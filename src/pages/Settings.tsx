@@ -3,9 +3,8 @@ import { Sidebar } from "@/components/layout/Sidebar";
 import { Header } from "@/components/layout/Header";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { User, Bell, Mail, Shield, Palette, Globe, Database } from "lucide-react";
+import { User, Bell, Mail, Shield, Palette, Database } from "lucide-react";
 
 interface UserSettings {
   notifications: boolean;
