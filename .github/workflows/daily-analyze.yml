@@ -48,11 +48,11 @@ jobs:
 
       # 7️⃣ Run analyzer
       - name: Run Daily Analyzer
-        run: npx tsx scripts/analyze-trends.ts
+        run: npx tsx src/scripts/analyze-trends.ts
 
       # 8️⃣ Commit & push ONLY if changes exist
       - name: Commit & Push
         run: |
-          git add data/daily-report.json data/history/ || true
+          git add data/daily-report.json data/history/ src/data/ || true
           git diff --cached --quiet || git commit -m "data: daily report $(date -u +'%Y-%m-%d')"
           git push origin HEAD:${{ github.ref_name }}
