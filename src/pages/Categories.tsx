@@ -111,7 +111,7 @@ export default function Categories() {
                   <CardHeader>
                     <div className="flex items-center justify-between">
                       <CardTitle className="text-lg">{category.name}</CardTitle>
-                      <Badge variant="secondary">{category.repoCount} repos</Badge>
+                      <Badge variant="outline" className="text-xs border-blue text-blue bg-blue/10">{category.repoCount} repos</Badge>
                     </div>
                   </CardHeader>
                   <CardContent className="space-y-4">
@@ -141,7 +141,7 @@ export default function Categories() {
                       </div>
                       <div className="flex flex-wrap gap-1">
                         {category.topRepos.map((repo, index) => (
-                          <Badge key={index} variant="outline" className="text-xs">
+                          <Badge key={index} variant="outline" className="text-xs border-green text-green bg-green/10">
                             {repo}
                           </Badge>
                         ))}

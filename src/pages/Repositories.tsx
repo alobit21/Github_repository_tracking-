@@ -183,9 +183,9 @@ export default function Repositories() {
                     <div className="flex items-start justify-between">
                       <div className="flex-1">
                         <CardTitle className="text-lg mb-2">{repo.name}</CardTitle>
-                        <Badge variant="secondary" className="text-xs">{repo.category}</Badge>
+                        <Badge variant="outline" className="text-xs border-blue text-blue bg-blue/10">{repo.category}</Badge>
                       </div>
-                      <Badge variant="outline" className="text-xs">{repo.language}</Badge>
+                      <Badge variant="outline" className="text-xs border-green text-green bg-green/10">{repo.language}</Badge>
                     </div>
                   </CardHeader>
                   <CardContent className="space-y-4">

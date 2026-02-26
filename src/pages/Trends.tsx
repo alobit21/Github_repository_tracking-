@@ -76,7 +76,7 @@ export default function Trends() {
                   <CardHeader>
                     <div className="flex items-center justify-between">
                       <CardTitle className="text-lg">{trend.name}</CardTitle>
-                      <Badge variant="secondary">{trend.category}</Badge>
+                      <Badge variant="outline" className="text-xs border-blue text-blue bg-blue/10">{trend.category}</Badge>
                     </div>
                   </CardHeader>
                   <CardContent>

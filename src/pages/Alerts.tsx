@@ -193,8 +193,8 @@ export default function Alerts() {
                             <p className="text-sm text-secondary mb-2">{alert.description}</p>
                           </div>
                           <div className="flex items-center gap-2 flex-shrink-0">
-                            <Badge variant="outline" className="text-xs">{alert.category}</Badge>
-                            <Badge variant="secondary" className="text-xs">
+                            <Badge variant="outline" className="text-xs border-blue text-blue bg-blue/10">{alert.category}</Badge>
+                            <Badge variant="outline" className="text-xs border-green text-green bg-green/10">
                               {alert.repository}
                             </Badge>
                           </div>

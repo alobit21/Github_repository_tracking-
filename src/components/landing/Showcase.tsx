@@ -56,7 +56,7 @@ export function Showcase() {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute top-4 left-4">
-                  <Badge variant="secondary" className="text-xs">
+                  <Badge variant="outline" className="text-xs border-blue text-blue bg-blue/10">
                     {item.badge}
                   </Badge>
                 </div>

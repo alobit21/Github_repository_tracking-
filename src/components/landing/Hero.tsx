@@ -9,7 +9,7 @@ export function Hero() {
       <div className="max-w-7xl mx-auto">
         {/* Badge */}
         <div className="flex justify-center mb-6">
-          <Badge variant="secondary" className="text-xs">
+          <Badge variant="outline" className="text-xs border-blue text-blue bg-blue/10">
             AI-Powered GitHub Intelligence
           </Badge>
         </div>
@@ -42,7 +42,7 @@ export function Hero() {
             <CardHeader className="pb-3">
               <div className="flex items-center justify-between">
                 <h3 className="text-sm font-medium text-secondary">Live Momentum Signals</h3>
-                <Badge variant="outline" className="text-xs">Live</Badge>
+                <Badge variant="outline" className="text-xs border-green text-green bg-green/10">Live</Badge>
               </div>
             </CardHeader>
             <CardContent className="space-y-4">

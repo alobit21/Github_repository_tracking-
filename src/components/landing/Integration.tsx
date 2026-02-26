@@ -50,8 +50,8 @@ export function Integration() {
                 />
                 <div className="absolute top-4 right-4">
                   <Badge 
-                    variant={integration.status === 'Connected' ? 'default' : 'secondary'}
-                    className="text-xs"
+                    variant="outline"
+                    className={`text-xs ${integration.status === 'Connected' ? 'border-green text-green bg-green/10' : 'border-blue text-blue bg-blue/10'}`}
                   >
                     {integration.status}
                   </Badge>
@@ -91,13 +91,13 @@ export function Integration() {
                 Built with developers in mind. RESTful APIs, webhooks, and SDKs for custom integrations.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Badge variant="outline" className="px-4 py-2">
+                <Badge variant="outline" className="px-4 py-2 border-blue text-blue bg-blue/10">
                   REST API
                 </Badge>
-                <Badge variant="outline" className="px-4 py-2">
+                <Badge variant="outline" className="px-4 py-2 border-blue text-blue bg-blue/10">
                   Webhooks
                 </Badge>
-                <Badge variant="outline" className="px-4 py-2">
+                <Badge variant="outline" className="px-4 py-2 border-blue text-blue bg-blue/10">
                   SDK Available
                 </Badge>
               </div>

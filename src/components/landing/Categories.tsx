@@ -1,14 +1,14 @@
 import { Badge } from '@/components/ui/badge';
 
 const categories = [
-  { name: 'AI / ML', color: 'default' },
-  { name: 'DevTools', color: 'secondary' },
-  { name: 'Infrastructure', color: 'outline' },
-  { name: 'Web3', color: 'default' },
-  { name: 'Frontend', color: 'secondary' },
-  { name: 'Backend', color: 'outline' },
-  { name: 'Enterprise', color: 'default' },
-  { name: 'Experimental', color: 'secondary' }
+  { name: 'AI / ML', color: 'blue' },
+  { name: 'DevTools', color: 'green' },
+  { name: 'Infrastructure', color: 'yellow' },
+  { name: 'Web3', color: 'blue' },
+  { name: 'Frontend', color: 'green' },
+  { name: 'Backend', color: 'yellow' },
+  { name: 'Enterprise', color: 'blue' },
+  { name: 'Experimental', color: 'green' }
 ];
 
 export function Categories() {
@@ -28,8 +28,8 @@ export function Categories() {
           {categories.map((category, index) => (
             <Badge 
               key={index} 
-              variant={category.color as any}
-              className="px-4 py-2 text-sm"
+              variant="outline"
+              className={`px-4 py-2 text-sm border-${category.color} text-${category.color} bg-${category.color}/10`}
             >
               {category.name}
             </Badge>

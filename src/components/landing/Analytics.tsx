@@ -63,8 +63,8 @@ export function Analytics() {
                     <item.icon className={`w-5 h-5 ${item.color}`} />
                   </div>
                   <Badge 
-                    variant={item.trend === 'up' ? 'default' : 'secondary'}
-                    className="text-xs"
+                    variant="outline"
+                    className="text-xs border-green text-green bg-green/10"
                   >
                     {item.change}
                   </Badge>
