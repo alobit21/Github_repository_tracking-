@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Signal, Menu, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const navigation = [
   { name: 'Features', href: '#features' },
@@ -36,12 +37,16 @@ export function Navbar() {
 
           {/* Desktop CTA Buttons */}
           <div className="hidden md:flex items-center gap-3">
-            <Button variant="ghost" size="sm">
-              Login
-            </Button>
-            <Button size="sm">
-              Get Started
-            </Button>
+            <Link to="/dashboard">
+              <Button variant="ghost" size="sm">
+                Login
+              </Button>
+            </Link>
+            <Link to="/dashboard">
+              <Button size="sm">
+                Get Started
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -75,12 +80,16 @@ export function Navbar() {
                 </a>
               ))}
               <div className="flex flex-col gap-3 pt-4 border-t border-border">
-                <Button variant="ghost" size="sm" className="w-full">
-                  Login
-                </Button>
-                <Button size="sm" className="w-full">
-                  Get Started
-                </Button>
+                <Link to="/dashboard">
+                  <Button variant="ghost" size="sm" className="w-full">
+                    Login
+                  </Button>
+                </Link>
+                <Link to="/dashboard">
+                  <Button size="sm" className="w-full">
+                    Get Started
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

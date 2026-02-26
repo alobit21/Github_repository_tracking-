@@ -2,6 +2,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { TrendingUp, Activity } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export function Hero() {
   return (
@@ -28,12 +29,16 @@ export function Hero() {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-          <Button size="lg" className="text-base px-8">
-            Start Tracking Trends
-          </Button>
-          <Button variant="outline" size="lg" className="text-base px-8">
-            View Live Dashboard
-          </Button>
+          <Link to="/dashboard">
+            <Button size="lg" className="text-base px-8 w-full sm:w-auto">
+              Start Tracking Trends
+            </Button>
+          </Link>
+          <Link to="/dashboard">
+            <Button variant="outline" size="lg" className="text-base px-8 w-full sm:w-auto">
+              View Live Dashboard
+            </Button>
+          </Link>
         </div>
 
         {/* Preview Card */}

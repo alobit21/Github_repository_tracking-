@@ -1,4 +1,5 @@
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 export function CTA() {
   return (
@@ -12,12 +13,16 @@ export function CTA() {
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button size="lg" className="text-base px-8">
-            Create Free Account
-          </Button>
-          <Button variant="outline" size="lg" className="text-base px-8">
-            Explore Demo
-          </Button>
+          <Link to="/dashboard">
+            <Button size="lg" className="text-base px-8 w-full sm:w-auto">
+              Create Free Account
+            </Button>
+          </Link>
+          <Link to="/dashboard">
+            <Button variant="outline" size="lg" className="text-base px-8 w-full sm:w-auto">
+              Explore Demo
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
