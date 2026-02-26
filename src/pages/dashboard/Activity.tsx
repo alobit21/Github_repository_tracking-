@@ -354,21 +354,21 @@ export default function ActivityPage() {
         </div>
 
         {/* Main Content */}
-        <main className="flex-1 p-4 sm:p-6 overflow-auto">
-          <div className="max-w-7xl mx-auto space-y-4 sm:space-y-6">
+        <main className="flex-1 p-3 sm:p-4 lg:p-6 overflow-auto">
+          <div className="max-w-7xl mx-auto space-y-3 sm:space-y-4 lg:space-y-6">
             {/* KPI Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
               {kpiData.map((kpi, index) => (
                 <KpiCard key={index} data={kpi} />
               ))}
             </div>
 
             {/* Activity Timeline */}
-            <div className="space-y-4 sm:space-y-6">
-              <div className="flex items-center gap-3 mb-4 sm:mb-6">
-                <Activity className="w-5 h-5 sm:w-6 sm:h-6 text-blue" />
-                <h2 className="text-xl sm:text-2xl font-bold text-primary">Recent Activity</h2>
-                <span className="px-2 sm:px-3 py-1 bg-blue text-white text-xs sm:text-sm rounded-full">
+            <div className="space-y-3 sm:space-y-4 lg:space-y-6">
+              <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-3 sm:mb-4 lg:mb-6">
+                <Activity className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-blue" />
+                <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-primary">Recent Activity</h2>
+                <span className="px-2 py-1 sm:px-3 py-1 bg-blue text-white text-xs sm:text-sm rounded-full w-fit">
                   {filteredActivities.length} events
                 </span>
               </div>
@@ -377,33 +377,35 @@ export default function ActivityPage() {
                 {filteredActivities.map((activity) => (
                   <div
                     key={activity.id}
-                    className="bg-card border border-border rounded-lg p-4 hover:border-blue transition-colors"
+                    className="bg-card border border-border rounded-lg p-3 sm:p-4 hover:border-blue transition-colors w-full"
                   >
-                    <div className="flex items-start gap-4">
+                    <div className="flex items-start gap-3 sm:gap-4">
                       {/* Activity Icon */}
-                      <div className="flex-shrink-0 w-10 h-10 bg-surface rounded-full flex items-center justify-center border border-border">
+                      <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 bg-surface rounded-full flex items-center justify-center border border-border">
                         {getActivityIcon(activity.type)}
                       </div>
 
                       {/* Activity Content */}
                       <div className="flex-1 min-w-0">
-                        <div className="flex items-center gap-2 mb-2">
-                          <span className="font-medium text-primary">{activity.user}</span>
-                          <span className="text-secondary">•</span>
-                          <span className="text-sm text-secondary flex items-center gap-1">
-                            <Clock className="w-3 h-3" />
-                            {formatTimestamp(activity.timestamp)}
-                          </span>
+                        <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 mb-2">
+                          <span className="font-medium text-primary text-sm sm:text-base truncate">{activity.user}</span>
+                          <div className="flex items-center gap-1 sm:gap-2 text-xs sm:text-sm text-secondary">
+                            <span className="hidden sm:inline">•</span>
+                            <div className="flex items-center gap-1">
+                              <Clock className="w-3 h-3" />
+                              {formatTimestamp(activity.timestamp)}
+                            </div>
+                          </div>
                         </div>
                         
-                        <p className="text-sm text-secondary mb-2">
+                        <p className="text-xs sm:text-sm text-secondary mb-2 line-clamp-2">
                           {activity.description}
                         </p>
 
-                        <div className="flex items-center gap-2">
+                        <div className="w-full">
                           <RepoCard
                             repo={activity.repository}
-                            className="max-w-md"
+                            className="w-full max-w-full"
                           />
                         </div>
                       </div>

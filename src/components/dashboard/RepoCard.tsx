@@ -54,16 +54,16 @@ export function RepoCard({ className, repo }: RepoCardProps) {
   return (
     <div
       className={cn(
-        'bg-card border border-border rounded-lg p-4 transition-all duration-200',
+        'bg-card border border-border rounded-lg p-3 sm:p-4 transition-all duration-200 w-full',
         'hover:border-blue hover:bg-surface',
         'focus:outline-none focus:ring-2 focus:ring-blue focus:border-transparent',
         className
       )}
     >
       {/* Header */}
-      <div className="flex items-start justify-between mb-3">
+      <div className="flex items-start justify-between mb-2 sm:mb-3 gap-2">
         <div className="flex-1 min-w-0">
-          <h3 className="font-semibold text-primary truncate">
+          <h3 className="font-semibold text-primary text-sm sm:text-base truncate">
             <a
               href={repo.url}
               target="_blank"
@@ -78,7 +78,7 @@ export function RepoCard({ className, repo }: RepoCardProps) {
         
         {/* Momentum Score Badge */}
         <div className={cn(
-          'px-2 py-1 rounded text-xs font-medium border',
+          'px-2 py-1 rounded text-xs font-medium border flex-shrink-0',
           getMomentumColor(repo.momentumScore),
           'bg-surface'
         )}>
@@ -88,14 +88,14 @@ export function RepoCard({ className, repo }: RepoCardProps) {
 
       {/* Description */}
       {repo.description && (
-        <p className="text-sm text-secondary mb-3 line-clamp-2">
+        <p className="text-xs sm:text-sm text-secondary mb-2 sm:mb-3 line-clamp-2">
           {repo.description}
         </p>
       )}
 
       {/* Categories */}
       {repo.categories.length > 0 && (
-        <div className="flex flex-wrap gap-1 mb-3">
+        <div className="flex flex-wrap gap-1 mb-2 sm:mb-3">
           {repo.categories.slice(0, 2).map((category) => (
             <span
               key={category}
@@ -114,7 +114,7 @@ export function RepoCard({ className, repo }: RepoCardProps) {
 
       {/* Language Badge */}
       {repo.language && (
-        <div className="flex items-center gap-2 mb-3">
+        <div className="flex items-center gap-2 mb-2 sm:mb-3">
           <span className="text-xs text-secondary">Language:</span>
           <span className="px-2 py-1 text-xs bg-surface border border-border rounded text-primary">
             {repo.language}
@@ -123,39 +123,39 @@ export function RepoCard({ className, repo }: RepoCardProps) {
       )}
 
       {/* Metrics */}
-      <div className="grid grid-cols-2 gap-3 text-xs">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 text-xs">
         <div className="flex items-center gap-1">
-          <Star className="w-3 h-3 text-secondary" />
-          <span className="text-primary">{formatNumber(repo.stars)}</span>
-          <span className={cn(getDeltaColor(repo.starDelta))}>
+          <Star className="w-3 h-3 text-secondary flex-shrink-0" />
+          <span className="text-primary truncate">{formatNumber(repo.stars)}</span>
+          <span className={cn(getDeltaColor(repo.starDelta), 'flex-shrink-0')}>
             ({formatDelta(repo.starDelta)})
           </span>
         </div>
         
         <div className="flex items-center gap-1">
-          <GitFork className="w-3 h-3 text-secondary" />
-          <span className="text-primary">{formatNumber(repo.forks)}</span>
-          <span className="text-secondary">forks</span>
+          <GitFork className="w-3 h-3 text-secondary flex-shrink-0" />
+          <span className="text-primary truncate">{formatNumber(repo.forks)}</span>
+          <span className="text-secondary flex-shrink-0">forks</span>
         </div>
         
         <div className="flex items-center gap-1">
-          <Eye className="w-3 h-3 text-secondary" />
-          <span className="text-primary">{formatNumber(repo.watchers)}</span>
-          <span className="text-secondary">watchers</span>
+          <Eye className="w-3 h-3 text-secondary flex-shrink-0" />
+          <span className="text-primary truncate">{formatNumber(repo.watchers)}</span>
+          <span className="text-secondary flex-shrink-0">watchers</span>
         </div>
         
         <div className="flex items-center gap-1">
-          <GitPullRequest className="w-3 h-3 text-secondary" />
-          <span className="text-primary">{formatNumber(repo.pullRequests)}</span>
-          <span className="text-secondary">PRs</span>
+          <GitPullRequest className="w-3 h-3 text-secondary flex-shrink-0" />
+          <span className="text-primary truncate">{formatNumber(repo.pullRequests)}</span>
+          <span className="text-secondary flex-shrink-0">PRs</span>
         </div>
       </div>
 
       {/* Open Source Indicator */}
       {repo.isOpenSource && (
-        <div className="mt-3 pt-3 border-t border-border">
+        <div className="mt-2 sm:mt-3 pt-2 sm:pt-3 border-t border-border">
           <span className="text-xs text-green flex items-center gap-1">
-            <span className="w-2 h-2 bg-green rounded-full"></span>
+            <span className="w-2 h-2 bg-green rounded-full flex-shrink-0"></span>
             Open Source
           </span>
         </div>

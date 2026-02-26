@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Sidebar } from "@/components/layout/Sidebar";
 import { Header } from "@/components/layout/Header";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Star, GitFork, Eye, ExternalLink, Filter } from "lucide-react";
+import { Star, GitFork, Eye, ExternalLink, Filter, Menu } from "lucide-react";
 
 interface Repository {
   id: string;
@@ -97,6 +97,15 @@ const mockRepos: Repository[] = [
 export default function Repositories() {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [sortBy, setSortBy] = useState('stars');
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 1024);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const categories = ['all', 'Frontend', 'Infrastructure', 'AI / ML', 'DevTools', 'Backend'];
   const sortOptions = ['stars', 'forks', 'growth', 'watchers'];
@@ -121,108 +130,138 @@ export default function Repositories() {
 
   return (
     <div className="min-h-screen bg-background flex">
+      {/* Mobile Sidebar Overlay */}
+      {isSidebarOpen && (
+        <div 
+          className="fixed inset-0 bg-black/50 z-40 lg:hidden"
+          onClick={() => setIsSidebarOpen(false)}
+        />
+      )}
+      
       {/* Sidebar */}
-      <div className="fixed left-0 top-0 h-full z-40">
+      <div className={`fixed left-0 top-0 h-full z-50 transform transition-transform duration-300 ease-in-out lg:translate-x-0 lg:static lg:z-40 ${
+        isSidebarOpen ? 'translate-x-0' : '-translate-x-full'
+      }`}>
         <Sidebar 
           activeItem="repositories"
-          onItemClick={(item) => console.log('Navigate to:', item.id)}
+          onItemClick={(item) => {
+            console.log('Navigate to:', item.id);
+            setIsSidebarOpen(false);
+          }}
+          isMobile={isMobile}
+          onClose={() => setIsSidebarOpen(false)}
         />
       </div>
 
       {/* Main Content */}
-      <div className="flex-1 flex flex-col ml-64">
+      <div className="flex-1 flex flex-col lg:ml-0">
         {/* Header */}
         <div className="sticky top-0 z-30 bg-background border-b border-border">
           <Header />
         </div>
 
+        {/* Mobile Menu Button */}
+        <div className="lg:hidden sticky top-16 z-20 bg-background border-b border-border px-4 py-3">
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => setIsSidebarOpen(true)}
+            className="flex items-center gap-2"
+          >
+            <Menu className="w-4 h-4" />
+            <span>Menu</span>
+          </Button>
+        </div>
+
         {/* Content */}
-        <div className="p-6">
+        <div className="p-4 sm:p-6">
           <div className="max-w-7xl mx-auto">
-            <div className="mb-8">
-              <h1 className="text-3xl font-bold text-primary mb-2">Repository Explorer</h1>
-              <p className="text-secondary">Browse and filter repositories across different categories.</p>
+            <div className="mb-6 sm:mb-8">
+              <h1 className="text-2xl sm:text-3xl font-bold text-primary mb-2">Repository Explorer</h1>
+              <p className="text-secondary text-sm sm:text-base">Browse and filter repositories across different categories.</p>
             </div>
 
             {/* Filters */}
-            <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <div className="flex items-center gap-2">
-                <Filter className="w-4 h-4 text-secondary" />
-                <select 
-                  value={selectedCategory}
-                  onChange={(e) => setSelectedCategory(e.target.value)}
-                  className="bg-surface border border-border rounded px-3 py-2 text-primary text-sm"
-                >
-                  {categories.map(cat => (
-                    <option key={cat} value={cat}>{cat}</option>
-                  ))}
-                </select>
-              </div>
-              
-              <div className="flex items-center gap-2">
-                <span className="text-secondary text-sm">Sort by:</span>
-                <select 
-                  value={sortBy}
-                  onChange={(e) => setSortBy(e.target.value)}
-                  className="bg-surface border border-border rounded px-3 py-2 text-primary text-sm"
-                >
-                  {sortOptions.map(option => (
-                    <option key={option} value={option}>
-                      {option.charAt(0).toUpperCase() + option.slice(1)}
-                    </option>
-                  ))}
-                </select>
+            <div className="flex flex-col gap-4 mb-6 sm:mb-8">
+              <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+                <div className="flex items-center gap-2">
+                  <Filter className="w-4 h-4 text-secondary flex-shrink-0" />
+                  <select 
+                    value={selectedCategory}
+                    onChange={(e) => setSelectedCategory(e.target.value)}
+                    className="bg-surface border border-border rounded px-3 py-2 text-primary text-sm w-full sm:w-auto"
+                  >
+                    {categories.map(cat => (
+                      <option key={cat} value={cat}>{cat}</option>
+                    ))}
+                  </select>
+                </div>
+                
+                <div className="flex items-center gap-2">
+                  <span className="text-secondary text-sm whitespace-nowrap">Sort by:</span>
+                  <select 
+                    value={sortBy}
+                    onChange={(e) => setSortBy(e.target.value)}
+                    className="bg-surface border border-border rounded px-3 py-2 text-primary text-sm w-full sm:w-auto"
+                  >
+                    {sortOptions.map(option => (
+                      <option key={option} value={option}>
+                        {option.charAt(0).toUpperCase() + option.slice(1)}
+                      </option>
+                    ))}
+                  </select>
+                </div>
               </div>
             </div>
 
             {/* Repositories Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
               {filteredRepos.map((repo) => (
                 <Card key={repo.id} className="border-border hover:border-blue transition-colors">
-                  <CardHeader>
-                    <div className="flex items-start justify-between">
-                      <div className="flex-1">
-                        <CardTitle className="text-lg mb-2">{repo.name}</CardTitle>
+                  <CardHeader className="pb-3">
+                    <div className="flex items-start justify-between gap-2">
+                      <div className="flex-1 min-w-0">
+                        <CardTitle className="text-base sm:text-lg mb-2 truncate">{repo.name}</CardTitle>
                         <Badge variant="outline" className="text-xs border-blue text-blue bg-blue/10">{repo.category}</Badge>
                       </div>
-                      <Badge variant="outline" className="text-xs border-green text-green bg-green/10">{repo.language}</Badge>
+                      <Badge variant="outline" className="text-xs border-green text-green bg-green/10 flex-shrink-0">{repo.language}</Badge>
                     </div>
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <p className="text-sm text-secondary line-clamp-2">{repo.description}</p>
                     
-                    <div className="grid grid-cols-3 gap-4 text-center">
+                    <div className="grid grid-cols-3 gap-2 sm:gap-4 text-center">
                       <div>
                         <div className="flex items-center justify-center gap-1 text-blue mb-1">
                           <Star className="w-3 h-3" />
-                          <span className="text-sm font-medium">{formatNumber(repo.stars)}</span>
+                          <span className="text-xs sm:text-sm font-medium">{formatNumber(repo.stars)}</span>
                         </div>
                         <p className="text-xs text-secondary">Stars</p>
                       </div>
                       <div>
                         <div className="flex items-center justify-center gap-1 text-green mb-1">
                           <GitFork className="w-3 h-3" />
-                          <span className="text-sm font-medium">{formatNumber(repo.forks)}</span>
+                          <span className="text-xs sm:text-sm font-medium">{formatNumber(repo.forks)}</span>
                         </div>
                         <p className="text-xs text-secondary">Forks</p>
                       </div>
                       <div>
                         <div className="flex items-center justify-center gap-1 text-yellow mb-1">
                           <Eye className="w-3 h-3" />
-                          <span className="text-sm font-medium">{formatNumber(repo.watchers)}</span>
+                          <span className="text-xs sm:text-sm font-medium">{formatNumber(repo.watchers)}</span>
                         </div>
                         <p className="text-xs text-secondary">Watchers</p>
                       </div>
                     </div>
 
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-1">
-                        <span className="text-sm text-secondary">Growth:</span>
-                        <span className={`text-sm font-medium ${repo.growth > 10 ? 'text-green' : 'text-secondary'}`}>
+                    <div className="flex items-center justify-between gap-2">
+                      <div className="flex items-center gap-1 min-w-0">
+                        <span className="text-xs sm:text-sm text-secondary whitespace-nowrap">Growth:</span>
+                        <span className={`text-xs sm:text-sm font-medium ${repo.growth > 10 ? 'text-green' : 'text-secondary'}`}>
                           +{repo.growth}%
                         </span>
                       </div>
-                      <Button variant="outline" size="sm" asChild>
+                      <Button variant="outline" size="sm" asChild className="flex-shrink-0">
                         <a href={repo.url} target="_blank" rel="noopener noreferrer">
                           <ExternalLink className="w-3 h-3" />
                         </a>

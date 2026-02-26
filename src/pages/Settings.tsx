@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Sidebar } from "@/components/layout/Sidebar";
 import { Header } from "@/components/layout/Header";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { User, Bell, Mail, Shield, Palette, Database } from "lucide-react";
+import { User, Bell, Mail, Shield, Palette, Database, Menu } from "lucide-react";
 
 interface UserSettings {
   notifications: boolean;
@@ -26,6 +26,15 @@ export default function Settings() {
   });
 
   const [isSaving, setIsSaving] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 1024);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const handleSave = async () => {
     setIsSaving(true);
@@ -40,27 +49,55 @@ export default function Settings() {
 
   return (
     <div className="min-h-screen bg-background flex">
+      {/* Mobile Sidebar Overlay */}
+      {isSidebarOpen && (
+        <div 
+          className="fixed inset-0 bg-black/50 z-40 lg:hidden"
+          onClick={() => setIsSidebarOpen(false)}
+        />
+      )}
+      
       {/* Sidebar */}
-      <div className="fixed left-0 top-0 h-full z-40">
+      <div className={`fixed left-0 top-0 h-full z-50 transform transition-transform duration-300 ease-in-out lg:translate-x-0 lg:static lg:z-40 ${
+        isSidebarOpen ? 'translate-x-0' : '-translate-x-full'
+      }`}>
         <Sidebar 
           activeItem="settings"
-          onItemClick={(item) => console.log('Navigate to:', item.id)}
+          onItemClick={(item) => {
+            console.log('Navigate to:', item.id);
+            setIsSidebarOpen(false);
+          }}
+          isMobile={isMobile}
+          onClose={() => setIsSidebarOpen(false)}
         />
       </div>
 
       {/* Main Content */}
-      <div className="flex-1 flex flex-col ml-64">
+      <div className="flex-1 flex flex-col lg:ml-0">
         {/* Header */}
         <div className="sticky top-0 z-30 bg-background border-b border-border">
           <Header />
         </div>
 
+        {/* Mobile Menu Button */}
+        <div className="lg:hidden sticky top-16 z-20 bg-background border-b border-border px-4 py-3">
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => setIsSidebarOpen(true)}
+            className="flex items-center gap-2"
+          >
+            <Menu className="w-4 h-4" />
+            <span>Menu</span>
+          </Button>
+        </div>
+
         {/* Content */}
-        <div className="p-6">
+        <div className="p-4 sm:p-6">
           <div className="max-w-4xl mx-auto">
-            <div className="mb-8">
-              <h1 className="text-3xl font-bold text-primary mb-2">Settings</h1>
-              <p className="text-secondary">Manage your account preferences and notification settings.</p>
+            <div className="mb-6 sm:mb-8">
+              <h1 className="text-2xl sm:text-3xl font-bold text-primary mb-2">Settings</h1>
+              <p className="text-secondary text-sm sm:text-base">Manage your account preferences and notification settings.</p>
             </div>
 
             <div className="space-y-6">
@@ -73,7 +110,7 @@ export default function Settings() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium text-primary mb-2">Display Name</label>
                       <input 
@@ -104,7 +141,7 @@ export default function Settings() {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="space-y-3">
-                    <div className="flex items-center justify-between">
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                       <div>
                         <p className="font-medium text-primary">Push Notifications</p>
                         <p className="text-sm text-secondary">Receive browser notifications for important alerts</p>
@@ -113,6 +150,7 @@ export default function Settings() {
                         variant={settings.notifications ? 'default' : 'outline'}
                         size="sm"
                         onClick={() => updateSetting('notifications', !settings.notifications)}
+                        className="w-full sm:w-auto"
                       >
                         {settings.notifications ? 'Enabled' : 'Disabled'}
                       </Button>
@@ -120,7 +158,7 @@ export default function Settings() {
                     
                     <Separator />
                     
-                    <div className="flex items-center justify-between">
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                       <div>
                         <p className="font-medium text-primary">Email Alerts</p>
                         <p className="text-sm text-secondary">Get daily digest and critical alerts via email</p>
@@ -129,6 +167,7 @@ export default function Settings() {
                         variant={settings.emailAlerts ? 'default' : 'outline'}
                         size="sm"
                         onClick={() => updateSetting('emailAlerts', !settings.emailAlerts)}
+                        className="w-full sm:w-auto"
                       >
                         {settings.emailAlerts ? 'Enabled' : 'Disabled'}
                       </Button>
@@ -146,7 +185,7 @@ export default function Settings() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium text-primary mb-2">Theme</label>
                       <select 
@@ -184,7 +223,7 @@ export default function Settings() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium text-primary mb-2">Data Retention</label>
                       <select 
@@ -233,11 +272,11 @@ export default function Settings() {
               </Card>
 
               {/* Save Button */}
-              <div className="flex justify-end">
+              <div className="flex justify-start sm:justify-end">
                 <Button 
                   onClick={handleSave}
                   disabled={isSaving}
-                  className="min-w-32"
+                  className="min-w-32 w-full sm:w-auto"
                 >
                   {isSaving ? 'Saving...' : 'Save Changes'}
                 </Button>
