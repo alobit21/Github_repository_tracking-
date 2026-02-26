@@ -347,17 +347,51 @@ export default function Dashboard() {
         {/* Main Dashboard Content */}
         <main className="flex-1 p-4 sm:p-6 lg:p-8 overflow-x-hidden overflow-y-auto">
           <div className="max-w-7xl mx-auto space-y-6 sm:space-y-8">
-            {/* Page Header */}
-            <div className="mb-6 sm:mb-8">
-              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary mb-2">Dashboard Overview</h1>
-              <p className="text-secondary text-sm sm:text-base">Real-time GitHub repository analytics and trending insights</p>
+            {/* Page Header with Stats Overview */}
+            <div className="bg-gradient-to-r from-blue/10 to-purple/10 border border-border rounded-xl p-6 sm:p-8">
+              <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+                <div>
+                  <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary mb-3">Dashboard Overview</h1>
+                  <p className="text-secondary text-base sm:text-lg max-w-2xl">Real-time GitHub repository analytics and trending insights from the open-source community</p>
+                  <div className="flex items-center gap-4 mt-4">
+                    <div className="flex items-center gap-2">
+                      <span className="w-2 h-2 bg-green rounded-full animate-pulse"></span>
+                      <span className="text-sm text-secondary">Live data</span>
+                    </div>
+                    <span className="text-sm text-secondary">•</span>
+                    <span className="text-sm text-secondary">Last updated: Just now</span>
+                  </div>
+                </div>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 lg:gap-6">
+                  <div className="text-center">
+                    <div className="text-2xl sm:text-3xl font-bold text-blue">{Object.values(filteredRepos).reduce((sum, repos) => sum + repos.length, 0)}</div>
+                    <p className="text-xs sm:text-sm text-secondary">Total Repos</p>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl sm:text-3xl font-bold text-green">{filteredRepos.emergingRockets.length}</div>
+                    <p className="text-xs sm:text-sm text-secondary">Trending</p>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl sm:text-3xl font-bold text-yellow">{filteredRepos.experimentalSpike.length}</div>
+                    <p className="text-xs sm:text-sm text-secondary">Experimental</p>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl sm:text-3xl font-bold text-purple">{categoryData.length}</div>
+                    <p className="text-xs sm:text-sm text-secondary">Categories</p>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            {/* KPI Cards Section */}
+            {/* KPI Cards Grid */}
             <section className="space-y-4">
               <div className="flex items-center justify-between">
-                <h2 className="text-lg sm:text-xl font-semibold text-primary">Key Metrics</h2>
-                <span className="text-xs sm:text-sm text-secondary">Last updated: Just now</span>
+                <h2 className="text-xl sm:text-2xl font-semibold text-primary flex items-center gap-3">
+                  <div className="w-8 h-8 bg-blue/10 rounded-lg flex items-center justify-center">
+                    <span className="text-blue text-sm font-bold">📊</span>
+                  </div>
+                  Key Performance Metrics
+                </h2>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
                 {kpiData.map((kpi, index) => (
@@ -366,157 +400,188 @@ export default function Dashboard() {
               </div>
             </section>
 
-            {/* Chart Section */}
-            <section className="space-y-4">
-              <div className="flex items-center justify-between">
-                <h2 className="text-lg sm:text-xl font-semibold text-primary">Momentum Trends</h2>
-                <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 bg-green rounded-full animate-pulse"></span>
-                  <span className="text-xs sm:text-sm text-secondary">Live data</span>
-                </div>
-              </div>
-              <div className="bg-card border border-border rounded-lg p-4 sm:p-6">
-                <MomentumChart
-                  data={chartData}
-                  visibleLines={visibleLines}
-                  onLineToggle={handleLineToggle}
-                />
-              </div>
-            </section>
-
-            {/* Repository Sections */}
-            <section className="space-y-6">
-              <div className="flex items-center justify-between">
-                <h2 className="text-lg sm:text-xl font-semibold text-primary">Repository Insights</h2>
-                <span className="text-xs sm:text-sm text-secondary">{Object.values(filteredRepos).reduce((sum, repos) => sum + repos.length, 0)} repositories</span>
-              </div>
-              
-              <div className="grid grid-cols-1 xl:grid-cols-3 gap-6 lg:gap-8">
-                {/* Main Repository Content */}
-                <div className="xl:col-span-2 space-y-6">
-                  {/* Emerging Rockets */}
-                  {filteredRepos.emergingRockets.length > 0 && (
-                    <div className="bg-card border border-border rounded-lg overflow-hidden">
-                      <div className="p-4 sm:p-6 border-b border-border bg-gradient-to-r from-blue/5 to-transparent">
-                        <div className="flex items-center gap-3">
-                          <div className="w-8 h-8 bg-blue rounded-lg flex items-center justify-center">
-                            <span className="text-white text-sm font-bold">🚀</span>
-                          </div>
-                          <div>
-                            <h3 className="text-lg font-semibold text-primary">Emerging Rockets</h3>
-                            <p className="text-sm text-secondary">High-growth repositories gaining momentum</p>
-                          </div>
-                        </div>
+            {/* Main Content Grid */}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
+              {/* Left Column - Chart and Repository Sections */}
+              <div className="lg:col-span-2 space-y-6">
+                {/* Momentum Chart */}
+                <section className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <h2 className="text-xl sm:text-2xl font-semibold text-primary flex items-center gap-3">
+                      <div className="w-8 h-8 bg-green/10 rounded-lg flex items-center justify-center">
+                        <span className="text-green text-sm font-bold">📈</span>
                       </div>
-                      <div className="p-4 sm:p-6">
-                        <Section
-                          title="Emerging Rockets"
-                          repos={filteredRepos.emergingRockets}
-                          accentColor="blue"
-                          maxItems={6}
-                        />
-                      </div>
+                      Momentum Trends
+                    </h2>
+                    <div className="flex items-center gap-2">
+                      <span className="w-2 h-2 bg-green rounded-full animate-pulse"></span>
+                      <span className="text-xs sm:text-sm text-secondary">Live tracking</span>
                     </div>
-                  )}
-
-                  {/* Silent Climbers */}
-                  {filteredRepos.silentClimbers.length > 0 && (
-                    <div className="bg-card border border-border rounded-lg overflow-hidden">
-                      <div className="p-4 sm:p-6 border-b border-border bg-gradient-to-r from-green/5 to-transparent">
-                        <div className="flex items-center gap-3">
-                          <div className="w-8 h-8 bg-green rounded-lg flex items-center justify-center">
-                            <span className="text-white text-sm font-bold">🧗</span>
-                          </div>
-                          <div>
-                            <h3 className="text-lg font-semibold text-primary">Silent Climbers</h3>
-                            <p className="text-sm text-secondary">Steady growth with consistent activity</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="p-4 sm:p-6">
-                        <Section
-                          title="Silent Climbers"
-                          repos={filteredRepos.silentClimbers}
-                          accentColor="green"
-                          maxItems={6}
-                        />
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Experimental Spike */}
-                  {filteredRepos.experimentalSpike.length > 0 && (
-                    <div className="bg-card border border-border rounded-lg overflow-hidden">
-                      <div className="p-4 sm:p-6 border-b border-border bg-gradient-to-r from-yellow/5 to-transparent">
-                        <div className="flex items-center gap-3">
-                          <div className="w-8 h-8 bg-yellow rounded-lg flex items-center justify-center">
-                            <span className="text-black text-sm font-bold">⚡</span>
-                          </div>
-                          <div>
-                            <h3 className="text-lg font-semibold text-primary">Experimental Spike</h3>
-                            <p className="text-sm text-secondary">Innovative projects with recent activity bursts</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="p-4 sm:p-6">
-                        <Section
-                          title="Experimental Spike"
-                          repos={filteredRepos.experimentalSpike}
-                          accentColor="yellow"
-                          maxItems={6}
-                        />
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Cooling Down */}
-                  {filteredRepos.coolingDown.length > 0 && (
-                    <div className="bg-card border border-border rounded-lg overflow-hidden">
-                      <div className="p-4 sm:p-6 border-b border-border bg-gradient-to-r from-red/5 to-transparent">
-                        <div className="flex items-center gap-3">
-                          <div className="w-8 h-8 bg-red rounded-lg flex items-center justify-center">
-                            <span className="text-white text-sm font-bold">❄️</span>
-                          </div>
-                          <div>
-                            <h3 className="text-lg font-semibold text-primary">Cooling Down</h3>
-                            <p className="text-sm text-secondary">Projects with declining activity</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="p-4 sm:p-6">
-                        <Section
-                          title="Cooling Down"
-                          repos={filteredRepos.coolingDown}
-                          accentColor="red"
-                          maxItems={6}
-                        />
-                      </div>
-                    </div>
-                  )}
-                </div>
-
-                {/* Sidebar - Category Distribution */}
-                <div className="space-y-6">
-                  <div className="bg-card border border-border rounded-lg p-4 sm:p-6 sticky top-24">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-8 h-8 bg-purple rounded-lg flex items-center justify-center">
-                        <span className="text-white text-sm font-bold">📊</span>
-                      </div>
-                      <div>
-                        <h3 className="text-lg font-semibold text-primary">Category Distribution</h3>
-                        <p className="text-sm text-secondary">Repository breakdown by category</p>
-                      </div>
-                    </div>
-                    <CategoryDistribution
-                      data={categoryData}
-                      onCategoryClick={(category) => {
-                        setSelectedCategories([category]);
-                      }}
+                  </div>
+                  <div className="bg-card border border-border rounded-xl p-4 sm:p-6 shadow-sm">
+                    <MomentumChart
+                      data={chartData}
+                      visibleLines={visibleLines}
+                      onLineToggle={handleLineToggle}
                     />
                   </div>
+                </section>
+
+                {/* Repository Sections */}
+                <section className="space-y-6">
+                  <div className="flex items-center justify-between">
+                    <h2 className="text-xl sm:text-2xl font-semibold text-primary flex items-center gap-3">
+                      <div className="w-8 h-8 bg-purple/10 rounded-lg flex items-center justify-center">
+                        <span className="text-purple text-sm font-bold">🚀</span>
+                      </div>
+                      Repository Insights
+                    </h2>
+                    <span className="text-xs sm:text-sm text-secondary bg-surface px-3 py-1 rounded-full">
+                      {Object.values(filteredRepos).reduce((sum, repos) => sum + repos.length, 0)} active
+                    </span>
+                  </div>
+                  
+                  <div className="space-y-6">
+                    {/* Emerging Rockets */}
+                    {filteredRepos.emergingRockets.length > 0 && (
+                      <div className="bg-card border border-border rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                        <div className="p-6 border-b border-border bg-gradient-to-r from-blue/5 via-blue/2 to-transparent">
+                          <div className="flex items-center gap-4">
+                            <div className="w-12 h-12 bg-blue rounded-xl flex items-center justify-center shadow-lg">
+                              <span className="text-white text-xl font-bold">🚀</span>
+                            </div>
+                            <div className="flex-1">
+                              <h3 className="text-xl font-bold text-primary">Emerging Rockets</h3>
+                              <p className="text-secondary">High-growth repositories gaining momentum</p>
+                              <div className="flex items-center gap-4 mt-2">
+                                <span className="text-xs text-blue bg-blue/10 px-2 py-1 rounded-full">{filteredRepos.emergingRockets.length} repos</span>
+                                <span className="text-xs text-secondary">⬆️ Rising fast</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="p-6">
+                          <Section
+                            title="Emerging Rockets"
+                            repos={filteredRepos.emergingRockets}
+                            accentColor="blue"
+                            maxItems={6}
+                          />
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Silent Climbers */}
+                    {filteredRepos.silentClimbers.length > 0 && (
+                      <div className="bg-card border border-border rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                        <div className="p-6 border-b border-border bg-gradient-to-r from-green/5 via-green/2 to-transparent">
+                          <div className="flex items-center gap-4">
+                            <div className="w-12 h-12 bg-green rounded-xl flex items-center justify-center shadow-lg">
+                              <span className="text-white text-xl font-bold">🧗</span>
+                            </div>
+                            <div className="flex-1">
+                              <h3 className="text-xl font-bold text-primary">Silent Climbers</h3>
+                              <p className="text-secondary">Steady growth with consistent activity</p>
+                              <div className="flex items-center gap-4 mt-2">
+                                <span className="text-xs text-green bg-green/10 px-2 py-1 rounded-full">{filteredRepos.silentClimbers.length} repos</span>
+                                <span className="text-xs text-secondary">📈 Consistent</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="p-6">
+                          <Section
+                            title="Silent Climbers"
+                            repos={filteredRepos.silentClimbers}
+                            accentColor="green"
+                            maxItems={6}
+                          />
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Experimental Spike */}
+                    {filteredRepos.experimentalSpike.length > 0 && (
+                      <div className="bg-card border border-border rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                        <div className="p-6 border-b border-border bg-gradient-to-r from-yellow/5 via-yellow/2 to-transparent">
+                          <div className="flex items-center gap-4">
+                            <div className="w-12 h-12 bg-yellow rounded-xl flex items-center justify-center shadow-lg">
+                              <span className="text-black text-xl font-bold">⚡</span>
+                            </div>
+                            <div className="flex-1">
+                              <h3 className="text-xl font-bold text-primary">Experimental Spike</h3>
+                              <p className="text-secondary">Innovative projects with recent activity bursts</p>
+                              <div className="flex items-center gap-4 mt-2">
+                                <span className="text-xs text-yellow bg-yellow/10 px-2 py-1 rounded-full">{filteredRepos.experimentalSpike.length} repos</span>
+                                <span className="text-xs text-secondary">🔥 Hot</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="p-6">
+                          <Section
+                            title="Experimental Spike"
+                            repos={filteredRepos.experimentalSpike}
+                            accentColor="yellow"
+                            maxItems={6}
+                          />
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Cooling Down */}
+                    {filteredRepos.coolingDown.length > 0 && (
+                      <div className="bg-card border border-border rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                        <div className="p-6 border-b border-border bg-gradient-to-r from-red/5 via-red/2 to-transparent">
+                          <div className="flex items-center gap-4">
+                            <div className="w-12 h-12 bg-red rounded-xl flex items-center justify-center shadow-lg">
+                              <span className="text-white text-xl font-bold">❄️</span>
+                            </div>
+                            <div className="flex-1">
+                              <h3 className="text-xl font-bold text-primary">Cooling Down</h3>
+                              <p className="text-secondary">Projects with declining activity</p>
+                              <div className="flex items-center gap-4 mt-2">
+                                <span className="text-xs text-red bg-red/10 px-2 py-1 rounded-full">{filteredRepos.coolingDown.length} repos</span>
+                                <span className="text-xs text-secondary">📉 Declining</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="p-6">
+                          <Section
+                            title="Cooling Down"
+                            repos={filteredRepos.coolingDown}
+                            accentColor="red"
+                            maxItems={6}
+                          />
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </section>
+              </div>
+
+              {/* Right Column - Category Distribution */}
+              <div className="space-y-6">
+                <div className="bg-card border border-border rounded-xl p-6 sticky top-24 shadow-sm">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="w-12 h-12 bg-purple rounded-xl flex items-center justify-center shadow-lg">
+                      <span className="text-white text-xl font-bold">📊</span>
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-primary">Category Distribution</h3>
+                      <p className="text-secondary">Repository breakdown by category</p>
+                    </div>
+                  </div>
+                  <CategoryDistribution
+                    data={categoryData}
+                    onCategoryClick={(category) => {
+                      setSelectedCategories([category]);
+                    }}
+                  />
                 </div>
               </div>
-            </section>
+            </div>
           </div>
         </main>
       </div>
