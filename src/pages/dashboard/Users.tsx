@@ -2,7 +2,11 @@ import { useState, useEffect } from "react";
 import { Sidebar } from "@/components/layout/Sidebar";
 import { Header } from "@/components/layout/Header";
 import { KpiCard, type KpiData } from "@/components/dashboard/KpiCard";
-import { Users, Activity } from "lucide-react";
+import { CategoryFilter } from "@/components/dashboard/CategoryFilter";
+import { Users, MapPin, Link2, Calendar, Menu, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 
 interface User {
   id: string;
@@ -13,100 +17,66 @@ interface User {
   location: string | null;
   followers: number;
   following: number;
-  publicRepos: number;
-  totalStars: number;
   contributions: number;
-  languages: string[];
   company: string | null;
   blog: string | null;
   twitter: string | null;
   isFollowing: boolean;
   lastActive: string;
+  categories: string[];
 }
 
 export default function UsersPage() {
   const [users, setUsers] = useState<User[]>([]);
   const [loading, setLoading] = useState(true);
+  const [selectedCategories, setSelectedCategories] = useState<string[]>(['all']);
   const [searchQuery, setSearchQuery] = useState('');
-  const [sortBy, setSortBy] = useState<'followers' | 'following'>('followers');
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   useEffect(() => {
     async function fetchUsersData() {
       try {
-        // Fetch real GitHub followers and following data
-        const [followersResponse, followingResponse] = await Promise.all([
-          fetch('https://api.github.com/user/followers'),
-          fetch('https://api.github.com/user/following')
-        ]);
-
-        if (!followersResponse.ok || !followingResponse.ok) {
-          throw new Error('Failed to fetch GitHub data');
-        }
-
-        const followers = await followersResponse.json();
-        const following = await followingResponse.json();
-
-        // Combine followers and following into users array
-        const allUsers = [
-          ...followers.map((user: any) => ({
-            ...user,
-            type: 'follower',
-            isFollowing: false
-          })),
-          ...following.map((user: any) => ({
-            ...user,
-            type: 'following',
-            isFollowing: true
-          }))
-        ];
-
-        // Transform to our User interface
-        const usersData: User[] = allUsers.map((user: any) => ({
-          id: user.id.toString(),
-          username: user.login,
-          name: user.name || user.login,
-          avatar: user.avatar_url,
-          bio: user.bio,
-          location: user.location,
-          followers: user.followers || 0,
-          following: user.following || 0,
-          publicRepos: user.public_repos || 0,
-          totalStars: 0, // Would need additional API call to get this
-          contributions: 0, // Would need additional API call to get this
-          languages: [], // Would need additional API call to get this
-          company: user.company,
-          blog: user.blog,
-          twitter: user.twitter_username ? `@${user.twitter_username}` : null,
-          isFollowing: user.isFollowing,
-          lastActive: user.updated_at || new Date().toISOString(),
-        }));
-
-        setUsers(usersData);
-      } catch (error) {
-        console.error('Error fetching GitHub user data:', error);
-        // Fallback to mock data if GitHub API fails
+        // Simulate user data
         const mockUsers: User[] = [
           {
             id: '1',
-            username: 'octocat',
-            name: 'The Octocat',
-            avatar: 'https://github.com/octocat.png',
-            bio: 'GitHub mascot',
-            location: 'San Francisco',
-            followers: 5000,
-            following: 9,
-            publicRepos: 8,
-            totalStars: 1000,
-            contributions: 500,
-            languages: ['JavaScript', 'Ruby'],
-            company: 'GitHub',
-            blog: 'https://octocat.github.io',
-            twitter: '@octocat',
+            username: 'torvalds',
+            name: 'Linus Torvalds',
+            avatar: '',
+            bio: 'Creator of Linux',
+            location: 'Portland, OR',
+            followers: 150000,
+            following: 0,
+            contributions: 25000,
+            company: 'Linux Foundation',
+            blog: '',
+            twitter: '',
+            isFollowing: false,
+            lastActive: new Date(Date.now() - 2 * 60 * 60 * 1000).toISOString(),
+            categories: ['DevTools', 'Infrastructure']
+          },
+          {
+            id: '2',
+            username: 'gaearon',
+            name: 'Dan Abramov',
+            avatar: '',
+            bio: 'Creator of React',
+            location: 'San Francisco, CA',
+            followers: 120000,
+            following: 150,
+            contributions: 18000,
+            company: 'Vercel',
+            blog: 'overreacted.io',
+            twitter: 'dan_abramov',
             isFollowing: true,
-            lastActive: new Date().toISOString(),
+            lastActive: new Date(Date.now() - 1 * 60 * 60 * 1000).toISOString(),
+            categories: ['Frontend', 'DevTools']
           }
         ];
+        
         setUsers(mockUsers);
+      } catch (error) {
+        console.error('Error fetching users data:', error);
       } finally {
         setLoading(false);
       }
@@ -117,20 +87,13 @@ export default function UsersPage() {
 
   const filteredUsers = users.filter(user => {
     const matchesSearch = !searchQuery || 
-      user.username.toLowerCase().includes(searchQuery.toLowerCase()) ||
       user.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      (user.bio && user.bio.toLowerCase().includes(searchQuery.toLowerCase()));
+      user.username.toLowerCase().includes(searchQuery.toLowerCase());
     
-    return matchesSearch;
-  }).sort((a, b) => {
-    switch (sortBy) {
-      case 'followers':
-        return b.followers - a.followers;
-      case 'following':
-        return b.following - a.following;
-      default:
-        return 0;
-    }
+    const matchesCategories = selectedCategories.includes('all') || 
+      user.categories.some(cat => selectedCategories.includes(cat));
+    
+    return matchesSearch && matchesCategories;
   });
 
   const kpiData: KpiData[] = [
@@ -139,12 +102,6 @@ export default function UsersPage() {
       value: filteredUsers.length,
       delta: 0,
       accentColor: 'blue',
-    },
-    {
-      title: 'Following',
-      value: filteredUsers.filter(u => u.isFollowing).length,
-      delta: 0,
-      accentColor: 'green',
     },
     {
       title: 'Total Followers',
@@ -161,22 +118,18 @@ export default function UsersPage() {
       delta: 0,
       accentColor: 'red',
     },
+    {
+      title: 'Top Contributors',
+      value: filteredUsers.filter(u => u.contributions > 10000).length,
+      delta: 0,
+      accentColor: 'green',
+    },
   ];
 
   const formatNumber = (num: number) => {
     if (num >= 1000000) return `${(num / 1000000).toFixed(1)}M`;
     if (num >= 1000) return `${(num / 1000).toFixed(1)}K`;
     return num.toString();
-  };
-
-  const formatLastActive = (lastActive: string) => {
-    const date = new Date(lastActive);
-    const now = new Date();
-    const diffInHours = Math.floor((now.getTime() - date.getTime()) / (1000 * 60 * 60));
-    
-    if (diffInHours < 1) return 'Active now';
-    if (diffInHours < 24) return `${diffInHours}h ago`;
-    return `${Math.floor(diffInHours / 24)}d ago`;
   };
 
   if (loading) {
@@ -192,135 +145,150 @@ export default function UsersPage() {
 
   return (
     <div className="min-h-screen bg-background flex">
-      {/* Sidebar */}
-      <div className="fixed left-0 top-0 h-full z-40">
+      {/* Mobile Menu Button */}
+      <div className="lg:hidden fixed top-4 left-4 z-50">
+        <Button
+          variant="outline"
+          size="sm"
+          onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+          className="bg-surface border-border"
+        >
+          {isSidebarOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
+        </Button>
+      </div>
+
+      {/* Sidebar - Fixed on desktop, overlay on mobile */}
+      <div className={`fixed inset-0 z-40 lg:relative lg:inset-auto transition-transform duration-300 ${
+        isSidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
+      }`}>
         <Sidebar 
           activeItem="users"
+          isMobile={true}
+          onClose={() => setIsSidebarOpen(false)}
+          onItemClick={(item) => {
+            console.log('Navigate to:', item.id);
+            setIsSidebarOpen(false);
+          }}
+        />
+      </div>
+
+      {/* Desktop Sidebar (always visible) */}
+      <div className="hidden lg:block fixed left-0 top-0 h-full z-40">
+        <Sidebar 
+          activeItem="users"
+          isMobile={false}
           onItemClick={(item) => console.log('Navigate to:', item.id)}
         />
       </div>
 
+      {/* Mobile Sidebar Overlay */}
+      {isSidebarOpen && (
+        <div 
+          className="lg:hidden fixed inset-0 bg-black/50 z-30"
+          onClick={() => setIsSidebarOpen(false)}
+        />
+      )}
+
       {/* Main Content */}
-      <div className="flex-1 flex flex-col ml-64">
+      <div className="flex-1 flex flex-col lg:ml-64 ml-0">
         {/* Header */}
-        <div className="sticky top-0 z-30 bg-background border-b border-border">
+        <div className="sticky top-0 z-20 bg-background border-b border-border">
           <Header
-            title="GitHub Users"
+            title="User Analytics"
             onSearch={setSearchQuery}
           />
         </div>
 
-        {/* Filters */}
-        <div className="px-6 py-4 border-b border-border">
-          <div className="flex gap-4 items-center">
-            {/* Sort Options */}
-            <select
-              value={sortBy}
-              onChange={(e) => setSortBy(e.target.value as 'followers' | 'following')}
-              className="px-3 py-2 bg-card border border-border rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue"
-            >
-              <option value="followers">Most Followers</option>
-              <option value="following">Most Following</option>
-            </select>
-          </div>
+        {/* Category Filter */}
+        <div className="px-4 sm:px-6 py-4 border-b border-border">
+          <CategoryFilter
+            selectedCategories={selectedCategories}
+            onCategoryChange={setSelectedCategories}
+          />
         </div>
 
         {/* Main Content */}
-        <main className="flex-1 p-6 overflow-auto">
-          <div className="max-w-7xl mx-auto space-y-6">
+        <main className="flex-1 p-4 sm:p-6 overflow-auto">
+          <div className="max-w-7xl mx-auto space-y-4 sm:space-y-6">
             {/* KPI Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {kpiData.map((kpi, index) => (
                 <KpiCard key={index} data={kpi} />
               ))}
             </div>
 
             {/* Users Grid */}
-            <div className="space-y-6">
-              <div className="flex items-center gap-3 mb-6">
-                <Users className="w-6 h-6 text-blue" />
-                <h2 className="text-2xl font-bold text-primary">Notable Developers</h2>
-                <span className="px-3 py-1 bg-blue text-white text-sm rounded-full">
+            <div className="space-y-4 sm:space-y-6">
+              <div className="flex items-center gap-3 mb-4 sm:mb-6">
+                <Users className="w-5 h-5 sm:w-6 sm:h-6 text-blue" />
+                <h2 className="text-xl sm:text-2xl font-bold text-primary">Notable Developers</h2>
+                <span className="px-2 sm:px-3 py-1 bg-blue text-white text-xs sm:text-sm rounded-full">
                   {filteredUsers.length} users
                 </span>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                 {filteredUsers.map((user) => (
-                  <div
-                    key={user.id}
-                    className="bg-card border border-border rounded-lg p-6 hover:border-blue transition-colors"
-                  >
-                    {/* User Header */}
-                    <div className="flex items-start gap-4 mb-4">
-                      <img
-                        src={user.avatar}
-                        alt={user.username}
-                        className="w-16 h-16 rounded-full"
-                      />
-                      
-                      <div className="flex-1 min-w-0">
-                        <h3 className="font-semibold text-primary truncate">
-                          {user.name}
-                        </h3>
-                        <p className="text-sm text-secondary">@{user.username}</p>
-                        
-                        {user.company && (
-                          <p className="text-sm text-secondary mt-1">{user.company}</p>
-                        )}
-                      </div>
-                    </div>
-
-                    {/* Bio */}
-                    {user.bio && (
-                      <p className="text-sm text-secondary mb-4 line-clamp-2">
-                        {user.bio}
-                      </p>
-                    )}
-
-                    {/* Stats */}
-                    <div className="grid grid-cols-2 gap-4 mb-4">
-                      <div className="text-center p-2 bg-surface rounded">
-                        <div className="text-lg font-semibold text-primary">
-                          {formatNumber(user.followers)}
+                  <Card key={user.id} className="border-border hover:border-blue transition-colors">
+                    <CardContent className="p-4">
+                      {/* User Header */}
+                      <div className="flex items-start gap-3 mb-4">
+                        <div className="w-12 h-12 bg-gradient-to-br from-blue to-purple rounded-full flex items-center justify-center text-white font-bold">
+                          {user.name.charAt(0).toUpperCase()}
                         </div>
-                        <div className="text-xs text-secondary">Followers</div>
-                      </div>
-                      
-                      <div className="text-center p-2 bg-surface rounded">
-                        <div className="text-lg font-semibold text-primary">
-                          {formatNumber(user.totalStars)}
+                        <div className="flex-1 min-w-0">
+                          <h3 className="font-semibold text-primary truncate">{user.name}</h3>
+                          <p className="text-sm text-secondary truncate">@{user.username}</p>
                         </div>
-                        <div className="text-xs text-secondary">Stars</div>
                       </div>
-                    </div>
 
-                    {/* Languages */}
-                    {user.company && (
-                      <div className="mb-4">
-                        <div className="text-sm text-secondary mb-2">Company</div>
-                        <div className="text-sm text-primary">{user.company}</div>
+                      {/* User Stats */}
+                      <div className="grid grid-cols-2 gap-4 mb-4">
+                        <div className="text-center">
+                          <div className="text-lg font-bold text-primary">{formatNumber(user.followers)}</div>
+                          <p className="text-xs text-secondary">Followers</p>
+                        </div>
+                        <div className="text-center">
+                          <div className="text-lg font-bold text-primary">{formatNumber(user.contributions)}</div>
+                          <p className="text-xs text-secondary">Contributions</p>
+                        </div>
                       </div>
-                    )}
 
-                    {/* Footer */}
-                    <div className="flex items-center justify-between pt-4 border-t border-border">
-                      <div className="flex items-center gap-2 text-xs text-secondary">
-                        <Activity className="w-3 h-3" />
-                        {formatLastActive(user.lastActive)}
+                      {/* Categories */}
+                      <div className="flex flex-wrap gap-1 mb-4">
+                        {user.categories.map((category) => (
+                          <Badge key={category} variant="outline" className="text-xs border-green text-green bg-green/10">
+                            {category}
+                          </Badge>
+                        ))}
                       </div>
-                      
-                      <button
-                        className={`px-3 py-1 rounded text-xs font-medium transition-colors ${
-                          user.isFollowing
-                            ? 'bg-surface border border-border text-secondary hover:bg-card'
-                            : 'bg-blue text-white hover:bg-blue/90'
-                        }`}
-                      >
-                        {user.isFollowing ? 'Following' : 'Follow'}
-                      </button>
-                    </div>
-                  </div>
+
+                      {/* Location and Activity */}
+                      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs text-secondary mb-3">
+                        <div className="flex items-center gap-1">
+                          <MapPin className="w-3 h-3" />
+                          <span>{user.location || 'Unknown'}</span>
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <Calendar className="w-3 h-3" />
+                          <span>Active now</span>
+                        </div>
+                      </div>
+
+                      {/* GitHub Link */}
+                      <div className="pt-3 border-t border-border">
+                        <a
+                          href={`https://github.com/${user.username}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2 text-blue hover:text-blue/80 transition-colors text-sm"
+                        >
+                          <Link2 className="w-3 h-3" />
+                          View GitHub Profile
+                        </a>
+                      </div>
+                    </CardContent>
+                  </Card>
                 ))}
               </div>
             </div>

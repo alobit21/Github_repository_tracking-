@@ -4,7 +4,8 @@ import { Header } from "@/components/layout/Header";
 import { RepoCard, type Repository } from "@/components/dashboard/RepoCard";
 import { KpiCard, type KpiData } from "@/components/dashboard/KpiCard";
 import { CategoryFilter } from "@/components/dashboard/CategoryFilter";
-import { TrendingUp, Activity } from "lucide-react";
+import { TrendingUp, Activity, Menu, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 interface TrendingRepo extends Repository {
   trendScore: number;
@@ -17,6 +18,7 @@ export default function Trending() {
   const [loading, setLoading] = useState(true);
   const [selectedCategories, setSelectedCategories] = useState<string[]>(['all']);
   const [searchQuery, setSearchQuery] = useState('');
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   useEffect(() => {
     async function fetchTrendingData() {
@@ -174,18 +176,54 @@ export default function Trending() {
 
   return (
     <div className="min-h-screen bg-background flex">
-      {/* Sidebar */}
-      <div className="fixed left-0 top-0 h-full z-40">
+      {/* Mobile Menu Button */}
+      <div className="lg:hidden fixed top-4 left-4 z-50">
+        <Button
+          variant="outline"
+          size="sm"
+          onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+          className="bg-surface border-border"
+        >
+          {isSidebarOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
+        </Button>
+      </div>
+
+      {/* Sidebar - Fixed on desktop, overlay on mobile */}
+      <div className={`fixed inset-0 z-40 lg:relative lg:inset-auto transition-transform duration-300 ${
+        isSidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
+      }`}>
         <Sidebar 
           activeItem="trending"
+          isMobile={true}
+          onClose={() => setIsSidebarOpen(false)}
+          onItemClick={(item) => {
+            console.log('Navigate to:', item.id);
+            setIsSidebarOpen(false); // Close sidebar on mobile after navigation
+          }}
+        />
+      </div>
+
+      {/* Desktop Sidebar (always visible) */}
+      <div className="hidden lg:block fixed left-0 top-0 h-full z-40">
+        <Sidebar 
+          activeItem="trending"
+          isMobile={false}
           onItemClick={(item) => console.log('Navigate to:', item.id)}
         />
       </div>
 
+      {/* Mobile Sidebar Overlay */}
+      {isSidebarOpen && (
+        <div 
+          className="lg:hidden fixed inset-0 bg-black/50 z-30"
+          onClick={() => setIsSidebarOpen(false)}
+        />
+      )}
+
       {/* Main Content */}
-      <div className="flex-1 flex flex-col ml-64">
+      <div className="flex-1 flex flex-col lg:ml-64 ml-0">
         {/* Header */}
-        <div className="sticky top-0 z-30 bg-background border-b border-border">
+        <div className="sticky top-0 z-20 bg-background border-b border-border">
           <Header
             title="Trending Repositories"
             onSearch={setSearchQuery}
@@ -193,7 +231,7 @@ export default function Trending() {
         </div>
 
         {/* Category Filter */}
-        <div className="px-6 py-4 border-b border-border">
+        <div className="px-4 sm:px-6 py-4 border-b border-border">
           <CategoryFilter
             selectedCategories={selectedCategories}
             onCategoryChange={setSelectedCategories}
@@ -201,26 +239,26 @@ export default function Trending() {
         </div>
 
         {/* Main Content */}
-        <main className="flex-1 p-6 overflow-auto">
-          <div className="max-w-7xl mx-auto space-y-6">
+        <main className="flex-1 p-4 sm:p-6 overflow-auto">
+          <div className="max-w-7xl mx-auto space-y-4 sm:space-y-6">
             {/* KPI Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {kpiData.map((kpi, index) => (
                 <KpiCard key={index} data={kpi} />
               ))}
             </div>
 
             {/* Trending Repositories */}
-            <div className="space-y-6">
-              <div className="flex items-center gap-3 mb-6">
-                <TrendingUp className="w-6 h-6 text-blue" />
-                <h2 className="text-2xl font-bold text-primary">Hot Trending</h2>
-                <span className="px-3 py-1 bg-blue text-white text-sm rounded-full">
+            <div className="space-y-4 sm:space-y-6">
+              <div className="flex items-center gap-3 mb-4 sm:mb-6">
+                <TrendingUp className="w-5 h-5 sm:w-6 sm:h-6 text-blue" />
+                <h2 className="text-xl sm:text-2xl font-bold text-primary">Hot Trending</h2>
+                <span className="px-2 sm:px-3 py-1 bg-blue text-white text-xs sm:text-sm rounded-full">
                   {filteredRepos.filter(r => r.trendScore > 90).length} repos
                 </span>
               </div>
 
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
                 {filteredRepos
                   .filter(repo => repo.trendScore > 90)
                   .map((repo) => (
@@ -231,15 +269,15 @@ export default function Trending() {
                   ))}
               </div>
 
-              <div className="flex items-center gap-3 mb-6">
-                <Activity className="w-6 h-6 text-green" />
-                <h2 className="text-2xl font-bold text-primary">Rising Fast</h2>
-                <span className="px-3 py-1 bg-green text-white text-sm rounded-full">
+              <div className="flex items-center gap-3 mb-4 sm:mb-6">
+                <Activity className="w-5 h-5 sm:w-6 sm:h-6 text-green" />
+                <h2 className="text-xl sm:text-2xl font-bold text-primary">Rising Fast</h2>
+                <span className="px-2 sm:px-3 py-1 bg-green text-white text-xs sm:text-sm rounded-full">
                   {filteredRepos.filter(r => r.growthRate > 5).length} repos
                 </span>
               </div>
 
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
                 {filteredRepos
                   .filter(repo => repo.growthRate > 5 && repo.trendScore <= 90)
                   .map((repo) => (

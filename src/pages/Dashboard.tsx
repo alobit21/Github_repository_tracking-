@@ -6,7 +6,9 @@ import { KpiCard, type KpiData } from "@/components/dashboard/KpiCard";
 import { MomentumChart, type ChartDataPoint } from "@/components/dashboard/MomentumChart";
 import { Section } from "@/components/dashboard/Section";
 import { CategoryDistribution, type CategoryData } from "@/components/dashboard/CategoryDistribution";
-import type { Repository } from "@/components/dashboard/RepoCard";
+import { type Repository } from "@/components/dashboard/RepoCard";
+import { Menu, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 interface RepoData {
   name: string;
@@ -111,6 +113,7 @@ export default function Dashboard() {
     coolingDown: true,
     experimentalSpike: true,
   });
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   useEffect(() => {
     async function fetchReport() {
@@ -279,18 +282,54 @@ export default function Dashboard() {
 
   return (
     <div className="min-h-screen bg-background flex">
-      {/* Sidebar - Fixed position */}
-      <div className="fixed left-0 top-0 h-full z-40">
+      {/* Mobile Menu Button */}
+      <div className="lg:hidden fixed top-4 left-4 z-50">
+        <Button
+          variant="outline"
+          size="sm"
+          onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+          className="bg-surface border-border"
+        >
+          {isSidebarOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
+        </Button>
+      </div>
+
+      {/* Sidebar - Fixed on desktop, overlay on mobile */}
+      <div className={`fixed inset-0 z-40 lg:relative lg:inset-auto transition-transform duration-300 ${
+        isSidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
+      }`}>
         <Sidebar 
           activeItem="dashboard"
+          isMobile={true}
+          onClose={() => setIsSidebarOpen(false)}
+          onItemClick={(item) => {
+            console.log('Navigate to:', item.id);
+            setIsSidebarOpen(false); // Close sidebar on mobile after navigation
+          }}
+        />
+      </div>
+
+      {/* Desktop Sidebar (always visible) */}
+      <div className="hidden lg:block fixed left-0 top-0 h-full z-40">
+        <Sidebar 
+          activeItem="dashboard"
+          isMobile={false}
           onItemClick={(item) => console.log('Navigate to:', item.id)}
         />
       </div>
 
+      {/* Mobile Sidebar Overlay */}
+      {isSidebarOpen && (
+        <div 
+          className="lg:hidden fixed inset-0 bg-black/50 z-30"
+          onClick={() => setIsSidebarOpen(false)}
+        />
+      )}
+
       {/* Main Content - With left padding for sidebar */}
-      <div className="flex-1 flex flex-col ml-64">
+      <div className="flex-1 flex flex-col lg:ml-64 ml-0">
         {/* Header - Sticky */}
-        <div className="sticky top-0 z-30 bg-background border-b border-border">
+        <div className="sticky top-0 z-20 bg-background border-b border-border">
           <Header
             onSearch={setSearchQuery}
             onLanguageFilter={setSelectedLanguage}
@@ -298,7 +337,7 @@ export default function Dashboard() {
         </div>
 
         {/* Category Filter */}
-        <div className="px-6 py-4 border-b border-border">
+        <div className="px-4 sm:px-6 py-4 border-b border-border">
           <CategoryFilter
             selectedCategories={selectedCategories}
             onCategoryChange={setSelectedCategories}
@@ -306,72 +345,178 @@ export default function Dashboard() {
         </div>
 
         {/* Main Dashboard Content */}
-        <main className="flex-1 p-6 overflow-auto">
-          <div className="max-w-7xl mx-auto space-y-6">
-            {/* KPI Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-              {kpiData.map((kpi, index) => (
-                <KpiCard key={index} data={kpi} />
-              ))}
+        <main className="flex-1 p-4 sm:p-6 lg:p-8 overflow-x-hidden overflow-y-auto">
+          <div className="max-w-7xl mx-auto space-y-6 sm:space-y-8">
+            {/* Page Header */}
+            <div className="mb-6 sm:mb-8">
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary mb-2">Dashboard Overview</h1>
+              <p className="text-secondary text-sm sm:text-base">Real-time GitHub repository analytics and trending insights</p>
             </div>
 
-            {/* Momentum Chart */}
-            <MomentumChart
-              data={chartData}
-              visibleLines={visibleLines}
-              onLineToggle={handleLineToggle}
-            />
-
-            {/* Repository Sections */}
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-              <div className="lg:col-span-2 space-y-6">
-                {filteredRepos.emergingRockets.length > 0 && (
-                  <Section
-                    title="🚀 Emerging Rockets"
-                    repos={filteredRepos.emergingRockets}
-                    accentColor="blue"
-                    maxItems={6}
-                  />
-                )}
-
-                {filteredRepos.silentClimbers.length > 0 && (
-                  <Section
-                    title="🧗 Silent Climbers"
-                    repos={filteredRepos.silentClimbers}
-                    accentColor="green"
-                    maxItems={6}
-                  />
-                )}
-
-                {filteredRepos.experimentalSpike.length > 0 && (
-                  <Section
-                    title="⚡ Experimental Spike"
-                    repos={filteredRepos.experimentalSpike}
-                    accentColor="yellow"
-                    maxItems={6}
-                  />
-                )}
-
-                {filteredRepos.coolingDown.length > 0 && (
-                  <Section
-                    title="❄️ Cooling Down"
-                    repos={filteredRepos.coolingDown}
-                    accentColor="red"
-                    maxItems={6}
-                  />
-                )}
+            {/* KPI Cards Section */}
+            <section className="space-y-4">
+              <div className="flex items-center justify-between">
+                <h2 className="text-lg sm:text-xl font-semibold text-primary">Key Metrics</h2>
+                <span className="text-xs sm:text-sm text-secondary">Last updated: Just now</span>
               </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                {kpiData.map((kpi, index) => (
+                  <KpiCard key={index} data={kpi} />
+                ))}
+              </div>
+            </section>
 
-              {/* Category Distribution Sidebar */}
-              <div className="space-y-6">
-                <CategoryDistribution
-                  data={categoryData}
-                  onCategoryClick={(category) => {
-                    setSelectedCategories([category]);
-                  }}
+            {/* Chart Section */}
+            <section className="space-y-4">
+              <div className="flex items-center justify-between">
+                <h2 className="text-lg sm:text-xl font-semibold text-primary">Momentum Trends</h2>
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 bg-green rounded-full animate-pulse"></span>
+                  <span className="text-xs sm:text-sm text-secondary">Live data</span>
+                </div>
+              </div>
+              <div className="bg-card border border-border rounded-lg p-4 sm:p-6">
+                <MomentumChart
+                  data={chartData}
+                  visibleLines={visibleLines}
+                  onLineToggle={handleLineToggle}
                 />
               </div>
-            </div>
+            </section>
+
+            {/* Repository Sections */}
+            <section className="space-y-6">
+              <div className="flex items-center justify-between">
+                <h2 className="text-lg sm:text-xl font-semibold text-primary">Repository Insights</h2>
+                <span className="text-xs sm:text-sm text-secondary">{Object.values(filteredRepos).reduce((sum, repos) => sum + repos.length, 0)} repositories</span>
+              </div>
+              
+              <div className="grid grid-cols-1 xl:grid-cols-3 gap-6 lg:gap-8">
+                {/* Main Repository Content */}
+                <div className="xl:col-span-2 space-y-6">
+                  {/* Emerging Rockets */}
+                  {filteredRepos.emergingRockets.length > 0 && (
+                    <div className="bg-card border border-border rounded-lg overflow-hidden">
+                      <div className="p-4 sm:p-6 border-b border-border bg-gradient-to-r from-blue/5 to-transparent">
+                        <div className="flex items-center gap-3">
+                          <div className="w-8 h-8 bg-blue rounded-lg flex items-center justify-center">
+                            <span className="text-white text-sm font-bold">🚀</span>
+                          </div>
+                          <div>
+                            <h3 className="text-lg font-semibold text-primary">Emerging Rockets</h3>
+                            <p className="text-sm text-secondary">High-growth repositories gaining momentum</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="p-4 sm:p-6">
+                        <Section
+                          title="Emerging Rockets"
+                          repos={filteredRepos.emergingRockets}
+                          accentColor="blue"
+                          maxItems={6}
+                        />
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Silent Climbers */}
+                  {filteredRepos.silentClimbers.length > 0 && (
+                    <div className="bg-card border border-border rounded-lg overflow-hidden">
+                      <div className="p-4 sm:p-6 border-b border-border bg-gradient-to-r from-green/5 to-transparent">
+                        <div className="flex items-center gap-3">
+                          <div className="w-8 h-8 bg-green rounded-lg flex items-center justify-center">
+                            <span className="text-white text-sm font-bold">🧗</span>
+                          </div>
+                          <div>
+                            <h3 className="text-lg font-semibold text-primary">Silent Climbers</h3>
+                            <p className="text-sm text-secondary">Steady growth with consistent activity</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="p-4 sm:p-6">
+                        <Section
+                          title="Silent Climbers"
+                          repos={filteredRepos.silentClimbers}
+                          accentColor="green"
+                          maxItems={6}
+                        />
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Experimental Spike */}
+                  {filteredRepos.experimentalSpike.length > 0 && (
+                    <div className="bg-card border border-border rounded-lg overflow-hidden">
+                      <div className="p-4 sm:p-6 border-b border-border bg-gradient-to-r from-yellow/5 to-transparent">
+                        <div className="flex items-center gap-3">
+                          <div className="w-8 h-8 bg-yellow rounded-lg flex items-center justify-center">
+                            <span className="text-black text-sm font-bold">⚡</span>
+                          </div>
+                          <div>
+                            <h3 className="text-lg font-semibold text-primary">Experimental Spike</h3>
+                            <p className="text-sm text-secondary">Innovative projects with recent activity bursts</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="p-4 sm:p-6">
+                        <Section
+                          title="Experimental Spike"
+                          repos={filteredRepos.experimentalSpike}
+                          accentColor="yellow"
+                          maxItems={6}
+                        />
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Cooling Down */}
+                  {filteredRepos.coolingDown.length > 0 && (
+                    <div className="bg-card border border-border rounded-lg overflow-hidden">
+                      <div className="p-4 sm:p-6 border-b border-border bg-gradient-to-r from-red/5 to-transparent">
+                        <div className="flex items-center gap-3">
+                          <div className="w-8 h-8 bg-red rounded-lg flex items-center justify-center">
+                            <span className="text-white text-sm font-bold">❄️</span>
+                          </div>
+                          <div>
+                            <h3 className="text-lg font-semibold text-primary">Cooling Down</h3>
+                            <p className="text-sm text-secondary">Projects with declining activity</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="p-4 sm:p-6">
+                        <Section
+                          title="Cooling Down"
+                          repos={filteredRepos.coolingDown}
+                          accentColor="red"
+                          maxItems={6}
+                        />
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+                {/* Sidebar - Category Distribution */}
+                <div className="space-y-6">
+                  <div className="bg-card border border-border rounded-lg p-4 sm:p-6 sticky top-24">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-8 h-8 bg-purple rounded-lg flex items-center justify-center">
+                        <span className="text-white text-sm font-bold">📊</span>
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-semibold text-primary">Category Distribution</h3>
+                        <p className="text-sm text-secondary">Repository breakdown by category</p>
+                      </div>
+                    </div>
+                    <CategoryDistribution
+                      data={categoryData}
+                      onCategoryClick={(category) => {
+                        setSelectedCategories([category]);
+                      }}
+                    />
+                  </div>
+                </div>
+              </div>
+            </section>
           </div>
         </main>
       </div>

@@ -60,32 +60,34 @@ export function Header({
   };
 
   return (
-    <header className={cn('bg-surface border-b border-border', className)}>
-      <div className="flex items-center justify-between px-6 py-4">
+    <header className={cn('bg-surface border-b border-border w-full overflow-hidden', className)}>
+      <div className="flex items-center justify-between px-4 sm:px-6 py-4 min-w-0">
         {/* Title */}
-        <div className="flex items-center gap-4">
-          <h1 className="text-xl font-semibold text-primary">{title}</h1>
+        <div className="flex items-center gap-4 min-w-0 flex-shrink-0">
+          <h1 className="text-lg sm:text-xl font-semibold text-primary truncate">{title}</h1>
         </div>
 
         {/* Controls */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2 sm:gap-4 flex-wrap min-w-0">
           {/* Search */}
-          <form onSubmit={handleSearch} className="relative">
+          <form onSubmit={handleSearch} className="relative flex-shrink-0">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-secondary" />
             <input
               type="text"
               placeholder="Search repositories..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-10 pr-4 py-2 bg-background border border-border rounded-md text-primary placeholder-secondary focus:outline-none focus:ring-2 focus:ring-blue focus:border-transparent w-64"
+              className="pl-10 pr-4 py-2 bg-background border border-border rounded-md text-primary placeholder-secondary focus:outline-none focus:ring-2 focus:ring-blue focus:border-transparent w-32 sm:w-48 md:w-64"
             />
           </form>
 
           {/* Language Filter */}
           <Select.Root value={selectedLanguage} onValueChange={handleLanguageChange}>
-            <Select.Trigger className="flex items-center gap-2 px-3 py-2 bg-background border border-border rounded-md text-primary hover:bg-surface transition-colors focus:outline-none focus:ring-2 focus:ring-blue">
+            <Select.Trigger className="flex items-center gap-2 px-2 sm:px-3 py-2 bg-background border border-border rounded-md text-primary hover:bg-surface transition-colors focus:outline-none focus:ring-2 focus:ring-blue text-sm">
               <Filter className="w-4 h-4 text-secondary" />
-              <Select.Value />
+              <span className="hidden sm:inline">
+                <Select.Value />
+              </span>
               <ChevronDown className="w-4 h-4 text-secondary" />
             </Select.Trigger>
             <Select.Portal>
@@ -105,9 +107,11 @@ export function Header({
 
           {/* Date Range */}
           <Select.Root value={selectedDateRange} onValueChange={handleDateRangeChange}>
-            <Select.Trigger className="flex items-center gap-2 px-3 py-2 bg-background border border-border rounded-md text-primary hover:bg-surface transition-colors focus:outline-none focus:ring-2 focus:ring-blue">
+            <Select.Trigger className="flex items-center gap-2 px-2 sm:px-3 py-2 bg-background border border-border rounded-md text-primary hover:bg-surface transition-colors focus:outline-none focus:ring-2 focus:ring-blue text-sm">
               <Calendar className="w-4 h-4 text-secondary" />
-              <Select.Value />
+              <span className="hidden sm:inline">
+                <Select.Value />
+              </span>
               <ChevronDown className="w-4 h-4 text-secondary" />
             </Select.Trigger>
             <Select.Portal>
@@ -128,10 +132,10 @@ export function Header({
           {/* User Menu */}
           <DropdownMenu.Root>
             <DropdownMenu.Trigger className="flex items-center gap-2 p-2 rounded-md hover:bg-surface transition-colors focus:outline-none focus:ring-2 focus:ring-blue">
-              <div className="w-8 h-8 bg-blue rounded-full flex items-center justify-center">
-                <User className="w-4 h-4 text-white" />
+              <div className="w-6 h-6 sm:w-8 sm:h-8 bg-blue rounded-full flex items-center justify-center">
+                <User className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
               </div>
-              <ChevronDown className="w-4 h-4 text-secondary" />
+              <ChevronDown className="w-4 h-4 text-secondary hidden sm:block" />
             </DropdownMenu.Trigger>
             <DropdownMenu.Portal>
               <DropdownMenu.Content className="bg-surface border border-border rounded-md shadow-lg p-2 min-w-48">

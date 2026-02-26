@@ -8,8 +8,10 @@ import {
   Users, 
   Star,
   GitBranch,
-  Activity
+  Activity,
+  X
 } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 interface SidebarItem {
   id: string;
@@ -22,6 +24,8 @@ interface SidebarProps {
   className?: string;
   activeItem?: string;
   onItemClick?: (item: SidebarItem) => void;
+  isMobile?: boolean;
+  onClose?: () => void;
 }
 
 const sidebarItems: SidebarItem[] = [
@@ -78,7 +82,9 @@ const sidebarItems: SidebarItem[] = [
 export function Sidebar({ 
   className, 
   activeItem = 'dashboard',
-  onItemClick 
+  onItemClick,
+  isMobile = false,
+  onClose
 }: SidebarProps) {
   const handleItemClick = (item: SidebarItem) => {
     onItemClick?.(item);
@@ -92,8 +98,8 @@ export function Sidebar({
       "w-64 bg-surface border-r border-border h-full flex flex-col",
       className
     )}>
-      {/* Logo/Brand */}
-      <div className="p-6 border-b border-border">
+      {/* Header with Close Button for Mobile */}
+      <div className="p-6 border-b border-border flex items-center justify-between">
         <div className="flex items-center space-x-3">
           <div className="w-8 h-8 bg-blue rounded-lg flex items-center justify-center">
             <GitBranch className="w-5 h-5 text-white" />
@@ -103,6 +109,16 @@ export function Sidebar({
             <p className="text-xs text-secondary">Repository Analytics</p>
           </div>
         </div>
+        {isMobile && (
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={onClose}
+            className="lg:hidden"
+          >
+            <X className="w-4 h-4" />
+          </Button>
+        )}
       </div>
 
       {/* Navigation */}

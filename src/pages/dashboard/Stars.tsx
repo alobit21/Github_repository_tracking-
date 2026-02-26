@@ -4,7 +4,8 @@ import { Header } from "@/components/layout/Header";
 import { RepoCard, type Repository } from "@/components/dashboard/RepoCard";
 import { KpiCard, type KpiData } from "@/components/dashboard/KpiCard";
 import { CategoryFilter } from "@/components/dashboard/CategoryFilter";
-import { Star, Calendar } from "lucide-react";
+import { Star, Calendar, Menu, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 interface StarredRepo extends Repository {
   starredAt: string;
@@ -18,6 +19,7 @@ export default function StarsPage() {
   const [selectedCategories, setSelectedCategories] = useState<string[]>(['all']);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   useEffect(() => {
     async function fetchStarredData() {
@@ -228,18 +230,54 @@ export default function StarsPage() {
 
   return (
     <div className="min-h-screen bg-background flex">
-      {/* Sidebar */}
-      <div className="fixed left-0 top-0 h-full z-40">
+      {/* Mobile Menu Button */}
+      <div className="lg:hidden fixed top-4 left-4 z-50">
+        <Button
+          variant="outline"
+          size="sm"
+          onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+          className="bg-surface border-border"
+        >
+          {isSidebarOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
+        </Button>
+      </div>
+
+      {/* Sidebar - Fixed on desktop, overlay on mobile */}
+      <div className={`fixed inset-0 z-40 lg:relative lg:inset-auto transition-transform duration-300 ${
+        isSidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
+      }`}>
         <Sidebar 
           activeItem="stars"
+          isMobile={true}
+          onClose={() => setIsSidebarOpen(false)}
+          onItemClick={(item) => {
+            console.log('Navigate to:', item.id);
+            setIsSidebarOpen(false);
+          }}
+        />
+      </div>
+
+      {/* Desktop Sidebar (always visible) */}
+      <div className="hidden lg:block fixed left-0 top-0 h-full z-40">
+        <Sidebar 
+          activeItem="stars"
+          isMobile={false}
           onItemClick={(item) => console.log('Navigate to:', item.id)}
         />
       </div>
 
+      {/* Mobile Sidebar Overlay */}
+      {isSidebarOpen && (
+        <div 
+          className="lg:hidden fixed inset-0 bg-black/50 z-30"
+          onClick={() => setIsSidebarOpen(false)}
+        />
+      )}
+
       {/* Main Content */}
-      <div className="flex-1 flex flex-col ml-64">
+      <div className="flex-1 flex flex-col lg:ml-64 ml-0">
         {/* Header */}
-        <div className="sticky top-0 z-30 bg-background border-b border-border">
+        <div className="sticky top-0 z-20 bg-background border-b border-border">
           <Header
             title="Starred Repositories"
             onSearch={setSearchQuery}
@@ -247,8 +285,8 @@ export default function StarsPage() {
         </div>
 
         {/* Filters */}
-        <div className="px-6 py-4 border-b border-border">
-          <div className="flex gap-4 items-center">
+        <div className="px-4 sm:px-6 py-4 border-b border-border">
+          <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
             <CategoryFilter
               selectedCategories={selectedCategories}
               onCategoryChange={setSelectedCategories}
@@ -258,7 +296,7 @@ export default function StarsPage() {
             <select
               value={selectedCategory}
               onChange={(e) => setSelectedCategory(e.target.value)}
-              className="px-3 py-2 bg-card border border-border rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue"
+              className="px-3 py-2 bg-card border border-border rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue w-full sm:w-auto"
             >
               <option value="all">All Categories</option>
               <option value="work">Work</option>
@@ -270,26 +308,26 @@ export default function StarsPage() {
         </div>
 
         {/* Main Content */}
-        <main className="flex-1 p-6 overflow-auto">
-          <div className="max-w-7xl mx-auto space-y-6">
+        <main className="flex-1 p-4 sm:p-6 overflow-auto">
+          <div className="max-w-7xl mx-auto space-y-4 sm:space-y-6">
             {/* KPI Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {kpiData.map((kpi, index) => (
                 <KpiCard key={index} data={kpi} />
               ))}
             </div>
 
             {/* Starred Repositories */}
-            <div className="space-y-6">
-              <div className="flex items-center gap-3 mb-6">
-                <Star className="w-6 h-6 text-yellow" />
-                <h2 className="text-2xl font-bold text-primary">Your Starred Repositories</h2>
-                <span className="px-3 py-1 bg-yellow text-black text-sm rounded-full">
+            <div className="space-y-4 sm:space-y-6">
+              <div className="flex items-center gap-3 mb-4 sm:mb-6">
+                <Star className="w-5 h-5 sm:w-6 sm:h-6 text-yellow" />
+                <h2 className="text-xl sm:text-2xl font-bold text-primary">Your Starred Repositories</h2>
+                <span className="px-2 sm:px-3 py-1 bg-yellow text-black text-xs sm:text-sm rounded-full">
                   {filteredRepos.length} repos
                 </span>
               </div>
 
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
                 {filteredRepos.map((repo) => (
                   <div
                     key={repo.id}
@@ -304,7 +342,7 @@ export default function StarsPage() {
                     </div>
 
                     {/* Star Info */}
-                    <div className="flex items-center justify-between mt-3 pt-3 border-t border-border">
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mt-3 pt-3 border-t border-border">
                       <div className="flex items-center gap-2">
                         <Calendar className="w-4 h-4 text-secondary" />
                         <span className="text-sm text-secondary">

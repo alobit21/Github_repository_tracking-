@@ -74,7 +74,7 @@ export function CategoryFilter({
               key={category.id}
               onClick={() => handleCategoryClick(category.id)}
               className={cn(
-                'flex items-center gap-2 px-3 py-1.5 rounded-md border transition-colors whitespace-nowrap',
+                'flex items-center gap-2 px-2 sm:px-3 py-1.5 rounded-md border transition-colors whitespace-nowrap text-sm',
                 'hover:bg-surface',
                 isActive
                   ? 'bg-surface border-blue text-primary'
@@ -82,7 +82,7 @@ export function CategoryFilter({
                 'focus:outline-none focus:ring-2 focus:ring-blue'
               )}
             >
-              <span className="text-sm font-medium">{category.label}</span>
+              <span className="font-medium">{category.label}</span>
               {showRemove && (
                 <X
                   className="w-3 h-3 text-secondary hover:text-primary"
@@ -97,7 +97,7 @@ export function CategoryFilter({
       {activeCategories.length > 1 && (
         <button
           onClick={() => onCategoryChange(['all'])}
-          className="text-xs text-secondary hover:text-primary transition-colors"
+          className="text-xs text-secondary hover:text-primary transition-colors flex-shrink-0"
         >
           Clear all
         </button>

@@ -4,7 +4,7 @@ import { Header } from "@/components/layout/Header";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Bell, TrendingUp, AlertTriangle, Clock, Check, X } from "lucide-react";
+import { Bell, TrendingUp, AlertTriangle, Clock, Check, X, Menu } from "lucide-react";
 
 interface Alert {
   id: string;
@@ -79,6 +79,7 @@ const mockAlerts: Alert[] = [
 export default function Alerts() {
   const [alerts, setAlerts] = useState<Alert[]>(mockAlerts);
   const [filter, setFilter] = useState<'all' | 'unread' | 'high'>('all');
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const getAlertIcon = (type: string) => {
     switch (type) {
@@ -126,31 +127,67 @@ export default function Alerts() {
 
   return (
     <div className="min-h-screen bg-background flex">
-      {/* Sidebar */}
-      <div className="fixed left-0 top-0 h-full z-40">
+      {/* Mobile Menu Button */}
+      <div className="lg:hidden fixed top-4 left-4 z-50">
+        <Button
+          variant="outline"
+          size="sm"
+          onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+          className="bg-surface border-border"
+        >
+          <Menu className="w-4 h-4" />
+        </Button>
+      </div>
+
+      {/* Sidebar - Fixed on desktop, overlay on mobile */}
+      <div className={`fixed inset-0 z-40 lg:relative lg:inset-auto transition-transform duration-300 ${
+        isSidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
+      }`}>
         <Sidebar 
           activeItem="alerts"
+          isMobile={true}
+          onClose={() => setIsSidebarOpen(false)}
+          onItemClick={(item) => {
+            console.log('Navigate to:', item.id);
+            setIsSidebarOpen(false);
+          }}
+        />
+      </div>
+
+      {/* Desktop Sidebar (always visible) */}
+      <div className="hidden lg:block fixed left-0 top-0 h-full z-40">
+        <Sidebar 
+          activeItem="alerts"
+          isMobile={false}
           onItemClick={(item) => console.log('Navigate to:', item.id)}
         />
       </div>
 
+      {/* Mobile Sidebar Overlay */}
+      {isSidebarOpen && (
+        <div 
+          className="lg:hidden fixed inset-0 bg-black/50 z-30"
+          onClick={() => setIsSidebarOpen(false)}
+        />
+      )}
+
       {/* Main Content */}
-      <div className="flex-1 flex flex-col ml-64">
+      <div className="flex-1 flex flex-col lg:ml-64 ml-0">
         {/* Header */}
-        <div className="sticky top-0 z-30 bg-background border-b border-border">
+        <div className="sticky top-0 z-20 bg-background border-b border-border">
           <Header />
         </div>
 
         {/* Content */}
-        <div className="p-6">
+        <div className="p-4 sm:p-6">
           <div className="max-w-7xl mx-auto">
-            <div className="mb-8">
-              <h1 className="text-3xl font-bold text-primary mb-2">Signal Alerts</h1>
+            <div className="mb-6 sm:mb-8">
+              <h1 className="text-2xl sm:text-3xl font-bold text-primary mb-2">Signal Alerts</h1>
               <p className="text-secondary">Real-time notifications for emerging trends and unusual activity.</p>
             </div>
 
             {/* Filters */}
-            <div className="flex gap-2 mb-6">
+            <div className="flex flex-wrap gap-2 mb-6">
               <Button 
                 variant={filter === 'all' ? 'default' : 'outline'}
                 size="sm"
