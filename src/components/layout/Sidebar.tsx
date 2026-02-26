@@ -1,32 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { cn } from '@/lib/utils';
-import {
-  BarChart3,
-  TrendingUp,
-  Folder,
-  Bell,
-  Settings,
-  ChevronLeft,
-  ChevronRight,
-  Signal,
-  Tag
+import { 
+  Home, 
+  TrendingUp, 
+  BarChart3, 
+  Settings, 
+  Users, 
+  Star,
+  GitBranch,
+  Activity
 } from 'lucide-react';
 
 interface SidebarItem {
   id: string;
   label: string;
-  icon: React.ElementType;
+  icon: React.ComponentType<{ className?: string }>;
   href?: string;
 }
-
-const sidebarItems: SidebarItem[] = [
-  { id: 'dashboard', label: 'Dashboard', icon: BarChart3, href: '/' },
-  { id: 'trends', label: 'Trends', icon: TrendingUp, href: '/trends' },
-  { id: 'categories', label: 'Categories', icon: Tag, href: '/categories' },
-  { id: 'repositories', label: 'Repositories', icon: Folder, href: '/repositories' },
-  { id: 'alerts', label: 'Alerts', icon: Bell, href: '/alerts' },
-  { id: 'settings', label: 'Settings', icon: Settings, href: '/settings' },
-];
 
 interface SidebarProps {
   className?: string;
@@ -34,40 +24,89 @@ interface SidebarProps {
   onItemClick?: (item: SidebarItem) => void;
 }
 
-export function Sidebar({ className, activeItem = 'dashboard', onItemClick }: SidebarProps) {
-  const [isCollapsed, setIsCollapsed] = useState(false);
+const sidebarItems: SidebarItem[] = [
+  {
+    id: 'home',
+    label: 'Home',
+    icon: Home,
+    href: '/',
+  },
+  {
+    id: 'dashboard',
+    label: 'Dashboard',
+    icon: BarChart3,
+    href: '/dashboard',
+  },
+  {
+    id: 'trending',
+    label: 'Trending',
+    icon: TrendingUp,
+    href: '/dashboard/trending',
+  },
+  {
+    id: 'repositories',
+    label: 'Repositories',
+    icon: GitBranch,
+    href: '/repositories',
+  },
+  {
+    id: 'activity',
+    label: 'Activity',
+    icon: Activity,
+    href: '/dashboard/activity',
+  },
+  {
+    id: 'stars',
+    label: 'Starred',
+    icon: Star,
+    href: '/dashboard/stars',
+  },
+  {
+    id: 'users',
+    label: 'Users',
+    icon: Users,
+    href: '/dashboard/users',
+  },
+  {
+    id: 'settings',
+    label: 'Settings',
+    icon: Settings,
+    href: '/settings',
+  },
+];
+
+export function Sidebar({ 
+  className, 
+  activeItem = 'dashboard',
+  onItemClick 
+}: SidebarProps) {
+  const handleItemClick = (item: SidebarItem) => {
+    onItemClick?.(item);
+    if (item.href) {
+      window.location.href = item.href;
+    }
+  };
 
   return (
-    <div
-      className={cn(
-        'flex flex-col bg-surface border-r border-border transition-all duration-200 h-full',
-        isCollapsed ? 'w-16' : 'w-64',
-        className
-      )}
-    >
-      {/* Logo */}
-      <div className="flex items-center justify-between p-4 border-b border-border">
-        <div className={cn('flex items-center gap-2', isCollapsed && 'justify-center')}>
-          <Signal className="w-6 h-6 text-blue" />
-          {!isCollapsed && (
-            <span className="font-semibold text-primary">SignalFromNoise</span>
-          )}
+    <div className={cn(
+      "w-64 bg-surface border-r border-border h-full flex flex-col",
+      className
+    )}>
+      {/* Logo/Brand */}
+      <div className="p-6 border-b border-border">
+        <div className="flex items-center space-x-3">
+          <div className="w-8 h-8 bg-blue rounded-lg flex items-center justify-center">
+            <GitBranch className="w-5 h-5 text-white" />
+          </div>
+          <div>
+            <h1 className="text-lg font-semibold text-primary">GitTrack</h1>
+            <p className="text-xs text-secondary">Repository Analytics</p>
+          </div>
         </div>
-        <button
-          onClick={() => setIsCollapsed(!isCollapsed)}
-          className="p-1 rounded hover:bg-surface transition-colors"
-          aria-label={isCollapsed ? 'Expand sidebar' : 'Collapse sidebar'}
-        >
-          {isCollapsed ? (
-            <ChevronRight className="w-4 h-4 text-secondary" />
-          ) : (
-            <ChevronLeft className="w-4 h-4 text-secondary" />
-          )}
-        </button>
       </div>
 
       {/* Navigation */}
-      <nav className="flex-1 p-2">
+      <nav className="flex-1 p-4">
         <ul className="space-y-1">
           {sidebarItems.map((item) => {
             const Icon = item.icon;
@@ -76,29 +115,16 @@ export function Sidebar({ className, activeItem = 'dashboard', onItemClick }: Si
             return (
               <li key={item.id}>
                 <button
-                  onClick={() => onItemClick?.(item)}
+                  onClick={() => handleItemClick(item)}
                   className={cn(
-                    'w-full flex items-center gap-3 px-3 py-2 rounded-md transition-colors',
-                    'hover:bg-surface',
-                    isActive && 'bg-surface border-l-2 border-blue',
-                    isCollapsed && 'justify-center px-2'
+                    "w-full flex items-center space-x-3 px-3 py-2 rounded-md text-sm transition-colors",
+                    isActive
+                      ? "bg-blue text-white"
+                      : "text-secondary hover:bg-card hover:text-primary"
                   )}
-                  aria-current={isActive ? 'page' : undefined}
                 >
-                  <Icon 
-                    className={cn(
-                      'w-5 h-5',
-                      isActive ? 'text-blue' : 'text-secondary'
-                    )} 
-                  />
-                  {!isCollapsed && (
-                    <span className={cn(
-                      'text-sm',
-                      isActive ? 'text-primary font-medium' : 'text-secondary'
-                    )}>
-                      {item.label}
-                    </span>
-                  )}
+                  <Icon className="w-4 h-4" />
+                  <span className="font-medium">{item.label}</span>
                 </button>
               </li>
             );
@@ -108,11 +134,9 @@ export function Sidebar({ className, activeItem = 'dashboard', onItemClick }: Si
 
       {/* Footer */}
       <div className="p-4 border-t border-border">
-        <div className={cn('flex items-center gap-2', isCollapsed && 'justify-center')}>
-          <div className="w-2 h-2 bg-green rounded-full"></div>
-          {!isCollapsed && (
-            <span className="text-xs text-secondary">Live tracking</span>
-          )}
+        <div className="text-xs text-secondary text-center">
+          <p>GitTrack v1.0.0</p>
+          <p className="mt-1">© 2026 GitTrack</p>
         </div>
       </div>
     </div>
