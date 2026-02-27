@@ -19,7 +19,7 @@ interface StarredRepo extends Repository {
 }
 
 export default function StarsPage() {
-  const { searchQuery, setSearchQuery } = useOutletContext<DashboardContext>();
+  const { searchQuery } = useOutletContext<DashboardContext>();
   const [starredRepos, setStarredRepos] = useState<StarredRepo[]>([]);
   const [loading, setLoading] = useState(true);
   const [selectedCategories, setSelectedCategories] = useState<string[]>(['all']);

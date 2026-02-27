@@ -8,21 +8,12 @@ import { LoadingGrid } from '@/components/ui/loading-skeleton';
 import { ErrorState, EmptyState } from '@/components/ui/error-state';
 import { 
   Globe, 
-  TrendingUp, 
   Activity, 
   RefreshCw,
   Filter,
-  Clock,
   Star,
   GitFork,
-  Calendar,
-  GitCommit,
-  GitPullRequest,
-  AlertCircle,
-  Package,
-  Users,
-  Zap,
-  Heart
+  Calendar
 } from 'lucide-react';
 
 interface RepositoryActivity {
@@ -80,30 +71,6 @@ type SortOption = 'stars' | 'forks' | 'created' | 'updated' | 'activity' | 'heal
 type FilterOption = 'all' | 'with-country' | 'with-language' | 'active' | 'healthy';
 type TimeFilter = 'last-hour' | 'last-24h' | 'last-week' | 'last-month' | 'all-time';
 
-// Activity tracking utilities
-const getActivityIcon = (type: RepositoryActivity['type']) => {
-  switch (type) {
-    case 'commit': return GitCommit;
-    case 'fork': return GitFork;
-    case 'star': return Star;
-    case 'issue': return AlertCircle;
-    case 'pull_request': return GitPullRequest;
-    case 'release': return Package;
-    default: return Activity;
-  }
-};
-
-const getActivityColor = (type: RepositoryActivity['type']) => {
-  switch (type) {
-    case 'commit': return 'text-green';
-    case 'fork': return 'text-purple';
-    case 'star': return 'text-yellow';
-    case 'issue': return 'text-red';
-    case 'pull_request': return 'text-blue';
-    case 'release': return 'text-orange';
-    default: return 'text-gray';
-  }
-};
 
 const generateMockActivities = (repoName: string): RepositoryActivity[] => {
   const activities: RepositoryActivity[] = [];

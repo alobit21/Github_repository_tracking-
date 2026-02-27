@@ -105,7 +105,7 @@ const transformToRepository = (repo: RepoData): Repository => {
 };
 
 export default function Dashboard() {
-  const { searchQuery, selectedLanguage, setSearchQuery, setSelectedLanguage } = useOutletContext<DashboardContext>();
+  const { searchQuery, selectedLanguage } = useOutletContext<DashboardContext>();
   const [report, setReport] = useState<DailyReport | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);

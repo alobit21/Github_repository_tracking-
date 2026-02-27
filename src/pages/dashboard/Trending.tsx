@@ -19,7 +19,7 @@ interface TrendingRepo extends Repository {
 }
 
 export default function Trending() {
-  const { searchQuery, setSearchQuery } = useOutletContext<DashboardContext>();
+  const { searchQuery } = useOutletContext<DashboardContext>();
   const [trendingRepos, setTrendingRepos] = useState<TrendingRepo[]>([]);
   const [loading, setLoading] = useState(true);
   const [selectedCategories, setSelectedCategories] = useState<string[]>(['all']);

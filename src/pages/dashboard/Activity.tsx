@@ -27,7 +27,7 @@ interface ActivityEvent {
 }
 
 export default function ActivityPage() {
-  const { searchQuery, setSearchQuery } = useOutletContext<DashboardContext>();
+  const { searchQuery } = useOutletContext<DashboardContext>();
   const [activities, setActivities] = useState<ActivityEvent[]>([]);
   const [loading, setLoading] = useState(true);
   const [selectedCategories, setSelectedCategories] = useState<string[]>(['all']);
