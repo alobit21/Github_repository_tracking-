@@ -1,8 +1,9 @@
-name: Daily Analyze & Commit
+name: Continuous Analyze & Commit
 
 on:
   schedule:
-    - cron: '0 2 * * *'   # daily 02:00 UTC
+    - cron: '0 */6 * * *'   # Every 6 hours (4 times daily)
+    - cron: '0 2 * * *'     # Daily 02:00 UTC (main report)
   workflow_dispatch:
 
 jobs:
@@ -47,12 +48,37 @@ jobs:
         run: echo "GITHUB_TOKEN=${{ secrets.PERSONAL_GITHUB_TOKEN }}" >> $GITHUB_ENV
 
       # 7️⃣ Run analyzer
-      - name: Run Daily Analyzer
+      - name: Run Continuous Analyzer
         run: npx tsx src/scripts/analyze-trends.ts
 
-      # 8️⃣ Commit & push ONLY if changes exist
-      - name: Commit & Push
+      # 8️⃣ Commit & push with timestamp
+      - name: Commit & Push Changes
         run: |
+          # Add all changes
           git add data/daily-report.json data/history/ src/data/ || true
-          git diff --cached --quiet || git commit -m "data: daily report $(date -u +'%Y-%m-%d')"
-          git push origin HEAD:${{ github.ref_name }}
+          
+          # Check if there are changes to commit
+          if git diff --cached --quiet; then
+            # Get current timestamp and hour
+            TIMESTAMP=$(date -u +'%Y-%m-%d_%H-%M')
+            HOUR=$(date -u +'%H')
+            
+            # Create descriptive commit message based on hour
+            case $HOUR in
+              02)
+                COMMIT_MSG="data: daily main report - $(date -u +'%Y-%m-%d')"
+                ;;
+              06|12|18)
+                COMMIT_MSG="data: 6-hourly update - $(date -u +'%Y-%m-%d %H:%M')"
+                ;;
+              *)
+                COMMIT_MSG="data: 6-hourly update - $(date -u +'%Y-%m-%d %H:%M')"
+                ;;
+            esac
+            
+            # Commit with timestamp
+            git commit -m "$COMMIT_MSG"
+            git push origin HEAD:${{ github.ref_name }}
+          else
+            echo "No changes to commit at $(date)"
+          fi
