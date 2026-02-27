@@ -1,11 +1,16 @@
 import { useState, useEffect } from "react";
-import { Sidebar } from "@/components/layout/Sidebar";
-import { Header } from "@/components/layout/Header";
+import { useOutletContext } from "react-router-dom";
 import { RepoCard, type Repository } from "@/components/dashboard/RepoCard";
 import { KpiCard, type KpiData } from "@/components/dashboard/KpiCard";
 import { CategoryFilter } from "@/components/dashboard/CategoryFilter";
-import { Activity, GitCommit, GitPullRequest, Clock, Star, GitFork, Menu, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Activity, GitCommit, GitPullRequest, Clock, Star, GitFork } from "lucide-react";
+
+interface DashboardContext {
+  searchQuery: string;
+  selectedLanguage: string;
+  setSearchQuery: (query: string) => void;
+  setSelectedLanguage: (language: string) => void;
+}
 
 interface ActivityEvent {
   id: string;
@@ -22,11 +27,10 @@ interface ActivityEvent {
 }
 
 export default function ActivityPage() {
+  const { searchQuery, setSearchQuery } = useOutletContext<DashboardContext>();
   const [activities, setActivities] = useState<ActivityEvent[]>([]);
   const [loading, setLoading] = useState(true);
   const [selectedCategories, setSelectedCategories] = useState<string[]>(['all']);
-  const [searchQuery, setSearchQuery] = useState('');
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   useEffect(() => {
     async function fetchActivityData() {
@@ -280,142 +284,86 @@ export default function ActivityPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-background flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue mx-auto mb-4"></div>
-          <p className="text-secondary">Loading activity data...</p>
+      <div className="p-4 sm:p-6 lg:p-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue mx-auto mb-4"></div>
+            <p className="text-secondary">Loading activity data...</p>
+          </div>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-background flex">
-      {/* Mobile Menu Button */}
-      <div className="lg:hidden fixed top-4 left-4 z-50">
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-          className="bg-surface border-border"
-        >
-          {isSidebarOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
-        </Button>
-      </div>
-
-      {/* Sidebar - Fixed on desktop, overlay on mobile */}
-      <div className={`fixed inset-0 z-40 lg:relative lg:inset-auto transition-transform duration-300 ${
-        isSidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
-      }`}>
-        <Sidebar 
-          activeItem="activity"
-          isMobile={true}
-          onClose={() => setIsSidebarOpen(false)}
-          onItemClick={(item) => {
-            console.log('Navigate to:', item.id);
-            setIsSidebarOpen(false); // Close sidebar on mobile after navigation
-          }}
-        />
-      </div>
-
-      {/* Desktop Sidebar (always visible) */}
-      <div className="hidden lg:block fixed left-0 top-0 h-full z-40">
-        <Sidebar 
-          activeItem="activity"
-          isMobile={false}
-          onItemClick={(item) => console.log('Navigate to:', item.id)}
-        />
-      </div>
-
-      {/* Mobile Sidebar Overlay */}
-      {isSidebarOpen && (
-        <div 
-          className="lg:hidden fixed inset-0 bg-black/50 z-30"
-          onClick={() => setIsSidebarOpen(false)}
-        />
-      )}
-
-      {/* Main Content */}
-      <div className="flex-1 flex flex-col lg:ml-64 ml-0">
-        {/* Header */}
-        <div className="sticky top-0 z-20 bg-background border-b border-border">
-          <Header
-            title="Repository Activity"
-            onSearch={setSearchQuery}
-          />
-        </div>
-
+    <div className="p-3 sm:p-4 lg:p-6">
+      <div className="max-w-7xl mx-auto space-y-3 sm:space-y-4 lg:space-y-6">
         {/* Category Filter */}
-        <div className="px-4 sm:px-6 py-4 border-b border-border">
+        <div className="px-0 py-4 border-b border-border">
           <CategoryFilter
             selectedCategories={selectedCategories}
             onCategoryChange={setSelectedCategories}
           />
         </div>
 
-        {/* Main Content */}
-        <main className="flex-1 p-3 sm:p-4 lg:p-6 overflow-auto">
-          <div className="max-w-7xl mx-auto space-y-3 sm:space-y-4 lg:space-y-6">
-            {/* KPI Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
-              {kpiData.map((kpi, index) => (
-                <KpiCard key={index} data={kpi} />
-              ))}
-            </div>
+        {/* KPI Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+          {kpiData.map((kpi, index) => (
+            <KpiCard key={index} data={kpi} />
+          ))}
+        </div>
 
-            {/* Activity Timeline */}
-            <div className="space-y-3 sm:space-y-4 lg:space-y-6">
-              <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-3 sm:mb-4 lg:mb-6">
-                <Activity className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-blue" />
-                <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-primary">Recent Activity</h2>
-                <span className="px-2 py-1 sm:px-3 py-1 bg-blue text-white text-xs sm:text-sm rounded-full w-fit">
-                  {filteredActivities.length} events
-                </span>
-              </div>
+        {/* Activity Timeline */}
+        <div className="space-y-3 sm:space-y-4 lg:space-y-6">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-3 sm:mb-4 lg:mb-6">
+            <Activity className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-blue" />
+            <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-primary">Recent Activity</h2>
+            <span className="px-2 py-1 sm:px-3 py-1 bg-blue text-white text-xs sm:text-sm rounded-full w-fit">
+              {filteredActivities.length} events
+            </span>
+          </div>
 
-              <div className="space-y-4">
-                {filteredActivities.map((activity) => (
-                  <div
-                    key={activity.id}
-                    className="bg-card border border-border rounded-lg p-3 sm:p-4 hover:border-blue transition-colors w-full"
-                  >
-                    <div className="flex items-start gap-3 sm:gap-4">
-                      {/* Activity Icon */}
-                      <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 bg-surface rounded-full flex items-center justify-center border border-border">
-                        {getActivityIcon(activity.type)}
-                      </div>
+          <div className="space-y-4">
+            {filteredActivities.map((activity) => (
+              <div
+                key={activity.id}
+                className="bg-card border border-border rounded-lg p-3 sm:p-4 hover:border-blue transition-colors w-full"
+              >
+                <div className="flex items-start gap-3 sm:gap-4">
+                  {/* Activity Icon */}
+                  <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 bg-surface rounded-full flex items-center justify-center border border-border">
+                    {getActivityIcon(activity.type)}
+                  </div>
 
-                      {/* Activity Content */}
-                      <div className="flex-1 min-w-0">
-                        <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 mb-2">
-                          <span className="font-medium text-primary text-sm sm:text-base truncate">{activity.user}</span>
-                          <div className="flex items-center gap-1 sm:gap-2 text-xs sm:text-sm text-secondary">
-                            <span className="hidden sm:inline">•</span>
-                            <div className="flex items-center gap-1">
-                              <Clock className="w-3 h-3" />
-                              {formatTimestamp(activity.timestamp)}
-                            </div>
-                          </div>
-                        </div>
-                        
-                        <p className="text-xs sm:text-sm text-secondary mb-2 line-clamp-2">
-                          {activity.description}
-                        </p>
-
-                        <div className="w-full">
-                          <RepoCard
-                            repo={activity.repository}
-                            className="w-full max-w-full"
-                          />
+                  {/* Activity Content */}
+                  <div className="flex-1 min-w-0">
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 mb-2">
+                      <span className="font-medium text-primary text-sm sm:text-base truncate">{activity.user}</span>
+                      <div className="flex items-center gap-1 sm:gap-2 text-xs sm:text-sm text-secondary">
+                        <span className="hidden sm:inline">•</span>
+                        <div className="flex items-center gap-1">
+                          <Clock className="w-3 h-3" />
+                          {formatTimestamp(activity.timestamp)}
                         </div>
                       </div>
                     </div>
+                    
+                    <p className="text-xs sm:text-sm text-secondary mb-2 line-clamp-2">
+                      {activity.description}
+                    </p>
+
+                    <div className="w-full">
+                      <RepoCard
+                        repo={activity.repository}
+                        className="w-full max-w-full"
+                      />
+                    </div>
                   </div>
-                ))}
+                </div>
               </div>
-            </div>
+            ))}
           </div>
-        </main>
+        </div>
       </div>
     </div>
   );

@@ -51,7 +51,7 @@ const sidebarItems: SidebarItem[] = [
     id: 'repositories',
     label: 'Repositories',
     icon: GitBranch,
-    href: '/repositories',
+    href: '/dashboard/repositories',
   },
   {
     id: 'activity',

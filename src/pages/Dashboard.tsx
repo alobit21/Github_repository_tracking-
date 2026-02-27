@@ -1,14 +1,18 @@
 import { useState, useEffect } from "react";
-import { Sidebar } from "@/components/layout/Sidebar";
-import { Header } from "@/components/layout/Header";
+import { useOutletContext } from "react-router-dom";
 import { CategoryFilter } from "@/components/dashboard/CategoryFilter";
 import { KpiCard, type KpiData } from "@/components/dashboard/KpiCard";
 import { MomentumChart, type ChartDataPoint } from "@/components/dashboard/MomentumChart";
 import { Section } from "@/components/dashboard/Section";
 import { CategoryDistribution, type CategoryData } from "@/components/dashboard/CategoryDistribution";
 import { type Repository } from "@/components/dashboard/RepoCard";
-import { Menu, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
+
+interface DashboardContext {
+  searchQuery: string;
+  selectedLanguage: string;
+  setSearchQuery: (query: string) => void;
+  setSelectedLanguage: (language: string) => void;
+}
 
 interface RepoData {
   name: string;
@@ -101,19 +105,17 @@ const transformToRepository = (repo: RepoData): Repository => {
 };
 
 export default function Dashboard() {
+  const { searchQuery, selectedLanguage, setSearchQuery, setSelectedLanguage } = useOutletContext<DashboardContext>();
   const [report, setReport] = useState<DailyReport | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [selectedCategories, setSelectedCategories] = useState<string[]>(['all']);
-  const [searchQuery, setSearchQuery] = useState('');
-  const [selectedLanguage, setSelectedLanguage] = useState('all');
   const [visibleLines, setVisibleLines] = useState({
     emergingRockets: true,
     silentClimbers: true,
     coolingDown: true,
     experimentalSpike: true,
   });
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   useEffect(() => {
     async function fetchReport() {
@@ -281,63 +283,10 @@ export default function Dashboard() {
   });
 
   return (
-    <div className="min-h-screen bg-background flex">
-      {/* Mobile Menu Button */}
-      <div className="lg:hidden fixed top-4 left-4 z-50">
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-          className="bg-surface border-border"
-        >
-          {isSidebarOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
-        </Button>
-      </div>
-
-      {/* Sidebar - Fixed on desktop, overlay on mobile */}
-      <div className={`fixed inset-0 z-40 lg:relative lg:inset-auto transition-transform duration-300 ${
-        isSidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
-      }`}>
-        <Sidebar 
-          activeItem="dashboard"
-          isMobile={true}
-          onClose={() => setIsSidebarOpen(false)}
-          onItemClick={(item) => {
-            console.log('Navigate to:', item.id);
-            setIsSidebarOpen(false); // Close sidebar on mobile after navigation
-          }}
-        />
-      </div>
-
-      {/* Desktop Sidebar (always visible) */}
-      <div className="hidden lg:block fixed left-0 top-0 h-full z-40">
-        <Sidebar 
-          activeItem="dashboard"
-          isMobile={false}
-          onItemClick={(item) => console.log('Navigate to:', item.id)}
-        />
-      </div>
-
-      {/* Mobile Sidebar Overlay */}
-      {isSidebarOpen && (
-        <div 
-          className="lg:hidden fixed inset-0 bg-black/50 z-30"
-          onClick={() => setIsSidebarOpen(false)}
-        />
-      )}
-
-      {/* Main Content - With left padding for sidebar */}
-      <div className="flex-1 flex flex-col lg:ml-64 ml-0">
-        {/* Header - Sticky */}
-        <div className="sticky top-0 z-20 bg-background border-b border-border">
-          <Header
-            onSearch={setSearchQuery}
-            onLanguageFilter={setSelectedLanguage}
-          />
-        </div>
-
+    <div className="p-4 sm:p-6 lg:p-8 overflow-x-hidden overflow-y-auto">
+      <div className="max-w-7xl mx-auto space-y-6 sm:space-y-8">
         {/* Category Filter */}
-        <div className="px-4 sm:px-6 py-4 border-b border-border">
+        <div className="px-0 py-4 border-b border-border">
           <CategoryFilter
             selectedCategories={selectedCategories}
             onCategoryChange={setSelectedCategories}
@@ -345,245 +294,243 @@ export default function Dashboard() {
         </div>
 
         {/* Main Dashboard Content */}
-        <main className="flex-1 p-4 sm:p-6 lg:p-8 overflow-x-hidden overflow-y-auto">
-          <div className="max-w-7xl mx-auto space-y-6 sm:space-y-8">
-            {/* Page Header with Stats Overview */}
-            <div className="bg-gradient-to-r from-blue/10 to-purple/10 border border-border rounded-xl p-6 sm:p-8">
-              <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
-                <div>
-                  <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary mb-3">Dashboard Overview</h1>
-                  <p className="text-secondary text-base sm:text-lg max-w-2xl">Real-time GitHub repository analytics and trending insights from the open-source community</p>
-                  <div className="flex items-center gap-4 mt-4">
-                    <div className="flex items-center gap-2">
-                      <span className="w-2 h-2 bg-green rounded-full animate-pulse"></span>
-                      <span className="text-sm text-secondary">Live data</span>
-                    </div>
-                    <span className="text-sm text-secondary">•</span>
-                    <span className="text-sm text-secondary">Last updated: Just now</span>
+        <div className="space-y-6 sm:space-y-8">
+          {/* Page Header with Stats Overview */}
+          <div className="bg-gradient-to-r from-blue/10 to-purple/10 border border-border rounded-xl p-6 sm:p-8">
+            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+              <div>
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary mb-3">Dashboard Overview</h1>
+                <p className="text-secondary text-base sm:text-lg max-w-2xl">Real-time GitHub repository analytics and trending insights from the open-source community</p>
+                <div className="flex items-center gap-4 mt-4">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2 h-2 bg-green rounded-full animate-pulse"></span>
+                    <span className="text-sm text-secondary">Live data</span>
                   </div>
-                </div>
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 lg:gap-6">
-                  <div className="text-center">
-                    <div className="text-2xl sm:text-3xl font-bold text-blue">{Object.values(filteredRepos).reduce((sum, repos) => sum + repos.length, 0)}</div>
-                    <p className="text-xs sm:text-sm text-secondary">Total Repos</p>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-2xl sm:text-3xl font-bold text-green">{filteredRepos.emergingRockets.length}</div>
-                    <p className="text-xs sm:text-sm text-secondary">Trending</p>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-2xl sm:text-3xl font-bold text-yellow">{filteredRepos.experimentalSpike.length}</div>
-                    <p className="text-xs sm:text-sm text-secondary">Experimental</p>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-2xl sm:text-3xl font-bold text-purple">{categoryData.length}</div>
-                    <p className="text-xs sm:text-sm text-secondary">Categories</p>
-                  </div>
+                  <span className="text-sm text-secondary">•</span>
+                  <span className="text-sm text-secondary">Last updated: Just now</span>
                 </div>
               </div>
-            </div>
-
-            {/* KPI Cards Grid */}
-            <section className="space-y-4">
-              <div className="flex items-center justify-between">
-                <h2 className="text-xl sm:text-2xl font-semibold text-primary flex items-center gap-3">
-                  <div className="w-8 h-8 bg-blue/10 rounded-lg flex items-center justify-center">
-                    <span className="text-blue text-sm font-bold">📊</span>
-                  </div>
-                  Key Performance Metrics
-                </h2>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-                {kpiData.map((kpi, index) => (
-                  <KpiCard key={index} data={kpi} />
-                ))}
-              </div>
-            </section>
-
-            {/* Main Content Grid */}
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
-              {/* Left Column - Chart and Repository Sections */}
-              <div className="lg:col-span-2 space-y-6">
-                {/* Momentum Chart */}
-                <section className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <h2 className="text-xl sm:text-2xl font-semibold text-primary flex items-center gap-3">
-                      <div className="w-8 h-8 bg-green/10 rounded-lg flex items-center justify-center">
-                        <span className="text-green text-sm font-bold">📈</span>
-                      </div>
-                      Momentum Trends
-                    </h2>
-                    <div className="flex items-center gap-2">
-                      <span className="w-2 h-2 bg-green rounded-full animate-pulse"></span>
-                      <span className="text-xs sm:text-sm text-secondary">Live tracking</span>
-                    </div>
-                  </div>
-                  <div className="bg-card border border-border rounded-xl p-4 sm:p-6 shadow-sm">
-                    <MomentumChart
-                      data={chartData}
-                      visibleLines={visibleLines}
-                      onLineToggle={handleLineToggle}
-                    />
-                  </div>
-                </section>
-
-                {/* Repository Sections */}
-                <section className="space-y-6">
-                  <div className="flex items-center justify-between">
-                    <h2 className="text-xl sm:text-2xl font-semibold text-primary flex items-center gap-3">
-                      <div className="w-8 h-8 bg-purple/10 rounded-lg flex items-center justify-center">
-                        <span className="text-purple text-sm font-bold">🚀</span>
-                      </div>
-                      Repository Insights
-                    </h2>
-                    <span className="text-xs sm:text-sm text-secondary bg-surface px-3 py-1 rounded-full">
-                      {Object.values(filteredRepos).reduce((sum, repos) => sum + repos.length, 0)} active
-                    </span>
-                  </div>
-                  
-                  <div className="space-y-6">
-                    {/* Emerging Rockets */}
-                    {filteredRepos.emergingRockets.length > 0 && (
-                      <div className="bg-card border border-border rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-                        <div className="p-6 border-b border-border bg-gradient-to-r from-blue/5 via-blue/2 to-transparent">
-                          <div className="flex items-center gap-4">
-                            <div className="w-12 h-12 bg-blue rounded-xl flex items-center justify-center shadow-lg">
-                              <span className="text-white text-xl font-bold">🚀</span>
-                            </div>
-                            <div className="flex-1">
-                              <h3 className="text-xl font-bold text-primary">Emerging Rockets</h3>
-                              <p className="text-secondary">High-growth repositories gaining momentum</p>
-                              <div className="flex items-center gap-4 mt-2">
-                                <span className="text-xs text-blue bg-blue/10 px-2 py-1 rounded-full">{filteredRepos.emergingRockets.length} repos</span>
-                                <span className="text-xs text-secondary">⬆️ Rising fast</span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="p-6">
-                          <Section
-                            title="Emerging Rockets"
-                            repos={filteredRepos.emergingRockets}
-                            accentColor="blue"
-                            maxItems={6}
-                          />
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Silent Climbers */}
-                    {filteredRepos.silentClimbers.length > 0 && (
-                      <div className="bg-card border border-border rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-                        <div className="p-6 border-b border-border bg-gradient-to-r from-green/5 via-green/2 to-transparent">
-                          <div className="flex items-center gap-4">
-                            <div className="w-12 h-12 bg-green rounded-xl flex items-center justify-center shadow-lg">
-                              <span className="text-white text-xl font-bold">🧗</span>
-                            </div>
-                            <div className="flex-1">
-                              <h3 className="text-xl font-bold text-primary">Silent Climbers</h3>
-                              <p className="text-secondary">Steady growth with consistent activity</p>
-                              <div className="flex items-center gap-4 mt-2">
-                                <span className="text-xs text-green bg-green/10 px-2 py-1 rounded-full">{filteredRepos.silentClimbers.length} repos</span>
-                                <span className="text-xs text-secondary">📈 Consistent</span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="p-6">
-                          <Section
-                            title="Silent Climbers"
-                            repos={filteredRepos.silentClimbers}
-                            accentColor="green"
-                            maxItems={6}
-                          />
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Experimental Spike */}
-                    {filteredRepos.experimentalSpike.length > 0 && (
-                      <div className="bg-card border border-border rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-                        <div className="p-6 border-b border-border bg-gradient-to-r from-yellow/5 via-yellow/2 to-transparent">
-                          <div className="flex items-center gap-4">
-                            <div className="w-12 h-12 bg-yellow rounded-xl flex items-center justify-center shadow-lg">
-                              <span className="text-black text-xl font-bold">⚡</span>
-                            </div>
-                            <div className="flex-1">
-                              <h3 className="text-xl font-bold text-primary">Experimental Spike</h3>
-                              <p className="text-secondary">Innovative projects with recent activity bursts</p>
-                              <div className="flex items-center gap-4 mt-2">
-                                <span className="text-xs text-yellow bg-yellow/10 px-2 py-1 rounded-full">{filteredRepos.experimentalSpike.length} repos</span>
-                                <span className="text-xs text-secondary">🔥 Hot</span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="p-6">
-                          <Section
-                            title="Experimental Spike"
-                            repos={filteredRepos.experimentalSpike}
-                            accentColor="yellow"
-                            maxItems={6}
-                          />
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Cooling Down */}
-                    {filteredRepos.coolingDown.length > 0 && (
-                      <div className="bg-card border border-border rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-                        <div className="p-6 border-b border-border bg-gradient-to-r from-red/5 via-red/2 to-transparent">
-                          <div className="flex items-center gap-4">
-                            <div className="w-12 h-12 bg-red rounded-xl flex items-center justify-center shadow-lg">
-                              <span className="text-white text-xl font-bold">❄️</span>
-                            </div>
-                            <div className="flex-1">
-                              <h3 className="text-xl font-bold text-primary">Cooling Down</h3>
-                              <p className="text-secondary">Projects with declining activity</p>
-                              <div className="flex items-center gap-4 mt-2">
-                                <span className="text-xs text-red bg-red/10 px-2 py-1 rounded-full">{filteredRepos.coolingDown.length} repos</span>
-                                <span className="text-xs text-secondary">📉 Declining</span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="p-6">
-                          <Section
-                            title="Cooling Down"
-                            repos={filteredRepos.coolingDown}
-                            accentColor="red"
-                            maxItems={6}
-                          />
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                </section>
-              </div>
-
-              {/* Right Column - Category Distribution */}
-              <div className="space-y-6">
-                <div className="bg-card border border-border rounded-xl p-6 sticky top-24 shadow-sm">
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="w-12 h-12 bg-purple rounded-xl flex items-center justify-center shadow-lg">
-                      <span className="text-white text-xl font-bold">📊</span>
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-primary">Category Distribution</h3>
-                      <p className="text-secondary">Repository breakdown by category</p>
-                    </div>
-                  </div>
-                  <CategoryDistribution
-                    data={categoryData}
-                    onCategoryClick={(category) => {
-                      setSelectedCategories([category]);
-                    }}
-                  />
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 lg:gap-6">
+                <div className="text-center">
+                  <div className="text-2xl sm:text-3xl font-bold text-blue">{Object.values(filteredRepos).reduce((sum, repos) => sum + repos.length, 0)}</div>
+                  <p className="text-xs sm:text-sm text-secondary">Total Repos</p>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl sm:text-3xl font-bold text-green">{filteredRepos.emergingRockets.length}</div>
+                  <p className="text-xs sm:text-sm text-secondary">Trending</p>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl sm:text-3xl font-bold text-yellow">{filteredRepos.experimentalSpike.length}</div>
+                  <p className="text-xs sm:text-sm text-secondary">Experimental</p>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl sm:text-3xl font-bold text-purple">{categoryData.length}</div>
+                  <p className="text-xs sm:text-sm text-secondary">Categories</p>
                 </div>
               </div>
             </div>
           </div>
-        </main>
+
+          {/* KPI Cards Grid */}
+          <section className="space-y-4">
+            <div className="flex items-center justify-between">
+              <h2 className="text-xl sm:text-2xl font-semibold text-primary flex items-center gap-3">
+                <div className="w-8 h-8 bg-blue/10 rounded-lg flex items-center justify-center">
+                  <span className="text-blue text-sm font-bold">📊</span>
+                </div>
+                Key Performance Metrics
+              </h2>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+              {kpiData.map((kpi, index) => (
+                <KpiCard key={index} data={kpi} />
+              ))}
+            </div>
+          </section>
+
+          {/* Main Content Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
+            {/* Left Column - Chart and Repository Sections */}
+            <div className="lg:col-span-2 space-y-6">
+              {/* Momentum Chart */}
+              <section className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <h2 className="text-xl sm:text-2xl font-semibold text-primary flex items-center gap-3">
+                    <div className="w-8 h-8 bg-green/10 rounded-lg flex items-center justify-center">
+                      <span className="text-green text-sm font-bold">📈</span>
+                    </div>
+                    Momentum Trends
+                  </h2>
+                  <div className="flex items-center gap-2">
+                    <span className="w-2 h-2 bg-green rounded-full animate-pulse"></span>
+                    <span className="text-xs sm:text-sm text-secondary">Live tracking</span>
+                  </div>
+                </div>
+                <div className="bg-card border border-border rounded-xl p-4 sm:p-6 shadow-sm">
+                  <MomentumChart
+                    data={chartData}
+                    visibleLines={visibleLines}
+                    onLineToggle={handleLineToggle}
+                  />
+                </div>
+              </section>
+
+              {/* Repository Sections */}
+              <section className="space-y-6">
+                <div className="flex items-center justify-between">
+                  <h2 className="text-xl sm:text-2xl font-semibold text-primary flex items-center gap-3">
+                    <div className="w-8 h-8 bg-purple/10 rounded-lg flex items-center justify-center">
+                      <span className="text-purple text-sm font-bold">🚀</span>
+                    </div>
+                    Repository Insights
+                  </h2>
+                  <span className="text-xs sm:text-sm text-secondary bg-surface px-3 py-1 rounded-full">
+                    {Object.values(filteredRepos).reduce((sum, repos) => sum + repos.length, 0)} active
+                  </span>
+                </div>
+                
+                <div className="space-y-6">
+                  {/* Emerging Rockets */}
+                  {filteredRepos.emergingRockets.length > 0 && (
+                    <div className="bg-card border border-border rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                      <div className="p-6 border-b border-border bg-gradient-to-r from-blue/5 via-blue/2 to-transparent">
+                        <div className="flex items-center gap-4">
+                          <div className="w-12 h-12 bg-blue rounded-xl flex items-center justify-center shadow-lg">
+                            <span className="text-white text-xl font-bold">🚀</span>
+                          </div>
+                          <div className="flex-1">
+                            <h3 className="text-xl font-bold text-primary">Emerging Rockets</h3>
+                            <p className="text-secondary">High-growth repositories gaining momentum</p>
+                            <div className="flex items-center gap-4 mt-2">
+                              <span className="text-xs text-blue bg-blue/10 px-2 py-1 rounded-full">{filteredRepos.emergingRockets.length} repos</span>
+                              <span className="text-xs text-secondary">⬆️ Rising fast</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="p-6">
+                        <Section
+                          title="Emerging Rockets"
+                          repos={filteredRepos.emergingRockets}
+                          accentColor="blue"
+                          maxItems={6}
+                        />
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Silent Climbers */}
+                  {filteredRepos.silentClimbers.length > 0 && (
+                    <div className="bg-card border border-border rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                      <div className="p-6 border-b border-border bg-gradient-to-r from-green/5 via-green/2 to-transparent">
+                        <div className="flex items-center gap-4">
+                          <div className="w-12 h-12 bg-green rounded-xl flex items-center justify-center shadow-lg">
+                            <span className="text-white text-xl font-bold">🧗</span>
+                          </div>
+                          <div className="flex-1">
+                            <h3 className="text-xl font-bold text-primary">Silent Climbers</h3>
+                            <p className="text-secondary">Steady growth with consistent activity</p>
+                            <div className="flex items-center gap-4 mt-2">
+                              <span className="text-xs text-green bg-green/10 px-2 py-1 rounded-full">{filteredRepos.silentClimbers.length} repos</span>
+                              <span className="text-xs text-secondary">📈 Consistent</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="p-6">
+                        <Section
+                          title="Silent Climbers"
+                          repos={filteredRepos.silentClimbers}
+                          accentColor="green"
+                          maxItems={6}
+                        />
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Experimental Spike */}
+                  {filteredRepos.experimentalSpike.length > 0 && (
+                    <div className="bg-card border border-border rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                      <div className="p-6 border-b border-border bg-gradient-to-r from-yellow/5 via-yellow/2 to-transparent">
+                        <div className="flex items-center gap-4">
+                          <div className="w-12 h-12 bg-yellow rounded-xl flex items-center justify-center shadow-lg">
+                            <span className="text-black text-xl font-bold">⚡</span>
+                          </div>
+                          <div className="flex-1">
+                            <h3 className="text-xl font-bold text-primary">Experimental Spike</h3>
+                            <p className="text-secondary">Innovative projects with recent activity bursts</p>
+                            <div className="flex items-center gap-4 mt-2">
+                              <span className="text-xs text-yellow bg-yellow/10 px-2 py-1 rounded-full">{filteredRepos.experimentalSpike.length} repos</span>
+                              <span className="text-xs text-secondary">🔥 Hot</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="p-6">
+                        <Section
+                          title="Experimental Spike"
+                          repos={filteredRepos.experimentalSpike}
+                          accentColor="yellow"
+                          maxItems={6}
+                        />
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Cooling Down */}
+                  {filteredRepos.coolingDown.length > 0 && (
+                    <div className="bg-card border border-border rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                      <div className="p-6 border-b border-border bg-gradient-to-r from-red/5 via-red/2 to-transparent">
+                        <div className="flex items-center gap-4">
+                          <div className="w-12 h-12 bg-red rounded-xl flex items-center justify-center shadow-lg">
+                            <span className="text-white text-xl font-bold">❄️</span>
+                          </div>
+                          <div className="flex-1">
+                            <h3 className="text-xl font-bold text-primary">Cooling Down</h3>
+                            <p className="text-secondary">Projects with declining activity</p>
+                            <div className="flex items-center gap-4 mt-2">
+                              <span className="text-xs text-red bg-red/10 px-2 py-1 rounded-full">{filteredRepos.coolingDown.length} repos</span>
+                              <span className="text-xs text-secondary">📉 Declining</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="p-6">
+                        <Section
+                          title="Cooling Down"
+                          repos={filteredRepos.coolingDown}
+                          accentColor="red"
+                          maxItems={6}
+                        />
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </section>
+            </div>
+
+            {/* Right Column - Category Distribution */}
+            <div className="space-y-6">
+              <div className="bg-card border border-border rounded-xl p-6 sticky top-24 shadow-sm">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-12 bg-purple rounded-xl flex items-center justify-center shadow-lg">
+                    <span className="text-white text-xl font-bold">📊</span>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-primary">Category Distribution</h3>
+                    <p className="text-secondary">Repository breakdown by category</p>
+                  </div>
+                </div>
+                <CategoryDistribution
+                  data={categoryData}
+                  onCategoryClick={(category) => {
+                    setSelectedCategories([category]);
+                  }}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -1,11 +1,16 @@
 import { useState, useEffect } from "react";
-import { Sidebar } from "@/components/layout/Sidebar";
-import { Header } from "@/components/layout/Header";
+import { useOutletContext } from "react-router-dom";
 import { RepoCard, type Repository } from "@/components/dashboard/RepoCard";
 import { KpiCard, type KpiData } from "@/components/dashboard/KpiCard";
 import { CategoryFilter } from "@/components/dashboard/CategoryFilter";
-import { Star, Calendar, Menu, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Star, Calendar } from "lucide-react";
+
+interface DashboardContext {
+  searchQuery: string;
+  selectedLanguage: string;
+  setSearchQuery: (query: string) => void;
+  setSelectedLanguage: (language: string) => void;
+}
 
 interface StarredRepo extends Repository {
   starredAt: string;
@@ -14,12 +19,11 @@ interface StarredRepo extends Repository {
 }
 
 export default function StarsPage() {
+  const { searchQuery, setSearchQuery } = useOutletContext<DashboardContext>();
   const [starredRepos, setStarredRepos] = useState<StarredRepo[]>([]);
   const [loading, setLoading] = useState(true);
   const [selectedCategories, setSelectedCategories] = useState<string[]>(['all']);
-  const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   useEffect(() => {
     async function fetchStarredData() {
@@ -219,73 +223,22 @@ export default function StarsPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-background flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue mx-auto mb-4"></div>
-          <p className="text-secondary">Loading starred repositories...</p>
+      <div className="p-4 sm:p-6 lg:p-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue mx-auto mb-4"></div>
+            <p className="text-secondary">Loading starred repositories...</p>
+          </div>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-background flex">
-      {/* Mobile Menu Button */}
-      <div className="lg:hidden fixed top-4 left-4 z-50">
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-          className="bg-surface border-border"
-        >
-          {isSidebarOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
-        </Button>
-      </div>
-
-      {/* Sidebar - Fixed on desktop, overlay on mobile */}
-      <div className={`fixed inset-0 z-40 lg:relative lg:inset-auto transition-transform duration-300 ${
-        isSidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
-      }`}>
-        <Sidebar 
-          activeItem="stars"
-          isMobile={true}
-          onClose={() => setIsSidebarOpen(false)}
-          onItemClick={(item) => {
-            console.log('Navigate to:', item.id);
-            setIsSidebarOpen(false);
-          }}
-        />
-      </div>
-
-      {/* Desktop Sidebar (always visible) */}
-      <div className="hidden lg:block fixed left-0 top-0 h-full z-40">
-        <Sidebar 
-          activeItem="stars"
-          isMobile={false}
-          onItemClick={(item) => console.log('Navigate to:', item.id)}
-        />
-      </div>
-
-      {/* Mobile Sidebar Overlay */}
-      {isSidebarOpen && (
-        <div 
-          className="lg:hidden fixed inset-0 bg-black/50 z-30"
-          onClick={() => setIsSidebarOpen(false)}
-        />
-      )}
-
-      {/* Main Content */}
-      <div className="flex-1 flex flex-col lg:ml-64 ml-0">
-        {/* Header */}
-        <div className="sticky top-0 z-20 bg-background border-b border-border">
-          <Header
-            title="Starred Repositories"
-            onSearch={setSearchQuery}
-          />
-        </div>
-
+    <div className="p-4 sm:p-6 lg:p-8">
+      <div className="max-w-7xl mx-auto space-y-4 sm:space-y-6">
         {/* Filters */}
-        <div className="px-4 sm:px-6 py-4 border-b border-border">
+        <div className="px-0 py-4 border-b border-border">
           <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
             <CategoryFilter
               selectedCategories={selectedCategories}
@@ -307,73 +260,68 @@ export default function StarsPage() {
           </div>
         </div>
 
-        {/* Main Content */}
-        <main className="flex-1 p-4 sm:p-6 overflow-auto">
-          <div className="max-w-7xl mx-auto space-y-4 sm:space-y-6">
-            {/* KPI Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {kpiData.map((kpi, index) => (
-                <KpiCard key={index} data={kpi} />
-              ))}
-            </div>
+        {/* KPI Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {kpiData.map((kpi, index) => (
+            <KpiCard key={index} data={kpi} />
+          ))}
+        </div>
 
-            {/* Starred Repositories */}
-            <div className="space-y-4 sm:space-y-6">
-              <div className="flex items-center gap-3 mb-4 sm:mb-6">
-                <Star className="w-5 h-5 sm:w-6 sm:h-6 text-yellow" />
-                <h2 className="text-xl sm:text-2xl font-bold text-primary">Your Starred Repositories</h2>
-                <span className="px-2 sm:px-3 py-1 bg-yellow text-black text-xs sm:text-sm rounded-full">
-                  {filteredRepos.length} repos
-                </span>
-              </div>
-
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
-                {filteredRepos.map((repo) => (
-                  <div
-                    key={repo.id}
-                    className="bg-card border border-border rounded-lg p-4 hover:border-blue transition-colors"
-                  >
-                    {/* Repo Header */}
-                    <div className="flex items-start justify-between mb-3">
-                      <RepoCard
-                        repo={repo}
-                        className="flex-1"
-                      />
-                    </div>
-
-                    {/* Star Info */}
-                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mt-3 pt-3 border-t border-border">
-                      <div className="flex items-center gap-2">
-                        <Calendar className="w-4 h-4 text-secondary" />
-                        <span className="text-sm text-secondary">
-                          Starred {formatStarDate(repo.starredAt)}
-                        </span>
-                      </div>
-                      
-                      <span className={`px-2 py-1 rounded text-xs font-medium ${getCategoryColor(repo.starCategory)}`}>
-                        {repo.starCategory}
-                      </span>
-                    </div>
-
-                    {/* Tags */}
-                    {repo.tags.length > 0 && (
-                      <div className="flex flex-wrap gap-1 mt-2">
-                        {repo.tags.map((tag) => (
-                          <span
-                            key={tag}
-                            className="px-2 py-1 bg-surface border border-border rounded text-xs text-secondary"
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
+        {/* Starred Repositories */}
+        <div className="space-y-4 sm:space-y-6">
+          <div className="flex items-center gap-3 mb-4 sm:mb-6">
+            <Star className="w-5 h-5 sm:w-6 sm:h-6 text-yellow" />
+            <h2 className="text-xl sm:text-2xl font-bold text-primary">Your Starred Repositories</h2>
+            <span className="px-2 sm:px-3 py-1 bg-yellow text-black text-xs sm:text-sm rounded-full">
+              {filteredRepos.length} repos
+            </span>
           </div>
-        </main>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
+            {filteredRepos.map((repo) => (
+              <div
+                key={repo.id}
+                className="bg-card border border-border rounded-lg p-4 hover:border-blue transition-colors"
+              >
+                {/* Repo Header */}
+                <div className="flex items-start justify-between mb-3">
+                  <RepoCard
+                    repo={repo}
+                    className="flex-1"
+                  />
+                </div>
+
+                {/* Star Info */}
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mt-3 pt-3 border-t border-border">
+                  <div className="flex items-center gap-2">
+                    <Calendar className="w-4 h-4 text-secondary" />
+                    <span className="text-sm text-secondary">
+                      Starred {formatStarDate(repo.starredAt)}
+                    </span>
+                  </div>
+                  
+                  <span className={`px-2 py-1 rounded text-xs font-medium ${getCategoryColor(repo.starCategory)}`}>
+                    {repo.starCategory}
+                  </span>
+                </div>
+
+                {/* Tags */}
+                {repo.tags.length > 0 && (
+                  <div className="flex flex-wrap gap-1 mt-2">
+                    {repo.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-2 py-1 bg-surface border border-border rounded text-xs text-secondary"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
