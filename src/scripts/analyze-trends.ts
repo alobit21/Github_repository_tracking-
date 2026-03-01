@@ -3,7 +3,7 @@ import path from "path";
 import * as dotenv from "dotenv";
 
 // Load environment variables explicitly
-dotenv.config({ path: path.resolve(process.cwd(), ".env.local") });
+dotenv.config({ path: path.resolve(process.cwd(), ".env") });
 
 const TOKEN = process.env.GITHUB_TOKEN;
 if (!TOKEN) {
