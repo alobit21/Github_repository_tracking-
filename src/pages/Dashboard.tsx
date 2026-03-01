@@ -6,6 +6,10 @@ import { MomentumChart, type ChartDataPoint } from "@/components/dashboard/Momen
 import { Section } from "@/components/dashboard/Section";
 import { CategoryDistribution, type CategoryData } from "@/components/dashboard/CategoryDistribution";
 import { type Repository } from "@/components/dashboard/RepoCard";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Globe, Filter, Loader2, ExternalLink, Star, GitFork } from "lucide-react";
 
 interface DashboardContext {
   searchQuery: string;
@@ -35,6 +39,93 @@ interface DailyReport {
   coolingDown: RepoData[];
   experimentalSpike: RepoData[];
 }
+
+// Country list for filtering
+const countries = [
+  { code: 'all', name: 'All Countries' },
+  { code: 'US', name: 'United States' },
+  { code: 'CN', name: 'China' },
+  { code: 'IN', name: 'India' },
+  { code: 'GB', name: 'United Kingdom' },
+  { code: 'DE', name: 'Germany' },
+  { code: 'FR', name: 'France' },
+  { code: 'JP', name: 'Japan' },
+  { code: 'CA', name: 'Canada' },
+  { code: 'AU', name: 'Australia' },
+  { code: 'BR', name: 'Brazil' },
+  { code: 'RU', name: 'Russia' },
+  { code: 'KR', name: 'South Korea' },
+  { code: 'ES', name: 'Spain' },
+  { code: 'IT', name: 'Italy' },
+  { code: 'NL', name: 'Netherlands' },
+  { code: 'SE', name: 'Sweden' },
+  { code: 'CH', name: 'Switzerland' },
+  { code: 'IL', name: 'Israel' },
+  { code: 'SG', name: 'Singapore' },
+  { code: 'MX', name: 'Mexico' },
+  { code: 'ZA', name: 'South Africa' },
+  { code: 'NG', name: 'Nigeria' },
+  { code: 'EG', name: 'Egypt' },
+  { code: 'KE', name: 'Kenya' },
+  { code: 'TZ', name: 'Tanzania' },
+  { code: 'GH', name: 'Ghana' },
+  { code: 'UG', name: 'Uganda' },
+];
+
+const getCountryFlag = (countryCode: string) => {
+  const flags: { [key: string]: string } = {
+    'US': '🇺🇸', 'CN': '🇨🇳', 'IN': '🇮🇳', 'GB': '🇬🇧', 'DE': '🇩🇪',
+    'FR': '🇫🇷', 'JP': '🇯🇵', 'CA': '🇨🇦', 'AU': '🇦🇺', 'BR': '🇧🇷',
+    'RU': '🇷🇺', 'KR': '🇰🇷', 'ES': '🇪🇸', 'IT': '🇮🇹', 'NL': '🇳🇱',
+    'SE': '🇸🇪', 'CH': '🇨🇭', 'IL': '🇮🇱', 'SG': '🇸🇬', 'MX': '🇲🇽',
+    'ZA': '🇿🇦', 'NG': '🇳🇬', 'EG': '🇪🇬', 'KE': '🇰🇪', 'TZ': '🇹🇿',
+    'GH': '🇬🇭', 'UG': '🇺🇬',
+  };
+  return flags[countryCode] || '🌍';
+};
+
+const detectCountry = (location: string | null): string => {
+  if (!location) return 'Unknown';
+  
+  const locationLower = location.toLowerCase();
+  const countryMap: { [key: string]: string } = {
+    'united states': 'US', 'usa': 'US', 'america': 'US', 'california': 'US', 'new york': 'US', 'texas': 'US',
+    'china': 'CN', 'beijing': 'CN', 'shanghai': 'CN', 'shenzhen': 'CN',
+    'india': 'IN', 'bangalore': 'IN', 'mumbai': 'IN', 'delhi': 'IN', 'hyderabad': 'IN',
+    'united kingdom': 'GB', 'uk': 'GB', 'london': 'GB', 'england': 'GB',
+    'germany': 'DE', 'berlin': 'DE', 'munich': 'DE',
+    'france': 'FR', 'paris': 'FR',
+    'japan': 'JP', 'tokyo': 'JP', 'osaka': 'JP',
+    'canada': 'CA', 'toronto': 'CA', 'montreal': 'CA', 'vancouver': 'CA',
+    'australia': 'AU', 'sydney': 'AU', 'melbourne': 'AU',
+    'brazil': 'BR', 'são paulo': 'BR', 'rio': 'BR',
+    'russia': 'RU', 'moscow': 'RU', 'saint petersburg': 'RU',
+    'south korea': 'KR', 'korea': 'KR', 'seoul': 'KR',
+    'spain': 'ES', 'madrid': 'ES', 'barcelona': 'ES',
+    'italy': 'IT', 'rome': 'IT', 'milan': 'IT',
+    'netherlands': 'NL', 'amsterdam': 'NL',
+    'sweden': 'SE', 'stockholm': 'SE',
+    'switzerland': 'CH', 'zurich': 'CH', 'geneva': 'CH',
+    'israel': 'IL', 'tel aviv': 'IL', 'jerusalem': 'IL',
+    'singapore': 'SG',
+    'mexico': 'MX', 'mexico city': 'MX',
+    'south africa': 'ZA', 'johannesburg': 'ZA', 'cape town': 'ZA', 'pretoria': 'ZA',
+    'nigeria': 'NG', 'lagos': 'NG', 'abuja': 'NG', 'kano': 'NG',
+    'egypt': 'EG', 'cairo': 'EG', 'alexandria': 'EG', 'giza': 'EG',
+    'kenya': 'KE', 'nairobi': 'KE', 'mombasa': 'KE', 'kisumu': 'KE',
+    'tanzania': 'TZ', 'dar es salaam': 'TZ', 'dodoma': 'TZ', 'arusha': 'TZ', 'mwanza': 'TZ', 'zanzibar': 'TZ',
+    'ghana': 'GH', 'accra': 'GH', 'kumasi': 'GH', 'tamale': 'GH',
+    'uganda': 'UG', 'kampala': 'UG', 'gulu': 'UG', 'jinja': 'UG',
+  };
+  
+  for (const [country, code] of Object.entries(countryMap)) {
+    if (locationLower.includes(country)) {
+      return code;
+    }
+  }
+  
+  return 'Unknown';
+};
 
 // Transform RepoData to Repository format with better categorization
 const transformToRepository = (repo: RepoData): Repository => {
@@ -110,6 +201,9 @@ export default function Dashboard() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [selectedCategories, setSelectedCategories] = useState<string[]>(['all']);
+  const [selectedCountry, setSelectedCountry] = useState('all');
+  const [liveRepos, setLiveRepos] = useState<any[]>([]);
+  const [liveLoading, setLiveLoading] = useState(false);
   const [visibleLines, setVisibleLines] = useState({
     emergingRockets: true,
     silentClimbers: true,
@@ -136,6 +230,88 @@ export default function Dashboard() {
 
     fetchReport();
   }, []);
+
+  // Fetch live repositories from GitHub API
+  const fetchLiveRepositories = async () => {
+    try {
+      setLiveLoading(true);
+      
+      // Build GitHub API query
+      let searchQuery = 'stars:>10';
+      
+      // Add country filter if selected
+      if (selectedCountry !== 'all') {
+        const country = countries.find(c => c.code === selectedCountry);
+        if (country) {
+          searchQuery += ` location:"${country.name}"`;
+        }
+      }
+
+      const apiUrl = `https://api.github.com/search/repositories?q=${encodeURIComponent(searchQuery)}&sort=stars&order=desc&per_page=20`;
+      
+      const headers: Record<string, string> = {
+        'Accept': 'application/vnd.github.v3+json',
+      };
+      
+      // Add GitHub token if available
+      const githubToken = import.meta.env.VITE_GITHUB_TOKEN;
+      if (githubToken) {
+        headers['Authorization'] = `token ${githubToken}`;
+      }
+
+      console.log('Dashboard GitHub API Query:', searchQuery);
+      const response = await fetch(apiUrl, { headers });
+      
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+      }
+
+      const data = await response.json();
+      
+      // Transform repositories
+      const enhancedRepos = (data.items || []).map((repo: any) => {
+        const detectedCountry = detectCountry(repo.owner.location);
+        const country = countries.find(c => c.code === detectedCountry);
+        
+        return {
+          id: repo.id.toString(),
+          name: repo.name,
+          full_name: repo.full_name,
+          description: repo.description || '',
+          language: repo.language || 'Unknown',
+          stars: repo.stargazers_count,
+          forks: repo.forks_count,
+          watchers: repo.watchers_count,
+          url: repo.html_url,
+          html_url: repo.html_url,
+          created_at: repo.created_at,
+          updated_at: repo.updated_at,
+          pushed_at: repo.pushed_at,
+          owner: {
+            login: repo.owner.login,
+            avatar_url: repo.owner.avatar_url,
+            location: repo.owner.location,
+            country: country?.name || detectedCountry || 'Unknown'
+          },
+          topics: repo.topics || [],
+          open_issues_count: repo.open_issues_count,
+          size: repo.size,
+        };
+      });
+
+      setLiveRepos(enhancedRepos);
+      console.log('Dashboard live repositories:', enhancedRepos.length);
+    } catch (err) {
+      console.error('Error fetching live repositories:', err);
+    } finally {
+      setLiveLoading(false);
+    }
+  };
+
+  // Fetch live repositories when country changes
+  useEffect(() => {
+    fetchLiveRepositories();
+  }, [selectedCountry]);
 
   if (loading) {
     return (
@@ -285,12 +461,107 @@ export default function Dashboard() {
   return (
     <div className="p-4 sm:p-6 lg:p-8 overflow-x-hidden overflow-y-auto">
       <div className="max-w-7xl mx-auto space-y-6 sm:space-y-8">
-        {/* Category Filter */}
+        {/* Category Filter and Country Filter */}
         <div className="px-0 py-4 border-b border-border">
-          <CategoryFilter
-            selectedCategories={selectedCategories}
-            onCategoryChange={setSelectedCategories}
-          />
+          <div className="flex flex-col lg:flex-row gap-4 items-start lg:items-center">
+            <div className="flex-1">
+              <CategoryFilter
+                selectedCategories={selectedCategories}
+                onCategoryChange={setSelectedCategories}
+              />
+            </div>
+            <div className="flex items-center gap-2">
+              <Globe className="w-4 h-4 text-secondary" />
+              <span className="text-sm font-medium">Country:</span>
+              <Select value={selectedCountry} onValueChange={setSelectedCountry}>
+                <SelectTrigger className="w-48">
+                  <SelectValue placeholder="Select country" />
+                </SelectTrigger>
+                <SelectContent>
+                  {countries.map(country => (
+                    <SelectItem key={country.code} value={country.code}>
+                      <span className="flex items-center gap-2">
+                        <span>{getCountryFlag(country.code)}</span>
+                        {country.name}
+                      </span>
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+              <Button 
+                onClick={fetchLiveRepositories} 
+                disabled={liveLoading}
+                variant="outline"
+                size="sm"
+                className="flex items-center gap-2"
+              >
+                {liveLoading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Filter className="w-4 h-4" />}
+                {liveLoading ? 'Loading...' : 'Refresh'}
+              </Button>
+            </div>
+          </div>
+        </div>
+
+        {/* Live Repositories Section */}
+        <div className="bg-gradient-to-r from-green/10 to-blue/10 border border-border rounded-xl p-6">
+          <div className="flex items-center justify-between mb-4">
+            <h2 className="text-xl font-bold text-primary flex items-center gap-3">
+              <Globe className="w-6 h-6 text-green" />
+              Live Repository Tracking
+              <Badge variant="outline" className="text-green border-green bg-green/10">
+                {liveRepos.length} repositories
+              </Badge>
+            </h2>
+            <div className="flex items-center gap-2">
+              <span className="w-2 h-2 bg-green rounded-full animate-pulse"></span>
+              <span className="text-sm text-secondary">Live from GitHub</span>
+            </div>
+          </div>
+          
+          {liveLoading ? (
+            <div className="flex items-center justify-center py-8">
+              <Loader2 className="w-6 h-6 animate-spin text-blue-500 mr-2" />
+              <span className="text-secondary">Fetching live repositories...</span>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+              {liveRepos.slice(0, 8).map((repo) => (
+                <div key={repo.id} className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4 hover:shadow-md transition-shadow">
+                  <div className="flex items-start justify-between gap-2 mb-3">
+                    <div className="flex-1 min-w-0">
+                      <h3 className="font-semibold text-primary text-sm truncate">{repo.name}</h3>
+                      <p className="text-xs text-secondary truncate">{repo.owner.login}</p>
+                    </div>
+                    {repo.owner.country !== 'Unknown' && (
+                      <Badge variant="outline" className="text-xs border-green text-green bg-green/10 flex-shrink-0">
+                        {getCountryFlag(countries.find(c => c.name === repo.owner.country)?.code || '')}
+                      </Badge>
+                    )}
+                  </div>
+                  
+                  <p className="text-xs text-gray-600 dark:text-gray-400 line-clamp-2 mb-3">{repo.description}</p>
+                  
+                  <div className="flex items-center justify-between text-xs">
+                    <div className="flex items-center gap-3">
+                      <div className="flex items-center gap-1">
+                        <Star className="w-3 h-3 text-yellow" />
+                        <span>{repo.stars}</span>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <GitFork className="w-3 h-3 text-blue" />
+                        <span>{repo.forks}</span>
+                      </div>
+                    </div>
+                    <Button variant="ghost" size="sm" asChild className="p-1">
+                      <a href={repo.url} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="w-3 h-3" />
+                      </a>
+                    </Button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
 
         {/* Main Dashboard Content */}
