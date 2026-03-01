@@ -4,15 +4,15 @@
     {
       "name": "RightNow-AI/openfang",
       "description": "Open-source Agent Operating System",
-      "stars": 6280,
-      "forks": 657,
+      "stars": 6283,
+      "forks": 658,
       "issues": 74,
       "language": "Rust",
       "url": "https://github.com/RightNow-AI/openfang",
-      "starDelta": 6280,
+      "starDelta": 6283,
       "contributorDelta": 0,
       "issueDelta": 74,
-      "score": 12671
+      "score": 12677
     },
     {
       "name": "anthropics/financial-services-plugins",
@@ -30,41 +30,41 @@
     {
       "name": "cloudflare/vinext",
       "description": "Vite plugin that reimplements the Next.js API surface — deploy anywhere",
-      "stars": 4765,
+      "stars": 4766,
       "forks": 143,
       "issues": 59,
       "language": "TypeScript",
       "url": "https://github.com/cloudflare/vinext",
-      "starDelta": 4765,
+      "starDelta": 4766,
       "contributorDelta": 0,
       "issueDelta": 59,
-      "score": 9618.5
+      "score": 9620.5
     },
     {
       "name": "Panniantong/Agent-Reach",
       "description": "Give your AI agent eyes to see the entire internet. Read & search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees.",
-      "stars": 3211,
+      "stars": 3213,
       "forks": 255,
       "issues": 0,
       "language": "Python",
       "url": "https://github.com/Panniantong/Agent-Reach",
-      "starDelta": 3211,
+      "starDelta": 3213,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 6422
+      "score": 6426
     },
     {
       "name": "agentscope-ai/CoPaw",
       "description": "Your Personal AI Assistant; easy to install, deploy on your own machine or on the cloud; supports multiple chat apps with easily extensible capabilities.",
-      "stars": 2572,
+      "stars": 2573,
       "forks": 243,
       "issues": 114,
       "language": "Python",
       "url": "https://github.com/agentscope-ai/CoPaw",
-      "starDelta": 2572,
+      "starDelta": 2573,
       "contributorDelta": 0,
       "issueDelta": 114,
-      "score": 5315
+      "score": 5317
     },
     {
       "name": "peteromallet/dataclaw",
@@ -95,28 +95,28 @@
     {
       "name": "mgechev/skills-best-practices",
       "description": "Write professional-grade skills for agents, validate them using LLMs, and maintain a lean context window.",
-      "stars": 908,
+      "stars": 909,
       "forks": 58,
       "issues": 1,
       "language": null,
       "url": "https://github.com/mgechev/skills-best-practices",
-      "starDelta": 908,
+      "starDelta": 909,
       "contributorDelta": 0,
       "issueDelta": 1,
-      "score": 1817.5
+      "score": 1819.5
     },
     {
       "name": "taigrr/spank",
       "description": "Slap your MacBook, it yells back. Uses Apple Silicon accelerometer via IOKit HID.",
-      "stars": 843,
+      "stars": 844,
       "forks": 35,
       "issues": 1,
       "language": "Go",
       "url": "https://github.com/taigrr/spank",
-      "starDelta": 843,
+      "starDelta": 844,
       "contributorDelta": 0,
       "issueDelta": 1,
-      "score": 1687.5
+      "score": 1689.5
     },
     {
       "name": "ForLoopCodes/contextplus",
@@ -136,28 +136,28 @@
     {
       "name": "ylytdeng/wechat-decrypt",
       "description": "WeChat 4.0 database decryptor - extract keys from memory, decrypt SQLCipher 4 databases, real-time message monitor",
-      "stars": 759,
-      "forks": 676,
+      "stars": 762,
+      "forks": 677,
       "issues": 2,
       "language": "Python",
       "url": "https://github.com/ylytdeng/wechat-decrypt",
-      "starDelta": 759,
+      "starDelta": 762,
       "contributorDelta": 0,
       "issueDelta": 2,
-      "score": 1521
+      "score": 1527
     },
     {
       "name": "Lakr233/vphone-cli",
       "description": null,
-      "stars": 752,
+      "stars": 754,
       "forks": 90,
       "issues": 4,
       "language": "Python",
       "url": "https://github.com/Lakr233/vphone-cli",
-      "starDelta": 752,
+      "starDelta": 754,
       "contributorDelta": 0,
       "issueDelta": 4,
-      "score": 1510
+      "score": 1514
     },
     {
       "name": "apple/python-apple-fm-sdk",
@@ -227,15 +227,15 @@
     {
       "name": "xjtulyc/MedgeClaw",
       "description": "Medge AI X OpenClaw",
-      "stars": 603,
+      "stars": 604,
       "forks": 176,
       "issues": 2,
       "language": "HTML",
       "url": "https://github.com/xjtulyc/MedgeClaw",
-      "starDelta": 603,
+      "starDelta": 604,
       "contributorDelta": 0,
       "issueDelta": 2,
-      "score": 1209
+      "score": 1211
     },
     {
       "name": "6551Team/opennews-mcp",
@@ -253,15 +253,15 @@
     {
       "name": "xstongxue/best-prompts",
       "description": "通用高质量 Prompt 合集🔥",
-      "stars": 491,
+      "stars": 492,
       "forks": 50,
       "issues": 0,
       "language": null,
       "url": "https://github.com/xstongxue/best-prompts",
-      "starDelta": 491,
+      "starDelta": 492,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 982
+      "score": 984
     }
   ],
   "coolingDown": [],
@@ -269,15 +269,15 @@
     {
       "name": "RightNow-AI/openfang",
       "description": "Open-source Agent Operating System",
-      "stars": 6280,
-      "forks": 657,
+      "stars": 6283,
+      "forks": 658,
       "issues": 74,
       "language": "Rust",
       "url": "https://github.com/RightNow-AI/openfang",
-      "starDelta": 6280,
+      "starDelta": 6283,
       "contributorDelta": 0,
       "issueDelta": 74,
-      "score": 12671
+      "score": 12677
     },
     {
       "name": "anthropics/financial-services-plugins",
@@ -295,41 +295,41 @@
     {
       "name": "cloudflare/vinext",
       "description": "Vite plugin that reimplements the Next.js API surface — deploy anywhere",
-      "stars": 4765,
+      "stars": 4766,
       "forks": 143,
       "issues": 59,
       "language": "TypeScript",
       "url": "https://github.com/cloudflare/vinext",
-      "starDelta": 4765,
+      "starDelta": 4766,
       "contributorDelta": 0,
       "issueDelta": 59,
-      "score": 9618.5
+      "score": 9620.5
     },
     {
       "name": "Panniantong/Agent-Reach",
       "description": "Give your AI agent eyes to see the entire internet. Read & search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees.",
-      "stars": 3211,
+      "stars": 3213,
       "forks": 255,
       "issues": 0,
       "language": "Python",
       "url": "https://github.com/Panniantong/Agent-Reach",
-      "starDelta": 3211,
+      "starDelta": 3213,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 6422
+      "score": 6426
     },
     {
       "name": "agentscope-ai/CoPaw",
       "description": "Your Personal AI Assistant; easy to install, deploy on your own machine or on the cloud; supports multiple chat apps with easily extensible capabilities.",
-      "stars": 2572,
+      "stars": 2573,
       "forks": 243,
       "issues": 114,
       "language": "Python",
       "url": "https://github.com/agentscope-ai/CoPaw",
-      "starDelta": 2572,
+      "starDelta": 2573,
       "contributorDelta": 0,
       "issueDelta": 114,
-      "score": 5315
+      "score": 5317
     },
     {
       "name": "peteromallet/dataclaw",
@@ -360,28 +360,28 @@
     {
       "name": "mgechev/skills-best-practices",
       "description": "Write professional-grade skills for agents, validate them using LLMs, and maintain a lean context window.",
-      "stars": 908,
+      "stars": 909,
       "forks": 58,
       "issues": 1,
       "language": null,
       "url": "https://github.com/mgechev/skills-best-practices",
-      "starDelta": 908,
+      "starDelta": 909,
       "contributorDelta": 0,
       "issueDelta": 1,
-      "score": 1817.5
+      "score": 1819.5
     },
     {
       "name": "taigrr/spank",
       "description": "Slap your MacBook, it yells back. Uses Apple Silicon accelerometer via IOKit HID.",
-      "stars": 843,
+      "stars": 844,
       "forks": 35,
       "issues": 1,
       "language": "Go",
       "url": "https://github.com/taigrr/spank",
-      "starDelta": 843,
+      "starDelta": 844,
       "contributorDelta": 0,
       "issueDelta": 1,
-      "score": 1687.5
+      "score": 1689.5
     },
     {
       "name": "ForLoopCodes/contextplus",
