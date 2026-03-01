@@ -38,9 +38,7 @@ export function Navbar() {
           {/* Desktop CTA Buttons */}
           <div className="hidden md:flex items-center gap-3">
             <Link to="/dashboard">
-              <Button variant="ghost" size="sm">
-                Login
-              </Button>
+           
             </Link>
             <Link to="/dashboard">
               <Button size="sm">
@@ -81,9 +79,7 @@ export function Navbar() {
               ))}
               <div className="flex flex-col gap-3 pt-4 border-t border-border">
                 <Link to="/dashboard">
-                  <Button variant="ghost" size="sm" className="w-full">
-                    Login
-                  </Button>
+                
                 </Link>
                 <Link to="/dashboard">
                   <Button size="sm" className="w-full">

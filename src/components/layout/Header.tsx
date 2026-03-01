@@ -4,12 +4,8 @@ import {
   Search, 
   Calendar, 
   Filter, 
-  ChevronDown, 
   Menu, 
   X,
-  Home,
-  BookOpen,
-  MoreHorizontal 
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -101,12 +97,8 @@ export function Header({
                 </TabsTrigger>
                 <TabsTrigger value="repositories" className="data-[state=active]:bg-muted">
                   Repositories
-                  <span className="ml-1 text-xs text-muted-foreground">62</span>
                 </TabsTrigger>
-                <TabsTrigger value="more" className="data-[state=active]:bg-muted">
-                  More
-                  <ChevronDown className="ml-1 h-3 w-3" />
-                </TabsTrigger>
+              
               </TabsList>
             </Tabs>
           </nav>
@@ -211,21 +203,8 @@ export function Header({
       {isMobileMenuOpen && (
         <div className="md:hidden border-t p-4 space-y-4">
           {/* Mobile navigation */}
-          <nav className="flex flex-col space-y-1">
-            <Button variant="ghost" className="justify-start">
-              <Home className="h-4 w-4 mr-2" />
-              Overview
-            </Button>
-            <Button variant="ghost" className="justify-start">
-              <BookOpen className="h-4 w-4 mr-2" />
-              Repositories
-              <span className="ml-auto text-xs text-muted-foreground">62</span>
-            </Button>
-            <Button variant="ghost" className="justify-start">
-              <MoreHorizontal className="h-4 w-4 mr-2" />
-              More
-            </Button>
-          </nav>
+          
+            
 
           {/* Mobile search */}
           <form onSubmit={handleSearch} className="relative">
