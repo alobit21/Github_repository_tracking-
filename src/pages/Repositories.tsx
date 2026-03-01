@@ -117,6 +117,7 @@ const detectCountry = (location: string | null): string => {
 };
 
 export default function Repositories() {
+  console.log('Repositories component rendering');
   const [repositories, setRepositories] = useState<Repository[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -318,16 +319,18 @@ export default function Repositories() {
             </div>
 
             {/* Filters */}
-            <div className="bg-card border border-border rounded-lg p-4 mb-6 sm:mb-8">
-              <div className="flex flex-col lg:flex-row gap-4">
-                <div className="flex items-center gap-2">
-                  <Globe className="w-4 h-4 text-secondary" />
-                  <span className="text-sm font-medium">Country:</span>
+            <div className="bg-blue-50 border-2 border-blue-200 rounded-lg p-4 mb-6 sm:mb-8">
+              <div className="text-blue-800 font-bold mb-4">🔍 FILTERS SECTION (This should be visible!)</div>
+              <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4">
+                <div className="flex flex-col lg:flex-row gap-4 items-start lg:items-center">
+                <div className="flex items-center gap-2 w-full lg:w-auto">
+                  <Globe className="w-4 h-4 text-gray-600 dark:text-gray-400 flex-shrink-0" />
+                  <span className="text-sm font-medium text-gray-900 dark:text-gray-100 whitespace-nowrap">Country:</span>
                   <Select value={selectedCountry} onValueChange={setSelectedCountry}>
-                    <SelectTrigger className="w-full lg:w-48">
+                    <SelectTrigger className="w-full lg:w-48 bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100">
                       <SelectValue placeholder="Select country" />
                     </SelectTrigger>
-                    <SelectContent>
+                    <SelectContent className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
                       <SelectItem value="all">All Countries</SelectItem>
                       {countries.map(country => (
                         <SelectItem key={country.code} value={country.code}>
@@ -341,14 +344,14 @@ export default function Repositories() {
                   </Select>
                 </div>
                 
-                <div className="flex items-center gap-2">
-                  <Calendar className="w-4 h-4 text-secondary" />
-                  <span className="text-sm font-medium">Time:</span>
+                <div className="flex items-center gap-2 w-full lg:w-auto">
+                  <Calendar className="w-4 h-4 text-gray-600 dark:text-gray-400 flex-shrink-0" />
+                  <span className="text-sm font-medium text-gray-900 dark:text-gray-100 whitespace-nowrap">Time:</span>
                   <Select value={selectedTime} onValueChange={setSelectedTime}>
-                    <SelectTrigger className="w-full lg:w-48">
+                    <SelectTrigger className="w-full lg:w-48 bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100">
                       <SelectValue placeholder="Select time period" />
                     </SelectTrigger>
-                    <SelectContent>
+                    <SelectContent className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
                       {timeFilters.map(filter => (
                         <SelectItem key={filter.value} value={filter.value}>
                           {filter.label}
@@ -358,13 +361,13 @@ export default function Repositories() {
                   </Select>
                 </div>
                 
-                <div className="flex items-center gap-2">
-                  <span className="text-sm font-medium">Sort by:</span>
+                <div className="flex items-center gap-2 w-full lg:w-auto">
+                  <span className="text-sm font-medium text-gray-900 dark:text-gray-100 whitespace-nowrap">Sort by:</span>
                   <Select value={sortBy} onValueChange={setSortBy}>
-                    <SelectTrigger className="w-full lg:w-48">
+                    <SelectTrigger className="w-full lg:w-48 bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100">
                       <SelectValue placeholder="Sort by" />
                     </SelectTrigger>
-                    <SelectContent>
+                    <SelectContent className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
                       {sortOptions.map(option => (
                         <SelectItem key={option.value} value={option.value}>
                           {option.label}
@@ -379,7 +382,7 @@ export default function Repositories() {
                   disabled={loading}
                   variant="outline"
                   size="sm"
-                  className="flex items-center gap-2"
+                  className="flex items-center gap-2 w-full lg:w-auto bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-600"
                 >
                   {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Filter className="w-4 h-4" />}
                   {loading ? 'Loading...' : 'Apply Filters'}
@@ -387,10 +390,11 @@ export default function Repositories() {
               </div>
               
               {/* Results count */}
-              <div className="mt-4 text-sm text-secondary">
-                Found {filteredRepos.length} repositories
+              <div className="mt-4 text-sm text-gray-600 dark:text-gray-400 border-t border-gray-200 dark:border-gray-700 pt-4">
+                Found <span className="font-medium text-gray-900 dark:text-gray-100">{filteredRepos.length}</span> repositories
                 {selectedCountry !== 'all' && ` in ${countries.find(c => c.code === selectedCountry)?.name}`}
                 {selectedTime !== 'all' && ` from ${timeFilters.find(t => t.value === selectedTime)?.label}`}
+              </div>
               </div>
             </div>
 
