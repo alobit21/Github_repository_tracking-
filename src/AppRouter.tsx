@@ -3,14 +3,13 @@ import Dashboard from '@/pages/Dashboard';
 import Landing from '@/pages/Landing';
 import Trends from '@/pages/Trends';
 import Categories from '@/pages/Categories';
-// import Repositories from '@/pages/Repositories';
+import Repositories from '@/pages/Repositories';
 import Alerts from '@/pages/Alerts';
 import Settings from '@/pages/Settings';
 import Trending from '@/pages/dashboard/Trending';
 import Activity from '@/pages/dashboard/Activity';
 import Stars from '@/pages/dashboard/Stars';
 import Users from '@/pages/dashboard/Users';
-import NewRepositoryRadar from './pages/NewRepositoryRadar';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Header } from '@/components/layout/Header';
 import { useState } from 'react';
@@ -122,7 +121,7 @@ const router = createBrowserRouter([
       },
       {
         path: 'repositories',
-        element: <NewRepositoryRadar />,
+        element: <Repositories />,
       },
       {
         path: 'trending',

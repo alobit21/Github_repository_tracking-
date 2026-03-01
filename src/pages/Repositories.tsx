@@ -1,6 +1,4 @@
 import { useState, useEffect } from "react";
-import { Sidebar } from "@/components/layout/Sidebar";
-import { Header } from "@/components/layout/Header";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -57,6 +55,45 @@ const countries = [
   { code: 'IL', name: 'Israel' },
   { code: 'SG', name: 'Singapore' },
   { code: 'MX', name: 'Mexico' },
+  { code: 'ZA', name: 'South Africa' },
+  { code: 'NG', name: 'Nigeria' },
+  { code: 'EG', name: 'Egypt' },
+  { code: 'KE', name: 'Kenya' },
+  { code: 'TZ', name: 'Tanzania' },
+  { code: 'GH', name: 'Ghana' },
+  { code: 'UG', name: 'Uganda' },
+  { code: 'DZ', name: 'Algeria' },
+  { code: 'MA', name: 'Morocco' },
+  { code: 'TH', name: 'Thailand' },
+  { code: 'VN', name: 'Vietnam' },
+  { code: 'PH', name: 'Philippines' },
+  { code: 'MY', name: 'Malaysia' },
+  { code: 'ID', name: 'Indonesia' },
+  { code: 'PK', name: 'Pakistan' },
+  { code: 'BD', name: 'Bangladesh' },
+  { code: 'TR', name: 'Turkey' },
+  { code: 'SA', name: 'Saudi Arabia' },
+  { code: 'AE', name: 'United Arab Emirates' },
+  { code: 'IR', name: 'Iran' },
+  { code: 'PL', name: 'Poland' },
+  { code: 'NO', name: 'Norway' },
+  { code: 'DK', name: 'Denmark' },
+  { code: 'FI', name: 'Finland' },
+  { code: 'GR', name: 'Greece' },
+  { code: 'PT', name: 'Portugal' },
+  { code: 'IE', name: 'Ireland' },
+  { code: 'AT', name: 'Austria' },
+  { code: 'CZ', name: 'Czech Republic' },
+  { code: 'HU', name: 'Hungary' },
+  { code: 'RO', name: 'Romania' },
+  { code: 'UA', name: 'Ukraine' },
+  { code: 'BE', name: 'Belgium' },
+  { code: 'AR', name: 'Argentina' },
+  { code: 'CL', name: 'Chile' },
+  { code: 'CO', name: 'Colombia' },
+  { code: 'PE', name: 'Peru' },
+  { code: 'VE', name: 'Venezuela' },
+  { code: 'NZ', name: 'New Zealand' },
 ];
 
 const timeFilters = [
@@ -106,6 +143,49 @@ const detectCountry = (location: string | null): string => {
     'israel': 'IL', 'tel aviv': 'IL', 'jerusalem': 'IL',
     'singapore': 'SG',
     'mexico': 'MX', 'mexico city': 'MX',
+    // African countries
+    'south africa': 'ZA', 'johannesburg': 'ZA', 'cape town': 'ZA', 'pretoria': 'ZA',
+    'nigeria': 'NG', 'lagos': 'NG', 'abuja': 'NG', 'kano': 'NG',
+    'egypt': 'EG', 'cairo': 'EG', 'alexandria': 'EG', 'giza': 'EG',
+    'kenya': 'KE', 'nairobi': 'KE', 'mombasa': 'KE', 'kisumu': 'KE',
+    'tanzania': 'TZ', 'dar es salaam': 'TZ', 'dodoma': 'TZ', 'arusha': 'TZ', 'mwanza': 'TZ', 'zanzibar': 'TZ',
+    'ghana': 'GH', 'accra': 'GH', 'kumasi': 'GH', 'tamale': 'GH',
+    'uganda': 'UG', 'kampala': 'UG', 'gulu': 'UG', 'jinja': 'UG',
+    'algeria': 'DZ', 'algiers': 'DZ', 'oran': 'DZ', 'constantine': 'DZ',
+    'morocco': 'MA', 'casablanca': 'MA', 'rabat': 'MA', 'marrakech': 'MA', 'fez': 'MA',
+    // Asian countries
+    'thailand': 'TH', 'bangkok': 'TH', 'chiang mai': 'TH', 'phuket': 'TH',
+    'vietnam': 'VN', 'hanoi': 'VN', 'ho chi minh': 'VN', 'da nang': 'VN',
+    'philippines': 'PH', 'manila': 'PH', 'cebu': 'PH', 'davao': 'PH',
+    'malaysia': 'MY', 'kuala lumpur': 'MY', 'penang': 'MY', 'johor bahru': 'MY',
+    'indonesia': 'ID', 'jakarta': 'ID', 'bali': 'ID', 'surabaya': 'ID', 'bandung': 'ID',
+    'pakistan': 'PK', 'karachi': 'PK', 'islamabad': 'PK', 'lahore': 'PK',
+    'bangladesh': 'BD', 'dhaka': 'BD', 'chittagong': 'BD', 'khulna': 'BD',
+    'turkey': 'TR', 'istanbul': 'TR', 'ankara': 'TR', 'izmir': 'TR',
+    'saudi arabia': 'SA', 'riyadh': 'SA', 'jeddah': 'SA', 'mecca': 'SA', 'medina': 'SA',
+    'united arab emirates': 'AE', 'dubai': 'AE', 'abu dhabi': 'AE', 'sharjah': 'AE',
+    'iran': 'IR', 'tehran': 'IR', 'mashhad': 'IR', 'isfahan': 'IR',
+    // European countries
+    'poland': 'PL', 'warsaw': 'PL', 'krakow': 'PL', 'gdansk': 'PL',
+    'norway': 'NO', 'oslo': 'NO', 'bergen': 'NO', 'trondheim': 'NO',
+    'denmark': 'DK', 'copenhagen': 'DK', 'aarhus': 'DK', 'odense': 'DK',
+    'finland': 'FI', 'helsinki': 'FI', 'espoo': 'FI', 'tampere': 'FI',
+    'greece': 'GR', 'athens': 'GR', 'thessaloniki': 'GR', 'patras': 'GR',
+    'portugal': 'PT', 'lisbon': 'PT', 'porto': 'PT', 'coimbra': 'PT',
+    'ireland': 'IE', 'dublin': 'IE', 'cork': 'IE', 'galway': 'IE',
+    'austria': 'AT', 'vienna': 'AT', 'salzburg': 'AT', 'innsbruck': 'AT',
+    'czech republic': 'CZ', 'prague': 'CZ', 'brno': 'CZ', 'ostrava': 'CZ',
+    'hungary': 'HU', 'budapest': 'HU', 'debrecen': 'HU', 'szeged': 'HU',
+    'romania': 'RO', 'bucharest': 'RO', 'cluj-napoca': 'RO', 'timisoara': 'RO',
+    'ukraine': 'UA', 'kyiv': 'UA', 'kharkiv': 'UA', 'odesa': 'UA',
+    'belgium': 'BE', 'brussels': 'BE', 'antwerp': 'BE', 'ghent': 'BE',
+    // American countries
+    'argentina': 'AR', 'buenos aires': 'AR', 'cordoba': 'AR', 'rosario': 'AR',
+    'chile': 'CL', 'santiago': 'CL', 'valparaiso': 'CL', 'concepcion': 'CL',
+    'colombia': 'CO', 'bogota': 'CO', 'medellin': 'CO', 'cali': 'CO',
+    'peru': 'PE', 'lima': 'PE', 'arequipa': 'PE', 'cusco': 'PE',
+    'venezuela': 'VE', 'caracas': 'VE', 'maracaibo': 'VE', 'valencia': 'VE',
+    'new zealand': 'NZ', 'auckland': 'NZ', 'wellington': 'NZ', 'christchurch': 'NZ',
   };
   
   for (const [country, code] of Object.entries(countryMap)) {
@@ -126,15 +206,6 @@ export default function Repositories() {
   const [selectedTime, setSelectedTime] = useState('all');
   const [sortBy, setSortBy] = useState('stars');
   const [countrySearch, setCountrySearch] = useState('');
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 1024);
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
 
   const fetchRepositories = async () => {
     try {
@@ -260,6 +331,19 @@ export default function Repositories() {
       'FR': '🇫🇷', 'JP': '🇯🇵', 'CA': '🇨🇦', 'AU': '🇦🇺', 'BR': '🇧🇷',
       'RU': '🇷🇺', 'KR': '🇰🇷', 'ES': '🇪🇸', 'IT': '🇮🇹', 'NL': '🇳🇱',
       'SE': '🇸🇪', 'CH': '🇨🇭', 'IL': '🇮🇱', 'SG': '🇸🇬', 'MX': '🇲🇽',
+      // African countries
+      'ZA': '🇿🇦', 'NG': '🇳🇬', 'EG': '🇪🇬', 'KE': '🇰🇪', 'TZ': '🇹🇿',
+      'GH': '🇬🇭', 'UG': '🇺🇬', 'DZ': '🇩🇿', 'MA': '🇲🇦',
+      // Asian countries
+      'TH': '🇹🇭', 'VN': '🇻🇳', 'PH': '🇵🇭', 'MY': '🇲🇾', 'ID': '🇮🇩',
+      'PK': '🇵🇰', 'BD': '🇧🇩', 'TR': '🇹🇷', 'SA': '🇸🇦', 'AE': '🇦🇪', 'IR': '🇮🇷',
+      // European countries
+      'PL': '🇵🇱', 'NO': '🇳🇴', 'DK': '🇩🇰', 'FI': '🇫🇮', 'GR': '🇬🇷',
+      'PT': '🇵🇹', 'IE': '🇮🇪', 'AT': '🇦🇹', 'CZ': '🇨🇿', 'HU': '🇭🇺',
+      'RO': '🇷🇴', 'UA': '🇺🇦', 'BE': '🇧🇪',
+      // American countries
+      'AR': '🇦🇷', 'CL': '🇨🇱', 'CO': '🇨🇴', 'PE': '🇵🇪', 'VE': '🇻🇪',
+      'NZ': '🇳🇿',
     };
     return flags[countryCode] || '🌍';
   };
@@ -271,192 +355,167 @@ export default function Repositories() {
   );
 
   return (
-    <div className="min-h-screen bg-background flex">
-      {/* Mobile Sidebar Overlay */}
-      {isSidebarOpen && (
-        <div 
-          className="fixed inset-0 bg-black/50 z-40 lg:hidden"
-          onClick={() => setIsSidebarOpen(false)}
-        />
-      )}
-      
-      {/* Sidebar */}
-      <div className={`fixed left-0 top-0 h-full z-50 transform transition-transform duration-300 ease-in-out lg:translate-x-0 lg:static lg:z-40 ${
-        isSidebarOpen ? 'translate-x-0' : '-translate-x-full'
-      }`}>
-        <Sidebar 
-          activeItem="repositories"
-          onItemClick={(item) => {
-            console.log('Navigate to:', item.id);
-            setIsSidebarOpen(false);
-          }}
-          isMobile={isMobile}
-          onClose={() => setIsSidebarOpen(false)}
-        />
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+      {/* Header */}
+      <div className="sticky top-0 z-30 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
+        <div className="px-4 py-3">
+          <div className="flex items-center gap-3">
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => window.history.back()}
+              className="flex items-center gap-2"
+            >
+              <Menu className="w-4 h-4" />
+              <span>Back to Dashboard</span>
+            </Button>
+            <h1 className="text-xl font-bold text-gray-900 dark:text-gray-100">Repository Explorer</h1>
+          </div>
+        </div>
       </div>
 
-      {/* Main Content */}
-      <div className="flex-1 flex flex-col lg:ml-0">
-        {/* Header */}
-        <div className="sticky top-0 z-30 bg-background border-b border-border">
-          <Header />
-        </div>
+      {/* Content */}
+      <div className="flex flex-1">
+        {/* Country Sidebar */}
+        <div className="w-80 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 overflow-y-auto">
+          <div className="p-4">
+            <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
+              <Globe className="w-5 h-5 text-blue-500" />
+              Countries
+            </h3>
+            
+            {/* Search */}
+            <div className="relative mb-4">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
+              <Input
+                type="text"
+                placeholder="Search countries..."
+                value={countrySearch}
+                onChange={(e) => setCountrySearch(e.target.value)}
+                className="pl-10 pr-10 bg-gray-50 dark:bg-gray-700 border-gray-300 dark:border-gray-600"
+              />
+              {countrySearch && (
+                <button
+                  onClick={() => setCountrySearch('')}
+                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+              )}
+            </div>
 
-        {/* Mobile Menu Button */}
-        <div className="lg:hidden sticky top-16 z-20 bg-background border-b border-border px-4 py-3">
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() => setIsSidebarOpen(true)}
-            className="flex items-center gap-2"
-          >
-            <Menu className="w-4 h-4" />
-            <span>Menu</span>
-          </Button>
-        </div>
-
-        {/* Content */}
-        <div className="flex flex-1">
-          {/* Country Sidebar */}
-          <div className="w-80 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 overflow-y-auto">
-            <div className="p-4">
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
-                <Globe className="w-5 h-5 text-blue-500" />
-                Countries
-              </h3>
-              
-              {/* Search */}
-              <div className="relative mb-4">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
-                <Input
-                  type="text"
-                  placeholder="Search countries..."
-                  value={countrySearch}
-                  onChange={(e) => setCountrySearch(e.target.value)}
-                  className="pl-10 pr-10 bg-gray-50 dark:bg-gray-700 border-gray-300 dark:border-gray-600"
-                />
-                {countrySearch && (
-                  <button
-                    onClick={() => setCountrySearch('')}
-                    className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
-                  >
-                    <X className="w-4 h-4" />
-                  </button>
-                )}
-              </div>
-
-              {/* All Countries Option */}
-              <div
-                onClick={() => setSelectedCountry('all')}
-                className={`p-3 rounded-lg cursor-pointer transition-colors mb-2 ${
-                  selectedCountry === 'all'
-                    ? 'bg-blue-100 dark:bg-blue-900 border-blue-300 dark:border-blue-700'
-                    : 'bg-gray-50 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600'
-                } border`}
-              >
-                <div className="flex items-center gap-3">
-                  <span className="text-lg">🌍</span>
-                  <div>
-                    <div className="font-medium text-gray-900 dark:text-gray-100">All Countries</div>
-                    <div className="text-xs text-gray-500 dark:text-gray-400">Show repositories from all countries</div>
-                  </div>
+            {/* All Countries Option */}
+            <div
+              onClick={() => setSelectedCountry('all')}
+              className={`p-3 rounded-lg cursor-pointer transition-colors mb-2 ${
+                selectedCountry === 'all'
+                  ? 'bg-blue-100 dark:bg-blue-900 border-blue-300 dark:border-blue-700'
+                  : 'bg-gray-50 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600'
+              } border`}
+            >
+              <div className="flex items-center gap-3">
+                <span className="text-lg">🌍</span>
+                <div>
+                  <div className="font-medium text-gray-900 dark:text-gray-100">All Countries</div>
+                  <div className="text-xs text-gray-500 dark:text-gray-400">Show repositories from all countries</div>
                 </div>
-              </div>
-
-              {/* Country List */}
-              <div className="space-y-2 max-h-96 overflow-y-auto">
-                {filteredCountries.map(country => (
-                  <div
-                    key={country.code}
-                    onClick={() => setSelectedCountry(country.code)}
-                    className={`p-3 rounded-lg cursor-pointer transition-colors ${
-                      selectedCountry === country.code
-                        ? 'bg-blue-100 dark:bg-blue-900 border-blue-300 dark:border-blue-700'
-                        : 'bg-gray-50 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600'
-                    } border`}
-                  >
-                    <div className="flex items-center gap-3">
-                      <span className="text-xl">{getCountryFlag(country.code)}</span>
-                      <div className="flex-1">
-                        <div className="font-medium text-gray-900 dark:text-gray-100">{country.name}</div>
-                        <div className="text-xs text-gray-500 dark:text-gray-400">{country.code}</div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
               </div>
             </div>
-          </div>
 
-          {/* Main Content Area */}
-          <div className="flex-1 p-4 sm:p-6">
-            <div className="max-w-6xl mx-auto">
-              <div className="mb-6 sm:mb-8">
-                <h1 className="text-2xl sm:text-3xl font-bold text-primary mb-2 flex items-center gap-3">
-                  <Globe className="w-8 h-8 text-blue-500" />
-                  Repository Explorer
-                </h1>
-                <p className="text-secondary text-sm sm:text-base">Browse repositories by country and time period.</p>
-              </div>
-
-              {/* Filters */}
-              <div className="bg-blue-50 border-2 border-blue-200 rounded-lg p-4 mb-6 sm:mb-8">
-                <div className="text-blue-800 font-bold mb-4">🔍 FILTERS SECTION</div>
-                <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4">
-                  <div className="flex flex-col lg:flex-row gap-4 items-start lg:items-center">
-                    <div className="flex items-center gap-2 w-full lg:w-auto">
-                      <Calendar className="w-4 h-4 text-gray-600 dark:text-gray-400 flex-shrink-0" />
-                      <span className="text-sm font-medium text-gray-900 dark:text-gray-100 whitespace-nowrap">Time:</span>
-                      <Select value={selectedTime} onValueChange={setSelectedTime}>
-                        <SelectTrigger className="w-full lg:w-48 bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100">
-                          <SelectValue placeholder="Select time period" />
-                        </SelectTrigger>
-                        <SelectContent className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
-                          {timeFilters.map(filter => (
-                            <SelectItem key={filter.value} value={filter.value}>
-                              {filter.label}
-                            </SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
+            {/* Country List */}
+            <div className="space-y-2 max-h-96 overflow-y-auto">
+              {filteredCountries.map(country => (
+                <div
+                  key={country.code}
+                  onClick={() => setSelectedCountry(country.code)}
+                  className={`p-3 rounded-lg cursor-pointer transition-colors ${
+                    selectedCountry === country.code
+                      ? 'bg-blue-100 dark:bg-blue-900 border-blue-300 dark:border-blue-700'
+                      : 'bg-gray-50 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600'
+                  } border`}
+                >
+                  <div className="flex items-center gap-3">
+                    <span className="text-xl">{getCountryFlag(country.code)}</span>
+                    <div className="flex-1">
+                      <div className="font-medium text-gray-900 dark:text-gray-100">{country.name}</div>
+                      <div className="text-xs text-gray-500 dark:text-gray-400">{country.code}</div>
                     </div>
-                    
-                    <div className="flex items-center gap-2 w-full lg:w-auto">
-                      <span className="text-sm font-medium text-gray-900 dark:text-gray-100 whitespace-nowrap">Sort by:</span>
-                      <Select value={sortBy} onValueChange={setSortBy}>
-                        <SelectTrigger className="w-full lg:w-48 bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100">
-                          <SelectValue placeholder="Sort by" />
-                        </SelectTrigger>
-                        <SelectContent className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
-                          {sortOptions.map(option => (
-                            <SelectItem key={option.value} value={option.value}>
-                              {option.label}
-                            </SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
-                    </div>
-
-                    <Button 
-                      onClick={fetchRepositories} 
-                      disabled={loading}
-                      variant="outline"
-                      size="sm"
-                      className="flex items-center gap-2 w-full lg:w-auto bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-600"
-                    >
-                      {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Filter className="w-4 h-4" />}
-                      {loading ? 'Loading...' : 'Apply Filters'}
-                    </Button>
-                  </div>
-                  
-                  {/* Results count */}
-                  <div className="mt-4 text-sm text-gray-600 dark:text-gray-400 border-t border-gray-200 dark:border-gray-700 pt-4">
-                    Found <span className="font-medium text-gray-900 dark:text-gray-100">{filteredRepos.length}</span> repositories
-                    {selectedCountry !== 'all' && ` in ${countries.find(c => c.code === selectedCountry)?.name}`}
-                    {selectedTime !== 'all' && ` from ${timeFilters.find(t => t.value === selectedTime)?.label}`}
-                  </div>
                   </div>
                 </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Main Content Area */}
+        <div className="flex-1 p-4 sm:p-6">
+          <div className="max-w-6xl mx-auto">
+            <div className="mb-6 sm:mb-8">
+              <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-gray-100 mb-2 flex items-center gap-3">
+                <Globe className="w-8 h-8 text-blue-500" />
+                Repository Explorer
+              </h1>
+              <p className="text-gray-600 dark:text-gray-400 text-sm sm:text-base">Browse repositories by country and time period.</p>
+            </div>
+
+            {/* Filters */}
+            <div className="bg-blue-50 border-2 border-blue-200 rounded-lg p-4 mb-6 sm:mb-8">
+              <div className="text-blue-800 font-bold mb-4">🔍 FILTERS SECTION</div>
+              <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4">
+                <div className="flex flex-col lg:flex-row gap-4 items-start lg:items-center">
+                  <div className="flex items-center gap-2 w-full lg:w-auto">
+                    <Calendar className="w-4 h-4 text-gray-600 dark:text-gray-400 flex-shrink-0" />
+                    <span className="text-sm font-medium text-gray-900 dark:text-gray-100 whitespace-nowrap">Time:</span>
+                    <Select value={selectedTime} onValueChange={setSelectedTime}>
+                      <SelectTrigger className="w-full lg:w-48 bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100">
+                        <SelectValue placeholder="Select time period" />
+                      </SelectTrigger>
+                      <SelectContent className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+                        {timeFilters.map(filter => (
+                          <SelectItem key={filter.value} value={filter.value}>
+                            {filter.label}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+                  
+                  <div className="flex items-center gap-2 w-full lg:w-auto">
+                    <span className="text-sm font-medium text-gray-900 dark:text-gray-100 whitespace-nowrap">Sort by:</span>
+                    <Select value={sortBy} onValueChange={setSortBy}>
+                      <SelectTrigger className="w-full lg:w-48 bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100">
+                        <SelectValue placeholder="Sort by" />
+                      </SelectTrigger>
+                      <SelectContent className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+                        {sortOptions.map(option => (
+                          <SelectItem key={option.value} value={option.value}>
+                            {option.label}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+
+                  <Button 
+                    onClick={fetchRepositories} 
+                    disabled={loading}
+                    variant="outline"
+                    size="sm"
+                    className="flex items-center gap-2 w-full lg:w-auto bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-600"
+                  >
+                    {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Filter className="w-4 h-4" />}
+                    {loading ? 'Loading...' : 'Apply Filters'}
+                  </Button>
+                </div>
+                
+                {/* Results count */}
+                <div className="mt-4 text-sm text-gray-600 dark:text-gray-400 border-t border-gray-200 dark:border-gray-700 pt-4">
+                  Found <span className="font-medium text-gray-900 dark:text-gray-100">{filteredRepos.length}</span> repositories
+                  {selectedCountry !== 'all' && ` in ${countries.find(c => c.code === selectedCountry)?.name}`}
+                  {selectedTime !== 'all' && ` from ${timeFilters.find(t => t.value === selectedTime)?.label}`}
+                </div>
+                </div>
+              </div>
 
             {/* Error State */}
             {error && (
@@ -469,7 +528,7 @@ export default function Repositories() {
             {loading && (
               <div className="flex items-center justify-center py-12">
                 <Loader2 className="w-8 h-8 animate-spin text-blue-500" />
-                <span className="ml-2 text-secondary">Loading repositories...</span>
+                <span className="ml-2 text-gray-600 dark:text-gray-400">Loading repositories...</span>
               </div>
             )}
 
@@ -477,11 +536,11 @@ export default function Repositories() {
             {!loading && !error && (
               <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
                 {filteredRepos.map((repo) => (
-                  <Card key={repo.id} className="border-border hover:border-blue transition-colors">
+                  <Card key={repo.id} className="border-gray-200 dark:border-gray-700 hover:border-blue-400 transition-colors">
                     <CardHeader className="pb-3">
                       <div className="flex items-start justify-between gap-2">
                         <div className="flex-1 min-w-0">
-                          <CardTitle className="text-base sm:text-lg mb-2 truncate">{repo.name}</CardTitle>
+                          <CardTitle className="text-base sm:text-lg mb-2 truncate text-gray-900 dark:text-gray-100">{repo.name}</CardTitle>
                           <div className="flex items-center gap-2 mb-2">
                             <Badge variant="outline" className="text-xs border-blue text-blue bg-blue/10">
                               {repo.language}
@@ -496,9 +555,9 @@ export default function Repositories() {
                       </div>
                     </CardHeader>
                     <CardContent className="space-y-4">
-                      <p className="text-sm text-secondary line-clamp-2">{repo.description}</p>
+                      <p className="text-sm text-gray-600 dark:text-gray-400 line-clamp-2">{repo.description}</p>
                       
-                      <div className="text-xs text-secondary">
+                      <div className="text-xs text-gray-500 dark:text-gray-400">
                         Created: {formatTimeAgo(repo.created_at)}
                       </div>
                       
@@ -506,30 +565,30 @@ export default function Repositories() {
                         <div>
                           <div className="flex items-center justify-center gap-1 text-blue mb-1">
                             <Star className="w-3 h-3" />
-                            <span className="text-xs sm:text-sm font-medium">{formatNumber(repo.stars)}</span>
+                            <span className="text-xs sm:text-sm font-medium text-gray-900 dark:text-gray-100">{formatNumber(repo.stars)}</span>
                           </div>
-                          <p className="text-xs text-secondary">Stars</p>
+                          <p className="text-xs text-gray-500 dark:text-gray-400">Stars</p>
                         </div>
                         <div>
                           <div className="flex items-center justify-center gap-1 text-green mb-1">
                             <GitFork className="w-3 h-3" />
-                            <span className="text-xs sm:text-sm font-medium">{formatNumber(repo.forks)}</span>
+                            <span className="text-xs sm:text-sm font-medium text-gray-900 dark:text-gray-100">{formatNumber(repo.forks)}</span>
                           </div>
-                          <p className="text-xs text-secondary">Forks</p>
+                          <p className="text-xs text-gray-500 dark:text-gray-400">Forks</p>
                         </div>
                         <div>
                           <div className="flex items-center justify-center gap-1 text-yellow mb-1">
                             <Eye className="w-3 h-3" />
-                            <span className="text-xs sm:text-sm font-medium">{formatNumber(repo.watchers)}</span>
+                            <span className="text-xs sm:text-sm font-medium text-gray-900 dark:text-gray-100">{formatNumber(repo.watchers)}</span>
                           </div>
-                          <p className="text-xs text-secondary">Watchers</p>
+                          <p className="text-xs text-gray-500 dark:text-gray-400">Watchers</p>
                         </div>
                       </div>
 
                       <div className="flex items-center justify-between gap-2">
                         <div className="flex items-center gap-1 min-w-0">
-                          <span className="text-xs sm:text-sm text-secondary whitespace-nowrap">Owner:</span>
-                          <span className="text-xs sm:text-sm font-medium text-primary truncate">
+                          <span className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 whitespace-nowrap">Owner:</span>
+                          <span className="text-xs sm:text-sm font-medium text-gray-900 dark:text-gray-100 truncate">
                             {repo.owner.login}
                           </span>
                         </div>
@@ -549,12 +608,11 @@ export default function Repositories() {
             {!loading && !error && filteredRepos.length === 0 && (
               <div className="text-center py-12">
                 <Globe className="w-16 h-16 text-gray-300 mx-auto mb-4" />
-                <h3 className="text-lg font-medium text-primary mb-2">No repositories found</h3>
-                <p className="text-secondary">Try adjusting your filters or search criteria.</p>
+                <h3 className="text-lg font-medium text-gray-900 dark:text-gray-100 mb-2">No repositories found</h3>
+                <p className="text-gray-600 dark:text-gray-400">Try adjusting your filters or search criteria.</p>
               </div>
             )}
           </div>
-        </div>
         </div>
       </div>
     </div>
