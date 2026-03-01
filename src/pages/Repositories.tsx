@@ -400,15 +400,15 @@ export default function Repositories() {
       {/* Content */}
       <div className="flex flex-1">
         {/* Country Sidebar */}
-        <div className="w-80 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 overflow-y-auto">
-          <div className="p-4">
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
+        <div className="w-72 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 overflow-y-auto">
+          <div className="p-3">
+            <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-3 flex items-center gap-2">
               <Globe className="w-5 h-5 text-blue-500" />
               Countries
             </h3>
             
             {/* Search */}
-            <div className="relative mb-4">
+            <div className="relative mb-3">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
               <Input
                 type="text"
@@ -430,37 +430,37 @@ export default function Repositories() {
             {/* All Countries Option */}
             <div
               onClick={() => setSelectedCountry('all')}
-              className={`p-3 rounded-lg cursor-pointer transition-colors mb-2 ${
+              className={`p-2 rounded-lg cursor-pointer transition-colors mb-2 ${
                 selectedCountry === 'all'
                   ? 'bg-blue-100 dark:bg-blue-900 border-blue-300 dark:border-blue-700'
                   : 'bg-gray-50 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600'
               } border`}
             >
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-2">
                 <span className="text-lg">🌍</span>
                 <div>
-                  <div className="font-medium text-gray-900 dark:text-gray-100">All Countries</div>
+                  <div className="font-medium text-gray-900 dark:text-gray-100 text-sm">All Countries</div>
                   <div className="text-xs text-gray-500 dark:text-gray-400">Show repositories from all countries</div>
                 </div>
               </div>
             </div>
 
             {/* Country List */}
-            <div className="space-y-2 max-h-96 overflow-y-auto">
+            <div className="space-y-1 max-h-96 overflow-y-auto">
               {filteredCountries.map(country => (
                 <div
                   key={country.code}
                   onClick={() => setSelectedCountry(country.code)}
-                  className={`p-3 rounded-lg cursor-pointer transition-colors ${
+                  className={`p-2 rounded-lg cursor-pointer transition-colors ${
                     selectedCountry === country.code
                       ? 'bg-blue-100 dark:bg-blue-900 border-blue-300 dark:border-blue-700'
                       : 'bg-gray-50 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600'
                   } border`}
                 >
-                  <div className="flex items-center gap-3">
-                    <span className="text-xl">{getCountryFlag(country.code)}</span>
+                  <div className="flex items-center gap-2">
+                    <span className="text-lg">{getCountryFlag(country.code)}</span>
                     <div className="flex-1">
-                      <div className="font-medium text-gray-900 dark:text-gray-100">{country.name}</div>
+                      <div className="font-medium text-gray-900 dark:text-gray-100 text-sm">{country.name}</div>
                       <div className="text-xs text-gray-500 dark:text-gray-400">{country.code}</div>
                     </div>
                   </div>
@@ -471,9 +471,9 @@ export default function Repositories() {
         </div>
 
         {/* Main Content Area */}
-        <div className="flex-1 p-4 sm:p-6">
+        <div className="flex-1 p-3 sm:p-4">
           <div className="max-w-6xl mx-auto">
-            <div className="mb-6 sm:mb-8">
+            <div className="mb-4 sm:mb-6">
               <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-gray-100 mb-2 flex items-center gap-3">
                 <Globe className="w-8 h-8 text-blue-500" />
                 Repository Explorer
@@ -482,15 +482,15 @@ export default function Repositories() {
             </div>
 
             {/* Filters */}
-            <div className="bg-blue-50 border-2 border-blue-200 rounded-lg p-4 mb-6 sm:mb-8">
-              <div className="text-blue-800 font-bold mb-4">🔍 FILTERS SECTION</div>
-              <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4">
-                <div className="flex flex-col lg:flex-row gap-4 items-start lg:items-center">
+            <div className="bg-blue-50 border-2 border-blue-200 rounded-lg p-3 mb-4 sm:mb-6">
+              <div className="text-blue-800 font-bold mb-3 text-sm">🔍 FILTERS SECTION</div>
+              <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-3">
+                <div className="flex flex-col lg:flex-row gap-3 items-start lg:items-center">
                   <div className="flex items-center gap-2 w-full lg:w-auto">
                     <Calendar className="w-4 h-4 text-gray-600 dark:text-gray-400 flex-shrink-0" />
                     <span className="text-sm font-medium text-gray-900 dark:text-gray-100 whitespace-nowrap">Time:</span>
                     <Select value={selectedTime} onValueChange={setSelectedTime}>
-                      <SelectTrigger className="w-full lg:w-48 bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100">
+                      <SelectTrigger className="w-full lg:w-44 bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100">
                         <SelectValue placeholder="Select time period" />
                       </SelectTrigger>
                       <SelectContent className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
@@ -506,7 +506,7 @@ export default function Repositories() {
                   <div className="flex items-center gap-2 w-full lg:w-auto">
                     <span className="text-sm font-medium text-gray-900 dark:text-gray-100 whitespace-nowrap">Sort by:</span>
                     <Select value={sortBy} onValueChange={setSortBy}>
-                      <SelectTrigger className="w-full lg:w-48 bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100">
+                      <SelectTrigger className="w-full lg:w-44 bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100">
                         <SelectValue placeholder="Sort by" />
                       </SelectTrigger>
                       <SelectContent className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
@@ -532,7 +532,7 @@ export default function Repositories() {
                 </div>
                 
                 {/* Results count */}
-                <div className="mt-4 text-sm text-gray-600 dark:text-gray-400 border-t border-gray-200 dark:border-gray-700 pt-4">
+                <div className="mt-3 text-sm text-gray-600 dark:text-gray-400 border-t border-gray-200 dark:border-gray-700 pt-3">
                   Found <span className="font-medium text-gray-900 dark:text-gray-100">{filteredRepos.length}</span> repositories
                   {selectedCountry !== 'all' && ` in ${countries.find(c => c.code === selectedCountry)?.name}`}
                   {selectedTime !== 'all' && ` from ${timeFilters.find(t => t.value === selectedTime)?.label}`}
@@ -557,10 +557,10 @@ export default function Repositories() {
 
             {/* Repositories Grid */}
             {!loading && !error && (
-              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3 sm:gap-4">
                 {filteredRepos.map((repo) => (
                   <Card key={repo.id} className="border-gray-200 dark:border-gray-700 hover:border-blue-400 transition-colors">
-                    <CardHeader className="pb-3">
+                    <CardHeader className="pb-2">
                       <div className="flex items-start justify-between gap-2">
                         <div className="flex-1 min-w-0">
                           <CardTitle className="text-base sm:text-lg mb-2 truncate text-gray-900 dark:text-gray-100">{repo.name}</CardTitle>
@@ -577,14 +577,14 @@ export default function Repositories() {
                         </div>
                       </div>
                     </CardHeader>
-                    <CardContent className="space-y-4">
+                    <CardContent className="space-y-3">
                       <p className="text-sm text-gray-600 dark:text-gray-400 line-clamp-2">{repo.description}</p>
                       
                       <div className="text-xs text-gray-500 dark:text-gray-400">
                         Created: {formatTimeAgo(repo.created_at)}
                       </div>
                       
-                      <div className="grid grid-cols-3 gap-2 sm:gap-4 text-center">
+                      <div className="grid grid-cols-3 gap-1 sm:gap-2 text-center">
                         <div>
                           <div className="flex items-center justify-center gap-1 text-blue mb-1">
                             <Star className="w-3 h-3" />
