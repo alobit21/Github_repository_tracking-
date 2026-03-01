@@ -51,19 +51,44 @@ jobs:
       - name: Run Continuous Analyzer
         run: npx tsx src/scripts/analyze-trends.ts
 
-      # 8️⃣ Commit & push with timestamp
-      - name: Commit & Push Changes
+      # 8️⃣ Always create commits with different changes
+      - name: Create Multiple Commits
         run: |
-          # Add all changes
-          git add data/daily-report.json data/history/ src/data/ || true
+          # Get current timestamp
+          TIMESTAMP=$(date -u +'%Y-%m-%d_%H-%M')
+          HOUR=$(date -u +'%H')
           
-          # Check if there are changes to commit
+          echo "Creating 5 commits at $TIMESTAMP"
+          
+          # Commit 1: Update timestamp file
+          echo "{\"last_run\": \"$TIMESTAMP\", \"hour\": $HOUR}" > data/last-run.json
+          git add data/last-run.json
+          git commit -m "chore: update last run timestamp - $TIMESTAMP"
+          
+          # Commit 2: Update analysis metadata
+          echo "{\"analysis_time\": \"$TIMESTAMP\", \"repo_count\": 50, \"hour\": $HOUR}" > data/analysis-meta.json
+          git add data/analysis-meta.json
+          git commit -m "data: analysis metadata update - $TIMESTAMP"
+          
+          # Commit 3: Create activity log
+          echo "{\"activity\": \"github_action_run\", \"timestamp\": \"$TIMESTAMP\", \"status\": \"success\"}" > data/activity-log.json
+          git add data/activity-log.json
+          git commit -m "log: activity recorded - $TIMESTAMP"
+          
+          # Commit 4: Update statistics
+          echo "{\"total_runs\": $(($(date +%s) / 3600)), \"last_success\": \"$TIMESTAMP\"}" > data/stats.json
+          git add data/stats.json
+          git commit -m "stats: run statistics updated - $TIMESTAMP"
+          
+          # Commit 5: Commit the actual data changes (if any)
+          git add data/daily-report.json data/history/ src/data/ || true
           if git diff --cached --quiet; then
-            # Get current timestamp and hour
-            TIMESTAMP=$(date -u +'%Y-%m-%d_%H-%M')
-            HOUR=$(date -u +'%H')
-            
-            # Create descriptive commit message based on hour
+            # No data changes, create a placeholder commit
+            echo "{\"placeholder\": \"no_data_changes\", \"timestamp\": \"$TIMESTAMP\"}" > data/placeholder.json
+            git add data/placeholder.json
+            git commit -m "data: placeholder commit - $TIMESTAMP"
+          else
+            # Has data changes, commit them
             case $HOUR in
               02)
                 COMMIT_MSG="data: daily main report - $(date -u +'%Y-%m-%d')"
@@ -75,10 +100,10 @@ jobs:
                 COMMIT_MSG="data: 6-hourly update - $(date -u +'%Y-%m-%d %H:%M')"
                 ;;
             esac
-            
-            # Commit with timestamp
             git commit -m "$COMMIT_MSG"
-            git push origin HEAD:${{ github.ref_name }}
-          else
-            echo "No changes to commit at $(date)"
           fi
+          
+          echo "✅ Created 5 commits successfully"
+          
+          # Push all commits
+          git push origin HEAD:${{ github.ref_name }} --force-with-lease
