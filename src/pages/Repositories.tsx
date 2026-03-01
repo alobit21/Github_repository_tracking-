@@ -212,14 +212,72 @@ export default function Repositories() {
       setLoading(true);
       setError(null);
 
-      // Build GitHub API query
-      let searchQuery = 'stars:>100';
+      // Build GitHub API query with multiple strategies for better country detection
+      let searchQuery = 'stars:>10'; // Lower threshold to get more results
       
-      // Add country filter if selected
+      // Add country filter if selected - use multiple search terms for better coverage
       if (selectedCountry !== 'all') {
         const country = countries.find(c => c.code === selectedCountry);
         if (country) {
-          searchQuery += ` location:${country.name}`;
+          // Try multiple location-based search terms
+          const locationTerms = [
+            `location:"${country.name}"`,
+            `location:${country.name}`,
+            `location:${country.code}`
+          ];
+          
+          // Add common city names for better coverage
+          const countryCities: { [key: string]: string[] } = {
+            'TZ': ['dar es salaam', 'dodoma', 'arusha', 'mwanza', 'zanzibar', 'tanzania'],
+            'KE': ['nairobi', 'mombasa', 'kisumu', 'kenya'],
+            'NG': ['lagos', 'abuja', 'kano', 'port harcourt', 'nigeria'],
+            'ZA': ['johannesburg', 'cape town', 'pretoria', 'durban', 'south africa'],
+            'EG': ['cairo', 'alexandria', 'giza', 'egypt'],
+            'GH': ['accra', 'kumasi', 'ghana'],
+            'UG': ['kampala', 'gulu', 'uganda'],
+            'IN': ['bangalore', 'mumbai', 'delhi', 'hyderabad', 'chennai', 'pune', 'india'],
+            'US': ['san francisco', 'new york', 'seattle', 'austin', 'boston', 'chicago', 'united states', 'usa'],
+            'GB': ['london', 'manchester', 'birmingham', 'united kingdom', 'uk'],
+            'DE': ['berlin', 'munich', 'hamburg', 'frankfurt', 'germany'],
+            'FR': ['paris', 'lyon', 'marseille', 'france'],
+            'CA': ['toronto', 'vancouver', 'montreal', 'canada'],
+            'AU': ['sydney', 'melbourne', 'brisbane', 'australia'],
+            'JP': ['tokyo', 'osaka', 'kyoto', 'japan'],
+            'BR': ['são paulo', 'rio de janeiro', 'brasil', 'brazil'],
+            'RU': ['moscow', 'saint petersburg', 'russia'],
+            'CN': ['beijing', 'shanghai', 'shenzhen', 'guangzhou', 'china'],
+            'KR': ['seoul', 'busan', 'south korea'],
+            'IT': ['rome', 'milan', 'naples', 'italy'],
+            'ES': ['madrid', 'barcelona', 'valencia', 'spain'],
+            'NL': ['amsterdam', 'rotterdam', 'netherlands'],
+            'SE': ['stockholm', 'gothenburg', 'sweden'],
+            'NO': ['oslo', 'bergen', 'norway'],
+            'DK': ['copenhagen', 'aarhus', 'denmark'],
+            'FI': ['helsinki', 'espoo', 'finland'],
+            'PL': ['warsaw', 'krakow', 'poland'],
+            'TR': ['istanbul', 'ankara', 'izmir', 'turkey'],
+            'SA': ['riyadh', 'jeddah', 'mecca', 'saudi arabia'],
+            'AE': ['dubai', 'abu dhabi', 'sharjah', 'united arab emirates'],
+            'TH': ['bangkok', 'chiang mai', 'thailand'],
+            'VN': ['hanoi', 'ho chi minh', 'vietnam'],
+            'PH': ['manila', 'cebu', 'philippines'],
+            'MY': ['kuala lumpur', 'penang', 'malaysia'],
+            'ID': ['jakarta', 'surabaya', 'bandung', 'indonesia'],
+            'PK': ['karachi', 'islamabad', 'lahore', 'pakistan'],
+            'BD': ['dhaka', 'chittagong', 'bangladesh'],
+            'AR': ['buenos aires', 'cordoba', 'argentina'],
+            'CL': ['santiago', 'valparaiso', 'chile'],
+            'CO': ['bogota', 'medellin', 'colombia'],
+            'PE': ['lima', 'arequipa', 'peru'],
+            'MX': ['mexico city', 'guadalajara', 'monterrey', 'mexico'],
+            'NZ': ['auckland', 'wellington', 'new zealand'],
+          };
+          
+          const cities = countryCities[selectedCountry] || [];
+          const allLocationTerms = [...locationTerms, ...cities.map(city => `location:"${city}"`)];
+          
+          // Use OR operator to search multiple location terms
+          searchQuery += ` ${allLocationTerms.join(' OR ')}`;
         }
       }
 
@@ -245,6 +303,7 @@ export default function Repositories() {
         headers['Authorization'] = `token ${githubToken}`;
       }
 
+      console.log('GitHub API Query:', searchQuery);
       const response = await fetch(apiUrl, { headers });
       
       if (!response.ok) {
@@ -252,6 +311,7 @@ export default function Repositories() {
       }
 
       const data = await response.json();
+      console.log('GitHub API Response:', data);
       
       // Transform and enhance repositories
       const enhancedRepositories = (data.items || []).map((repo: any) => {
@@ -278,7 +338,7 @@ export default function Repositories() {
             login: repo.owner.login,
             avatar_url: repo.owner.avatar_url,
             location: repo.owner.location,
-            country: country?.name || 'Unknown'
+            country: country?.name || detectedCountry || 'Unknown'
           },
           topics: repo.topics || [],
           open_issues_count: repo.open_issues_count,
@@ -286,6 +346,7 @@ export default function Repositories() {
         };
       });
 
+      console.log('Enhanced repositories:', enhancedRepositories.length);
       setRepositories(enhancedRepositories);
     } catch (err) {
       const errorMessage = err instanceof Error ? err.message : 'Failed to fetch repositories';
