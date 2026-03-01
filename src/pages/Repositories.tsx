@@ -5,7 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Star, GitFork, Eye, ExternalLink, Filter, Menu, Globe, Calendar, Loader2 } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Star, GitFork, Eye, ExternalLink, Filter, Menu, Globe, Calendar, Loader2, Search, X } from "lucide-react";
 
 interface Repository {
   id: string;
@@ -124,6 +125,7 @@ export default function Repositories() {
   const [selectedCountry, setSelectedCountry] = useState('all');
   const [selectedTime, setSelectedTime] = useState('all');
   const [sortBy, setSortBy] = useState('stars');
+  const [countrySearch, setCountrySearch] = useState('');
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -262,6 +264,12 @@ export default function Repositories() {
     return flags[countryCode] || '🌍';
   };
 
+  // Filter countries based on search
+  const filteredCountries = countries.filter(country => 
+    country.name.toLowerCase().includes(countrySearch.toLowerCase()) ||
+    country.code.toLowerCase().includes(countrySearch.toLowerCase())
+  );
+
   return (
     <div className="min-h-screen bg-background flex">
       {/* Mobile Sidebar Overlay */}
@@ -308,95 +316,147 @@ export default function Repositories() {
         </div>
 
         {/* Content */}
-        <div className="p-4 sm:p-6">
-          <div className="max-w-7xl mx-auto">
-            <div className="mb-6 sm:mb-8">
-              <h1 className="text-2xl sm:text-3xl font-bold text-primary mb-2 flex items-center gap-3">
-                <Globe className="w-8 h-8 text-blue-500" />
-                Repository Explorer
-              </h1>
-              <p className="text-secondary text-sm sm:text-base">Browse repositories by country and time period.</p>
-            </div>
-
-            {/* Filters */}
-            <div className="bg-blue-50 border-2 border-blue-200 rounded-lg p-4 mb-6 sm:mb-8">
-              <div className="text-blue-800 font-bold mb-4">🔍 FILTERS SECTION (This should be visible!)</div>
-              <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4">
-                <div className="flex flex-col lg:flex-row gap-4 items-start lg:items-center">
-                <div className="flex items-center gap-2 w-full lg:w-auto">
-                  <Globe className="w-4 h-4 text-gray-600 dark:text-gray-400 flex-shrink-0" />
-                  <span className="text-sm font-medium text-gray-900 dark:text-gray-100 whitespace-nowrap">Country:</span>
-                  <Select value={selectedCountry} onValueChange={setSelectedCountry}>
-                    <SelectTrigger className="w-full lg:w-48 bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100">
-                      <SelectValue placeholder="Select country" />
-                    </SelectTrigger>
-                    <SelectContent className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
-                      <SelectItem value="all">All Countries</SelectItem>
-                      {countries.map(country => (
-                        <SelectItem key={country.code} value={country.code}>
-                          <span className="flex items-center gap-2">
-                            <span>{getCountryFlag(country.code)}</span>
-                            {country.name}
-                          </span>
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-                </div>
-                
-                <div className="flex items-center gap-2 w-full lg:w-auto">
-                  <Calendar className="w-4 h-4 text-gray-600 dark:text-gray-400 flex-shrink-0" />
-                  <span className="text-sm font-medium text-gray-900 dark:text-gray-100 whitespace-nowrap">Time:</span>
-                  <Select value={selectedTime} onValueChange={setSelectedTime}>
-                    <SelectTrigger className="w-full lg:w-48 bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100">
-                      <SelectValue placeholder="Select time period" />
-                    </SelectTrigger>
-                    <SelectContent className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
-                      {timeFilters.map(filter => (
-                        <SelectItem key={filter.value} value={filter.value}>
-                          {filter.label}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-                </div>
-                
-                <div className="flex items-center gap-2 w-full lg:w-auto">
-                  <span className="text-sm font-medium text-gray-900 dark:text-gray-100 whitespace-nowrap">Sort by:</span>
-                  <Select value={sortBy} onValueChange={setSortBy}>
-                    <SelectTrigger className="w-full lg:w-48 bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100">
-                      <SelectValue placeholder="Sort by" />
-                    </SelectTrigger>
-                    <SelectContent className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
-                      {sortOptions.map(option => (
-                        <SelectItem key={option.value} value={option.value}>
-                          {option.label}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-                </div>
-
-                <Button 
-                  onClick={fetchRepositories} 
-                  disabled={loading}
-                  variant="outline"
-                  size="sm"
-                  className="flex items-center gap-2 w-full lg:w-auto bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-600"
-                >
-                  {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Filter className="w-4 h-4" />}
-                  {loading ? 'Loading...' : 'Apply Filters'}
-                </Button>
-              </div>
+        <div className="flex flex-1">
+          {/* Country Sidebar */}
+          <div className="w-80 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 overflow-y-auto">
+            <div className="p-4">
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
+                <Globe className="w-5 h-5 text-blue-500" />
+                Countries
+              </h3>
               
-              {/* Results count */}
-              <div className="mt-4 text-sm text-gray-600 dark:text-gray-400 border-t border-gray-200 dark:border-gray-700 pt-4">
-                Found <span className="font-medium text-gray-900 dark:text-gray-100">{filteredRepos.length}</span> repositories
-                {selectedCountry !== 'all' && ` in ${countries.find(c => c.code === selectedCountry)?.name}`}
-                {selectedTime !== 'all' && ` from ${timeFilters.find(t => t.value === selectedTime)?.label}`}
+              {/* Search */}
+              <div className="relative mb-4">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
+                <Input
+                  type="text"
+                  placeholder="Search countries..."
+                  value={countrySearch}
+                  onChange={(e) => setCountrySearch(e.target.value)}
+                  className="pl-10 pr-10 bg-gray-50 dark:bg-gray-700 border-gray-300 dark:border-gray-600"
+                />
+                {countrySearch && (
+                  <button
+                    onClick={() => setCountrySearch('')}
+                    className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
+                  >
+                    <X className="w-4 h-4" />
+                  </button>
+                )}
               </div>
+
+              {/* All Countries Option */}
+              <div
+                onClick={() => setSelectedCountry('all')}
+                className={`p-3 rounded-lg cursor-pointer transition-colors mb-2 ${
+                  selectedCountry === 'all'
+                    ? 'bg-blue-100 dark:bg-blue-900 border-blue-300 dark:border-blue-700'
+                    : 'bg-gray-50 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600'
+                } border`}
+              >
+                <div className="flex items-center gap-3">
+                  <span className="text-lg">🌍</span>
+                  <div>
+                    <div className="font-medium text-gray-900 dark:text-gray-100">All Countries</div>
+                    <div className="text-xs text-gray-500 dark:text-gray-400">Show repositories from all countries</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Country List */}
+              <div className="space-y-2 max-h-96 overflow-y-auto">
+                {filteredCountries.map(country => (
+                  <div
+                    key={country.code}
+                    onClick={() => setSelectedCountry(country.code)}
+                    className={`p-3 rounded-lg cursor-pointer transition-colors ${
+                      selectedCountry === country.code
+                        ? 'bg-blue-100 dark:bg-blue-900 border-blue-300 dark:border-blue-700'
+                        : 'bg-gray-50 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600'
+                    } border`}
+                  >
+                    <div className="flex items-center gap-3">
+                      <span className="text-xl">{getCountryFlag(country.code)}</span>
+                      <div className="flex-1">
+                        <div className="font-medium text-gray-900 dark:text-gray-100">{country.name}</div>
+                        <div className="text-xs text-gray-500 dark:text-gray-400">{country.code}</div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
+          </div>
+
+          {/* Main Content Area */}
+          <div className="flex-1 p-4 sm:p-6">
+            <div className="max-w-6xl mx-auto">
+              <div className="mb-6 sm:mb-8">
+                <h1 className="text-2xl sm:text-3xl font-bold text-primary mb-2 flex items-center gap-3">
+                  <Globe className="w-8 h-8 text-blue-500" />
+                  Repository Explorer
+                </h1>
+                <p className="text-secondary text-sm sm:text-base">Browse repositories by country and time period.</p>
+              </div>
+
+              {/* Filters */}
+              <div className="bg-blue-50 border-2 border-blue-200 rounded-lg p-4 mb-6 sm:mb-8">
+                <div className="text-blue-800 font-bold mb-4">🔍 FILTERS SECTION</div>
+                <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4">
+                  <div className="flex flex-col lg:flex-row gap-4 items-start lg:items-center">
+                    <div className="flex items-center gap-2 w-full lg:w-auto">
+                      <Calendar className="w-4 h-4 text-gray-600 dark:text-gray-400 flex-shrink-0" />
+                      <span className="text-sm font-medium text-gray-900 dark:text-gray-100 whitespace-nowrap">Time:</span>
+                      <Select value={selectedTime} onValueChange={setSelectedTime}>
+                        <SelectTrigger className="w-full lg:w-48 bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100">
+                          <SelectValue placeholder="Select time period" />
+                        </SelectTrigger>
+                        <SelectContent className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+                          {timeFilters.map(filter => (
+                            <SelectItem key={filter.value} value={filter.value}>
+                              {filter.label}
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                    </div>
+                    
+                    <div className="flex items-center gap-2 w-full lg:w-auto">
+                      <span className="text-sm font-medium text-gray-900 dark:text-gray-100 whitespace-nowrap">Sort by:</span>
+                      <Select value={sortBy} onValueChange={setSortBy}>
+                        <SelectTrigger className="w-full lg:w-48 bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100">
+                          <SelectValue placeholder="Sort by" />
+                        </SelectTrigger>
+                        <SelectContent className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+                          {sortOptions.map(option => (
+                            <SelectItem key={option.value} value={option.value}>
+                              {option.label}
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                    </div>
+
+                    <Button 
+                      onClick={fetchRepositories} 
+                      disabled={loading}
+                      variant="outline"
+                      size="sm"
+                      className="flex items-center gap-2 w-full lg:w-auto bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-600"
+                    >
+                      {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Filter className="w-4 h-4" />}
+                      {loading ? 'Loading...' : 'Apply Filters'}
+                    </Button>
+                  </div>
+                  
+                  {/* Results count */}
+                  <div className="mt-4 text-sm text-gray-600 dark:text-gray-400 border-t border-gray-200 dark:border-gray-700 pt-4">
+                    Found <span className="font-medium text-gray-900 dark:text-gray-100">{filteredRepos.length}</span> repositories
+                    {selectedCountry !== 'all' && ` in ${countries.find(c => c.code === selectedCountry)?.name}`}
+                    {selectedTime !== 'all' && ` from ${timeFilters.find(t => t.value === selectedTime)?.label}`}
+                  </div>
+                  </div>
+                </div>
 
             {/* Error State */}
             {error && (
@@ -494,6 +554,7 @@ export default function Repositories() {
               </div>
             )}
           </div>
+        </div>
         </div>
       </div>
     </div>
