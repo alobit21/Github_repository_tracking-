@@ -40,8 +40,8 @@ jobs:
       # 5️⃣ Configure Git
       - name: Configure Git
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "alobit21"
+          git config user.email "macmtavangu@gmail.com"
 
       # 6️⃣ Provide token to your script
       - name: Set GitHub token for script
