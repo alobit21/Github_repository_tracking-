@@ -17,12 +17,12 @@
     {
       "name": "HKUDS/OpenSpace",
       "description": "\"OpenSpace: Make Your Agents: Smarter, Low-Cost, Self-Evolving\" -- Community: https://open-space.cloud/",
-      "stars": 2854,
+      "stars": 2855,
       "forks": 307,
       "issues": 34,
       "language": "Python",
       "url": "https://github.com/HKUDS/OpenSpace",
-      "starDelta": 479,
+      "starDelta": 480,
       "contributorDelta": null,
       "issueDelta": 3,
       "score": null
@@ -56,12 +56,12 @@
     {
       "name": "alvinunreal/awesome-opensource-ai",
       "description": "Curated list of the best truly open-source AI projects, models, tools, and infrastructure.",
-      "stars": 2051,
+      "stars": 2052,
       "forks": 158,
       "issues": 10,
       "language": null,
       "url": "https://github.com/alvinunreal/awesome-opensource-ai",
-      "starDelta": 151,
+      "starDelta": 152,
       "contributorDelta": null,
       "issueDelta": 1,
       "score": null
@@ -69,15 +69,15 @@
     {
       "name": "TheTom/turboquant_plus",
       "description": null,
-      "stars": 1625,
+      "stars": 1631,
       "forks": 142,
       "issues": 17,
       "language": "Python",
       "url": "https://github.com/TheTom/turboquant_plus",
-      "starDelta": 1625,
+      "starDelta": 1631,
       "contributorDelta": 0,
       "issueDelta": 17,
-      "score": 3275.5
+      "score": 3287.5
     },
     {
       "name": "qiuzhi2046/Qclaw",
@@ -95,28 +95,28 @@
     {
       "name": "facebookresearch/tribev2",
       "description": "This repository contains the code to train and evaluate TRIBE v2, a multimodal model for brain response prediction",
-      "stars": 1045,
+      "stars": 1046,
       "forks": 209,
       "issues": 11,
       "language": "Jupyter Notebook",
       "url": "https://github.com/facebookresearch/tribev2",
-      "starDelta": 1045,
+      "starDelta": 1046,
       "contributorDelta": 0,
       "issueDelta": 11,
-      "score": 2106.5
+      "score": 2108.5
     },
     {
       "name": "yetone/voice-input-src",
       "description": null,
-      "stars": 1022,
+      "stars": 1023,
       "forks": 98,
       "issues": 2,
       "language": null,
       "url": "https://github.com/yetone/voice-input-src",
-      "starDelta": 1022,
+      "starDelta": 1023,
       "contributorDelta": 0,
       "issueDelta": 2,
-      "score": 2047
+      "score": 2049
     },
     {
       "name": "nashsu/opencli-rs",
@@ -188,15 +188,15 @@
     {
       "name": "Michaelliv/markit",
       "description": "🖍️ Convert anything to markdown. Mark it.",
-      "stars": 863,
+      "stars": 864,
       "forks": 36,
       "issues": 0,
       "language": "TypeScript",
       "url": "https://github.com/Michaelliv/markit",
-      "starDelta": 863,
+      "starDelta": 864,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 1726
+      "score": 1728
     },
     {
       "name": "legalize-dev/legalize-es",
@@ -240,21 +240,21 @@
     {
       "name": "garinasset/leak-check",
       "description": "个人信息 “泄漏” 检测接口",
-      "stars": 760,
+      "stars": 761,
       "forks": 101,
       "issues": 1,
       "language": "Python",
       "url": "https://github.com/garinasset/leak-check",
-      "starDelta": 760,
+      "starDelta": 761,
       "contributorDelta": 0,
       "issueDelta": 1,
-      "score": 1521.5
+      "score": 1523.5
     },
     {
       "name": "revfactory/harness",
       "description": "A meta-skill that designs domain-specific agent teams, defines specialized agents, and generates the skills they use.",
       "stars": 757,
-      "forks": 97,
+      "forks": 98,
       "issues": 0,
       "language": "HTML",
       "url": "https://github.com/revfactory/harness",
@@ -282,12 +282,12 @@
     {
       "name": "HKUDS/OpenSpace",
       "description": "\"OpenSpace: Make Your Agents: Smarter, Low-Cost, Self-Evolving\" -- Community: https://open-space.cloud/",
-      "stars": 2854,
+      "stars": 2855,
       "forks": 307,
       "issues": 34,
       "language": "Python",
       "url": "https://github.com/HKUDS/OpenSpace",
-      "starDelta": 479,
+      "starDelta": 480,
       "contributorDelta": null,
       "issueDelta": 3,
       "score": null
@@ -321,12 +321,12 @@
     {
       "name": "alvinunreal/awesome-opensource-ai",
       "description": "Curated list of the best truly open-source AI projects, models, tools, and infrastructure.",
-      "stars": 2051,
+      "stars": 2052,
       "forks": 158,
       "issues": 10,
       "language": null,
       "url": "https://github.com/alvinunreal/awesome-opensource-ai",
-      "starDelta": 151,
+      "starDelta": 152,
       "contributorDelta": null,
       "issueDelta": 1,
       "score": null
@@ -334,15 +334,15 @@
     {
       "name": "TheTom/turboquant_plus",
       "description": null,
-      "stars": 1625,
+      "stars": 1631,
       "forks": 142,
       "issues": 17,
       "language": "Python",
       "url": "https://github.com/TheTom/turboquant_plus",
-      "starDelta": 1625,
+      "starDelta": 1631,
       "contributorDelta": 0,
       "issueDelta": 17,
-      "score": 3275.5
+      "score": 3287.5
     },
     {
       "name": "qiuzhi2046/Qclaw",
@@ -360,28 +360,28 @@
     {
       "name": "facebookresearch/tribev2",
       "description": "This repository contains the code to train and evaluate TRIBE v2, a multimodal model for brain response prediction",
-      "stars": 1045,
+      "stars": 1046,
       "forks": 209,
       "issues": 11,
       "language": "Jupyter Notebook",
       "url": "https://github.com/facebookresearch/tribev2",
-      "starDelta": 1045,
+      "starDelta": 1046,
       "contributorDelta": 0,
       "issueDelta": 11,
-      "score": 2106.5
+      "score": 2108.5
     },
     {
       "name": "yetone/voice-input-src",
       "description": null,
-      "stars": 1022,
+      "stars": 1023,
       "forks": 98,
       "issues": 2,
       "language": null,
       "url": "https://github.com/yetone/voice-input-src",
-      "starDelta": 1022,
+      "starDelta": 1023,
       "contributorDelta": 0,
       "issueDelta": 2,
-      "score": 2047
+      "score": 2049
     },
     {
       "name": "oaker-io/wewrite",
