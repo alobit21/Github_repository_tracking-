@@ -1,13 +1,49 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" style="background-color: #0d1117; color: #c9d1d9;">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/github-tracking-icon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Github Repository Tracking</title>
+    
+    <!-- Critical CSS - Load first to prevent flash -->
+    <link rel="stylesheet" href="/critical.css">
+    
+    <style>
+      /* Additional critical inline styles */
+      html, body {
+        background-color: #0d1117 !important;
+        color: #c9d1d9 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+        min-height: 100vh !important;
+        overflow-x: hidden !important;
+      }
+      
+      #root {
+        background-color: #0d1117 !important;
+        color: #c9d1d9 !important;
+        min-height: 100vh !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      
+      /* Prevent any default browser styles that might cause white flashes */
+      * {
+        box-sizing: border-box;
+      }
+      
+      /* Override any potential white backgrounds */
+      div, section, main, article, aside, header, footer, nav {
+        background-color: #0d1117 !important;
+      }
+    </style>
+    <link rel="stylesheet" href="/src/index.css">
   </head>
-  <body>
-    <div id="root"></div>
+  <body style="background-color: #0d1117; color: #c9d1d9; margin: 0; padding: 0; width: 100%; min-height: 100vh; overflow-x: hidden;">
+    <div id="root" style="background-color: #0d1117; color: #c9d1d9; min-height: 100vh; width: 100%; margin: 0; padding: 0;"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

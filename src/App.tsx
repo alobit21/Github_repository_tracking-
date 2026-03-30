@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center text-center px-6 bg-gradient-to-br from-blue-50 to-indigo-100">
+    <main className="min-h-screen flex flex-col items-center justify-center text-center px-6">
       <div className="test-tailwind bg-red-500 text-white p-4 rounded-lg mb-4">
         Test Tailwind - This should be red with white text
       </div>
