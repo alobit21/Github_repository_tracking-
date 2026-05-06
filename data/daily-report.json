@@ -30,12 +30,12 @@
     {
       "name": "vercel-labs/deepsec",
       "description": "Deepsec is a security harness for finding vulnerabilities in your codebase powered by coding agents",
-      "stars": 1244,
+      "stars": 1246,
       "forks": 82,
       "issues": 19,
       "language": "TypeScript",
       "url": "https://github.com/vercel-labs/deepsec",
-      "starDelta": 272,
+      "starDelta": 274,
       "contributorDelta": null,
       "issueDelta": 1,
       "score": null
@@ -43,12 +43,12 @@
     {
       "name": "mattpocock/dictionary-of-ai-coding",
       "description": "AI coding jargon, explained in plain English.",
-      "stars": 1115,
-      "forks": 135,
+      "stars": 1116,
+      "forks": 136,
       "issues": 1,
       "language": "TypeScript",
       "url": "https://github.com/mattpocock/dictionary-of-ai-coding",
-      "starDelta": 68,
+      "starDelta": 69,
       "contributorDelta": null,
       "issueDelta": 1,
       "score": null
@@ -69,12 +69,12 @@
     {
       "name": "vibeforge1111/keep-codex-fast",
       "description": "A backup-first Codex skill for keeping local Codex state fast, clean, and recoverable.",
-      "stars": 798,
+      "stars": 799,
       "forks": 44,
       "issues": 2,
       "language": "Python",
       "url": "https://github.com/vibeforge1111/keep-codex-fast",
-      "starDelta": 75,
+      "starDelta": 76,
       "contributorDelta": null,
       "issueDelta": 0,
       "score": null
@@ -82,54 +82,54 @@
     {
       "name": "XBuilderLAB/cheat-on-content",
       "description": "Content is already a cheat-code race—whoever cracks the patterns first wins the traffic. Your auto-evolving ops expert that learns YOUR account, not the global average. The Claude Code workflow behind 1M followers in 1 month.",
-      "stars": 673,
+      "stars": 677,
       "forks": 133,
       "issues": 3,
       "language": "Python",
       "url": "https://github.com/XBuilderLAB/cheat-on-content",
-      "starDelta": 673,
+      "starDelta": 677,
       "contributorDelta": 0,
       "issueDelta": 3,
-      "score": 1350.5
+      "score": 1358.5
     },
     {
       "name": "tddworks/baguette",
       "description": "Headless iOS Simulator manager/farm + host-side input injection for iOS 26 — taps, swipes, multi-finger gestures, and 60 fps streaming",
-      "stars": 670,
+      "stars": 671,
       "forks": 25,
       "issues": 1,
       "language": "Swift",
       "url": "https://github.com/tddworks/baguette",
-      "starDelta": 670,
+      "starDelta": 671,
       "contributorDelta": 0,
       "issueDelta": 1,
-      "score": 1341.5
+      "score": 1343.5
     },
     {
       "name": "crafter-station/petdex",
       "description": "Public gallery of animated Codex pets",
-      "stars": 599,
+      "stars": 604,
       "forks": 31,
       "issues": 6,
       "language": "TypeScript",
       "url": "https://github.com/crafter-station/petdex",
-      "starDelta": 599,
+      "starDelta": 604,
       "contributorDelta": 0,
       "issueDelta": 6,
-      "score": 1207
+      "score": 1217
     },
     {
       "name": "jherrodthomas/automotive-skills-suite",
       "description": "100+ installable Claude skills covering Engineering areas such as, ISO 26262 functional safety, ISO/SAE 21434 cybersecurity, ISO 21448 SOTIF, AIAG-VDA quality (APQP/PPAP/FMEA), Automotive SPICE, and continuous improvement tools — every builder paired with a confirmation reviewer.",
-      "stars": 578,
+      "stars": 581,
       "forks": 15,
       "issues": 0,
       "language": null,
       "url": "https://github.com/jherrodthomas/automotive-skills-suite",
-      "starDelta": 578,
+      "starDelta": 581,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 1156
+      "score": 1162
     }
   ],
   "silentClimbers": [
@@ -149,41 +149,41 @@
     {
       "name": "raiyanyahya/how-to-train-your-gpt",
       "description": "Build a modern LLM from scratch. Every line commented. Explained like we are five.",
-      "stars": 523,
+      "stars": 527,
       "forks": 68,
       "issues": 0,
       "language": "Jupyter Notebook",
       "url": "https://github.com/raiyanyahya/how-to-train-your-gpt",
-      "starDelta": 523,
+      "starDelta": 527,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 1046
+      "score": 1054
     },
     {
       "name": "techjarves/OpenClaude-Portable",
       "description": "Run Claude Code from a USB drive on any PC — no installation required.",
-      "stars": 481,
+      "stars": 483,
       "forks": 182,
       "issues": 8,
       "language": "HTML",
       "url": "https://github.com/techjarves/OpenClaude-Portable",
-      "starDelta": 481,
+      "starDelta": 483,
       "contributorDelta": 0,
       "issueDelta": 8,
-      "score": 974
+      "score": 978
     },
     {
       "name": "jherrodthomas/robotics-skills-suite",
       "description": "76 audit-ready Claude skills automating the industrial robot, cobot, AMR, ROS2, V&V, AI/ML, and IEC 62443 lifecycle. 38 builder + reviewer pairs anchored to ISO 10218, 13849, 62061, 12100, 9283, 15066, 3691-4, and IEC 62443.",
-      "stars": 486,
+      "stars": 487,
       "forks": 14,
       "issues": 0,
       "language": null,
       "url": "https://github.com/jherrodthomas/robotics-skills-suite",
-      "starDelta": 486,
+      "starDelta": 487,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 972
+      "score": 974
     },
     {
       "name": "NamKhoa-07/Voidstrap",
@@ -295,12 +295,12 @@
     {
       "name": "vercel-labs/deepsec",
       "description": "Deepsec is a security harness for finding vulnerabilities in your codebase powered by coding agents",
-      "stars": 1244,
+      "stars": 1246,
       "forks": 82,
       "issues": 19,
       "language": "TypeScript",
       "url": "https://github.com/vercel-labs/deepsec",
-      "starDelta": 272,
+      "starDelta": 274,
       "contributorDelta": null,
       "issueDelta": 1,
       "score": null
@@ -308,12 +308,12 @@
     {
       "name": "mattpocock/dictionary-of-ai-coding",
       "description": "AI coding jargon, explained in plain English.",
-      "stars": 1115,
-      "forks": 135,
+      "stars": 1116,
+      "forks": 136,
       "issues": 1,
       "language": "TypeScript",
       "url": "https://github.com/mattpocock/dictionary-of-ai-coding",
-      "starDelta": 68,
+      "starDelta": 69,
       "contributorDelta": null,
       "issueDelta": 1,
       "score": null
@@ -321,12 +321,12 @@
     {
       "name": "vibeforge1111/keep-codex-fast",
       "description": "A backup-first Codex skill for keeping local Codex state fast, clean, and recoverable.",
-      "stars": 798,
+      "stars": 799,
       "forks": 44,
       "issues": 2,
       "language": "Python",
       "url": "https://github.com/vibeforge1111/keep-codex-fast",
-      "starDelta": 75,
+      "starDelta": 76,
       "contributorDelta": null,
       "issueDelta": 0,
       "score": null
@@ -334,54 +334,54 @@
     {
       "name": "XBuilderLAB/cheat-on-content",
       "description": "Content is already a cheat-code race—whoever cracks the patterns first wins the traffic. Your auto-evolving ops expert that learns YOUR account, not the global average. The Claude Code workflow behind 1M followers in 1 month.",
-      "stars": 673,
+      "stars": 677,
       "forks": 133,
       "issues": 3,
       "language": "Python",
       "url": "https://github.com/XBuilderLAB/cheat-on-content",
-      "starDelta": 673,
+      "starDelta": 677,
       "contributorDelta": 0,
       "issueDelta": 3,
-      "score": 1350.5
+      "score": 1358.5
     },
     {
       "name": "tddworks/baguette",
       "description": "Headless iOS Simulator manager/farm + host-side input injection for iOS 26 — taps, swipes, multi-finger gestures, and 60 fps streaming",
-      "stars": 670,
+      "stars": 671,
       "forks": 25,
       "issues": 1,
       "language": "Swift",
       "url": "https://github.com/tddworks/baguette",
-      "starDelta": 670,
+      "starDelta": 671,
       "contributorDelta": 0,
       "issueDelta": 1,
-      "score": 1341.5
+      "score": 1343.5
     },
     {
       "name": "crafter-station/petdex",
       "description": "Public gallery of animated Codex pets",
-      "stars": 599,
+      "stars": 604,
       "forks": 31,
       "issues": 6,
       "language": "TypeScript",
       "url": "https://github.com/crafter-station/petdex",
-      "starDelta": 599,
+      "starDelta": 604,
       "contributorDelta": 0,
       "issueDelta": 6,
-      "score": 1207
+      "score": 1217
     },
     {
       "name": "jherrodthomas/automotive-skills-suite",
       "description": "100+ installable Claude skills covering Engineering areas such as, ISO 26262 functional safety, ISO/SAE 21434 cybersecurity, ISO 21448 SOTIF, AIAG-VDA quality (APQP/PPAP/FMEA), Automotive SPICE, and continuous improvement tools — every builder paired with a confirmation reviewer.",
-      "stars": 578,
+      "stars": 581,
       "forks": 15,
       "issues": 0,
       "language": null,
       "url": "https://github.com/jherrodthomas/automotive-skills-suite",
-      "starDelta": 578,
+      "starDelta": 581,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 1156
+      "score": 1162
     },
     {
       "name": "Tommy-yw/RunbookHermes",
