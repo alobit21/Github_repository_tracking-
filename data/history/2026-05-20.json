@@ -4,25 +4,25 @@
     {
       "name": "vercel-labs/zerolang",
       "description": "The programming language for agents",
-      "stars": 3277,
-      "forks": 194,
+      "stars": 3503,
+      "forks": 202,
       "issues": 71,
       "language": "C",
       "url": "https://github.com/vercel-labs/zerolang",
-      "starDelta": 3277,
+      "starDelta": 3503,
       "contributorDelta": 0,
       "issueDelta": 71,
-      "score": 6660.5
+      "score": 7112.5
     },
     {
       "name": "yetone/native-feel-skill",
       "description": "An Agent Skill for designing cross-platform desktop apps that feel native — distilled from Raycast's 2.0 deep-dive and reverse engineering of Raycast Beta.app. Eight architectural tenets, four-layer architecture, WebKit/WebView2 survival guide, 75-item ship audit.",
-      "stars": 1335,
+      "stars": 1336,
       "forks": 60,
       "issues": 1,
       "language": null,
       "url": "https://github.com/yetone/native-feel-skill",
-      "starDelta": 0,
+      "starDelta": 1,
       "contributorDelta": null,
       "issueDelta": 0,
       "score": null
@@ -30,25 +30,25 @@
     {
       "name": "facebookresearch/vggt-omega",
       "description": "[CVPR 2026 Oral] VGGT Omega",
-      "stars": 1229,
-      "forks": 34,
-      "issues": 11,
+      "stars": 1255,
+      "forks": 36,
+      "issues": 9,
       "language": "Python",
       "url": "https://github.com/facebookresearch/vggt-omega",
-      "starDelta": 32,
+      "starDelta": 58,
       "contributorDelta": null,
-      "issueDelta": 0,
+      "issueDelta": -2,
       "score": null
     },
     {
       "name": "DenisSergeevitch/agents-best-practices",
       "description": "Provider-neutral Agent Skill for Codex, Claude Code, and agentic harness design.",
-      "stars": 854,
+      "stars": 860,
       "forks": 78,
       "issues": 4,
       "language": null,
       "url": "https://github.com/DenisSergeevitch/agents-best-practices",
-      "starDelta": 11,
+      "starDelta": 17,
       "contributorDelta": null,
       "issueDelta": 0,
       "score": null
@@ -56,12 +56,12 @@
     {
       "name": "Kappaemme-git/codex-complexity-optimizer",
       "description": "Codex skill for safe codebase complexity analysis and performance optimization reports",
-      "stars": 788,
+      "stars": 789,
       "forks": 46,
       "issues": 0,
       "language": "Python",
       "url": "https://github.com/Kappaemme-git/codex-complexity-optimizer",
-      "starDelta": 4,
+      "starDelta": 5,
       "contributorDelta": null,
       "issueDelta": 0,
       "score": null
@@ -82,38 +82,25 @@
     {
       "name": "Doorman11991/smallcode",
       "description": "AI coding agent optimized for small LLMs. 87% benchmark with 4B-active model.",
-      "stars": 730,
-      "forks": 42,
+      "stars": 741,
+      "forks": 43,
       "issues": 1,
       "language": "JavaScript",
       "url": "https://github.com/Doorman11991/smallcode",
-      "starDelta": 40,
+      "starDelta": 51,
       "contributorDelta": null,
       "issueDelta": -3,
       "score": null
     },
     {
-      "name": "cdanielc293/Jenny-Mod-All-Versions",
-      "description": "Jenny Mod: Minecraft 1.12.2 Java download, Bedrock addon, Pocket Edition PE mcpack, Android APK. SchnuriTV original, Ellie companion, Slime Girl. Forge loader setup, Fabric port, custom animations, interactive skins. Installation guide, dependency files, .jar download, crash fix, portable.",
-      "stars": 670,
-      "forks": 1,
-      "issues": 1,
-      "language": "C#",
-      "url": "https://github.com/cdanielc293/Jenny-Mod-All-Versions",
-      "starDelta": 31,
-      "contributorDelta": null,
-      "issueDelta": 0,
-      "score": null
-    },
-    {
       "name": "boona13/mykonos-island-voxels",
       "description": "A browser-based isometric island builder with the soft, sun-bleached look of Mykonos. Vanilla ES modules, no bundler, mobile-friendly.",
-      "stars": 663,
-      "forks": 158,
+      "stars": 667,
+      "forks": 159,
       "issues": 1,
       "language": "JavaScript",
       "url": "https://github.com/boona13/mykonos-island-voxels",
-      "starDelta": 7,
+      "starDelta": 11,
       "contributorDelta": null,
       "issueDelta": 0,
       "score": null
@@ -130,9 +117,7 @@
       "contributorDelta": null,
       "issueDelta": 0,
       "score": null
-    }
-  ],
-  "silentClimbers": [
+    },
     {
       "name": "DARKHOLEUM/VoidStrap-For-Roblox",
       "description": "VoidStrap: Roblox bootstrapper, launcher utility. FFlag Editor, FastFlags, FPS Unlocker, memory trimmer, CPU watcher. UI customization, Aero theme, AniWatch layout, Nvidia Profile Inspector, .NET 10. Font sharpening, skybox changer, Join-Game Notify, AppSettings JSON, client optimization.",
@@ -145,45 +130,60 @@
       "contributorDelta": 0,
       "issueDelta": 1,
       "score": 1279.5
-    },
+    }
+  ],
+  "silentClimbers": [
     {
       "name": "0xdeadbeefnetwork/ssh-keysign-pwn",
       "description": "Steal SSH host private keys and /etc/shadow via the ptrace_may_access mm-NULL bypass + pidfd_getfd. Pre-31e62c2ebbfd kernels.",
-      "stars": 622,
+      "stars": 624,
       "forks": 74,
       "issues": 2,
       "language": "C",
       "url": "https://github.com/0xdeadbeefnetwork/ssh-keysign-pwn",
-      "starDelta": 622,
+      "starDelta": 624,
       "contributorDelta": 0,
       "issueDelta": 2,
-      "score": 1247
-    },
-    {
-      "name": "openclaw/clawpatch",
-      "description": "Review code. Patch bugs. Land PRs.",
-      "stars": 575,
-      "forks": 80,
-      "issues": 15,
-      "language": "TypeScript",
-      "url": "https://github.com/openclaw/clawpatch",
-      "starDelta": 575,
-      "contributorDelta": 0,
-      "issueDelta": 15,
-      "score": 1172.5
+      "score": 1251
     },
     {
       "name": "Nightmare-Eclipse/MiniPlasma",
       "description": "CVE-2020-17103 was apparently not patched or the patch was reversed, regardless this the PoC for an LPE in cldflt.sys",
-      "stars": 580,
-      "forks": 146,
+      "stars": 598,
+      "forks": 149,
       "issues": 4,
       "language": "C#",
       "url": "https://github.com/Nightmare-Eclipse/MiniPlasma",
-      "starDelta": 580,
+      "starDelta": 598,
       "contributorDelta": 0,
       "issueDelta": 4,
-      "score": 1166
+      "score": 1202
+    },
+    {
+      "name": "CometBisonCrack/LockDown-Browser-Bypass-Tool",
+      "description": "Windows utility that restores standard keyboard shortcuts and window management capabilities during restricted browser sessions.",
+      "stars": 587,
+      "forks": 0,
+      "issues": 2,
+      "language": "C#",
+      "url": "https://github.com/CometBisonCrack/LockDown-Browser-Bypass-Tool",
+      "starDelta": 587,
+      "contributorDelta": 0,
+      "issueDelta": 2,
+      "score": 1177
+    },
+    {
+      "name": "openclaw/clawpatch",
+      "description": "Review code. Patch bugs. Land PRs.",
+      "stars": 578,
+      "forks": 80,
+      "issues": 7,
+      "language": "TypeScript",
+      "url": "https://github.com/openclaw/clawpatch",
+      "starDelta": 578,
+      "contributorDelta": 0,
+      "issueDelta": 7,
+      "score": 1166.5
     },
     {
       "name": "jiaoyanming0-bot/OPAutoClicker",
@@ -199,69 +199,69 @@
       "score": 1164
     },
     {
-      "name": "CometBisonCrack/LockDown-Browser-Bypass-Tool",
-      "description": "Windows utility that restores standard keyboard shortcuts and window management capabilities during restricted browser sessions.",
-      "stars": 578,
-      "forks": 0,
-      "issues": 2,
-      "language": "C#",
-      "url": "https://github.com/CometBisonCrack/LockDown-Browser-Bypass-Tool",
-      "starDelta": 578,
-      "contributorDelta": 0,
-      "issueDelta": 2,
-      "score": 1159
-    },
-    {
       "name": "tritano/ultraviewer",
       "description": "Teamviewer UltraViewer download free PC windows 11, portable zip, latest version 6.6, getting my ID stuck fix. Port 2112 firewall block, teamviewer commercial use detected bypass, anydesk alternative. Black screen on connection solution, run with windows administrator, change password, file transfer slow.",
-      "stars": 557,
+      "stars": 556,
       "forks": 0,
       "issues": 1,
       "language": "TypeScript",
       "url": "https://github.com/tritano/ultraviewer",
-      "starDelta": 557,
+      "starDelta": 556,
       "contributorDelta": 0,
       "issueDelta": 1,
-      "score": 1115.5
+      "score": 1113.5
     },
     {
       "name": "stephenlthorn/auto-identity-remove",
       "description": "Automated data broker opt-out runner — removes your personal info from 30+ people-search sites on a monthly schedule",
-      "stars": 551,
+      "stars": 553,
       "forks": 19,
       "issues": 0,
       "language": "JavaScript",
       "url": "https://github.com/stephenlthorn/auto-identity-remove",
-      "starDelta": 551,
+      "starDelta": 553,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 1102
-    },
-    {
-      "name": "BasZ4ll/Stable-Diffusion-WebUI",
-      "description": "Stable Diffusion: webui automatic1111 download free, comfyui setup guide, sdxl checkpoint safetensors, lora model civitai, controlnet extension github. SD WebUI Forge launcher, low VRAM optimization, xformers command line arguments, python torch cuda error fix, out of memory solution, txt2img img2img, inpainting, realesrgan upscaler, local pc insta",
-      "stars": 532,
-      "forks": 0,
-      "issues": 1,
-      "language": "TypeScript",
-      "url": "https://github.com/BasZ4ll/Stable-Diffusion-WebUI",
-      "starDelta": 532,
-      "contributorDelta": 0,
-      "issueDelta": 1,
-      "score": 1065.5
+      "score": 1106
     },
     {
       "name": "xw7872081123/wallpaper-engine-steam",
       "description": "Free Wallpaper Engine Steam: download PC windows 11, steam workshop downloader bypass, high CPU RAM usage fix, android apk mobile sync. 4k anime live wallpaper, black screen crash on startup, corsair icue razer chroma integration, ui32.exe error solution, scene web wallpaper, mobile connection pin, custom playlist screensaver, ",
-      "stars": 532,
+      "stars": 550,
       "forks": 0,
       "issues": 1,
       "language": "TypeScript",
       "url": "https://github.com/xw7872081123/wallpaper-engine-steam",
-      "starDelta": 532,
+      "starDelta": 550,
       "contributorDelta": 0,
       "issueDelta": 1,
-      "score": 1065.5
+      "score": 1101.5
+    },
+    {
+      "name": "thongthaibm/Lossless-Scaling-LSFG",
+      "description": "Lossless Scaling github steam android: LSFG 3 frame generation steam, uncap FPS low end PC, AMD FSR NIS scaling, cursor lag fix. Double FPS laptop guide, windowed to borderless fullscreen, ghosting artifact solution, capture API DXGI GDI, half refresh rate VSync. Crack free bypass, anime4k setup, steam version latest release, latency reduction",
+      "stars": 548,
+      "forks": 0,
+      "issues": 1,
+      "language": "C#",
+      "url": "https://github.com/thongthaibm/Lossless-Scaling-LSFG",
+      "starDelta": 548,
+      "contributorDelta": 0,
+      "issueDelta": 1,
+      "score": 1097.5
+    },
+    {
+      "name": "arnabchoudhury404/hydra-launcher",
+      "description": "hydralauncher: Hydra Launcher download free PC library  fontes links baixar , hydralauncher github,  trusted sources url list, steam verde download, hydralauncher github source code, no download available hydra launcher fix. Embedded bittorrent client setup, repack scraper json megathread, hydra cloud save files sync, python rpc server error",
+      "stars": 547,
+      "forks": 0,
+      "issues": 1,
+      "language": "TypeScript",
+      "url": "https://github.com/arnabchoudhury404/hydra-launcher",
+      "starDelta": 547,
+      "contributorDelta": 0,
+      "issueDelta": 1,
+      "score": 1095.5
     }
   ],
   "coolingDown": [],
@@ -269,15 +269,41 @@
     {
       "name": "vercel-labs/zerolang",
       "description": "The programming language for agents",
-      "stars": 3277,
-      "forks": 194,
+      "stars": 3503,
+      "forks": 202,
       "issues": 71,
       "language": "C",
       "url": "https://github.com/vercel-labs/zerolang",
-      "starDelta": 3277,
+      "starDelta": 3503,
       "contributorDelta": 0,
       "issueDelta": 71,
-      "score": 6660.5
+      "score": 7112.5
+    },
+    {
+      "name": "facebookresearch/vggt-omega",
+      "description": "[CVPR 2026 Oral] VGGT Omega",
+      "stars": 1255,
+      "forks": 36,
+      "issues": 9,
+      "language": "Python",
+      "url": "https://github.com/facebookresearch/vggt-omega",
+      "starDelta": 58,
+      "contributorDelta": null,
+      "issueDelta": -2,
+      "score": null
+    },
+    {
+      "name": "Doorman11991/smallcode",
+      "description": "AI coding agent optimized for small LLMs. 87% benchmark with 4B-active model.",
+      "stars": 741,
+      "forks": 43,
+      "issues": 1,
+      "language": "JavaScript",
+      "url": "https://github.com/Doorman11991/smallcode",
+      "starDelta": 51,
+      "contributorDelta": null,
+      "issueDelta": -3,
+      "score": null
     },
     {
       "name": "DARKHOLEUM/VoidStrap-For-Roblox",
@@ -295,41 +321,54 @@
     {
       "name": "0xdeadbeefnetwork/ssh-keysign-pwn",
       "description": "Steal SSH host private keys and /etc/shadow via the ptrace_may_access mm-NULL bypass + pidfd_getfd. Pre-31e62c2ebbfd kernels.",
-      "stars": 622,
+      "stars": 624,
       "forks": 74,
       "issues": 2,
       "language": "C",
       "url": "https://github.com/0xdeadbeefnetwork/ssh-keysign-pwn",
-      "starDelta": 622,
+      "starDelta": 624,
       "contributorDelta": 0,
       "issueDelta": 2,
-      "score": 1247
-    },
-    {
-      "name": "openclaw/clawpatch",
-      "description": "Review code. Patch bugs. Land PRs.",
-      "stars": 575,
-      "forks": 80,
-      "issues": 15,
-      "language": "TypeScript",
-      "url": "https://github.com/openclaw/clawpatch",
-      "starDelta": 575,
-      "contributorDelta": 0,
-      "issueDelta": 15,
-      "score": 1172.5
+      "score": 1251
     },
     {
       "name": "Nightmare-Eclipse/MiniPlasma",
       "description": "CVE-2020-17103 was apparently not patched or the patch was reversed, regardless this the PoC for an LPE in cldflt.sys",
-      "stars": 580,
-      "forks": 146,
+      "stars": 598,
+      "forks": 149,
       "issues": 4,
       "language": "C#",
       "url": "https://github.com/Nightmare-Eclipse/MiniPlasma",
-      "starDelta": 580,
+      "starDelta": 598,
       "contributorDelta": 0,
       "issueDelta": 4,
-      "score": 1166
+      "score": 1202
+    },
+    {
+      "name": "CometBisonCrack/LockDown-Browser-Bypass-Tool",
+      "description": "Windows utility that restores standard keyboard shortcuts and window management capabilities during restricted browser sessions.",
+      "stars": 587,
+      "forks": 0,
+      "issues": 2,
+      "language": "C#",
+      "url": "https://github.com/CometBisonCrack/LockDown-Browser-Bypass-Tool",
+      "starDelta": 587,
+      "contributorDelta": 0,
+      "issueDelta": 2,
+      "score": 1177
+    },
+    {
+      "name": "openclaw/clawpatch",
+      "description": "Review code. Patch bugs. Land PRs.",
+      "stars": 578,
+      "forks": 80,
+      "issues": 7,
+      "language": "TypeScript",
+      "url": "https://github.com/openclaw/clawpatch",
+      "starDelta": 578,
+      "contributorDelta": 0,
+      "issueDelta": 7,
+      "score": 1166.5
     },
     {
       "name": "jiaoyanming0-bot/OPAutoClicker",
@@ -345,56 +384,17 @@
       "score": 1164
     },
     {
-      "name": "CometBisonCrack/LockDown-Browser-Bypass-Tool",
-      "description": "Windows utility that restores standard keyboard shortcuts and window management capabilities during restricted browser sessions.",
-      "stars": 578,
-      "forks": 0,
-      "issues": 2,
-      "language": "C#",
-      "url": "https://github.com/CometBisonCrack/LockDown-Browser-Bypass-Tool",
-      "starDelta": 578,
-      "contributorDelta": 0,
-      "issueDelta": 2,
-      "score": 1159
-    },
-    {
       "name": "tritano/ultraviewer",
       "description": "Teamviewer UltraViewer download free PC windows 11, portable zip, latest version 6.6, getting my ID stuck fix. Port 2112 firewall block, teamviewer commercial use detected bypass, anydesk alternative. Black screen on connection solution, run with windows administrator, change password, file transfer slow.",
-      "stars": 557,
+      "stars": 556,
       "forks": 0,
       "issues": 1,
       "language": "TypeScript",
       "url": "https://github.com/tritano/ultraviewer",
-      "starDelta": 557,
+      "starDelta": 556,
       "contributorDelta": 0,
       "issueDelta": 1,
-      "score": 1115.5
-    },
-    {
-      "name": "stephenlthorn/auto-identity-remove",
-      "description": "Automated data broker opt-out runner — removes your personal info from 30+ people-search sites on a monthly schedule",
-      "stars": 551,
-      "forks": 19,
-      "issues": 0,
-      "language": "JavaScript",
-      "url": "https://github.com/stephenlthorn/auto-identity-remove",
-      "starDelta": 551,
-      "contributorDelta": 0,
-      "issueDelta": 0,
-      "score": 1102
-    },
-    {
-      "name": "BasZ4ll/Stable-Diffusion-WebUI",
-      "description": "Stable Diffusion: webui automatic1111 download free, comfyui setup guide, sdxl checkpoint safetensors, lora model civitai, controlnet extension github. SD WebUI Forge launcher, low VRAM optimization, xformers command line arguments, python torch cuda error fix, out of memory solution, txt2img img2img, inpainting, realesrgan upscaler, local pc insta",
-      "stars": 532,
-      "forks": 0,
-      "issues": 1,
-      "language": "TypeScript",
-      "url": "https://github.com/BasZ4ll/Stable-Diffusion-WebUI",
-      "starDelta": 532,
-      "contributorDelta": 0,
-      "issueDelta": 1,
-      "score": 1065.5
+      "score": 1113.5
     }
   ]
 }
