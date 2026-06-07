@@ -4,12 +4,12 @@
     {
       "name": "b-nnett/goose",
       "description": "Goose Swift proof-of-concept README",
-      "stars": 2180,
-      "forks": 510,
+      "stars": 2199,
+      "forks": 514,
       "issues": 26,
       "language": "Rust",
       "url": "https://github.com/b-nnett/goose",
-      "starDelta": 19,
+      "starDelta": 38,
       "contributorDelta": null,
       "issueDelta": 0,
       "score": null
@@ -17,25 +17,25 @@
     {
       "name": "cpaczek/skylight",
       "description": "Project the aircraft passing overhead onto your ceiling in real time, from an RTL-SDR — with a live sky layer (sun, moon, stars, ISS) and where each plane is headed.",
-      "stars": 2136,
-      "forks": 208,
-      "issues": 7,
+      "stars": 2183,
+      "forks": 215,
+      "issues": 10,
       "language": "TypeScript",
       "url": "https://github.com/cpaczek/skylight",
-      "starDelta": 105,
+      "starDelta": 152,
       "contributorDelta": null,
-      "issueDelta": 2,
+      "issueDelta": 5,
       "score": null
     },
     {
       "name": "jd-opensource/JoyAI-Echo",
       "description": "JoyAI-Echo: Pushing the Frontier of Long Audio-Visual Generation",
-      "stars": 763,
+      "stars": 799,
       "forks": 47,
       "issues": 3,
       "language": "Python",
       "url": "https://github.com/jd-opensource/JoyAI-Echo",
-      "starDelta": 77,
+      "starDelta": 113,
       "contributorDelta": null,
       "issueDelta": 0,
       "score": null
@@ -43,12 +43,12 @@
     {
       "name": "qiuqiubuchongle-cloud/chokepoint-atlas",
       "description": null,
-      "stars": 593,
+      "stars": 594,
       "forks": 126,
       "issues": 1,
       "language": "Python",
       "url": "https://github.com/qiuqiubuchongle-cloud/chokepoint-atlas",
-      "starDelta": 3,
+      "starDelta": 4,
       "contributorDelta": null,
       "issueDelta": 0,
       "score": null
@@ -56,12 +56,12 @@
     {
       "name": "VAST-AI-Research/TripoSplat",
       "description": "TripoSplat converts a single 2D image into high-quality and variable number of 3D Gaussians, developed by TripoAI.",
-      "stars": 506,
+      "stars": 510,
       "forks": 47,
       "issues": 2,
       "language": "Python",
       "url": "https://github.com/VAST-AI-Research/TripoSplat",
-      "starDelta": 28,
+      "starDelta": 32,
       "contributorDelta": null,
       "issueDelta": 0,
       "score": null
@@ -69,12 +69,12 @@
     {
       "name": "tastyeffectco/sandboxes",
       "description": "Self-hosted dev sandboxes with preview URLs. One command. No Kubernetes, perfect for coding agents and Saas factories",
-      "stars": 478,
+      "stars": 484,
       "forks": 10,
       "issues": 5,
       "language": "Go",
       "url": "https://github.com/tastyeffectco/sandboxes",
-      "starDelta": 11,
+      "starDelta": 17,
       "contributorDelta": null,
       "issueDelta": 0,
       "score": null
@@ -82,54 +82,54 @@
     {
       "name": "tiantianGPU/reg-factory",
       "description": null,
-      "stars": 469,
-      "forks": 228,
+      "stars": 472,
+      "forks": 230,
       "issues": 0,
       "language": "Python",
       "url": "https://github.com/tiantianGPU/reg-factory",
-      "starDelta": 469,
+      "starDelta": 472,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 938
+      "score": 944
     },
     {
       "name": "Jane-xiaoer/xiaoer-videolab",
       "description": "One click on the toolbar grabs the current page's video into ~/Downloads — local yt-dlp daemon, 1800+ sites. 小耳抓视频：一键把当前页视频抓到本地。",
-      "stars": 457,
+      "stars": 459,
       "forks": 71,
       "issues": 0,
       "language": "JavaScript",
       "url": "https://github.com/Jane-xiaoer/xiaoer-videolab",
-      "starDelta": 457,
+      "starDelta": 459,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 914
+      "score": 918
     },
     {
       "name": "Fullive-AI/Anima",
       "description": "Make Every Hardware Intelligent — an open-source Agent OS for hardware intelligence",
-      "stars": 389,
+      "stars": 390,
       "forks": 9,
       "issues": 6,
       "language": "Python",
       "url": "https://github.com/Fullive-AI/Anima",
-      "starDelta": 389,
+      "starDelta": 390,
       "contributorDelta": 0,
       "issueDelta": 6,
-      "score": 787
+      "score": 789
     },
     {
       "name": "S-Sigdel/vimhjkl",
       "description": "learn vim from your terminal with spaced repetition",
-      "stars": 388,
+      "stars": 392,
       "forks": 6,
       "issues": 2,
       "language": "Python",
       "url": "https://github.com/S-Sigdel/vimhjkl",
-      "starDelta": 388,
+      "starDelta": 392,
       "contributorDelta": 0,
       "issueDelta": 2,
-      "score": 779
+      "score": 787
     }
   ],
   "silentClimbers": [
@@ -149,67 +149,67 @@
     {
       "name": "jeff141/meatshell",
       "description": "一个轻量级、低内存占用的 SSH / 终端客户端（A lightweight, low-memory SSH / terminal client）",
-      "stars": 343,
+      "stars": 363,
       "forks": 45,
       "issues": 13,
       "language": "Rust",
       "url": "https://github.com/jeff141/meatshell",
-      "starDelta": 343,
+      "starDelta": 363,
       "contributorDelta": 0,
       "issueDelta": 13,
-      "score": 705.5
+      "score": 745.5
     },
     {
       "name": "zenhosta/9drive",
       "description": "9Drive is a storage gateway web app for connecting multiple Google Drive accounts into one virtual storage dashboard. Users can connect Google Drive accounts, track quota, upload files, organize files with virtual folders, preview files, and let the backend route uploads to the Drive account with enough free space.",
-      "stars": 331,
-      "forks": 124,
+      "stars": 358,
+      "forks": 131,
       "issues": 0,
       "language": "TypeScript",
       "url": "https://github.com/zenhosta/9drive",
-      "starDelta": 331,
+      "starDelta": 358,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 662
+      "score": 716
     },
     {
       "name": "ConiferKit/sage",
       "description": null,
-      "stars": 306,
+      "stars": 309,
       "forks": 12,
       "issues": 0,
       "language": null,
       "url": "https://github.com/ConiferKit/sage",
-      "starDelta": 306,
+      "starDelta": 309,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 612
+      "score": 618
     },
     {
       "name": "nevertoday/zhongguo-traditional-colors",
       "description": "中华传统色演示、色卡浏览与颜色知识科普开源项目",
-      "stars": 287,
-      "forks": 36,
+      "stars": 298,
+      "forks": 38,
       "issues": 0,
       "language": "JavaScript",
       "url": "https://github.com/nevertoday/zhongguo-traditional-colors",
-      "starDelta": 287,
+      "starDelta": 298,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 574
+      "score": 596
     },
     {
       "name": "wy51ai/edulab",
       "description": null,
-      "stars": 263,
-      "forks": 57,
+      "stars": 268,
+      "forks": 59,
       "issues": 1,
       "language": "HTML",
       "url": "https://github.com/wy51ai/edulab",
-      "starDelta": 263,
+      "starDelta": 268,
       "contributorDelta": 0,
       "issueDelta": 1,
-      "score": 527.5
+      "score": 537.5
     },
     {
       "name": "CWS6206/ai-coding-starter-kit",
@@ -227,15 +227,15 @@
     {
       "name": "ni5arga/deanonymizer",
       "description": "Deanonymize anyone based on their public commenting or posting history & pattern.",
-      "stars": 255,
-      "forks": 84,
+      "stars": 257,
+      "forks": 85,
       "issues": 6,
       "language": "TypeScript",
       "url": "https://github.com/ni5arga/deanonymizer",
-      "starDelta": 255,
+      "starDelta": 257,
       "contributorDelta": 0,
       "issueDelta": 6,
-      "score": 519
+      "score": 523
     },
     {
       "name": "razr001/align-dev",
@@ -253,15 +253,15 @@
     {
       "name": "torvalds/ScrollWheel",
       "description": "Minimalist RP2350 magnetic sensor scroll wheel toy project",
-      "stars": 236,
+      "stars": 239,
       "forks": 7,
       "issues": 6,
       "language": "C",
       "url": "https://github.com/torvalds/ScrollWheel",
-      "starDelta": 236,
+      "starDelta": 239,
       "contributorDelta": 0,
       "issueDelta": 6,
-      "score": 481
+      "score": 487
     }
   ],
   "coolingDown": [],
@@ -269,25 +269,25 @@
     {
       "name": "cpaczek/skylight",
       "description": "Project the aircraft passing overhead onto your ceiling in real time, from an RTL-SDR — with a live sky layer (sun, moon, stars, ISS) and where each plane is headed.",
-      "stars": 2136,
-      "forks": 208,
-      "issues": 7,
+      "stars": 2183,
+      "forks": 215,
+      "issues": 10,
       "language": "TypeScript",
       "url": "https://github.com/cpaczek/skylight",
-      "starDelta": 105,
+      "starDelta": 152,
       "contributorDelta": null,
-      "issueDelta": 2,
+      "issueDelta": 5,
       "score": null
     },
     {
       "name": "jd-opensource/JoyAI-Echo",
       "description": "JoyAI-Echo: Pushing the Frontier of Long Audio-Visual Generation",
-      "stars": 763,
+      "stars": 799,
       "forks": 47,
       "issues": 3,
       "language": "Python",
       "url": "https://github.com/jd-opensource/JoyAI-Echo",
-      "starDelta": 77,
+      "starDelta": 113,
       "contributorDelta": null,
       "issueDelta": 0,
       "score": null
@@ -295,54 +295,54 @@
     {
       "name": "tiantianGPU/reg-factory",
       "description": null,
-      "stars": 469,
-      "forks": 228,
+      "stars": 472,
+      "forks": 230,
       "issues": 0,
       "language": "Python",
       "url": "https://github.com/tiantianGPU/reg-factory",
-      "starDelta": 469,
+      "starDelta": 472,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 938
+      "score": 944
     },
     {
       "name": "Jane-xiaoer/xiaoer-videolab",
       "description": "One click on the toolbar grabs the current page's video into ~/Downloads — local yt-dlp daemon, 1800+ sites. 小耳抓视频：一键把当前页视频抓到本地。",
-      "stars": 457,
+      "stars": 459,
       "forks": 71,
       "issues": 0,
       "language": "JavaScript",
       "url": "https://github.com/Jane-xiaoer/xiaoer-videolab",
-      "starDelta": 457,
+      "starDelta": 459,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 914
+      "score": 918
     },
     {
       "name": "Fullive-AI/Anima",
       "description": "Make Every Hardware Intelligent — an open-source Agent OS for hardware intelligence",
-      "stars": 389,
+      "stars": 390,
       "forks": 9,
       "issues": 6,
       "language": "Python",
       "url": "https://github.com/Fullive-AI/Anima",
-      "starDelta": 389,
+      "starDelta": 390,
       "contributorDelta": 0,
       "issueDelta": 6,
-      "score": 787
+      "score": 789
     },
     {
       "name": "S-Sigdel/vimhjkl",
       "description": "learn vim from your terminal with spaced repetition",
-      "stars": 388,
+      "stars": 392,
       "forks": 6,
       "issues": 2,
       "language": "Python",
       "url": "https://github.com/S-Sigdel/vimhjkl",
-      "starDelta": 388,
+      "starDelta": 392,
       "contributorDelta": 0,
       "issueDelta": 2,
-      "score": 779
+      "score": 787
     },
     {
       "name": "SenhorH/tab-labeler",
@@ -360,41 +360,41 @@
     {
       "name": "jeff141/meatshell",
       "description": "一个轻量级、低内存占用的 SSH / 终端客户端（A lightweight, low-memory SSH / terminal client）",
-      "stars": 343,
+      "stars": 363,
       "forks": 45,
       "issues": 13,
       "language": "Rust",
       "url": "https://github.com/jeff141/meatshell",
-      "starDelta": 343,
+      "starDelta": 363,
       "contributorDelta": 0,
       "issueDelta": 13,
-      "score": 705.5
+      "score": 745.5
     },
     {
       "name": "zenhosta/9drive",
       "description": "9Drive is a storage gateway web app for connecting multiple Google Drive accounts into one virtual storage dashboard. Users can connect Google Drive accounts, track quota, upload files, organize files with virtual folders, preview files, and let the backend route uploads to the Drive account with enough free space.",
-      "stars": 331,
-      "forks": 124,
+      "stars": 358,
+      "forks": 131,
       "issues": 0,
       "language": "TypeScript",
       "url": "https://github.com/zenhosta/9drive",
-      "starDelta": 331,
+      "starDelta": 358,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 662
+      "score": 716
     },
     {
       "name": "ConiferKit/sage",
       "description": null,
-      "stars": 306,
+      "stars": 309,
       "forks": 12,
       "issues": 0,
       "language": null,
       "url": "https://github.com/ConiferKit/sage",
-      "starDelta": 306,
+      "starDelta": 309,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 612
+      "score": 618
     }
   ]
 }
