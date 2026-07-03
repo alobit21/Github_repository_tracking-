@@ -4,12 +4,12 @@
     {
       "name": "Krishnagangwal/CS-Fundamentals",
       "description": "Curated CS fundamentals for placement prep: DSA,Computer Networks, DBMS & SQL, OOPs, Operating Systems, System Design & Software Engineering",
-      "stars": 1437,
-      "forks": 118,
+      "stars": 1450,
+      "forks": 120,
       "issues": 0,
       "language": null,
       "url": "https://github.com/Krishnagangwal/CS-Fundamentals",
-      "starDelta": 16,
+      "starDelta": 29,
       "contributorDelta": null,
       "issueDelta": 0,
       "score": null
@@ -17,12 +17,12 @@
     {
       "name": "mekos2772/ios-location-spoofer",
       "description": "Standalone iOS app to spoof GPS location without jailbreak. Includes Shadowrocket/Surge/Loon/QX/Stash module.",
-      "stars": 1115,
-      "forks": 154,
+      "stars": 1157,
+      "forks": 164,
       "issues": 1,
       "language": "JavaScript",
       "url": "https://github.com/mekos2772/ios-location-spoofer",
-      "starDelta": 53,
+      "starDelta": 95,
       "contributorDelta": null,
       "issueDelta": 0,
       "score": null
@@ -30,38 +30,38 @@
     {
       "name": "yynxxxxx/Codex-5.5-codex-instruct-5.5",
       "description": null,
-      "stars": 1112,
-      "forks": 338,
-      "issues": 1,
+      "stars": 1131,
+      "forks": 341,
+      "issues": 0,
       "language": "Python",
       "url": "https://github.com/yynxxxxx/Codex-5.5-codex-instruct-5.5",
-      "starDelta": 11,
+      "starDelta": 30,
       "contributorDelta": null,
-      "issueDelta": 0,
+      "issueDelta": -1,
       "score": null
     },
     {
       "name": "Kulaxyz/self-learning-skills",
       "description": "A self-improving skill for AI coding agents (Claude Code, Cursor, AGENTS.md): recognize a hard-won golden path in a session and harvest it into a reusable skill/rule for next time.",
-      "stars": 897,
-      "forks": 14,
-      "issues": 1,
+      "stars": 915,
+      "forks": 17,
+      "issues": 2,
       "language": null,
       "url": "https://github.com/Kulaxyz/self-learning-skills",
-      "starDelta": 13,
+      "starDelta": 31,
       "contributorDelta": null,
-      "issueDelta": 0,
+      "issueDelta": 1,
       "score": null
     },
     {
       "name": "TianhangZhuzth/Fundamental-Ava",
       "description": "Build digital human beings — autonomous, collaborative, and socially intelligent agents. FNzgGxU31RWiDgLr3GvxxSa42nRntvZNSG6aBMQ1pump",
-      "stars": 754,
+      "stars": 756,
       "forks": 78,
       "issues": 0,
       "language": "Python",
       "url": "https://github.com/TianhangZhuzth/Fundamental-Ava",
-      "starDelta": 5,
+      "starDelta": 7,
       "contributorDelta": null,
       "issueDelta": 0,
       "score": null
@@ -82,42 +82,57 @@
     {
       "name": "diinki/linux-antiquity",
       "description": "A highly tasteful Linux-theme, reminiscent of art-nouveau and old drawings related to astronomy, science, and mythology.",
-      "stars": 502,
+      "stars": 509,
       "forks": 10,
       "issues": 1,
       "language": "QML",
       "url": "https://github.com/diinki/linux-antiquity",
-      "starDelta": 502,
+      "starDelta": 509,
       "contributorDelta": 0,
       "issueDelta": 1,
-      "score": 1005.5
+      "score": 1019.5
     },
     {
       "name": "wlzh/dji-4g-vohive-mac",
       "description": "在 Mac（Apple Silicon / Intel）上用 UTM 跑 Linux 虚拟机，把大疆 4G 模块（EG25-G）伪装成移远 Quectel EC25 并部署 vohive 平台的完整步骤",
-      "stars": 401,
-      "forks": 81,
+      "stars": 410,
+      "forks": 91,
       "issues": 1,
       "language": null,
       "url": "https://github.com/wlzh/dji-4g-vohive-mac",
-      "starDelta": 401,
+      "starDelta": 410,
       "contributorDelta": 0,
       "issueDelta": 1,
-      "score": 803.5
+      "score": 821.5
     },
     {
       "name": "Jia-Ethan/codex-keysmith",
       "description": "Codex CLI instruction-file installer for local configuration",
-      "stars": 399,
+      "stars": 403,
       "forks": 69,
       "issues": 0,
       "language": "Python",
       "url": "https://github.com/Jia-Ethan/codex-keysmith",
-      "starDelta": 399,
+      "starDelta": 403,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 798
+      "score": 806
     },
+    {
+      "name": "kui123456789/cdk-redeem-only-extension",
+      "description": "UPI redeem only extension",
+      "stars": 358,
+      "forks": 167,
+      "issues": 1,
+      "language": "JavaScript",
+      "url": "https://github.com/kui123456789/cdk-redeem-only-extension",
+      "starDelta": 358,
+      "contributorDelta": 0,
+      "issueDelta": 1,
+      "score": 717.5
+    }
+  ],
+  "silentClimbers": [
     {
       "name": "downclash/clash",
       "description": null,
@@ -130,86 +145,71 @@
       "contributorDelta": 0,
       "issueDelta": 0,
       "score": 688
-    }
-  ],
-  "silentClimbers": [
+    },
     {
       "name": "offchainthoughts/Amber",
       "description": "Bank the expensive compute once, then carry it offline as a single file that can prove it is what it claims to be.",
-      "stars": 332,
+      "stars": 333,
       "forks": 203,
       "issues": 0,
       "language": "Python",
       "url": "https://github.com/offchainthoughts/Amber",
-      "starDelta": 332,
+      "starDelta": 333,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 664
-    },
-    {
-      "name": "kui123456789/cdk-redeem-only-extension",
-      "description": "UPI redeem only extension",
-      "stars": 327,
-      "forks": 163,
-      "issues": 1,
-      "language": "JavaScript",
-      "url": "https://github.com/kui123456789/cdk-redeem-only-extension",
-      "starDelta": 327,
-      "contributorDelta": 0,
-      "issueDelta": 1,
-      "score": 655.5
+      "score": 666
     },
     {
       "name": "asz798838958/FrciblyK12",
       "description": "多线程全自动注册free 强上K12空间",
-      "stars": 314,
-      "forks": 142,
+      "stars": 325,
+      "forks": 146,
       "issues": 0,
       "language": "Python",
       "url": "https://github.com/asz798838958/FrciblyK12",
-      "starDelta": 314,
+      "starDelta": 325,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 628
+      "score": 650
     },
     {
       "name": "JasonLiu0826/ackem",
       "description": "Ackem — 本地优先 AI 桌面陪伴 · Local-first AI desktop companion. 隐私数据不上传，支持记忆/情绪/扩展/ 。AGPL-3.0",
-      "stars": 293,
-      "forks": 31,
-      "issues": 7,
+      "stars": 295,
+      "forks": 32,
+      "issues": 8,
       "language": "TypeScript",
       "url": "https://github.com/JasonLiu0826/ackem",
-      "starDelta": 293,
+      "starDelta": 295,
       "contributorDelta": 0,
-      "issueDelta": 7,
-      "score": 596.5
+      "issueDelta": 8,
+      "score": 602
     },
     {
       "name": "Evolink-AI/Awesome-Blender-Seedance-Workflow-Usecases",
       "description": "Curated Blender + Seedance workflows for AI filmmaking: previs, camera control, Blender MCP, reference video, and agent-guided use cases.",
-      "stars": 289,
+      "stars": 290,
       "forks": 24,
       "issues": 0,
       "language": "Python",
       "url": "https://github.com/Evolink-AI/Awesome-Blender-Seedance-Workflow-Usecases",
-      "starDelta": 289,
+      "starDelta": 290,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 578
+      "score": 580
     },
     {
       "name": "lingbol088-spec/reverse-flow-skill",
       "description": "面向 AI Agent / Codex 的本地 CTF 逆向工程流程技能。加载后通过“真心为你”进入逆向模式，默认在本地沙盒、CTF、crackme、wargame 或训练靶场环境中工作，按“分析 → 报告 → 逆向 → 深度逆向 → 漏洞研判 → 用户选择下一步”的流程推进。",
-      "stars": 277,
+      "stars": 285,
       "forks": 160,
       "issues": 1,
       "language": "Python",
       "url": "https://github.com/lingbol088-spec/reverse-flow-skill",
-      "starDelta": 277,
+      "starDelta": 285,
       "contributorDelta": 0,
       "issueDelta": 1,
-      "score": 555.5
+      "score": 571.5
     },
     {
       "name": "eli-labz/Godcoder",
@@ -223,6 +223,19 @@
       "contributorDelta": 0,
       "issueDelta": 0,
       "score": 544
+    },
+    {
+      "name": "spiritov/ds.css",
+      "description": "A css framework recreating the DS / DS Lite's UI",
+      "stars": 265,
+      "forks": 2,
+      "issues": 0,
+      "language": "CSS",
+      "url": "https://github.com/spiritov/ds.css",
+      "starDelta": 265,
+      "contributorDelta": 0,
+      "issueDelta": 0,
+      "score": 530
     },
     {
       "name": "vidhitam/Data_Recovery",
@@ -249,19 +262,6 @@
       "contributorDelta": 0,
       "issueDelta": 0,
       "score": 520
-    },
-    {
-      "name": "JokiTsien/App_Store_Play_Store_Review_Bot",
-      "description": "Auto-post reviews and ratings for apps on Google Play and Apple App Store. Boost app rankings and credibility.",
-      "stars": 260,
-      "forks": 0,
-      "issues": 0,
-      "language": "Python",
-      "url": "https://github.com/JokiTsien/App_Store_Play_Store_Review_Bot",
-      "starDelta": 260,
-      "contributorDelta": 0,
-      "issueDelta": 0,
-      "score": 520
     }
   ],
   "coolingDown": [],
@@ -269,12 +269,12 @@
     {
       "name": "mekos2772/ios-location-spoofer",
       "description": "Standalone iOS app to spoof GPS location without jailbreak. Includes Shadowrocket/Surge/Loon/QX/Stash module.",
-      "stars": 1115,
-      "forks": 154,
+      "stars": 1157,
+      "forks": 164,
       "issues": 1,
       "language": "JavaScript",
       "url": "https://github.com/mekos2772/ios-location-spoofer",
-      "starDelta": 53,
+      "starDelta": 95,
       "contributorDelta": null,
       "issueDelta": 0,
       "score": null
@@ -282,41 +282,54 @@
     {
       "name": "diinki/linux-antiquity",
       "description": "A highly tasteful Linux-theme, reminiscent of art-nouveau and old drawings related to astronomy, science, and mythology.",
-      "stars": 502,
+      "stars": 509,
       "forks": 10,
       "issues": 1,
       "language": "QML",
       "url": "https://github.com/diinki/linux-antiquity",
-      "starDelta": 502,
+      "starDelta": 509,
       "contributorDelta": 0,
       "issueDelta": 1,
-      "score": 1005.5
+      "score": 1019.5
     },
     {
       "name": "wlzh/dji-4g-vohive-mac",
       "description": "在 Mac（Apple Silicon / Intel）上用 UTM 跑 Linux 虚拟机，把大疆 4G 模块（EG25-G）伪装成移远 Quectel EC25 并部署 vohive 平台的完整步骤",
-      "stars": 401,
-      "forks": 81,
+      "stars": 410,
+      "forks": 91,
       "issues": 1,
       "language": null,
       "url": "https://github.com/wlzh/dji-4g-vohive-mac",
-      "starDelta": 401,
+      "starDelta": 410,
       "contributorDelta": 0,
       "issueDelta": 1,
-      "score": 803.5
+      "score": 821.5
     },
     {
       "name": "Jia-Ethan/codex-keysmith",
       "description": "Codex CLI instruction-file installer for local configuration",
-      "stars": 399,
+      "stars": 403,
       "forks": 69,
       "issues": 0,
       "language": "Python",
       "url": "https://github.com/Jia-Ethan/codex-keysmith",
-      "starDelta": 399,
+      "starDelta": 403,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 798
+      "score": 806
+    },
+    {
+      "name": "kui123456789/cdk-redeem-only-extension",
+      "description": "UPI redeem only extension",
+      "stars": 358,
+      "forks": 167,
+      "issues": 1,
+      "language": "JavaScript",
+      "url": "https://github.com/kui123456789/cdk-redeem-only-extension",
+      "starDelta": 358,
+      "contributorDelta": 0,
+      "issueDelta": 1,
+      "score": 717.5
     },
     {
       "name": "downclash/clash",
@@ -334,67 +347,54 @@
     {
       "name": "offchainthoughts/Amber",
       "description": "Bank the expensive compute once, then carry it offline as a single file that can prove it is what it claims to be.",
-      "stars": 332,
+      "stars": 333,
       "forks": 203,
       "issues": 0,
       "language": "Python",
       "url": "https://github.com/offchainthoughts/Amber",
-      "starDelta": 332,
+      "starDelta": 333,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 664
-    },
-    {
-      "name": "kui123456789/cdk-redeem-only-extension",
-      "description": "UPI redeem only extension",
-      "stars": 327,
-      "forks": 163,
-      "issues": 1,
-      "language": "JavaScript",
-      "url": "https://github.com/kui123456789/cdk-redeem-only-extension",
-      "starDelta": 327,
-      "contributorDelta": 0,
-      "issueDelta": 1,
-      "score": 655.5
+      "score": 666
     },
     {
       "name": "asz798838958/FrciblyK12",
       "description": "多线程全自动注册free 强上K12空间",
-      "stars": 314,
-      "forks": 142,
+      "stars": 325,
+      "forks": 146,
       "issues": 0,
       "language": "Python",
       "url": "https://github.com/asz798838958/FrciblyK12",
-      "starDelta": 314,
+      "starDelta": 325,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 628
+      "score": 650
     },
     {
       "name": "JasonLiu0826/ackem",
       "description": "Ackem — 本地优先 AI 桌面陪伴 · Local-first AI desktop companion. 隐私数据不上传，支持记忆/情绪/扩展/ 。AGPL-3.0",
-      "stars": 293,
-      "forks": 31,
-      "issues": 7,
+      "stars": 295,
+      "forks": 32,
+      "issues": 8,
       "language": "TypeScript",
       "url": "https://github.com/JasonLiu0826/ackem",
-      "starDelta": 293,
+      "starDelta": 295,
       "contributorDelta": 0,
-      "issueDelta": 7,
-      "score": 596.5
+      "issueDelta": 8,
+      "score": 602
     },
     {
       "name": "Evolink-AI/Awesome-Blender-Seedance-Workflow-Usecases",
       "description": "Curated Blender + Seedance workflows for AI filmmaking: previs, camera control, Blender MCP, reference video, and agent-guided use cases.",
-      "stars": 289,
+      "stars": 290,
       "forks": 24,
       "issues": 0,
       "language": "Python",
       "url": "https://github.com/Evolink-AI/Awesome-Blender-Seedance-Workflow-Usecases",
-      "starDelta": 289,
+      "starDelta": 290,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 578
+      "score": 580
     }
   ]
 }
