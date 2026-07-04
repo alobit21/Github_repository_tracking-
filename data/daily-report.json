@@ -4,12 +4,12 @@
     {
       "name": "Krishnagangwal/CS-Fundamentals",
       "description": "Curated CS fundamentals for placement prep: DSA,Computer Networks, DBMS & SQL, OOPs, Operating Systems, System Design & Software Engineering",
-      "stars": 1523,
-      "forks": 129,
+      "stars": 1538,
+      "forks": 130,
       "issues": 0,
       "language": null,
       "url": "https://github.com/Krishnagangwal/CS-Fundamentals",
-      "starDelta": 20,
+      "starDelta": 35,
       "contributorDelta": null,
       "issueDelta": 0,
       "score": null
@@ -17,12 +17,12 @@
     {
       "name": "yynxxxxx/Codex-5.5-codex-instruct-5.5",
       "description": null,
-      "stars": 1306,
-      "forks": 380,
+      "stars": 1318,
+      "forks": 383,
       "issues": 0,
       "language": "Python",
       "url": "https://github.com/yynxxxxx/Codex-5.5-codex-instruct-5.5",
-      "starDelta": 24,
+      "starDelta": 36,
       "contributorDelta": null,
       "issueDelta": 0,
       "score": null
@@ -30,12 +30,12 @@
     {
       "name": "mekos2772/ios-location-spoofer",
       "description": "Standalone iOS app to spoof GPS location without jailbreak. Includes Shadowrocket/Surge/Loon/QX/Stash module.",
-      "stars": 1270,
-      "forks": 189,
+      "stars": 1272,
+      "forks": 190,
       "issues": 2,
       "language": "JavaScript",
       "url": "https://github.com/mekos2772/ios-location-spoofer",
-      "starDelta": 31,
+      "starDelta": 33,
       "contributorDelta": null,
       "issueDelta": -1,
       "score": null
@@ -43,12 +43,12 @@
     {
       "name": "Kulaxyz/self-learning-skills",
       "description": "A self-improving skill for AI coding agents (Claude Code, Cursor, AGENTS.md): recognize a hard-won golden path in a session and harvest it into a reusable skill/rule for next time.",
-      "stars": 809,
+      "stars": 814,
       "forks": 23,
       "issues": 2,
       "language": null,
       "url": "https://github.com/Kulaxyz/self-learning-skills",
-      "starDelta": 27,
+      "starDelta": 32,
       "contributorDelta": null,
       "issueDelta": 0,
       "score": null
@@ -56,12 +56,12 @@
     {
       "name": "HUANGCHIHHUNGLeo/claude-real-video",
       "description": "Let Claude (or any LLM) actually watch a video — scene-aware, deduplicated frames + transcript, from a URL or local file. Runs locally, MIT.",
-      "stars": 586,
-      "forks": 23,
+      "stars": 625,
+      "forks": 27,
       "issues": 0,
       "language": "Python",
       "url": "https://github.com/HUANGCHIHHUNGLeo/claude-real-video",
-      "starDelta": 92,
+      "starDelta": 131,
       "contributorDelta": null,
       "issueDelta": 0,
       "score": null
@@ -69,12 +69,12 @@
     {
       "name": "xuchonglang/investing-for-beginners",
       "description": "小隐寺投资百科官方公开索引：美股、期权与加密货币知识框架",
-      "stars": 524,
+      "stars": 553,
       "forks": 27,
       "issues": 0,
       "language": null,
       "url": "https://github.com/xuchonglang/investing-for-beginners",
-      "starDelta": 71,
+      "starDelta": 100,
       "contributorDelta": null,
       "issueDelta": 0,
       "score": null
@@ -82,12 +82,12 @@
     {
       "name": "TianhangZhuzth/Fundamental-Ava",
       "description": "Build digital human beings — autonomous, collaborative, and socially intelligent agents. FNzgGxU31RWiDgLr3GvxxSa42nRntvZNSG6aBMQ1pump",
-      "stars": 520,
+      "stars": 521,
       "forks": 52,
       "issues": 0,
       "language": "Python",
       "url": "https://github.com/TianhangZhuzth/Fundamental-Ava",
-      "starDelta": 2,
+      "starDelta": 3,
       "contributorDelta": null,
       "issueDelta": 0,
       "score": null
@@ -95,29 +95,44 @@
     {
       "name": "uzairansaruzi/hermex",
       "description": "Native iPhone app for your Hermes agent",
-      "stars": 463,
+      "stars": 472,
       "forks": 53,
       "issues": 39,
       "language": "Swift",
       "url": "https://github.com/uzairansaruzi/hermex",
-      "starDelta": 463,
+      "starDelta": 472,
       "contributorDelta": 0,
       "issueDelta": 39,
-      "score": 984.5
+      "score": 1002.5
     },
     {
       "name": "jamesob/local-llm",
       "description": "Everything I know about running LLMs locally",
-      "stars": 411,
-      "forks": 13,
-      "issues": 0,
+      "stars": 449,
+      "forks": 15,
+      "issues": 1,
       "language": "Shell",
       "url": "https://github.com/jamesob/local-llm",
-      "starDelta": 411,
+      "starDelta": 449,
+      "contributorDelta": 0,
+      "issueDelta": 1,
+      "score": 899.5
+    },
+    {
+      "name": "jmerelnyc/Talos",
+      "description": "GPU worker client for the Talos network. Pairs with your Talos account, serves open-model inference jobs over a WebSocket, and reports uptime for payouts.",
+      "stars": 415,
+      "forks": 12,
+      "issues": 0,
+      "language": "Python",
+      "url": "https://github.com/jmerelnyc/Talos",
+      "starDelta": 415,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 822
-    },
+      "score": 830
+    }
+  ],
+  "silentClimbers": [
     {
       "name": "Jia-Ethan/codex-keysmith",
       "description": "Codex CLI instruction-file installer for local configuration",
@@ -130,112 +145,97 @@
       "contributorDelta": 0,
       "issueDelta": 0,
       "score": 822
-    }
-  ],
-  "silentClimbers": [
-    {
-      "name": "spiritov/ds.css",
-      "description": "A css framework recreating the DS / DS Lite's UI",
-      "stars": 388,
-      "forks": 2,
-      "issues": 0,
-      "language": "JavaScript",
-      "url": "https://github.com/spiritov/ds.css",
-      "starDelta": 388,
-      "contributorDelta": 0,
-      "issueDelta": 0,
-      "score": 776
     },
     {
       "name": "asz798838958/FrciblyK12",
       "description": "多线程全自动注册free 强上K12空间",
-      "stars": 384,
+      "stars": 391,
       "forks": 155,
       "issues": 0,
       "language": "Python",
       "url": "https://github.com/asz798838958/FrciblyK12",
-      "starDelta": 384,
+      "starDelta": 391,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 768
+      "score": 782
     },
     {
-      "name": "jmerelnyc/Talos",
-      "description": "GPU worker client for the Talos network. Pairs with your Talos account, serves open-model inference jobs over a WebSocket, and reports uptime for payouts.",
-      "stars": 370,
-      "forks": 12,
+      "name": "spiritov/ds.css",
+      "description": "A css framework recreating the DS / DS Lite's UI",
+      "stars": 391,
+      "forks": 2,
       "issues": 0,
-      "language": "Python",
-      "url": "https://github.com/jmerelnyc/Talos",
-      "starDelta": 370,
+      "language": "JavaScript",
+      "url": "https://github.com/spiritov/ds.css",
+      "starDelta": 391,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 740
-    },
-    {
-      "name": "lingbol088-spec/reverse-flow-skill",
-      "description": "面向 AI Agent / Codex 的本地 CTF 逆向工程流程技能。加载后通过“真心为你”进入逆向模式，默认在本地沙盒、CTF、crackme、wargame 或训练靶场环境中工作，按“分析 → 报告 → 逆向 → 深度逆向 → 漏洞研判 → 用户选择下一步”的流程推进。",
-      "stars": 319,
-      "forks": 180,
-      "issues": 2,
-      "language": "Python",
-      "url": "https://github.com/lingbol088-spec/reverse-flow-skill",
-      "starDelta": 319,
-      "contributorDelta": 0,
-      "issueDelta": 2,
-      "score": 641
+      "score": 782
     },
     {
       "name": "FractalFir/crustc",
       "description": "Entirety of `rustc`, translated to C. ",
-      "stars": 316,
-      "forks": 4,
+      "stars": 326,
+      "forks": 5,
       "issues": 4,
       "language": "C",
       "url": "https://github.com/FractalFir/crustc",
-      "starDelta": 316,
+      "starDelta": 326,
       "contributorDelta": 0,
       "issueDelta": 4,
-      "score": 638
+      "score": 658
+    },
+    {
+      "name": "lingbol088-spec/reverse-flow-skill",
+      "description": "面向 AI Agent / Codex 的本地 CTF 逆向工程流程技能。加载后通过“真心为你”进入逆向模式，默认在本地沙盒、CTF、crackme、wargame 或训练靶场环境中工作，按“分析 → 报告 → 逆向 → 深度逆向 → 漏洞研判 → 用户选择下一步”的流程推进。",
+      "stars": 326,
+      "forks": 181,
+      "issues": 2,
+      "language": "Python",
+      "url": "https://github.com/lingbol088-spec/reverse-flow-skill",
+      "starDelta": 326,
+      "contributorDelta": 0,
+      "issueDelta": 2,
+      "score": 655
     },
     {
       "name": "LinXiaoTao/FuckClaude",
       "description": null,
-      "stars": 295,
-      "forks": 33,
-      "issues": 4,
+      "stars": 315,
+      "forks": 32,
+      "issues": 5,
       "language": "Astro",
       "url": "https://github.com/LinXiaoTao/FuckClaude",
-      "starDelta": 295,
+      "starDelta": 315,
       "contributorDelta": 0,
-      "issueDelta": 4,
-      "score": 596
+      "issueDelta": 5,
+      "score": 637.5
     },
     {
       "name": "Evolink-AI/Awesome-Blender-Seedance-Workflow-Usecases",
       "description": "Curated Blender + Seedance workflows for AI filmmaking: previs, camera control, Blender MCP, reference video, and agent-guided use cases.",
-      "stars": 294,
+      "stars": 295,
       "forks": 24,
       "issues": 0,
       "language": "Python",
       "url": "https://github.com/Evolink-AI/Awesome-Blender-Seedance-Workflow-Usecases",
-      "starDelta": 294,
+      "starDelta": 295,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 588
+      "score": 590
     },
     {
       "name": "maaslalani/fast",
       "description": "Internet speed test in your terminal",
-      "stars": 256,
+      "stars": 258,
       "forks": 13,
       "issues": 3,
       "language": "Go",
       "url": "https://github.com/maaslalani/fast",
-      "starDelta": 256,
+      "starDelta": 258,
       "contributorDelta": 0,
       "issueDelta": 3,
-      "score": 516.5
+      "score": 520.5
     },
     {
       "name": "revfactory/webtoon-harness",
@@ -253,15 +253,15 @@
     {
       "name": "Ssupercoder/Salary-Negotiation-Skill",
       "description": "谈薪skill--自动化谈薪的开拓者与领跑者",
-      "stars": 234,
+      "stars": 235,
       "forks": 6,
       "issues": 1,
       "language": "Python",
       "url": "https://github.com/Ssupercoder/Salary-Negotiation-Skill",
-      "starDelta": 234,
+      "starDelta": 235,
       "contributorDelta": 0,
       "issueDelta": 1,
-      "score": 469.5
+      "score": 471.5
     }
   ],
   "coolingDown": [],
@@ -269,12 +269,12 @@
     {
       "name": "HUANGCHIHHUNGLeo/claude-real-video",
       "description": "Let Claude (or any LLM) actually watch a video — scene-aware, deduplicated frames + transcript, from a URL or local file. Runs locally, MIT.",
-      "stars": 586,
-      "forks": 23,
+      "stars": 625,
+      "forks": 27,
       "issues": 0,
       "language": "Python",
       "url": "https://github.com/HUANGCHIHHUNGLeo/claude-real-video",
-      "starDelta": 92,
+      "starDelta": 131,
       "contributorDelta": null,
       "issueDelta": 0,
       "score": null
@@ -282,12 +282,12 @@
     {
       "name": "xuchonglang/investing-for-beginners",
       "description": "小隐寺投资百科官方公开索引：美股、期权与加密货币知识框架",
-      "stars": 524,
+      "stars": 553,
       "forks": 27,
       "issues": 0,
       "language": null,
       "url": "https://github.com/xuchonglang/investing-for-beginners",
-      "starDelta": 71,
+      "starDelta": 100,
       "contributorDelta": null,
       "issueDelta": 0,
       "score": null
@@ -295,28 +295,41 @@
     {
       "name": "uzairansaruzi/hermex",
       "description": "Native iPhone app for your Hermes agent",
-      "stars": 463,
+      "stars": 472,
       "forks": 53,
       "issues": 39,
       "language": "Swift",
       "url": "https://github.com/uzairansaruzi/hermex",
-      "starDelta": 463,
+      "starDelta": 472,
       "contributorDelta": 0,
       "issueDelta": 39,
-      "score": 984.5
+      "score": 1002.5
     },
     {
       "name": "jamesob/local-llm",
       "description": "Everything I know about running LLMs locally",
-      "stars": 411,
-      "forks": 13,
-      "issues": 0,
+      "stars": 449,
+      "forks": 15,
+      "issues": 1,
       "language": "Shell",
       "url": "https://github.com/jamesob/local-llm",
-      "starDelta": 411,
+      "starDelta": 449,
+      "contributorDelta": 0,
+      "issueDelta": 1,
+      "score": 899.5
+    },
+    {
+      "name": "jmerelnyc/Talos",
+      "description": "GPU worker client for the Talos network. Pairs with your Talos account, serves open-model inference jobs over a WebSocket, and reports uptime for payouts.",
+      "stars": 415,
+      "forks": 12,
+      "issues": 0,
+      "language": "Python",
+      "url": "https://github.com/jmerelnyc/Talos",
+      "starDelta": 415,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 822
+      "score": 830
     },
     {
       "name": "Jia-Ethan/codex-keysmith",
@@ -332,69 +345,56 @@
       "score": 822
     },
     {
-      "name": "spiritov/ds.css",
-      "description": "A css framework recreating the DS / DS Lite's UI",
-      "stars": 388,
-      "forks": 2,
-      "issues": 0,
-      "language": "JavaScript",
-      "url": "https://github.com/spiritov/ds.css",
-      "starDelta": 388,
-      "contributorDelta": 0,
-      "issueDelta": 0,
-      "score": 776
-    },
-    {
       "name": "asz798838958/FrciblyK12",
       "description": "多线程全自动注册free 强上K12空间",
-      "stars": 384,
+      "stars": 391,
       "forks": 155,
       "issues": 0,
       "language": "Python",
       "url": "https://github.com/asz798838958/FrciblyK12",
-      "starDelta": 384,
+      "starDelta": 391,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 768
+      "score": 782
     },
     {
-      "name": "jmerelnyc/Talos",
-      "description": "GPU worker client for the Talos network. Pairs with your Talos account, serves open-model inference jobs over a WebSocket, and reports uptime for payouts.",
-      "stars": 370,
-      "forks": 12,
+      "name": "spiritov/ds.css",
+      "description": "A css framework recreating the DS / DS Lite's UI",
+      "stars": 391,
+      "forks": 2,
       "issues": 0,
-      "language": "Python",
-      "url": "https://github.com/jmerelnyc/Talos",
-      "starDelta": 370,
+      "language": "JavaScript",
+      "url": "https://github.com/spiritov/ds.css",
+      "starDelta": 391,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 740
-    },
-    {
-      "name": "lingbol088-spec/reverse-flow-skill",
-      "description": "面向 AI Agent / Codex 的本地 CTF 逆向工程流程技能。加载后通过“真心为你”进入逆向模式，默认在本地沙盒、CTF、crackme、wargame 或训练靶场环境中工作，按“分析 → 报告 → 逆向 → 深度逆向 → 漏洞研判 → 用户选择下一步”的流程推进。",
-      "stars": 319,
-      "forks": 180,
-      "issues": 2,
-      "language": "Python",
-      "url": "https://github.com/lingbol088-spec/reverse-flow-skill",
-      "starDelta": 319,
-      "contributorDelta": 0,
-      "issueDelta": 2,
-      "score": 641
+      "score": 782
     },
     {
       "name": "FractalFir/crustc",
       "description": "Entirety of `rustc`, translated to C. ",
-      "stars": 316,
-      "forks": 4,
+      "stars": 326,
+      "forks": 5,
       "issues": 4,
       "language": "C",
       "url": "https://github.com/FractalFir/crustc",
-      "starDelta": 316,
+      "starDelta": 326,
       "contributorDelta": 0,
       "issueDelta": 4,
-      "score": 638
+      "score": 658
+    },
+    {
+      "name": "lingbol088-spec/reverse-flow-skill",
+      "description": "面向 AI Agent / Codex 的本地 CTF 逆向工程流程技能。加载后通过“真心为你”进入逆向模式，默认在本地沙盒、CTF、crackme、wargame 或训练靶场环境中工作，按“分析 → 报告 → 逆向 → 深度逆向 → 漏洞研判 → 用户选择下一步”的流程推进。",
+      "stars": 326,
+      "forks": 181,
+      "issues": 2,
+      "language": "Python",
+      "url": "https://github.com/lingbol088-spec/reverse-flow-skill",
+      "starDelta": 326,
+      "contributorDelta": 0,
+      "issueDelta": 2,
+      "score": 655
     }
   ]
 }
