@@ -4,12 +4,12 @@
     {
       "name": "xai-org/grok-build",
       "description": "SpaceXAI's coding agent harness and TUI. Fullscreen, mouse interactive, extensible.",
-      "stars": 19162,
-      "forks": 3456,
+      "stars": 19402,
+      "forks": 3490,
       "issues": 0,
       "language": "Rust",
       "url": "https://github.com/xai-org/grok-build",
-      "starDelta": 708,
+      "starDelta": 948,
       "contributorDelta": null,
       "issueDelta": 0,
       "score": null
@@ -17,25 +17,25 @@
     {
       "name": "Fei-Away/Codex-Dream-Skin",
       "description": "Codex Dream Skin",
-      "stars": 9862,
-      "forks": 1029,
-      "issues": 99,
+      "stars": 9957,
+      "forks": 1032,
+      "issues": 100,
       "language": "JavaScript",
       "url": "https://github.com/Fei-Away/Codex-Dream-Skin",
-      "starDelta": 158,
+      "starDelta": 253,
       "contributorDelta": null,
-      "issueDelta": 7,
+      "issueDelta": 8,
       "score": null
     },
     {
       "name": "CluvexStudio/Aether",
       "description": null,
-      "stars": 1260,
-      "forks": 76,
+      "stars": 1270,
+      "forks": 77,
       "issues": 7,
       "language": "Rust",
       "url": "https://github.com/CluvexStudio/Aether",
-      "starDelta": 22,
+      "starDelta": 32,
       "contributorDelta": null,
       "issueDelta": 1,
       "score": null
@@ -43,12 +43,12 @@
     {
       "name": "pixel-point/aval",
       "description": "A new open-source format for interactive video on the web, with a built-in state machine, frame-accurate transitions, and packed-alpha transparency.",
-      "stars": 1218,
-      "forks": 65,
+      "stars": 1223,
+      "forks": 66,
       "issues": 2,
       "language": "TypeScript",
       "url": "https://github.com/pixel-point/aval",
-      "starDelta": 14,
+      "starDelta": 19,
       "contributorDelta": null,
       "issueDelta": 0,
       "score": null
@@ -56,12 +56,12 @@
     {
       "name": "littledivy/mimic",
       "description": "Intercept any app, then call it from Python like a library",
-      "stars": 1179,
-      "forks": 75,
+      "stars": 1183,
+      "forks": 77,
       "issues": 4,
       "language": "Python",
       "url": "https://github.com/littledivy/mimic",
-      "starDelta": 17,
+      "starDelta": 21,
       "contributorDelta": null,
       "issueDelta": 0,
       "score": null
@@ -69,12 +69,12 @@
     {
       "name": "tandpfun/wardrobe",
       "description": "Your clothes, extracted and organized with gpt-image.",
-      "stars": 1071,
+      "stars": 1083,
       "forks": 160,
       "issues": 2,
       "language": "JavaScript",
       "url": "https://github.com/tandpfun/wardrobe",
-      "starDelta": 50,
+      "starDelta": 62,
       "contributorDelta": null,
       "issueDelta": 0,
       "score": null
@@ -82,28 +82,28 @@
     {
       "name": "oil-oil/beautify-github-readme",
       "description": "Design clear, theme-specific GitHub README homepages with SVG titles, real proof, and maintainable Markdown",
-      "stars": 831,
+      "stars": 834,
       "forks": 47,
-      "issues": 2,
+      "issues": 1,
       "language": "Python",
       "url": "https://github.com/oil-oil/beautify-github-readme",
-      "starDelta": 33,
+      "starDelta": 36,
       "contributorDelta": null,
-      "issueDelta": 0,
+      "issueDelta": -1,
       "score": null
     },
     {
       "name": "nethical6/conversation-steganography",
       "description": "Use LLMs to hide messages inside normal looking conversations",
-      "stars": 723,
-      "forks": 41,
+      "stars": 736,
+      "forks": 42,
       "issues": 1,
       "language": "Go",
       "url": "https://github.com/nethical6/conversation-steganography",
-      "starDelta": 723,
+      "starDelta": 736,
       "contributorDelta": 0,
       "issueDelta": 1,
-      "score": 1447.5
+      "score": 1473.5
     },
     {
       "name": "KubeezMedia/kubeez-scroll-world-video",
@@ -121,95 +121,95 @@
     {
       "name": "MatinSenPai/Aether-GUI",
       "description": "One-click desktop GUI for the Aether censorship-circumvention tunnel — Tauri v2, React 19, Rust",
-      "stars": 599,
+      "stars": 602,
       "forks": 26,
       "issues": 8,
       "language": "TypeScript",
       "url": "https://github.com/MatinSenPai/Aether-GUI",
-      "starDelta": 599,
+      "starDelta": 602,
       "contributorDelta": 0,
       "issueDelta": 8,
-      "score": 1210
+      "score": 1216
     }
   ],
   "silentClimbers": [
     {
       "name": "pablostanley/yoinks",
       "description": "yoink any video from your terminal. no shady ads.",
-      "stars": 568,
-      "forks": 55,
+      "stars": 585,
+      "forks": 58,
       "issues": 6,
       "language": "TypeScript",
       "url": "https://github.com/pablostanley/yoinks",
-      "starDelta": 568,
+      "starDelta": 585,
       "contributorDelta": 0,
       "issueDelta": 6,
-      "score": 1145
+      "score": 1179
     },
     {
       "name": "Blueturboguy07/cue",
       "description": "Open-source macOS AI copilot that floats over your screen, sees/hears your meetings, and stays hidden from screen shares. Cluely alternative, bring-your-own-key.",
-      "stars": 557,
-      "forks": 117,
-      "issues": 6,
+      "stars": 560,
+      "forks": 121,
+      "issues": 7,
       "language": "JavaScript",
       "url": "https://github.com/Blueturboguy07/cue",
-      "starDelta": 557,
+      "starDelta": 560,
       "contributorDelta": 0,
-      "issueDelta": 6,
-      "score": 1123
+      "issueDelta": 7,
+      "score": 1130.5
     },
     {
       "name": "PengZhang64/circuit-framework",
       "description": "Circuit Framework — multi-agent LLM trading research system",
-      "stars": 483,
+      "stars": 484,
       "forks": 19,
       "issues": 0,
       "language": "Python",
       "url": "https://github.com/PengZhang64/circuit-framework",
-      "starDelta": 483,
+      "starDelta": 484,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 966
+      "score": 968
     },
     {
       "name": "stackblitz/bolt-slides",
       "description": "Use any agent to create stunning, interactive presentations",
-      "stars": 390,
+      "stars": 397,
       "forks": 55,
       "issues": 3,
       "language": "TypeScript",
       "url": "https://github.com/stackblitz/bolt-slides",
-      "starDelta": 390,
+      "starDelta": 397,
       "contributorDelta": 0,
       "issueDelta": 3,
-      "score": 784.5
+      "score": 798.5
     },
     {
       "name": "vshulcz/deja-vu",
       "description": "Memory layer for coding agents: search, MCP recall, auto-context, secret redaction, stats, share and sync over the session logs Claude Code, Codex, opencode, Cursor, Gemini CLI, aider, Antigravity, Grok Build and Qwen Code already write. One zero-dep binary.",
       "stars": 366,
       "forks": 17,
-      "issues": 10,
+      "issues": 9,
       "language": "Go",
       "url": "https://github.com/vshulcz/deja-vu",
       "starDelta": 366,
       "contributorDelta": 0,
-      "issueDelta": 10,
-      "score": 747
+      "issueDelta": 9,
+      "score": 745.5
     },
     {
       "name": "pyang5166/gbro-collage-broll",
       "description": "半调纸拼贴 B-roll 生成 skill：三闸门审批，Gemini Omni Flash 首尾帧组装动画 | Editorial halftone paper-collage B-roll agent skill",
-      "stars": 366,
-      "forks": 40,
+      "stars": 370,
+      "forks": 41,
       "issues": 2,
       "language": "Python",
       "url": "https://github.com/pyang5166/gbro-collage-broll",
-      "starDelta": 366,
+      "starDelta": 370,
       "contributorDelta": 0,
       "issueDelta": 2,
-      "score": 735
+      "score": 743
     },
     {
       "name": "QuantumByteOSS/quantumbyte",
@@ -225,17 +225,30 @@
       "score": 656
     },
     {
-      "name": "Wan-Video/Wan-Dancer",
+      "name": "JustinGamer191/Holo",
       "description": null,
       "stars": 313,
-      "forks": 27,
+      "forks": 43,
+      "issues": 11,
+      "language": "Swift",
+      "url": "https://github.com/JustinGamer191/Holo",
+      "starDelta": 313,
+      "contributorDelta": 0,
+      "issueDelta": 11,
+      "score": 642.5
+    },
+    {
+      "name": "Wan-Video/Wan-Dancer",
+      "description": null,
+      "stars": 318,
+      "forks": 29,
       "issues": 0,
       "language": "Python",
       "url": "https://github.com/Wan-Video/Wan-Dancer",
-      "starDelta": 313,
+      "starDelta": 318,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 626
+      "score": 636
     },
     {
       "name": "TobiasLee/Rebuttal-Skill",
@@ -249,19 +262,6 @@
       "contributorDelta": 0,
       "issueDelta": 0,
       "score": 624
-    },
-    {
-      "name": "JustinGamer191/Holo",
-      "description": null,
-      "stars": 302,
-      "forks": 38,
-      "issues": 11,
-      "language": "Swift",
-      "url": "https://github.com/JustinGamer191/Holo",
-      "starDelta": 302,
-      "contributorDelta": 0,
-      "issueDelta": 11,
-      "score": 620.5
     }
   ],
   "coolingDown": [],
@@ -269,12 +269,12 @@
     {
       "name": "xai-org/grok-build",
       "description": "SpaceXAI's coding agent harness and TUI. Fullscreen, mouse interactive, extensible.",
-      "stars": 19162,
-      "forks": 3456,
+      "stars": 19402,
+      "forks": 3490,
       "issues": 0,
       "language": "Rust",
       "url": "https://github.com/xai-org/grok-build",
-      "starDelta": 708,
+      "starDelta": 948,
       "contributorDelta": null,
       "issueDelta": 0,
       "score": null
@@ -282,28 +282,41 @@
     {
       "name": "Fei-Away/Codex-Dream-Skin",
       "description": "Codex Dream Skin",
-      "stars": 9862,
-      "forks": 1029,
-      "issues": 99,
+      "stars": 9957,
+      "forks": 1032,
+      "issues": 100,
       "language": "JavaScript",
       "url": "https://github.com/Fei-Away/Codex-Dream-Skin",
-      "starDelta": 158,
+      "starDelta": 253,
       "contributorDelta": null,
-      "issueDelta": 7,
+      "issueDelta": 8,
+      "score": null
+    },
+    {
+      "name": "tandpfun/wardrobe",
+      "description": "Your clothes, extracted and organized with gpt-image.",
+      "stars": 1083,
+      "forks": 160,
+      "issues": 2,
+      "language": "JavaScript",
+      "url": "https://github.com/tandpfun/wardrobe",
+      "starDelta": 62,
+      "contributorDelta": null,
+      "issueDelta": 0,
       "score": null
     },
     {
       "name": "nethical6/conversation-steganography",
       "description": "Use LLMs to hide messages inside normal looking conversations",
-      "stars": 723,
-      "forks": 41,
+      "stars": 736,
+      "forks": 42,
       "issues": 1,
       "language": "Go",
       "url": "https://github.com/nethical6/conversation-steganography",
-      "starDelta": 723,
+      "starDelta": 736,
       "contributorDelta": 0,
       "issueDelta": 1,
-      "score": 1447.5
+      "score": 1473.5
     },
     {
       "name": "KubeezMedia/kubeez-scroll-world-video",
@@ -321,80 +334,67 @@
     {
       "name": "MatinSenPai/Aether-GUI",
       "description": "One-click desktop GUI for the Aether censorship-circumvention tunnel — Tauri v2, React 19, Rust",
-      "stars": 599,
+      "stars": 602,
       "forks": 26,
       "issues": 8,
       "language": "TypeScript",
       "url": "https://github.com/MatinSenPai/Aether-GUI",
-      "starDelta": 599,
+      "starDelta": 602,
       "contributorDelta": 0,
       "issueDelta": 8,
-      "score": 1210
+      "score": 1216
     },
     {
       "name": "pablostanley/yoinks",
       "description": "yoink any video from your terminal. no shady ads.",
-      "stars": 568,
-      "forks": 55,
+      "stars": 585,
+      "forks": 58,
       "issues": 6,
       "language": "TypeScript",
       "url": "https://github.com/pablostanley/yoinks",
-      "starDelta": 568,
+      "starDelta": 585,
       "contributorDelta": 0,
       "issueDelta": 6,
-      "score": 1145
+      "score": 1179
     },
     {
       "name": "Blueturboguy07/cue",
       "description": "Open-source macOS AI copilot that floats over your screen, sees/hears your meetings, and stays hidden from screen shares. Cluely alternative, bring-your-own-key.",
-      "stars": 557,
-      "forks": 117,
-      "issues": 6,
+      "stars": 560,
+      "forks": 121,
+      "issues": 7,
       "language": "JavaScript",
       "url": "https://github.com/Blueturboguy07/cue",
-      "starDelta": 557,
+      "starDelta": 560,
       "contributorDelta": 0,
-      "issueDelta": 6,
-      "score": 1123
+      "issueDelta": 7,
+      "score": 1130.5
     },
     {
       "name": "PengZhang64/circuit-framework",
       "description": "Circuit Framework — multi-agent LLM trading research system",
-      "stars": 483,
+      "stars": 484,
       "forks": 19,
       "issues": 0,
       "language": "Python",
       "url": "https://github.com/PengZhang64/circuit-framework",
-      "starDelta": 483,
+      "starDelta": 484,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 966
+      "score": 968
     },
     {
       "name": "stackblitz/bolt-slides",
       "description": "Use any agent to create stunning, interactive presentations",
-      "stars": 390,
+      "stars": 397,
       "forks": 55,
       "issues": 3,
       "language": "TypeScript",
       "url": "https://github.com/stackblitz/bolt-slides",
-      "starDelta": 390,
+      "starDelta": 397,
       "contributorDelta": 0,
       "issueDelta": 3,
-      "score": 784.5
-    },
-    {
-      "name": "vshulcz/deja-vu",
-      "description": "Memory layer for coding agents: search, MCP recall, auto-context, secret redaction, stats, share and sync over the session logs Claude Code, Codex, opencode, Cursor, Gemini CLI, aider, Antigravity, Grok Build and Qwen Code already write. One zero-dep binary.",
-      "stars": 366,
-      "forks": 17,
-      "issues": 10,
-      "language": "Go",
-      "url": "https://github.com/vshulcz/deja-vu",
-      "starDelta": 366,
-      "contributorDelta": 0,
-      "issueDelta": 10,
-      "score": 747
+      "score": 798.5
     }
   ]
 }
