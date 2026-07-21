@@ -4,25 +4,25 @@
     {
       "name": "Fei-Away/Codex-Dream-Skin",
       "description": "Codex Dream Skin",
-      "stars": 11086,
-      "forks": 1138,
-      "issues": 109,
+      "stars": 11187,
+      "forks": 1147,
+      "issues": 113,
       "language": "JavaScript",
       "url": "https://github.com/Fei-Away/Codex-Dream-Skin",
-      "starDelta": 39,
+      "starDelta": 140,
       "contributorDelta": null,
-      "issueDelta": 0,
+      "issueDelta": 4,
       "score": null
     },
     {
       "name": "tandpfun/wardrobe",
       "description": "Your clothes, extracted and organized with gpt-image.",
-      "stars": 1219,
-      "forks": 174,
+      "stars": 1223,
+      "forks": 176,
       "issues": 3,
       "language": "JavaScript",
       "url": "https://github.com/tandpfun/wardrobe",
-      "starDelta": 13,
+      "starDelta": 17,
       "contributorDelta": null,
       "issueDelta": 0,
       "score": null
@@ -30,25 +30,38 @@
     {
       "name": "hoainho/img2threejs",
       "description": "Rebuild the object in a reference image as a code-only, procedural, quality-gated, animation-ready Three.js model. Token-efficient image-to-3D.",
-      "stars": 1026,
-      "forks": 88,
+      "stars": 1119,
+      "forks": 93,
       "issues": 8,
       "language": "Python",
       "url": "https://github.com/hoainho/img2threejs",
-      "starDelta": 137,
+      "starDelta": 230,
       "contributorDelta": null,
       "issueDelta": 0,
       "score": null
     },
     {
+      "name": "lopopolo/harness-engineering",
+      "description": "🐎 Ryan Lopopolo’s anthology, field guide, and agent context bundle for harness engineering",
+      "stars": 885,
+      "forks": 51,
+      "issues": 1,
+      "language": "Python",
+      "url": "https://github.com/lopopolo/harness-engineering",
+      "starDelta": 229,
+      "contributorDelta": null,
+      "issueDelta": 1,
+      "score": null
+    },
+    {
       "name": "nethical6/conversation-steganography",
       "description": "Use LLMs to hide messages inside normal looking conversations",
-      "stars": 881,
+      "stars": 884,
       "forks": 53,
       "issues": 1,
       "language": "Go",
       "url": "https://github.com/nethical6/conversation-steganography",
-      "starDelta": 14,
+      "starDelta": 17,
       "contributorDelta": null,
       "issueDelta": 0,
       "score": null
@@ -56,38 +69,25 @@
     {
       "name": "pablostanley/yoinks",
       "description": "yoink any video from your terminal. no shady ads.",
-      "stars": 868,
+      "stars": 881,
       "forks": 94,
       "issues": 8,
       "language": "TypeScript",
       "url": "https://github.com/pablostanley/yoinks",
-      "starDelta": 15,
+      "starDelta": 28,
       "contributorDelta": null,
       "issueDelta": 1,
       "score": null
     },
     {
-      "name": "lopopolo/harness-engineering",
-      "description": "🐎 Ryan Lopopolo’s anthology, field guide, and agent context bundle for harness engineering",
-      "stars": 782,
-      "forks": 36,
-      "issues": 0,
-      "language": "Python",
-      "url": "https://github.com/lopopolo/harness-engineering",
-      "starDelta": 126,
-      "contributorDelta": null,
-      "issueDelta": 0,
-      "score": null
-    },
-    {
       "name": "Blueturboguy07/cue",
       "description": "Open-source macOS AI copilot that floats over your screen, sees/hears your meetings, and stays hidden from screen shares. Cluely alternative, bring-your-own-key.",
-      "stars": 661,
-      "forks": 143,
+      "stars": 668,
+      "forks": 144,
       "issues": 7,
       "language": "JavaScript",
       "url": "https://github.com/Blueturboguy07/cue",
-      "starDelta": 12,
+      "starDelta": 19,
       "contributorDelta": null,
       "issueDelta": 1,
       "score": null
@@ -95,29 +95,44 @@
     {
       "name": "v-modal/vmodal_sdk_flutter",
       "description": "V- Modal AI: Search anything anywhere SDK Flutter",
-      "stars": 622,
+      "stars": 623,
       "forks": 1,
       "issues": 4,
       "language": "Dart",
       "url": "https://github.com/v-modal/vmodal_sdk_flutter",
-      "starDelta": 622,
+      "starDelta": 623,
       "contributorDelta": 0,
       "issueDelta": 4,
-      "score": 1250
+      "score": 1252
     },
     {
       "name": "xiejunjie524/handdraw-story-video",
       "description": "Turn hand-drawn story illustrations into 35–45 second line-reveal and gradual-coloring videos with HyperFrames.",
-      "stars": 501,
-      "forks": 82,
+      "stars": 521,
+      "forks": 83,
       "issues": 0,
       "language": "Python",
       "url": "https://github.com/xiejunjie524/handdraw-story-video",
-      "starDelta": 501,
+      "starDelta": 521,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 1002
+      "score": 1042
     },
+    {
+      "name": "pyang5166/gbro-collage-broll",
+      "description": "半调纸拼贴 B-roll 生成 skill：三闸门审批，Gemini Omni Flash 首尾帧组装动画 | Editorial halftone paper-collage B-roll agent skill",
+      "stars": 492,
+      "forks": 52,
+      "issues": 2,
+      "language": "Python",
+      "url": "https://github.com/pyang5166/gbro-collage-broll",
+      "starDelta": 492,
+      "contributorDelta": 0,
+      "issueDelta": 2,
+      "score": 987
+    }
+  ],
+  "silentClimbers": [
     {
       "name": "EthanXiang777/circuit-framework",
       "description": "Circuit Framework — multi-agent LLM trading research system",
@@ -130,21 +145,6 @@
       "contributorDelta": 0,
       "issueDelta": 0,
       "score": 972
-    }
-  ],
-  "silentClimbers": [
-    {
-      "name": "pyang5166/gbro-collage-broll",
-      "description": "半调纸拼贴 B-roll 生成 skill：三闸门审批，Gemini Omni Flash 首尾帧组装动画 | Editorial halftone paper-collage B-roll agent skill",
-      "stars": 476,
-      "forks": 50,
-      "issues": 2,
-      "language": "Python",
-      "url": "https://github.com/pyang5166/gbro-collage-broll",
-      "starDelta": 476,
-      "contributorDelta": 0,
-      "issueDelta": 2,
-      "score": 955
     },
     {
       "name": "MIgHTy-alIeN/Trading-Bot",
@@ -162,67 +162,67 @@
     {
       "name": "Icex0/wp2shell-poc",
       "description": "wp2shell (CVE-2026-63030 & CVE-2026-60137) - full RCE chain",
-      "stars": 420,
-      "forks": 100,
+      "stars": 429,
+      "forks": 102,
       "issues": 1,
       "language": "Python",
       "url": "https://github.com/Icex0/wp2shell-poc",
-      "starDelta": 420,
+      "starDelta": 429,
       "contributorDelta": 0,
       "issueDelta": 1,
-      "score": 841.5
+      "score": 859.5
     },
     {
       "name": "JustinGamer191/Holo",
       "description": null,
-      "stars": 380,
+      "stars": 383,
       "forks": 58,
-      "issues": 10,
+      "issues": 9,
       "language": "Swift",
       "url": "https://github.com/JustinGamer191/Holo",
-      "starDelta": 380,
+      "starDelta": 383,
       "contributorDelta": 0,
-      "issueDelta": 10,
-      "score": 775
+      "issueDelta": 9,
+      "score": 779.5
     },
     {
       "name": "yuwen-cool/yuwen-publish-precheck",
       "description": "发布前审｜发抖音/小红书/视频号前先让 AI 审一遍：哪句踩线、依据哪条官方规则、给能直接用的改法。38 篇真实样本校准判定尺度，72 条官方原文引文可查证，你踩过的坑沉淀成本地规则库越用越准。不承诺过审，不教绕审。",
-      "stars": 352,
-      "forks": 32,
+      "stars": 358,
+      "forks": 34,
       "issues": 1,
       "language": "Python",
       "url": "https://github.com/yuwen-cool/yuwen-publish-precheck",
-      "starDelta": 352,
+      "starDelta": 358,
       "contributorDelta": 0,
       "issueDelta": 1,
-      "score": 705.5
+      "score": 717.5
     },
     {
       "name": "PromptPartner/agentsmith",
       "description": "Universal, model-agnostic operating harness for AI agents (Claude, Codex, Gemini, …) — a lean core + work-type profiles assembled by one setup script.",
-      "stars": 311,
+      "stars": 315,
       "forks": 17,
       "issues": 0,
       "language": "Shell",
       "url": "https://github.com/PromptPartner/agentsmith",
-      "starDelta": 311,
+      "starDelta": 315,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 622
+      "score": 630
     },
     {
       "name": "thesysdev/appless",
       "description": "What if your phone had no apps",
-      "stars": 300,
+      "stars": 301,
       "forks": 43,
       "issues": 3,
       "language": "TypeScript",
       "url": "https://github.com/thesysdev/appless",
-      "starDelta": 300,
+      "starDelta": 301,
       "contributorDelta": 0,
       "issueDelta": 3,
-      "score": 604.5
+      "score": 606.5
     },
     {
       "name": "my-take-dev/inspired-mino-design-skills",
@@ -240,41 +240,54 @@
     {
       "name": "HeiGeAi/heige-codex-skin-studio",
       "description": "给 Codex Desktop 一键换肤：OpenAI Codex/ChatGPT 桌面端主题工具，CDP 注入零修改应用，Miku/原神/鸣潮/火影/恋与深空 9 预设+自定义图片取色 | One-click theme & skin switcher for OpenAI Codex Desktop (macOS/Windows)",
-      "stars": 285,
+      "stars": 287,
       "forks": 46,
       "issues": 8,
       "language": "JavaScript",
       "url": "https://github.com/HeiGeAi/heige-codex-skin-studio",
-      "starDelta": 285,
+      "starDelta": 287,
       "contributorDelta": 0,
       "issueDelta": 8,
-      "score": 582
+      "score": 586
     },
     {
       "name": "thebuggeddev/football-stadium",
       "description": "A 3D football stadium to visualize where you sit in the seat before you buy it",
-      "stars": 290,
-      "forks": 62,
+      "stars": 292,
+      "forks": 61,
       "issues": 0,
       "language": "HTML",
       "url": "https://github.com/thebuggeddev/football-stadium",
-      "starDelta": 290,
+      "starDelta": 292,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 580
+      "score": 584
     }
   ],
   "coolingDown": [],
   "experimentalSpike": [
     {
+      "name": "Fei-Away/Codex-Dream-Skin",
+      "description": "Codex Dream Skin",
+      "stars": 11187,
+      "forks": 1147,
+      "issues": 113,
+      "language": "JavaScript",
+      "url": "https://github.com/Fei-Away/Codex-Dream-Skin",
+      "starDelta": 140,
+      "contributorDelta": null,
+      "issueDelta": 4,
+      "score": null
+    },
+    {
       "name": "hoainho/img2threejs",
       "description": "Rebuild the object in a reference image as a code-only, procedural, quality-gated, animation-ready Three.js model. Token-efficient image-to-3D.",
-      "stars": 1026,
-      "forks": 88,
+      "stars": 1119,
+      "forks": 93,
       "issues": 8,
       "language": "Python",
       "url": "https://github.com/hoainho/img2threejs",
-      "starDelta": 137,
+      "starDelta": 230,
       "contributorDelta": null,
       "issueDelta": 0,
       "score": null
@@ -282,41 +295,54 @@
     {
       "name": "lopopolo/harness-engineering",
       "description": "🐎 Ryan Lopopolo’s anthology, field guide, and agent context bundle for harness engineering",
-      "stars": 782,
-      "forks": 36,
-      "issues": 0,
+      "stars": 885,
+      "forks": 51,
+      "issues": 1,
       "language": "Python",
       "url": "https://github.com/lopopolo/harness-engineering",
-      "starDelta": 126,
+      "starDelta": 229,
       "contributorDelta": null,
-      "issueDelta": 0,
+      "issueDelta": 1,
       "score": null
     },
     {
       "name": "v-modal/vmodal_sdk_flutter",
       "description": "V- Modal AI: Search anything anywhere SDK Flutter",
-      "stars": 622,
+      "stars": 623,
       "forks": 1,
       "issues": 4,
       "language": "Dart",
       "url": "https://github.com/v-modal/vmodal_sdk_flutter",
-      "starDelta": 622,
+      "starDelta": 623,
       "contributorDelta": 0,
       "issueDelta": 4,
-      "score": 1250
+      "score": 1252
     },
     {
       "name": "xiejunjie524/handdraw-story-video",
       "description": "Turn hand-drawn story illustrations into 35–45 second line-reveal and gradual-coloring videos with HyperFrames.",
-      "stars": 501,
-      "forks": 82,
+      "stars": 521,
+      "forks": 83,
       "issues": 0,
       "language": "Python",
       "url": "https://github.com/xiejunjie524/handdraw-story-video",
-      "starDelta": 501,
+      "starDelta": 521,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 1002
+      "score": 1042
+    },
+    {
+      "name": "pyang5166/gbro-collage-broll",
+      "description": "半调纸拼贴 B-roll 生成 skill：三闸门审批，Gemini Omni Flash 首尾帧组装动画 | Editorial halftone paper-collage B-roll agent skill",
+      "stars": 492,
+      "forks": 52,
+      "issues": 2,
+      "language": "Python",
+      "url": "https://github.com/pyang5166/gbro-collage-broll",
+      "starDelta": 492,
+      "contributorDelta": 0,
+      "issueDelta": 2,
+      "score": 987
     },
     {
       "name": "EthanXiang777/circuit-framework",
@@ -330,19 +356,6 @@
       "contributorDelta": 0,
       "issueDelta": 0,
       "score": 972
-    },
-    {
-      "name": "pyang5166/gbro-collage-broll",
-      "description": "半调纸拼贴 B-roll 生成 skill：三闸门审批，Gemini Omni Flash 首尾帧组装动画 | Editorial halftone paper-collage B-roll agent skill",
-      "stars": 476,
-      "forks": 50,
-      "issues": 2,
-      "language": "Python",
-      "url": "https://github.com/pyang5166/gbro-collage-broll",
-      "starDelta": 476,
-      "contributorDelta": 0,
-      "issueDelta": 2,
-      "score": 955
     },
     {
       "name": "MIgHTy-alIeN/Trading-Bot",
@@ -360,41 +373,28 @@
     {
       "name": "Icex0/wp2shell-poc",
       "description": "wp2shell (CVE-2026-63030 & CVE-2026-60137) - full RCE chain",
-      "stars": 420,
-      "forks": 100,
+      "stars": 429,
+      "forks": 102,
       "issues": 1,
       "language": "Python",
       "url": "https://github.com/Icex0/wp2shell-poc",
-      "starDelta": 420,
+      "starDelta": 429,
       "contributorDelta": 0,
       "issueDelta": 1,
-      "score": 841.5
+      "score": 859.5
     },
     {
       "name": "JustinGamer191/Holo",
       "description": null,
-      "stars": 380,
+      "stars": 383,
       "forks": 58,
-      "issues": 10,
+      "issues": 9,
       "language": "Swift",
       "url": "https://github.com/JustinGamer191/Holo",
-      "starDelta": 380,
+      "starDelta": 383,
       "contributorDelta": 0,
-      "issueDelta": 10,
-      "score": 775
-    },
-    {
-      "name": "yuwen-cool/yuwen-publish-precheck",
-      "description": "发布前审｜发抖音/小红书/视频号前先让 AI 审一遍：哪句踩线、依据哪条官方规则、给能直接用的改法。38 篇真实样本校准判定尺度，72 条官方原文引文可查证，你踩过的坑沉淀成本地规则库越用越准。不承诺过审，不教绕审。",
-      "stars": 352,
-      "forks": 32,
-      "issues": 1,
-      "language": "Python",
-      "url": "https://github.com/yuwen-cool/yuwen-publish-precheck",
-      "starDelta": 352,
-      "contributorDelta": 0,
-      "issueDelta": 1,
-      "score": 705.5
+      "issueDelta": 9,
+      "score": 779.5
     }
   ]
 }
