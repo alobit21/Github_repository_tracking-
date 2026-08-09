@@ -4,12 +4,12 @@
     {
       "name": "firecrawl/anydoc",
       "description": "Convert Word, PowerPoint, Excel, OpenDocument, RTF, EPUB, CSV, and PDF to clean Markdown. Built in Rust, with Node.js and Python bindings.",
-      "stars": 12126,
-      "forks": 581,
+      "stars": 12189,
+      "forks": 586,
       "issues": 54,
       "language": "Rust",
       "url": "https://github.com/firecrawl/anydoc",
-      "starDelta": 152,
+      "starDelta": 215,
       "contributorDelta": null,
       "issueDelta": 3,
       "score": null
@@ -17,12 +17,12 @@
     {
       "name": "KKKKhazix/human-writing",
       "description": "让 AI 写的中文读起来像一个具体的人在说话。通用创作与改稿 Skill，开箱即用。",
-      "stars": 1988,
-      "forks": 174,
+      "stars": 1992,
+      "forks": 175,
       "issues": 4,
       "language": "Python",
       "url": "https://github.com/KKKKhazix/human-writing",
-      "starDelta": 7,
+      "starDelta": 11,
       "contributorDelta": null,
       "issueDelta": 0,
       "score": null
@@ -30,12 +30,12 @@
     {
       "name": "ZzzLc0405/photo-abstract-editorial",
       "description": null,
-      "stars": 1723,
-      "forks": 87,
+      "stars": 1757,
+      "forks": 89,
       "issues": 2,
       "language": null,
       "url": "https://github.com/ZzzLc0405/photo-abstract-editorial",
-      "starDelta": 22,
+      "starDelta": 56,
       "contributorDelta": null,
       "issueDelta": 0,
       "score": null
@@ -44,7 +44,7 @@
       "name": "Binaryify/open-kimi-ppt-skill",
       "description": "非官方 Kimi Slides Skill：让 AI Agent 生成可编辑 PPTD + PPTX，并附带本地浏览器编辑器 Unofficial Kimi Slides skill for AI agents — generate editable PPTD + PPTX with a local browser editor",
       "stars": 1588,
-      "forks": 1114,
+      "forks": 1125,
       "issues": 6,
       "language": null,
       "url": "https://github.com/Binaryify/open-kimi-ppt-skill",
@@ -56,12 +56,12 @@
     {
       "name": "mikiarlo3/awesome-growth-hacking-skills",
       "description": "Find agentic growth hacking skills for Claude, ChatGPT, Manus | by enso.bot",
-      "stars": 764,
+      "stars": 766,
       "forks": 11,
       "issues": 0,
       "language": "Shell",
       "url": "https://github.com/mikiarlo3/awesome-growth-hacking-skills",
-      "starDelta": 6,
+      "starDelta": 8,
       "contributorDelta": null,
       "issueDelta": 0,
       "score": null
@@ -82,28 +82,28 @@
     {
       "name": "google-gemma/gemma-translator",
       "description": null,
-      "stars": 578,
+      "stars": 588,
       "forks": 77,
       "issues": 1,
       "language": "JavaScript",
       "url": "https://github.com/google-gemma/gemma-translator",
-      "starDelta": 578,
+      "starDelta": 588,
       "contributorDelta": 0,
       "issueDelta": 1,
-      "score": 1157.5
+      "score": 1177.5
     },
     {
       "name": "wumingqi60/lingxi",
       "description": "灵犀跨境-开源共建版",
-      "stars": 567,
+      "stars": 576,
       "forks": 9,
       "issues": 0,
       "language": "TypeScript",
       "url": "https://github.com/wumingqi60/lingxi",
-      "starDelta": 567,
+      "starDelta": 576,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 1134
+      "score": 1152
     },
     {
       "name": "MarcosSete/awesome-free-ai-course-notes",
@@ -121,95 +121,95 @@
     {
       "name": "xoreaxeaxeax/asm-hall-of-shame",
       "description": "Racing to the bottom of CPU performance",
-      "stars": 548,
+      "stars": 558,
       "forks": 5,
       "issues": 2,
       "language": "C",
       "url": "https://github.com/xoreaxeaxeax/asm-hall-of-shame",
-      "starDelta": 548,
+      "starDelta": 558,
       "contributorDelta": 0,
       "issueDelta": 2,
-      "score": 1099
+      "score": 1119
     }
   ],
   "silentClimbers": [
     {
-      "name": "nfzerox/VirtualMacOniPad",
-      "description": "People have dreamed of running macOS on iPad for more than a decade. Today, that dream comes true. With Virtual Mac, iPad finally breaks free from iPadOS, enabling pro apps like Xcode and Terminal to run directly on device. Requires iPad Pro (M1, M2) or iPad Air (M1) running iPadOS 16 up to 16.3.1.",
-      "stars": 522,
-      "forks": 24,
-      "issues": 21,
-      "language": "Objective-C",
-      "url": "https://github.com/nfzerox/VirtualMacOniPad",
-      "starDelta": 522,
-      "contributorDelta": 0,
-      "issueDelta": 21,
-      "score": 1075.5
-    },
-    {
       "name": "yuhuangerdi/InduSecAgent",
       "description": null,
-      "stars": 527,
+      "stars": 539,
       "forks": 9,
       "issues": 0,
       "language": "Vue",
       "url": "https://github.com/yuhuangerdi/InduSecAgent",
-      "starDelta": 527,
+      "starDelta": 539,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 1054
+      "score": 1078
+    },
+    {
+      "name": "nfzerox/VirtualMacOniPad",
+      "description": "People have dreamed of running macOS on iPad for more than a decade. Today, that dream comes true. With Virtual Mac, iPad finally breaks free from iPadOS, enabling pro apps like Xcode and Terminal to run directly on device. Requires iPad Pro (M1, M2) or iPad Air (M1) running iPadOS 16 up to 16.3.1.",
+      "stars": 526,
+      "forks": 24,
+      "issues": 17,
+      "language": "Objective-C",
+      "url": "https://github.com/nfzerox/VirtualMacOniPad",
+      "starDelta": 526,
+      "contributorDelta": 0,
+      "issueDelta": 17,
+      "score": 1077.5
     },
     {
       "name": "jd-opensource/JoyAI-Video-Edit",
       "description": "[Official Repo] JoyAI-Video-Edit: Real-Time Open-Ended Video Editing with Autoregressive Diffusion",
-      "stars": 517,
-      "forks": 21,
+      "stars": 524,
+      "forks": 22,
       "issues": 5,
       "language": "Python",
       "url": "https://github.com/jd-opensource/JoyAI-Video-Edit",
-      "starDelta": 517,
+      "starDelta": 524,
       "contributorDelta": 0,
       "issueDelta": 5,
-      "score": 1041.5
+      "score": 1055.5
     },
     {
       "name": "T8mars/comfyui-minimax-h3-audio-T8",
       "description": null,
-      "stars": 462,
+      "stars": 472,
       "forks": 23,
       "issues": 3,
       "language": "Python",
       "url": "https://github.com/T8mars/comfyui-minimax-h3-audio-T8",
-      "starDelta": 462,
+      "starDelta": 472,
       "contributorDelta": 0,
       "issueDelta": 3,
-      "score": 928.5
+      "score": 948.5
     },
     {
       "name": "leonickson1/Swiftlet",
       "description": "Swiftlet is a Swift and Metal runtime that runs large Qwen Mixture-of-Experts models locally on Apple devices by streaming expert weights from storage, enabling 35B and 80B models to run with low RAM, including on iPhone.",
-      "stars": 458,
+      "stars": 461,
       "forks": 20,
       "issues": 2,
       "language": "Swift",
       "url": "https://github.com/leonickson1/Swiftlet",
-      "starDelta": 458,
+      "starDelta": 461,
       "contributorDelta": 0,
       "issueDelta": 2,
-      "score": 919
+      "score": 925
     },
     {
       "name": "zqxwce/vphone-ws",
       "description": "A native macOS app for managing virtual iPhones - browse, create, and boot iOS research VMs from a single window.",
-      "stars": 445,
+      "stars": 446,
       "forks": 25,
       "issues": 0,
       "language": "Swift",
       "url": "https://github.com/zqxwce/vphone-ws",
-      "starDelta": 445,
+      "starDelta": 446,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 890
+      "score": 892
     },
     {
       "name": "fuxicodex/Fuxi",
@@ -240,28 +240,28 @@
     {
       "name": "SandAI-org/MAGI-2-preview",
       "description": "MAGI-2-preview: Scaling Video Generation Models Efficiently",
-      "stars": 425,
+      "stars": 426,
       "forks": 8,
       "issues": 1,
       "language": "Python",
       "url": "https://github.com/SandAI-org/MAGI-2-preview",
-      "starDelta": 425,
+      "starDelta": 426,
       "contributorDelta": 0,
       "issueDelta": 1,
-      "score": 851.5
+      "score": 853.5
     },
     {
-      "name": "AMAP-ML/LongHorizon-Harness",
-      "description": "The long-horizon computer-use harness. Run AI agents across desktop apps and the CLI for extended periods while preserving task state and making reliable progress on complex workflows. Features fresh-context execution, durable verified state, independent auditing, recoverable progress, and native Claude Code / Codex / OpenClaw integration.",
-      "stars": 411,
-      "forks": 46,
-      "issues": 5,
-      "language": "Python",
-      "url": "https://github.com/AMAP-ML/LongHorizon-Harness",
-      "starDelta": 411,
+      "name": "openTrinity/mycontext",
+      "description": "MyContext is a local-first desktop app for everyday communication and knowledge work",
+      "stars": 426,
+      "forks": 34,
+      "issues": 0,
+      "language": "TypeScript",
+      "url": "https://github.com/openTrinity/mycontext",
+      "starDelta": 426,
       "contributorDelta": 0,
-      "issueDelta": 5,
-      "score": 829.5
+      "issueDelta": 0,
+      "score": 852
     }
   ],
   "coolingDown": [],
@@ -269,41 +269,54 @@
     {
       "name": "firecrawl/anydoc",
       "description": "Convert Word, PowerPoint, Excel, OpenDocument, RTF, EPUB, CSV, and PDF to clean Markdown. Built in Rust, with Node.js and Python bindings.",
-      "stars": 12126,
-      "forks": 581,
+      "stars": 12189,
+      "forks": 586,
       "issues": 54,
       "language": "Rust",
       "url": "https://github.com/firecrawl/anydoc",
-      "starDelta": 152,
+      "starDelta": 215,
       "contributorDelta": null,
       "issueDelta": 3,
       "score": null
     },
     {
+      "name": "ZzzLc0405/photo-abstract-editorial",
+      "description": null,
+      "stars": 1757,
+      "forks": 89,
+      "issues": 2,
+      "language": null,
+      "url": "https://github.com/ZzzLc0405/photo-abstract-editorial",
+      "starDelta": 56,
+      "contributorDelta": null,
+      "issueDelta": 0,
+      "score": null
+    },
+    {
       "name": "google-gemma/gemma-translator",
       "description": null,
-      "stars": 578,
+      "stars": 588,
       "forks": 77,
       "issues": 1,
       "language": "JavaScript",
       "url": "https://github.com/google-gemma/gemma-translator",
-      "starDelta": 578,
+      "starDelta": 588,
       "contributorDelta": 0,
       "issueDelta": 1,
-      "score": 1157.5
+      "score": 1177.5
     },
     {
       "name": "wumingqi60/lingxi",
       "description": "灵犀跨境-开源共建版",
-      "stars": 567,
+      "stars": 576,
       "forks": 9,
       "issues": 0,
       "language": "TypeScript",
       "url": "https://github.com/wumingqi60/lingxi",
-      "starDelta": 567,
+      "starDelta": 576,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 1134
+      "score": 1152
     },
     {
       "name": "MarcosSete/awesome-free-ai-course-notes",
@@ -321,80 +334,67 @@
     {
       "name": "xoreaxeaxeax/asm-hall-of-shame",
       "description": "Racing to the bottom of CPU performance",
-      "stars": 548,
+      "stars": 558,
       "forks": 5,
       "issues": 2,
       "language": "C",
       "url": "https://github.com/xoreaxeaxeax/asm-hall-of-shame",
-      "starDelta": 548,
+      "starDelta": 558,
       "contributorDelta": 0,
       "issueDelta": 2,
-      "score": 1099
-    },
-    {
-      "name": "nfzerox/VirtualMacOniPad",
-      "description": "People have dreamed of running macOS on iPad for more than a decade. Today, that dream comes true. With Virtual Mac, iPad finally breaks free from iPadOS, enabling pro apps like Xcode and Terminal to run directly on device. Requires iPad Pro (M1, M2) or iPad Air (M1) running iPadOS 16 up to 16.3.1.",
-      "stars": 522,
-      "forks": 24,
-      "issues": 21,
-      "language": "Objective-C",
-      "url": "https://github.com/nfzerox/VirtualMacOniPad",
-      "starDelta": 522,
-      "contributorDelta": 0,
-      "issueDelta": 21,
-      "score": 1075.5
+      "score": 1119
     },
     {
       "name": "yuhuangerdi/InduSecAgent",
       "description": null,
-      "stars": 527,
+      "stars": 539,
       "forks": 9,
       "issues": 0,
       "language": "Vue",
       "url": "https://github.com/yuhuangerdi/InduSecAgent",
-      "starDelta": 527,
+      "starDelta": 539,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 1054
+      "score": 1078
+    },
+    {
+      "name": "nfzerox/VirtualMacOniPad",
+      "description": "People have dreamed of running macOS on iPad for more than a decade. Today, that dream comes true. With Virtual Mac, iPad finally breaks free from iPadOS, enabling pro apps like Xcode and Terminal to run directly on device. Requires iPad Pro (M1, M2) or iPad Air (M1) running iPadOS 16 up to 16.3.1.",
+      "stars": 526,
+      "forks": 24,
+      "issues": 17,
+      "language": "Objective-C",
+      "url": "https://github.com/nfzerox/VirtualMacOniPad",
+      "starDelta": 526,
+      "contributorDelta": 0,
+      "issueDelta": 17,
+      "score": 1077.5
     },
     {
       "name": "jd-opensource/JoyAI-Video-Edit",
       "description": "[Official Repo] JoyAI-Video-Edit: Real-Time Open-Ended Video Editing with Autoregressive Diffusion",
-      "stars": 517,
-      "forks": 21,
+      "stars": 524,
+      "forks": 22,
       "issues": 5,
       "language": "Python",
       "url": "https://github.com/jd-opensource/JoyAI-Video-Edit",
-      "starDelta": 517,
+      "starDelta": 524,
       "contributorDelta": 0,
       "issueDelta": 5,
-      "score": 1041.5
+      "score": 1055.5
     },
     {
       "name": "T8mars/comfyui-minimax-h3-audio-T8",
       "description": null,
-      "stars": 462,
+      "stars": 472,
       "forks": 23,
       "issues": 3,
       "language": "Python",
       "url": "https://github.com/T8mars/comfyui-minimax-h3-audio-T8",
-      "starDelta": 462,
+      "starDelta": 472,
       "contributorDelta": 0,
       "issueDelta": 3,
-      "score": 928.5
-    },
-    {
-      "name": "leonickson1/Swiftlet",
-      "description": "Swiftlet is a Swift and Metal runtime that runs large Qwen Mixture-of-Experts models locally on Apple devices by streaming expert weights from storage, enabling 35B and 80B models to run with low RAM, including on iPhone.",
-      "stars": 458,
-      "forks": 20,
-      "issues": 2,
-      "language": "Swift",
-      "url": "https://github.com/leonickson1/Swiftlet",
-      "starDelta": 458,
-      "contributorDelta": 0,
-      "issueDelta": 2,
-      "score": 919
+      "score": 948.5
     }
   ]
 }
