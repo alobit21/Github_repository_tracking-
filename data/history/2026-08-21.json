@@ -4,12 +4,12 @@
     {
       "name": "s1dashu/ip-as-logo-skill",
       "description": "A compact Agent Skill for highly simplified, rounded, subtly neo-skeuomorphic IP mascot logos.",
-      "stars": 3180,
-      "forks": 155,
+      "stars": 3260,
+      "forks": 160,
       "issues": 3,
       "language": null,
       "url": "https://github.com/s1dashu/ip-as-logo-skill",
-      "starDelta": 181,
+      "starDelta": 261,
       "contributorDelta": null,
       "issueDelta": 0,
       "score": null
@@ -17,27 +17,27 @@
     {
       "name": "yetone/cumora",
       "description": "Where agent teams gather. Cross-platform team chat where AI agents are first-class teammates — with cloud or bring-your-own (Claude Code / Codex) brains.",
-      "stars": 2781,
-      "forks": 330,
-      "issues": 6,
+      "stars": 2792,
+      "forks": 334,
+      "issues": 7,
       "language": "TypeScript",
       "url": "https://github.com/yetone/cumora",
-      "starDelta": 12,
+      "starDelta": 23,
       "contributorDelta": null,
-      "issueDelta": 3,
+      "issueDelta": 4,
       "score": null
     },
     {
       "name": "CopilotKit/OpenBot",
       "description": "Open-source AI coworkers that each get a computer of their own: a browser, files and tools, with every action decided before it happens and recorded after. Bring any AG-UI agent.",
-      "stars": 1694,
-      "forks": 178,
-      "issues": 35,
+      "stars": 1789,
+      "forks": 184,
+      "issues": 33,
       "language": "TypeScript",
       "url": "https://github.com/CopilotKit/OpenBot",
-      "starDelta": 296,
+      "starDelta": 391,
       "contributorDelta": null,
-      "issueDelta": 8,
+      "issueDelta": 6,
       "score": null
     },
     {
@@ -80,17 +80,30 @@
       "score": 1858
     },
     {
+      "name": "wang2122/sprix-sage-router",
+      "description": "Sprix AI at 屿智同行 — state-aware SELF/COLLABORATE/HANDOFF routing for A2A agent networks.",
+      "stars": 901,
+      "forks": 12,
+      "issues": 0,
+      "language": "Python",
+      "url": "https://github.com/wang2122/sprix-sage-router",
+      "starDelta": 901,
+      "contributorDelta": 0,
+      "issueDelta": 0,
+      "score": 1802
+    },
+    {
       "name": "vvxw/deploy-vercel",
       "description": "Install Command：npm install",
-      "stars": 825,
-      "forks": 171,
+      "stars": 857,
+      "forks": 185,
       "issues": 3,
       "language": "JavaScript",
       "url": "https://github.com/vvxw/deploy-vercel",
-      "starDelta": 825,
+      "starDelta": 857,
       "contributorDelta": 0,
       "issueDelta": 3,
-      "score": 1654.5
+      "score": 1718.5
     },
     {
       "name": "Leutenegger/vanity-eth",
@@ -106,58 +119,45 @@
       "score": 1602
     },
     {
-      "name": "wang2122/sprix-sage-router",
-      "description": "Sprix AI at 屿智同行 — state-aware SELF/COLLABORATE/HANDOFF routing for A2A agent networks.",
-      "stars": 679,
-      "forks": 11,
-      "issues": 0,
-      "language": "Python",
-      "url": "https://github.com/wang2122/sprix-sage-router",
-      "starDelta": 679,
-      "contributorDelta": 0,
-      "issueDelta": 0,
-      "score": 1358
-    },
-    {
       "name": "DenisSergeevitch/desktop-fly",
       "description": "A 3D fruit fly living on your macOS desktop, driven by a live spiking simulation of the real FlyWire connectome",
-      "stars": 639,
-      "forks": 37,
+      "stars": 649,
+      "forks": 38,
       "issues": 5,
       "language": "Swift",
       "url": "https://github.com/DenisSergeevitch/desktop-fly",
-      "starDelta": 639,
+      "starDelta": 649,
       "contributorDelta": 0,
       "issueDelta": 5,
-      "score": 1285.5
+      "score": 1305.5
     }
   ],
   "silentClimbers": [
     {
       "name": "SigmanticAI/apex-inference-chip",
       "description": "An inference chip design that runs a real LLM (Qwen2.5-0.5B) on FPGA — one transformer decoder layer in RTL, every silicon value bit-exact against a golden model. 0.56 tok/s measured, a 140× climb, full evidence trail.",
-      "stars": 629,
+      "stars": 644,
       "forks": 1,
       "issues": 0,
       "language": "Python",
       "url": "https://github.com/SigmanticAI/apex-inference-chip",
-      "starDelta": 629,
+      "starDelta": 644,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 1258
+      "score": 1288
     },
     {
       "name": "Alain00/blobatar",
       "description": null,
-      "stars": 616,
+      "stars": 620,
       "forks": 38,
       "issues": 3,
       "language": "TypeScript",
       "url": "https://github.com/Alain00/blobatar",
-      "starDelta": 616,
+      "starDelta": 620,
       "contributorDelta": 0,
       "issueDelta": 3,
-      "score": 1236.5
+      "score": 1244.5
     },
     {
       "name": "Leutenegger/coldcard-airgap",
@@ -175,93 +175,93 @@
     {
       "name": "jeremy-prt/bloub",
       "description": "SVG recreation of the x.ai bot avatar. One shape morphing through 14 states, measured off the reference video frame by frame.",
-      "stars": 581,
+      "stars": 586,
       "forks": 65,
       "issues": 2,
       "language": "TypeScript",
       "url": "https://github.com/jeremy-prt/bloub",
-      "starDelta": 581,
+      "starDelta": 586,
       "contributorDelta": 0,
       "issueDelta": 2,
-      "score": 1165
+      "score": 1175
     },
     {
       "name": "browser-use/macos-harness",
       "description": "The simplest, thinnest harness that gives an LLM complete freedom to control a Mac.",
-      "stars": 572,
-      "forks": 38,
+      "stars": 582,
+      "forks": 39,
       "issues": 6,
       "language": "Python",
       "url": "https://github.com/browser-use/macos-harness",
-      "starDelta": 572,
+      "starDelta": 582,
       "contributorDelta": 0,
       "issueDelta": 6,
-      "score": 1153
+      "score": 1173
     },
     {
       "name": "missuo/herdrm",
       "description": "Native macOS console for herdr — all your coding agents and their live terminals, across devices",
-      "stars": 563,
-      "forks": 33,
-      "issues": 5,
+      "stars": 575,
+      "forks": 34,
+      "issues": 1,
       "language": "Swift",
       "url": "https://github.com/missuo/herdrm",
-      "starDelta": 563,
+      "starDelta": 575,
       "contributorDelta": 0,
-      "issueDelta": 5,
-      "score": 1133.5
+      "issueDelta": 1,
+      "score": 1151.5
     },
     {
       "name": "Nervercc/gpt_nerver",
       "description": "ChatGPT Plus automation toolkit: PyQt6 desktop + JSON-RPC registration engine + card/CDK/PayPal/GCash flows",
-      "stars": 533,
-      "forks": 75,
+      "stars": 562,
+      "forks": 76,
       "issues": 0,
       "language": "Python",
       "url": "https://github.com/Nervercc/gpt_nerver",
-      "starDelta": 533,
+      "starDelta": 562,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 1066
+      "score": 1124
     },
     {
       "name": "bawadou/ai-data-extractor",
       "description": "Free open-source extractor for AI coding assistant chat histories. Supports Claude Code, Cursor, Windsurf, Aider, Cline/Roo Code, and more.",
-      "stars": 529,
+      "stars": 531,
       "forks": 97,
       "issues": 0,
       "language": "Python",
       "url": "https://github.com/bawadou/ai-data-extractor",
-      "starDelta": 529,
+      "starDelta": 531,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 1058
+      "score": 1062
     },
     {
       "name": "SheberDavid/v4-flash-godmode-opencode-go",
       "description": "V4 Flash 神模式 (opencode-go)：让 opencode-go 的 DeepSeek V4 Flash 从鬼模式切换到神模式的 dsh agent preset",
-      "stars": 494,
+      "stars": 493,
       "forks": 13,
       "issues": 6,
       "language": "JavaScript",
       "url": "https://github.com/SheberDavid/v4-flash-godmode-opencode-go",
-      "starDelta": 494,
+      "starDelta": 493,
       "contributorDelta": 0,
       "issueDelta": 6,
-      "score": 997
+      "score": 995
     },
     {
       "name": "jaredrhod/barehands",
       "description": "Move things on your screen with your bare hands. A webcam-powered, hand-tracked interface for your AI. No headset. No controllers.",
-      "stars": 483,
-      "forks": 90,
+      "stars": 491,
+      "forks": 93,
       "issues": 0,
       "language": "HTML",
       "url": "https://github.com/jaredrhod/barehands",
-      "starDelta": 483,
+      "starDelta": 491,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 966
+      "score": 982
     }
   ],
   "coolingDown": [],
@@ -269,12 +269,12 @@
     {
       "name": "s1dashu/ip-as-logo-skill",
       "description": "A compact Agent Skill for highly simplified, rounded, subtly neo-skeuomorphic IP mascot logos.",
-      "stars": 3180,
-      "forks": 155,
+      "stars": 3260,
+      "forks": 160,
       "issues": 3,
       "language": null,
       "url": "https://github.com/s1dashu/ip-as-logo-skill",
-      "starDelta": 181,
+      "starDelta": 261,
       "contributorDelta": null,
       "issueDelta": 0,
       "score": null
@@ -282,14 +282,14 @@
     {
       "name": "CopilotKit/OpenBot",
       "description": "Open-source AI coworkers that each get a computer of their own: a browser, files and tools, with every action decided before it happens and recorded after. Bring any AG-UI agent.",
-      "stars": 1694,
-      "forks": 178,
-      "issues": 35,
+      "stars": 1789,
+      "forks": 184,
+      "issues": 33,
       "language": "TypeScript",
       "url": "https://github.com/CopilotKit/OpenBot",
-      "starDelta": 296,
+      "starDelta": 391,
       "contributorDelta": null,
-      "issueDelta": 8,
+      "issueDelta": 6,
       "score": null
     },
     {
@@ -319,17 +319,30 @@
       "score": 1858
     },
     {
+      "name": "wang2122/sprix-sage-router",
+      "description": "Sprix AI at 屿智同行 — state-aware SELF/COLLABORATE/HANDOFF routing for A2A agent networks.",
+      "stars": 901,
+      "forks": 12,
+      "issues": 0,
+      "language": "Python",
+      "url": "https://github.com/wang2122/sprix-sage-router",
+      "starDelta": 901,
+      "contributorDelta": 0,
+      "issueDelta": 0,
+      "score": 1802
+    },
+    {
       "name": "vvxw/deploy-vercel",
       "description": "Install Command：npm install",
-      "stars": 825,
-      "forks": 171,
+      "stars": 857,
+      "forks": 185,
       "issues": 3,
       "language": "JavaScript",
       "url": "https://github.com/vvxw/deploy-vercel",
-      "starDelta": 825,
+      "starDelta": 857,
       "contributorDelta": 0,
       "issueDelta": 3,
-      "score": 1654.5
+      "score": 1718.5
     },
     {
       "name": "Leutenegger/vanity-eth",
@@ -345,56 +358,43 @@
       "score": 1602
     },
     {
-      "name": "wang2122/sprix-sage-router",
-      "description": "Sprix AI at 屿智同行 — state-aware SELF/COLLABORATE/HANDOFF routing for A2A agent networks.",
-      "stars": 679,
-      "forks": 11,
-      "issues": 0,
-      "language": "Python",
-      "url": "https://github.com/wang2122/sprix-sage-router",
-      "starDelta": 679,
-      "contributorDelta": 0,
-      "issueDelta": 0,
-      "score": 1358
-    },
-    {
       "name": "DenisSergeevitch/desktop-fly",
       "description": "A 3D fruit fly living on your macOS desktop, driven by a live spiking simulation of the real FlyWire connectome",
-      "stars": 639,
-      "forks": 37,
+      "stars": 649,
+      "forks": 38,
       "issues": 5,
       "language": "Swift",
       "url": "https://github.com/DenisSergeevitch/desktop-fly",
-      "starDelta": 639,
+      "starDelta": 649,
       "contributorDelta": 0,
       "issueDelta": 5,
-      "score": 1285.5
+      "score": 1305.5
     },
     {
       "name": "SigmanticAI/apex-inference-chip",
       "description": "An inference chip design that runs a real LLM (Qwen2.5-0.5B) on FPGA — one transformer decoder layer in RTL, every silicon value bit-exact against a golden model. 0.56 tok/s measured, a 140× climb, full evidence trail.",
-      "stars": 629,
+      "stars": 644,
       "forks": 1,
       "issues": 0,
       "language": "Python",
       "url": "https://github.com/SigmanticAI/apex-inference-chip",
-      "starDelta": 629,
+      "starDelta": 644,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 1258
+      "score": 1288
     },
     {
       "name": "Alain00/blobatar",
       "description": null,
-      "stars": 616,
+      "stars": 620,
       "forks": 38,
       "issues": 3,
       "language": "TypeScript",
       "url": "https://github.com/Alain00/blobatar",
-      "starDelta": 616,
+      "starDelta": 620,
       "contributorDelta": 0,
       "issueDelta": 3,
-      "score": 1236.5
+      "score": 1244.5
     }
   ]
 }
