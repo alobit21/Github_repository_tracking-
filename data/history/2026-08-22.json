@@ -4,12 +4,12 @@
     {
       "name": "s1dashu/ip-as-logo-skill",
       "description": "A compact Agent Skill for highly simplified, rounded, subtly neo-skeuomorphic IP mascot logos.",
-      "stars": 3487,
-      "forks": 171,
+      "stars": 3506,
+      "forks": 173,
       "issues": 3,
       "language": null,
       "url": "https://github.com/s1dashu/ip-as-logo-skill",
-      "starDelta": 30,
+      "starDelta": 49,
       "contributorDelta": null,
       "issueDelta": 0,
       "score": null
@@ -17,12 +17,12 @@
     {
       "name": "yetone/cumora",
       "description": "Where agent teams gather. Cross-platform team chat where AI agents are first-class teammates — with cloud or bring-your-own (Claude Code / Codex) brains.",
-      "stars": 2858,
+      "stars": 2863,
       "forks": 346,
       "issues": 7,
       "language": "TypeScript",
       "url": "https://github.com/yetone/cumora",
-      "starDelta": 2,
+      "starDelta": 7,
       "contributorDelta": null,
       "issueDelta": 0,
       "score": null
@@ -30,14 +30,14 @@
     {
       "name": "CopilotKit/OpenBot",
       "description": "Open-source AI coworkers that each get a computer of their own: a browser, files and tools, with every action decided before it happens and recorded after. Bring any AG-UI agent.",
-      "stars": 2121,
-      "forks": 227,
-      "issues": 22,
+      "stars": 2143,
+      "forks": 230,
+      "issues": 25,
       "language": "TypeScript",
       "url": "https://github.com/CopilotKit/OpenBot",
-      "starDelta": 67,
+      "starDelta": 89,
       "contributorDelta": null,
-      "issueDelta": -11,
+      "issueDelta": -8,
       "score": null
     },
     {
@@ -56,12 +56,12 @@
     {
       "name": "Tiger3807861189/DeepSeek-V4-J-Space-Capability-Realization-Report",
       "description": "DeepSeek V4 × J-Space capability realization report — benchmark evidence that J-Space reduces capability-realization loss on DeepSeek V4 (Flash/Pro).",
-      "stars": 1036,
+      "stars": 1035,
       "forks": 67,
       "issues": 13,
       "language": null,
       "url": "https://github.com/Tiger3807861189/DeepSeek-V4-J-Space-Capability-Realization-Report",
-      "starDelta": 1,
+      "starDelta": 0,
       "contributorDelta": null,
       "issueDelta": 0,
       "score": null
@@ -82,12 +82,12 @@
     {
       "name": "vvxw/deploy-vercel",
       "description": "Install Command：npm install",
-      "stars": 985,
-      "forks": 197,
+      "stars": 998,
+      "forks": 201,
       "issues": 5,
       "language": "JavaScript",
       "url": "https://github.com/vvxw/deploy-vercel",
-      "starDelta": 11,
+      "starDelta": 24,
       "contributorDelta": null,
       "issueDelta": 0,
       "score": null
@@ -95,12 +95,12 @@
     {
       "name": "Leutenegger/watermarks-remover",
       "description": "Remove multi-vendor AI provenance traces: Unicode text sanitization, statistical rewriting techniques, and C2PA/metadata stripping from PNG/JPEG/SVG/PDF/DOCX/HTML/MD files",
-      "stars": 929,
+      "stars": 930,
       "forks": 95,
       "issues": 4,
       "language": "Python",
       "url": "https://github.com/Leutenegger/watermarks-remover",
-      "starDelta": 0,
+      "starDelta": 1,
       "contributorDelta": null,
       "issueDelta": 0,
       "score": null
@@ -121,27 +121,27 @@
     {
       "name": "browser-use/macos-harness",
       "description": "The simplest, thinnest harness that gives an LLM complete freedom to control a Mac.",
-      "stars": 686,
+      "stars": 691,
       "forks": 45,
       "issues": 6,
       "language": "Python",
       "url": "https://github.com/browser-use/macos-harness",
-      "starDelta": 686,
+      "starDelta": 691,
       "contributorDelta": 0,
       "issueDelta": 6,
-      "score": 1381
+      "score": 1391
     }
   ],
   "silentClimbers": [
     {
       "name": "DenisSergeevitch/desktop-fly",
       "description": "A 3D fruit fly living on your macOS desktop, driven by a live spiking simulation of the real FlyWire connectome",
-      "stars": 677,
+      "stars": 678,
       "forks": 39,
       "issues": 6,
       "language": "Swift",
       "url": "https://github.com/DenisSergeevitch/desktop-fly",
-      "starDelta": 6,
+      "starDelta": 7,
       "contributorDelta": null,
       "issueDelta": 0,
       "score": null
@@ -149,15 +149,28 @@
     {
       "name": "SigmanticAI/apex-inference-chip",
       "description": "An inference chip design that runs a real LLM (Qwen2.5-0.5B) on FPGA — one transformer decoder layer in RTL, every silicon value bit-exact against a golden model. 0.56 tok/s measured, a 140× climb, full evidence trail.",
-      "stars": 668,
+      "stars": 671,
       "forks": 1,
       "issues": 0,
       "language": "Python",
       "url": "https://github.com/SigmanticAI/apex-inference-chip",
-      "starDelta": 668,
+      "starDelta": 671,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 1336
+      "score": 1342
+    },
+    {
+      "name": "MengTo/threeui",
+      "description": "Open-source ThreeUI Community catalog with live interactive components and complete Community source.",
+      "stars": 620,
+      "forks": 64,
+      "issues": 1,
+      "language": "HTML",
+      "url": "https://github.com/MengTo/threeui",
+      "starDelta": 620,
+      "contributorDelta": 0,
+      "issueDelta": 1,
+      "score": 1241.5
     },
     {
       "name": "Leutenegger/coldcard-airgap",
@@ -173,30 +186,30 @@
       "score": 1216
     },
     {
-      "name": "missuo/herdrm",
-      "description": "Native macOS console for herdr — all your coding agents and their live terminals, across devices",
-      "stars": 592,
-      "forks": 34,
-      "issues": 3,
-      "language": "Swift",
-      "url": "https://github.com/missuo/herdrm",
-      "starDelta": 592,
-      "contributorDelta": 0,
-      "issueDelta": 3,
-      "score": 1188.5
-    },
-    {
       "name": "Spielewoy/autoprompt-skill",
       "description": "Autoprompt is a coding-agent skill that cuts failures by 45% on agentic coding tasks.",
-      "stars": 590,
+      "stars": 595,
       "forks": 43,
       "issues": 4,
       "language": "JavaScript",
       "url": "https://github.com/Spielewoy/autoprompt-skill",
-      "starDelta": 590,
+      "starDelta": 595,
       "contributorDelta": 0,
       "issueDelta": 4,
-      "score": 1186
+      "score": 1196
+    },
+    {
+      "name": "missuo/herdrm",
+      "description": "Native macOS console for herdr — all your coding agents and their live terminals, across devices",
+      "stars": 593,
+      "forks": 35,
+      "issues": 3,
+      "language": "Swift",
+      "url": "https://github.com/missuo/herdrm",
+      "starDelta": 593,
+      "contributorDelta": 0,
+      "issueDelta": 3,
+      "score": 1190.5
     },
     {
       "name": "Leutenegger/claudish-to-english",
@@ -227,15 +240,15 @@
     {
       "name": "flaqai/backlink_skills",
       "description": "Awesome skills for submitting url to free websites. Get more backlinks for your website to get more traffic.",
-      "stars": 508,
+      "stars": 509,
       "forks": 182,
       "issues": 0,
       "language": "Python",
       "url": "https://github.com/flaqai/backlink_skills",
-      "starDelta": 508,
+      "starDelta": 509,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 1016
+      "score": 1018
     },
     {
       "name": "lanicer/cve-2026-41940-PoC",
@@ -249,19 +262,6 @@
       "contributorDelta": 0,
       "issueDelta": 0,
       "score": 1004
-    },
-    {
-      "name": "MengTo/threeui",
-      "description": "Open-source ThreeUI Community catalog with live interactive components and complete Community source.",
-      "stars": 494,
-      "forks": 56,
-      "issues": 0,
-      "language": "HTML",
-      "url": "https://github.com/MengTo/threeui",
-      "starDelta": 494,
-      "contributorDelta": 0,
-      "issueDelta": 0,
-      "score": 988
     }
   ],
   "coolingDown": [],
@@ -269,41 +269,54 @@
     {
       "name": "CopilotKit/OpenBot",
       "description": "Open-source AI coworkers that each get a computer of their own: a browser, files and tools, with every action decided before it happens and recorded after. Bring any AG-UI agent.",
-      "stars": 2121,
-      "forks": 227,
-      "issues": 22,
+      "stars": 2143,
+      "forks": 230,
+      "issues": 25,
       "language": "TypeScript",
       "url": "https://github.com/CopilotKit/OpenBot",
-      "starDelta": 67,
+      "starDelta": 89,
       "contributorDelta": null,
-      "issueDelta": -11,
+      "issueDelta": -8,
       "score": null
     },
     {
       "name": "browser-use/macos-harness",
       "description": "The simplest, thinnest harness that gives an LLM complete freedom to control a Mac.",
-      "stars": 686,
+      "stars": 691,
       "forks": 45,
       "issues": 6,
       "language": "Python",
       "url": "https://github.com/browser-use/macos-harness",
-      "starDelta": 686,
+      "starDelta": 691,
       "contributorDelta": 0,
       "issueDelta": 6,
-      "score": 1381
+      "score": 1391
     },
     {
       "name": "SigmanticAI/apex-inference-chip",
       "description": "An inference chip design that runs a real LLM (Qwen2.5-0.5B) on FPGA — one transformer decoder layer in RTL, every silicon value bit-exact against a golden model. 0.56 tok/s measured, a 140× climb, full evidence trail.",
-      "stars": 668,
+      "stars": 671,
       "forks": 1,
       "issues": 0,
       "language": "Python",
       "url": "https://github.com/SigmanticAI/apex-inference-chip",
-      "starDelta": 668,
+      "starDelta": 671,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 1336
+      "score": 1342
+    },
+    {
+      "name": "MengTo/threeui",
+      "description": "Open-source ThreeUI Community catalog with live interactive components and complete Community source.",
+      "stars": 620,
+      "forks": 64,
+      "issues": 1,
+      "language": "HTML",
+      "url": "https://github.com/MengTo/threeui",
+      "starDelta": 620,
+      "contributorDelta": 0,
+      "issueDelta": 1,
+      "score": 1241.5
     },
     {
       "name": "Leutenegger/coldcard-airgap",
@@ -319,30 +332,30 @@
       "score": 1216
     },
     {
-      "name": "missuo/herdrm",
-      "description": "Native macOS console for herdr — all your coding agents and their live terminals, across devices",
-      "stars": 592,
-      "forks": 34,
-      "issues": 3,
-      "language": "Swift",
-      "url": "https://github.com/missuo/herdrm",
-      "starDelta": 592,
-      "contributorDelta": 0,
-      "issueDelta": 3,
-      "score": 1188.5
-    },
-    {
       "name": "Spielewoy/autoprompt-skill",
       "description": "Autoprompt is a coding-agent skill that cuts failures by 45% on agentic coding tasks.",
-      "stars": 590,
+      "stars": 595,
       "forks": 43,
       "issues": 4,
       "language": "JavaScript",
       "url": "https://github.com/Spielewoy/autoprompt-skill",
-      "starDelta": 590,
+      "starDelta": 595,
       "contributorDelta": 0,
       "issueDelta": 4,
-      "score": 1186
+      "score": 1196
+    },
+    {
+      "name": "missuo/herdrm",
+      "description": "Native macOS console for herdr — all your coding agents and their live terminals, across devices",
+      "stars": 593,
+      "forks": 35,
+      "issues": 3,
+      "language": "Swift",
+      "url": "https://github.com/missuo/herdrm",
+      "starDelta": 593,
+      "contributorDelta": 0,
+      "issueDelta": 3,
+      "score": 1190.5
     },
     {
       "name": "Leutenegger/claudish-to-english",
@@ -373,28 +386,15 @@
     {
       "name": "flaqai/backlink_skills",
       "description": "Awesome skills for submitting url to free websites. Get more backlinks for your website to get more traffic.",
-      "stars": 508,
+      "stars": 509,
       "forks": 182,
       "issues": 0,
       "language": "Python",
       "url": "https://github.com/flaqai/backlink_skills",
-      "starDelta": 508,
+      "starDelta": 509,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 1016
-    },
-    {
-      "name": "lanicer/cve-2026-41940-PoC",
-      "description": "A cPanel and WHM authentication bypassing tool",
-      "stars": 502,
-      "forks": 96,
-      "issues": 0,
-      "language": "Python",
-      "url": "https://github.com/lanicer/cve-2026-41940-PoC",
-      "starDelta": 502,
-      "contributorDelta": 0,
-      "issueDelta": 0,
-      "score": 1004
+      "score": 1018
     }
   ]
 }
