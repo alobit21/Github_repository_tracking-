@@ -4,12 +4,12 @@
     {
       "name": "s1dashu/ip-as-logo-skill",
       "description": "A compact Agent Skill for highly simplified, rounded, subtly neo-skeuomorphic IP mascot logos.",
-      "stars": 3790,
-      "forks": 180,
+      "stars": 3816,
+      "forks": 183,
       "issues": 4,
       "language": null,
       "url": "https://github.com/s1dashu/ip-as-logo-skill",
-      "starDelta": 52,
+      "starDelta": 78,
       "contributorDelta": null,
       "issueDelta": 0,
       "score": null
@@ -17,12 +17,12 @@
     {
       "name": "yetone/cumora",
       "description": "Where agent teams gather. Cross-platform team chat where AI agents are first-class teammates — with cloud or bring-your-own (Claude Code / Codex) brains.",
-      "stars": 2903,
-      "forks": 350,
+      "stars": 2906,
+      "forks": 352,
       "issues": 6,
       "language": "TypeScript",
       "url": "https://github.com/yetone/cumora",
-      "starDelta": 8,
+      "starDelta": 11,
       "contributorDelta": null,
       "issueDelta": -1,
       "score": null
@@ -30,25 +30,25 @@
     {
       "name": "CopilotKit/OpenBot",
       "description": "Open-source AI coworkers that each get a computer of their own: a browser, files and tools, with every action decided before it happens and recorded after. Bring any AG-UI agent.",
-      "stars": 2340,
-      "forks": 268,
-      "issues": 29,
+      "stars": 2361,
+      "forks": 269,
+      "issues": 30,
       "language": "TypeScript",
       "url": "https://github.com/CopilotKit/OpenBot",
-      "starDelta": 51,
+      "starDelta": 72,
       "contributorDelta": null,
-      "issueDelta": 7,
+      "issueDelta": 8,
       "score": null
     },
     {
       "name": "MengTo/threeui",
       "description": "Open-source ThreeUI Community catalog with live interactive components and complete Community source.",
-      "stars": 1952,
-      "forks": 200,
+      "stars": 2114,
+      "forks": 214,
       "issues": 4,
       "language": "HTML",
       "url": "https://github.com/MengTo/threeui",
-      "starDelta": 416,
+      "starDelta": 578,
       "contributorDelta": null,
       "issueDelta": 0,
       "score": null
@@ -69,12 +69,12 @@
     {
       "name": "cinderline/northcinder",
       "description": "Open-source MCP server for comparing products and asking the buyer before purchase.",
-      "stars": 1205,
+      "stars": 1206,
       "forks": 6,
       "issues": 2,
       "language": "JavaScript",
       "url": "https://github.com/cinderline/northcinder",
-      "starDelta": 1,
+      "starDelta": 2,
       "contributorDelta": null,
       "issueDelta": 0,
       "score": null
@@ -82,12 +82,12 @@
     {
       "name": "vvxw/deploy-vercel",
       "description": "Install Command：npm install",
-      "stars": 1136,
-      "forks": 235,
+      "stars": 1158,
+      "forks": 243,
       "issues": 5,
       "language": "JavaScript",
       "url": "https://github.com/vvxw/deploy-vercel",
-      "starDelta": 28,
+      "starDelta": 50,
       "contributorDelta": null,
       "issueDelta": 0,
       "score": null
@@ -95,12 +95,12 @@
     {
       "name": "Leutenegger/watermarks-remover",
       "description": "Remove multi-vendor AI provenance traces: Unicode text sanitization, statistical rewriting techniques, and C2PA/metadata stripping from PNG/JPEG/SVG/PDF/DOCX/HTML/MD files",
-      "stars": 934,
+      "stars": 936,
       "forks": 95,
       "issues": 4,
       "language": "Python",
       "url": "https://github.com/Leutenegger/watermarks-remover",
-      "starDelta": 2,
+      "starDelta": 4,
       "contributorDelta": null,
       "issueDelta": 0,
       "score": null
@@ -121,15 +121,15 @@
     {
       "name": "Spielewoy/autoprompt-skill",
       "description": "Autoprompt is a coding-agent skill that cuts failures by 45% on agentic coding tasks.",
-      "stars": 710,
+      "stars": 719,
       "forks": 47,
       "issues": 6,
       "language": "JavaScript",
       "url": "https://github.com/Spielewoy/autoprompt-skill",
-      "starDelta": 710,
+      "starDelta": 719,
       "contributorDelta": 0,
       "issueDelta": 6,
-      "score": 1429
+      "score": 1447
     }
   ],
   "silentClimbers": [
@@ -188,15 +188,28 @@
     {
       "name": "missuo/herdrm",
       "description": "Native macOS console for herdr — all your coding agents and their live terminals, across devices",
-      "stars": 604,
+      "stars": 607,
       "forks": 37,
       "issues": 1,
       "language": "Swift",
       "url": "https://github.com/missuo/herdrm",
-      "starDelta": 604,
+      "starDelta": 607,
       "contributorDelta": 0,
       "issueDelta": 1,
-      "score": 1209.5
+      "score": 1215.5
+    },
+    {
+      "name": "MeteorNOX/DeepSeek-Balance-Whale-Widget",
+      "description": "DeepSeek Harness（DSH）一只住在 DSH 界面右下角的小鲸鱼娘，帮你盯着DeepSeek账户余额。QQ弹弹，支持拖拽吸附、左吸附翻转、数字滚动动画，随界面自动启用，建议直接喊来你的dsh安装",
+      "stars": 594,
+      "forks": 23,
+      "issues": 8,
+      "language": "JavaScript",
+      "url": "https://github.com/MeteorNOX/DeepSeek-Balance-Whale-Widget",
+      "starDelta": 594,
+      "contributorDelta": 0,
+      "issueDelta": 8,
+      "score": 1200
     },
     {
       "name": "Leutenegger/claudish-to-english",
@@ -210,19 +223,6 @@
       "contributorDelta": 0,
       "issueDelta": 0,
       "score": 1162
-    },
-    {
-      "name": "MeteorNOX/DeepSeek-Balance-Whale-Widget",
-      "description": "DeepSeek Harness（DSH）一只住在 DSH 界面右下角的小鲸鱼娘，帮你盯着DeepSeek账户余额。QQ弹弹，支持拖拽吸附、左吸附翻转、数字滚动动画，随界面自动启用，建议直接喊来你的dsh安装",
-      "stars": 567,
-      "forks": 22,
-      "issues": 7,
-      "language": "JavaScript",
-      "url": "https://github.com/MeteorNOX/DeepSeek-Balance-Whale-Widget",
-      "starDelta": 567,
-      "contributorDelta": 0,
-      "issueDelta": 7,
-      "score": 1144.5
     },
     {
       "name": "lanicer/cve-2026-41940-PoC",
@@ -240,28 +240,28 @@
     {
       "name": "flaqai/backlink_skills",
       "description": "Awesome skills for submitting url to free websites. Get more backlinks for your website to get more traffic.",
-      "stars": 524,
+      "stars": 525,
       "forks": 188,
       "issues": 0,
       "language": "Python",
       "url": "https://github.com/flaqai/backlink_skills",
-      "starDelta": 524,
+      "starDelta": 525,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 1048
+      "score": 1050
     },
     {
       "name": "amirh00sain/SpiderPanel",
       "description": null,
-      "stars": 511,
-      "forks": 1726,
+      "stars": 518,
+      "forks": 1746,
       "issues": 0,
       "language": "Python",
       "url": "https://github.com/amirh00sain/SpiderPanel",
-      "starDelta": 511,
+      "starDelta": 518,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 1022
+      "score": 1036
     }
   ],
   "coolingDown": [],
@@ -269,12 +269,12 @@
     {
       "name": "s1dashu/ip-as-logo-skill",
       "description": "A compact Agent Skill for highly simplified, rounded, subtly neo-skeuomorphic IP mascot logos.",
-      "stars": 3790,
-      "forks": 180,
+      "stars": 3816,
+      "forks": 183,
       "issues": 4,
       "language": null,
       "url": "https://github.com/s1dashu/ip-as-logo-skill",
-      "starDelta": 52,
+      "starDelta": 78,
       "contributorDelta": null,
       "issueDelta": 0,
       "score": null
@@ -282,25 +282,25 @@
     {
       "name": "CopilotKit/OpenBot",
       "description": "Open-source AI coworkers that each get a computer of their own: a browser, files and tools, with every action decided before it happens and recorded after. Bring any AG-UI agent.",
-      "stars": 2340,
-      "forks": 268,
-      "issues": 29,
+      "stars": 2361,
+      "forks": 269,
+      "issues": 30,
       "language": "TypeScript",
       "url": "https://github.com/CopilotKit/OpenBot",
-      "starDelta": 51,
+      "starDelta": 72,
       "contributorDelta": null,
-      "issueDelta": 7,
+      "issueDelta": 8,
       "score": null
     },
     {
       "name": "MengTo/threeui",
       "description": "Open-source ThreeUI Community catalog with live interactive components and complete Community source.",
-      "stars": 1952,
-      "forks": 200,
+      "stars": 2114,
+      "forks": 214,
       "issues": 4,
       "language": "HTML",
       "url": "https://github.com/MengTo/threeui",
-      "starDelta": 416,
+      "starDelta": 578,
       "contributorDelta": null,
       "issueDelta": 0,
       "score": null
@@ -308,15 +308,15 @@
     {
       "name": "Spielewoy/autoprompt-skill",
       "description": "Autoprompt is a coding-agent skill that cuts failures by 45% on agentic coding tasks.",
-      "stars": 710,
+      "stars": 719,
       "forks": 47,
       "issues": 6,
       "language": "JavaScript",
       "url": "https://github.com/Spielewoy/autoprompt-skill",
-      "starDelta": 710,
+      "starDelta": 719,
       "contributorDelta": 0,
       "issueDelta": 6,
-      "score": 1429
+      "score": 1447
     },
     {
       "name": "browser-use/macos-harness",
@@ -373,28 +373,28 @@
     {
       "name": "missuo/herdrm",
       "description": "Native macOS console for herdr — all your coding agents and their live terminals, across devices",
-      "stars": 604,
+      "stars": 607,
       "forks": 37,
       "issues": 1,
       "language": "Swift",
       "url": "https://github.com/missuo/herdrm",
-      "starDelta": 604,
+      "starDelta": 607,
       "contributorDelta": 0,
       "issueDelta": 1,
-      "score": 1209.5
+      "score": 1215.5
     },
     {
-      "name": "Leutenegger/claudish-to-english",
-      "description": "Claude Code plugin that rewrites each assistant message into plain language on screen only. Local ollama by default; also codex CLI, Anthropic, or any OpenAI-compatible API. Fail-open. Optional Markdown rewrite.",
-      "stars": 581,
-      "forks": 61,
-      "issues": 0,
-      "language": "Shell",
-      "url": "https://github.com/Leutenegger/claudish-to-english",
-      "starDelta": 581,
+      "name": "MeteorNOX/DeepSeek-Balance-Whale-Widget",
+      "description": "DeepSeek Harness（DSH）一只住在 DSH 界面右下角的小鲸鱼娘，帮你盯着DeepSeek账户余额。QQ弹弹，支持拖拽吸附、左吸附翻转、数字滚动动画，随界面自动启用，建议直接喊来你的dsh安装",
+      "stars": 594,
+      "forks": 23,
+      "issues": 8,
+      "language": "JavaScript",
+      "url": "https://github.com/MeteorNOX/DeepSeek-Balance-Whale-Widget",
+      "starDelta": 594,
       "contributorDelta": 0,
-      "issueDelta": 0,
-      "score": 1162
+      "issueDelta": 8,
+      "score": 1200
     }
   ]
 }
