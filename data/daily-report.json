@@ -4,12 +4,12 @@
     {
       "name": "s1dashu/ip-as-logo-skill",
       "description": "A compact Agent Skill for highly simplified, rounded, subtly neo-skeuomorphic IP mascot logos.",
-      "stars": 3778,
+      "stars": 3790,
       "forks": 180,
       "issues": 4,
       "language": null,
       "url": "https://github.com/s1dashu/ip-as-logo-skill",
-      "starDelta": 40,
+      "starDelta": 52,
       "contributorDelta": null,
       "issueDelta": 0,
       "score": null
@@ -17,12 +17,12 @@
     {
       "name": "yetone/cumora",
       "description": "Where agent teams gather. Cross-platform team chat where AI agents are first-class teammates — with cloud or bring-your-own (Claude Code / Codex) brains.",
-      "stars": 2901,
+      "stars": 2903,
       "forks": 350,
       "issues": 6,
       "language": "TypeScript",
       "url": "https://github.com/yetone/cumora",
-      "starDelta": 6,
+      "starDelta": 8,
       "contributorDelta": null,
       "issueDelta": -1,
       "score": null
@@ -30,12 +30,12 @@
     {
       "name": "CopilotKit/OpenBot",
       "description": "Open-source AI coworkers that each get a computer of their own: a browser, files and tools, with every action decided before it happens and recorded after. Bring any AG-UI agent.",
-      "stars": 2325,
-      "forks": 266,
+      "stars": 2340,
+      "forks": 268,
       "issues": 29,
       "language": "TypeScript",
       "url": "https://github.com/CopilotKit/OpenBot",
-      "starDelta": 36,
+      "starDelta": 51,
       "contributorDelta": null,
       "issueDelta": 7,
       "score": null
@@ -43,12 +43,12 @@
     {
       "name": "MengTo/threeui",
       "description": "Open-source ThreeUI Community catalog with live interactive components and complete Community source.",
-      "stars": 1885,
-      "forks": 192,
+      "stars": 1952,
+      "forks": 200,
       "issues": 4,
       "language": "HTML",
       "url": "https://github.com/MengTo/threeui",
-      "starDelta": 349,
+      "starDelta": 416,
       "contributorDelta": null,
       "issueDelta": 0,
       "score": null
@@ -82,12 +82,12 @@
     {
       "name": "vvxw/deploy-vercel",
       "description": "Install Command：npm install",
-      "stars": 1116,
-      "forks": 234,
+      "stars": 1136,
+      "forks": 235,
       "issues": 5,
       "language": "JavaScript",
       "url": "https://github.com/vvxw/deploy-vercel",
-      "starDelta": 8,
+      "starDelta": 28,
       "contributorDelta": null,
       "issueDelta": 0,
       "score": null
@@ -119,45 +119,45 @@
       "score": null
     },
     {
-      "name": "browser-use/macos-harness",
-      "description": "The simplest, thinnest harness that gives an LLM complete freedom to control a Mac.",
-      "stars": 708,
-      "forks": 49,
-      "issues": 7,
-      "language": "Python",
-      "url": "https://github.com/browser-use/macos-harness",
-      "starDelta": 708,
-      "contributorDelta": 0,
-      "issueDelta": 7,
-      "score": 1426.5
-    }
-  ],
-  "silentClimbers": [
-    {
       "name": "Spielewoy/autoprompt-skill",
       "description": "Autoprompt is a coding-agent skill that cuts failures by 45% on agentic coding tasks.",
-      "stars": 706,
+      "stars": 710,
       "forks": 47,
       "issues": 6,
       "language": "JavaScript",
       "url": "https://github.com/Spielewoy/autoprompt-skill",
-      "starDelta": 706,
+      "starDelta": 710,
       "contributorDelta": 0,
       "issueDelta": 6,
-      "score": 1421
+      "score": 1429
+    }
+  ],
+  "silentClimbers": [
+    {
+      "name": "browser-use/macos-harness",
+      "description": "The simplest, thinnest harness that gives an LLM complete freedom to control a Mac.",
+      "stars": 709,
+      "forks": 49,
+      "issues": 7,
+      "language": "Python",
+      "url": "https://github.com/browser-use/macos-harness",
+      "starDelta": 709,
+      "contributorDelta": 0,
+      "issueDelta": 7,
+      "score": 1428.5
     },
     {
       "name": "DenisSergeevitch/desktop-fly",
       "description": "A 3D fruit fly living on your macOS desktop, driven by a live spiking simulation of the real FlyWire connectome",
-      "stars": 692,
+      "stars": 694,
       "forks": 42,
       "issues": 6,
       "language": "Swift",
       "url": "https://github.com/DenisSergeevitch/desktop-fly",
-      "starDelta": 692,
+      "starDelta": 694,
       "contributorDelta": 0,
       "issueDelta": 6,
-      "score": 1393
+      "score": 1397
     },
     {
       "name": "SigmanticAI/apex-inference-chip",
@@ -201,28 +201,28 @@
     {
       "name": "Leutenegger/claudish-to-english",
       "description": "Claude Code plugin that rewrites each assistant message into plain language on screen only. Local ollama by default; also codex CLI, Anthropic, or any OpenAI-compatible API. Fail-open. Optional Markdown rewrite.",
-      "stars": 580,
+      "stars": 581,
       "forks": 61,
       "issues": 0,
       "language": "Shell",
       "url": "https://github.com/Leutenegger/claudish-to-english",
-      "starDelta": 580,
+      "starDelta": 581,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 1160
+      "score": 1162
     },
     {
       "name": "MeteorNOX/DeepSeek-Balance-Whale-Widget",
       "description": "DeepSeek Harness（DSH）一只住在 DSH 界面右下角的小鲸鱼娘，帮你盯着DeepSeek账户余额。QQ弹弹，支持拖拽吸附、左吸附翻转、数字滚动动画，随界面自动启用，建议直接喊来你的dsh安装",
-      "stars": 555,
-      "forks": 21,
-      "issues": 6,
+      "stars": 567,
+      "forks": 22,
+      "issues": 7,
       "language": "JavaScript",
       "url": "https://github.com/MeteorNOX/DeepSeek-Balance-Whale-Widget",
-      "starDelta": 555,
+      "starDelta": 567,
       "contributorDelta": 0,
-      "issueDelta": 6,
-      "score": 1119
+      "issueDelta": 7,
+      "score": 1144.5
     },
     {
       "name": "lanicer/cve-2026-41940-PoC",
@@ -240,83 +240,109 @@
     {
       "name": "flaqai/backlink_skills",
       "description": "Awesome skills for submitting url to free websites. Get more backlinks for your website to get more traffic.",
-      "stars": 523,
-      "forks": 187,
+      "stars": 524,
+      "forks": 188,
       "issues": 0,
       "language": "Python",
       "url": "https://github.com/flaqai/backlink_skills",
-      "starDelta": 523,
+      "starDelta": 524,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 1046
+      "score": 1048
     },
     {
       "name": "amirh00sain/SpiderPanel",
       "description": null,
-      "stars": 507,
-      "forks": 1718,
+      "stars": 511,
+      "forks": 1726,
       "issues": 0,
       "language": "Python",
       "url": "https://github.com/amirh00sain/SpiderPanel",
-      "starDelta": 507,
+      "starDelta": 511,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 1014
+      "score": 1022
     }
   ],
   "coolingDown": [],
   "experimentalSpike": [
     {
-      "name": "MengTo/threeui",
-      "description": "Open-source ThreeUI Community catalog with live interactive components and complete Community source.",
-      "stars": 1885,
-      "forks": 192,
+      "name": "s1dashu/ip-as-logo-skill",
+      "description": "A compact Agent Skill for highly simplified, rounded, subtly neo-skeuomorphic IP mascot logos.",
+      "stars": 3790,
+      "forks": 180,
       "issues": 4,
-      "language": "HTML",
-      "url": "https://github.com/MengTo/threeui",
-      "starDelta": 349,
+      "language": null,
+      "url": "https://github.com/s1dashu/ip-as-logo-skill",
+      "starDelta": 52,
       "contributorDelta": null,
       "issueDelta": 0,
       "score": null
     },
     {
-      "name": "browser-use/macos-harness",
-      "description": "The simplest, thinnest harness that gives an LLM complete freedom to control a Mac.",
-      "stars": 708,
-      "forks": 49,
-      "issues": 7,
-      "language": "Python",
-      "url": "https://github.com/browser-use/macos-harness",
-      "starDelta": 708,
-      "contributorDelta": 0,
+      "name": "CopilotKit/OpenBot",
+      "description": "Open-source AI coworkers that each get a computer of their own: a browser, files and tools, with every action decided before it happens and recorded after. Bring any AG-UI agent.",
+      "stars": 2340,
+      "forks": 268,
+      "issues": 29,
+      "language": "TypeScript",
+      "url": "https://github.com/CopilotKit/OpenBot",
+      "starDelta": 51,
+      "contributorDelta": null,
       "issueDelta": 7,
-      "score": 1426.5
+      "score": null
+    },
+    {
+      "name": "MengTo/threeui",
+      "description": "Open-source ThreeUI Community catalog with live interactive components and complete Community source.",
+      "stars": 1952,
+      "forks": 200,
+      "issues": 4,
+      "language": "HTML",
+      "url": "https://github.com/MengTo/threeui",
+      "starDelta": 416,
+      "contributorDelta": null,
+      "issueDelta": 0,
+      "score": null
     },
     {
       "name": "Spielewoy/autoprompt-skill",
       "description": "Autoprompt is a coding-agent skill that cuts failures by 45% on agentic coding tasks.",
-      "stars": 706,
+      "stars": 710,
       "forks": 47,
       "issues": 6,
       "language": "JavaScript",
       "url": "https://github.com/Spielewoy/autoprompt-skill",
-      "starDelta": 706,
+      "starDelta": 710,
       "contributorDelta": 0,
       "issueDelta": 6,
-      "score": 1421
+      "score": 1429
+    },
+    {
+      "name": "browser-use/macos-harness",
+      "description": "The simplest, thinnest harness that gives an LLM complete freedom to control a Mac.",
+      "stars": 709,
+      "forks": 49,
+      "issues": 7,
+      "language": "Python",
+      "url": "https://github.com/browser-use/macos-harness",
+      "starDelta": 709,
+      "contributorDelta": 0,
+      "issueDelta": 7,
+      "score": 1428.5
     },
     {
       "name": "DenisSergeevitch/desktop-fly",
       "description": "A 3D fruit fly living on your macOS desktop, driven by a live spiking simulation of the real FlyWire connectome",
-      "stars": 692,
+      "stars": 694,
       "forks": 42,
       "issues": 6,
       "language": "Swift",
       "url": "https://github.com/DenisSergeevitch/desktop-fly",
-      "starDelta": 692,
+      "starDelta": 694,
       "contributorDelta": 0,
       "issueDelta": 6,
-      "score": 1393
+      "score": 1397
     },
     {
       "name": "SigmanticAI/apex-inference-chip",
@@ -360,41 +386,15 @@
     {
       "name": "Leutenegger/claudish-to-english",
       "description": "Claude Code plugin that rewrites each assistant message into plain language on screen only. Local ollama by default; also codex CLI, Anthropic, or any OpenAI-compatible API. Fail-open. Optional Markdown rewrite.",
-      "stars": 580,
+      "stars": 581,
       "forks": 61,
       "issues": 0,
       "language": "Shell",
       "url": "https://github.com/Leutenegger/claudish-to-english",
-      "starDelta": 580,
+      "starDelta": 581,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 1160
-    },
-    {
-      "name": "MeteorNOX/DeepSeek-Balance-Whale-Widget",
-      "description": "DeepSeek Harness（DSH）一只住在 DSH 界面右下角的小鲸鱼娘，帮你盯着DeepSeek账户余额。QQ弹弹，支持拖拽吸附、左吸附翻转、数字滚动动画，随界面自动启用，建议直接喊来你的dsh安装",
-      "stars": 555,
-      "forks": 21,
-      "issues": 6,
-      "language": "JavaScript",
-      "url": "https://github.com/MeteorNOX/DeepSeek-Balance-Whale-Widget",
-      "starDelta": 555,
-      "contributorDelta": 0,
-      "issueDelta": 6,
-      "score": 1119
-    },
-    {
-      "name": "lanicer/cve-2026-41940-PoC",
-      "description": "A cPanel and WHM authentication bypassing tool",
-      "stars": 526,
-      "forks": 96,
-      "issues": 0,
-      "language": "Python",
-      "url": "https://github.com/lanicer/cve-2026-41940-PoC",
-      "starDelta": 526,
-      "contributorDelta": 0,
-      "issueDelta": 0,
-      "score": 1052
+      "score": 1162
     }
   ]
 }
