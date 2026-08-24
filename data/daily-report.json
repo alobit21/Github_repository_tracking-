@@ -4,12 +4,12 @@
     {
       "name": "s1dashu/ip-as-logo-skill",
       "description": "A compact Agent Skill for highly simplified, rounded, subtly neo-skeuomorphic IP mascot logos.",
-      "stars": 3901,
-      "forks": 190,
+      "stars": 3936,
+      "forks": 191,
       "issues": 7,
       "language": null,
       "url": "https://github.com/s1dashu/ip-as-logo-skill",
-      "starDelta": 20,
+      "starDelta": 55,
       "contributorDelta": null,
       "issueDelta": 0,
       "score": null
@@ -17,12 +17,12 @@
     {
       "name": "MengTo/threeui",
       "description": "Open-source ThreeUI Community catalog with live interactive components and complete Community source.",
-      "stars": 2890,
-      "forks": 289,
+      "stars": 2989,
+      "forks": 297,
       "issues": 5,
       "language": "HTML",
       "url": "https://github.com/MengTo/threeui",
-      "starDelta": 187,
+      "starDelta": 286,
       "contributorDelta": null,
       "issueDelta": 0,
       "score": null
@@ -30,12 +30,12 @@
     {
       "name": "wang2122/sprix-sage-router",
       "description": "Sprix AI at 屿智同行 — state-aware SELF/COLLABORATE/HANDOFF routing for A2A agent networks.",
-      "stars": 1412,
+      "stars": 1443,
       "forks": 23,
       "issues": 0,
       "language": "Python",
       "url": "https://github.com/wang2122/sprix-sage-router",
-      "starDelta": 1,
+      "starDelta": 32,
       "contributorDelta": null,
       "issueDelta": 0,
       "score": null
@@ -43,12 +43,12 @@
     {
       "name": "vvxw/deploy-vercel",
       "description": "Install Command：npm install",
-      "stars": 1213,
-      "forks": 256,
+      "stars": 1224,
+      "forks": 258,
       "issues": 5,
       "language": "JavaScript",
       "url": "https://github.com/vvxw/deploy-vercel",
-      "starDelta": 8,
+      "starDelta": 19,
       "contributorDelta": null,
       "issueDelta": 0,
       "score": null
@@ -56,15 +56,15 @@
     {
       "name": "duty1g/x64dbg-mcp-server",
       "description": "x64dbg-MCP Server is a native MCP (Model Context Protocol) plugin for x64dbg that exposes the debugger's full functionality over HTTP. Connect any MCP-compatible AI assistant and control x64dbg programmatically: set breakpoints, step through code, read memory, dump registers, and more.  Built with Zig — zero dependencies, single-binary output, cros",
-      "stars": 865,
-      "forks": 87,
+      "stars": 947,
+      "forks": 95,
       "issues": 0,
       "language": "Zig",
       "url": "https://github.com/duty1g/x64dbg-mcp-server",
-      "starDelta": 865,
+      "starDelta": 947,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 1730
+      "score": 1894
     },
     {
       "name": "ShadowAqueduct/watermark-remover",
@@ -82,12 +82,12 @@
     {
       "name": "MeteorNOX/DeepSeek-Balance-Whale-Widget",
       "description": "DeepSeek Harness（DSH）一只住在 DSH 界面右下角的小鲸鱼娘，帮你盯着DeepSeek账户余额。QQ弹弹，支持拖拽吸附、左吸附翻转、数字滚动动画，随界面自动启用，建议直接喊来你的dsh安装",
-      "stars": 716,
+      "stars": 739,
       "forks": 28,
       "issues": 14,
       "language": "JavaScript",
       "url": "https://github.com/MeteorNOX/DeepSeek-Balance-Whale-Widget",
-      "starDelta": 8,
+      "starDelta": 31,
       "contributorDelta": null,
       "issueDelta": 2,
       "score": null
@@ -95,69 +95,69 @@
     {
       "name": "DenisSergeevitch/desktop-fly",
       "description": "A 3D fruit fly living on your macOS desktop, driven by a live spiking simulation of the real FlyWire connectome",
-      "stars": 704,
+      "stars": 706,
       "forks": 43,
       "issues": 6,
       "language": "Swift",
       "url": "https://github.com/DenisSergeevitch/desktop-fly",
-      "starDelta": 704,
+      "starDelta": 706,
       "contributorDelta": 0,
       "issueDelta": 6,
-      "score": 1417
+      "score": 1421
     },
     {
       "name": "cclank/lanshu-create-ai-presenter-video",
       "description": "Provider-neutral Codex Skill for producing verified AI presenter videos from a script and an authorized presenter image.",
-      "stars": 652,
-      "forks": 105,
+      "stars": 684,
+      "forks": 112,
       "issues": 0,
       "language": "Python",
       "url": "https://github.com/cclank/lanshu-create-ai-presenter-video",
-      "starDelta": 652,
+      "starDelta": 684,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 1304
+      "score": 1368
     },
     {
       "name": "missuo/herdrm",
       "description": "Native macOS console for herdr — all your coding agents and their live terminals, across devices",
-      "stars": 611,
+      "stars": 613,
       "forks": 37,
-      "issues": 2,
+      "issues": 0,
       "language": "Swift",
       "url": "https://github.com/missuo/herdrm",
-      "starDelta": 611,
+      "starDelta": 613,
       "contributorDelta": 0,
-      "issueDelta": 2,
-      "score": 1225
+      "issueDelta": 0,
+      "score": 1226
     }
   ],
   "silentClimbers": [
     {
       "name": "amirh00sain/SpiderPanel",
       "description": null,
-      "stars": 610,
-      "forks": 1996,
+      "stars": 613,
+      "forks": 1999,
       "issues": 0,
       "language": "Python",
       "url": "https://github.com/amirh00sain/SpiderPanel",
-      "starDelta": 610,
+      "starDelta": 613,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 1220
+      "score": 1226
     },
     {
       "name": "iAmCorey/Wake",
       "description": "Every coding-agent session on your Mac in one place — browse, search, resume. Rust + GPUI.",
-      "stars": 543,
-      "forks": 30,
+      "stars": 549,
+      "forks": 31,
       "issues": 4,
       "language": "Rust",
       "url": "https://github.com/iAmCorey/Wake",
-      "starDelta": 543,
+      "starDelta": 549,
       "contributorDelta": 0,
       "issueDelta": 4,
-      "score": 1092
+      "score": 1104
     },
     {
       "name": "lanicer/cve-2026-41940-PoC",
@@ -175,15 +175,15 @@
     {
       "name": "nateherkai/scroll-craft",
       "description": "Claude Code skill for premium scroll-driven websites. Scroll becomes the timeline, on a real design floor, verified by screenshotting its own scroll.",
-      "stars": 484,
-      "forks": 86,
+      "stars": 510,
+      "forks": 89,
       "issues": 0,
       "language": "JavaScript",
       "url": "https://github.com/nateherkai/scroll-craft",
-      "starDelta": 484,
+      "starDelta": 510,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 968
+      "score": 1020
     },
     {
       "name": "xdreizein666/getcontact-cli",
@@ -214,67 +214,80 @@
     {
       "name": "Forsy-AI/biosecurity-agent",
       "description": "AI agent that builds a live biosecurity world around any target.",
-      "stars": 361,
-      "forks": 12,
+      "stars": 408,
+      "forks": 14,
       "issues": 0,
       "language": "TypeScript",
       "url": "https://github.com/Forsy-AI/biosecurity-agent",
-      "starDelta": 361,
+      "starDelta": 408,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 722
+      "score": 816
     },
     {
       "name": "amagine-ai/Amagine3D",
       "description": "Amagine3D: From hardware requirements to editable 3D designs",
-      "stars": 315,
+      "stars": 332,
       "forks": 16,
       "issues": 2,
       "language": "TypeScript",
       "url": "https://github.com/amagine-ai/Amagine3D",
-      "starDelta": 315,
+      "starDelta": 332,
       "contributorDelta": 0,
       "issueDelta": 2,
-      "score": 633
+      "score": 667
     },
     {
       "name": "air-embodied-brain/Zetta-Embodiment",
       "description": null,
-      "stars": 311,
-      "forks": 22,
+      "stars": 316,
+      "forks": 23,
       "issues": 4,
       "language": "Python",
       "url": "https://github.com/air-embodied-brain/Zetta-Embodiment",
-      "starDelta": 311,
+      "starDelta": 316,
       "contributorDelta": 0,
       "issueDelta": 4,
-      "score": 628
+      "score": 638
     },
     {
-      "name": "MengTo/sylva",
-      "description": "An interactive Three.js landscape study with a procedural, pointer-responsive moss world.",
+      "name": "localai-org/kimodo.cpp",
+      "description": "NVIDIA Kimodo ported to C++/GGML",
       "stars": 305,
-      "forks": 52,
-      "issues": 0,
-      "language": "HTML",
-      "url": "https://github.com/MengTo/sylva",
+      "forks": 25,
+      "issues": 2,
+      "language": "C++",
+      "url": "https://github.com/localai-org/kimodo.cpp",
       "starDelta": 305,
       "contributorDelta": 0,
-      "issueDelta": 0,
-      "score": 610
+      "issueDelta": 2,
+      "score": 613
     }
   ],
   "coolingDown": [],
   "experimentalSpike": [
     {
+      "name": "s1dashu/ip-as-logo-skill",
+      "description": "A compact Agent Skill for highly simplified, rounded, subtly neo-skeuomorphic IP mascot logos.",
+      "stars": 3936,
+      "forks": 191,
+      "issues": 7,
+      "language": null,
+      "url": "https://github.com/s1dashu/ip-as-logo-skill",
+      "starDelta": 55,
+      "contributorDelta": null,
+      "issueDelta": 0,
+      "score": null
+    },
+    {
       "name": "MengTo/threeui",
       "description": "Open-source ThreeUI Community catalog with live interactive components and complete Community source.",
-      "stars": 2890,
-      "forks": 289,
+      "stars": 2989,
+      "forks": 297,
       "issues": 5,
       "language": "HTML",
       "url": "https://github.com/MengTo/threeui",
-      "starDelta": 187,
+      "starDelta": 286,
       "contributorDelta": null,
       "issueDelta": 0,
       "score": null
@@ -282,15 +295,15 @@
     {
       "name": "duty1g/x64dbg-mcp-server",
       "description": "x64dbg-MCP Server is a native MCP (Model Context Protocol) plugin for x64dbg that exposes the debugger's full functionality over HTTP. Connect any MCP-compatible AI assistant and control x64dbg programmatically: set breakpoints, step through code, read memory, dump registers, and more.  Built with Zig — zero dependencies, single-binary output, cros",
-      "stars": 865,
-      "forks": 87,
+      "stars": 947,
+      "forks": 95,
       "issues": 0,
       "language": "Zig",
       "url": "https://github.com/duty1g/x64dbg-mcp-server",
-      "starDelta": 865,
+      "starDelta": 947,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 1730
+      "score": 1894
     },
     {
       "name": "ShadowAqueduct/watermark-remover",
@@ -308,67 +321,67 @@
     {
       "name": "DenisSergeevitch/desktop-fly",
       "description": "A 3D fruit fly living on your macOS desktop, driven by a live spiking simulation of the real FlyWire connectome",
-      "stars": 704,
+      "stars": 706,
       "forks": 43,
       "issues": 6,
       "language": "Swift",
       "url": "https://github.com/DenisSergeevitch/desktop-fly",
-      "starDelta": 704,
+      "starDelta": 706,
       "contributorDelta": 0,
       "issueDelta": 6,
-      "score": 1417
+      "score": 1421
     },
     {
       "name": "cclank/lanshu-create-ai-presenter-video",
       "description": "Provider-neutral Codex Skill for producing verified AI presenter videos from a script and an authorized presenter image.",
-      "stars": 652,
-      "forks": 105,
+      "stars": 684,
+      "forks": 112,
       "issues": 0,
       "language": "Python",
       "url": "https://github.com/cclank/lanshu-create-ai-presenter-video",
-      "starDelta": 652,
+      "starDelta": 684,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 1304
+      "score": 1368
     },
     {
       "name": "missuo/herdrm",
       "description": "Native macOS console for herdr — all your coding agents and their live terminals, across devices",
-      "stars": 611,
+      "stars": 613,
       "forks": 37,
-      "issues": 2,
+      "issues": 0,
       "language": "Swift",
       "url": "https://github.com/missuo/herdrm",
-      "starDelta": 611,
+      "starDelta": 613,
       "contributorDelta": 0,
-      "issueDelta": 2,
-      "score": 1225
+      "issueDelta": 0,
+      "score": 1226
     },
     {
       "name": "amirh00sain/SpiderPanel",
       "description": null,
-      "stars": 610,
-      "forks": 1996,
+      "stars": 613,
+      "forks": 1999,
       "issues": 0,
       "language": "Python",
       "url": "https://github.com/amirh00sain/SpiderPanel",
-      "starDelta": 610,
+      "starDelta": 613,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 1220
+      "score": 1226
     },
     {
       "name": "iAmCorey/Wake",
       "description": "Every coding-agent session on your Mac in one place — browse, search, resume. Rust + GPUI.",
-      "stars": 543,
-      "forks": 30,
+      "stars": 549,
+      "forks": 31,
       "issues": 4,
       "language": "Rust",
       "url": "https://github.com/iAmCorey/Wake",
-      "starDelta": 543,
+      "starDelta": 549,
       "contributorDelta": 0,
       "issueDelta": 4,
-      "score": 1092
+      "score": 1104
     },
     {
       "name": "lanicer/cve-2026-41940-PoC",
@@ -382,19 +395,6 @@
       "contributorDelta": 0,
       "issueDelta": 0,
       "score": 1054
-    },
-    {
-      "name": "nateherkai/scroll-craft",
-      "description": "Claude Code skill for premium scroll-driven websites. Scroll becomes the timeline, on a real design floor, verified by screenshotting its own scroll.",
-      "stars": 484,
-      "forks": 86,
-      "issues": 0,
-      "language": "JavaScript",
-      "url": "https://github.com/nateherkai/scroll-craft",
-      "starDelta": 484,
-      "contributorDelta": 0,
-      "issueDelta": 0,
-      "score": 968
     }
   ]
 }
