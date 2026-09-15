@@ -4,12 +4,12 @@
     {
       "name": "Chuloo/mural",
       "description": "The language app you eventually delete. A native iPhone companion for learning through conversation.",
-      "stars": 970,
-      "forks": 204,
+      "stars": 998,
+      "forks": 213,
       "issues": 14,
       "language": "Kotlin",
       "url": "https://github.com/Chuloo/mural",
-      "starDelta": 241,
+      "starDelta": 269,
       "contributorDelta": null,
       "issueDelta": -1,
       "score": null
@@ -17,41 +17,41 @@
     {
       "name": "sumimakito/Mac-Duo",
       "description": "Wish you could bring the iPhone Duo effect to your MacBook?",
-      "stars": 903,
-      "forks": 65,
-      "issues": 28,
+      "stars": 911,
+      "forks": 66,
+      "issues": 29,
       "language": "Swift",
       "url": "https://github.com/sumimakito/Mac-Duo",
-      "starDelta": 37,
+      "starDelta": 45,
       "contributorDelta": null,
-      "issueDelta": 2,
+      "issueDelta": 3,
+      "score": null
+    },
+    {
+      "name": "yifanzhang-pro/recurrent-looped-tranformer",
+      "description": "Official Project Page for Recurrent Looped Transformer (RLT)",
+      "stars": 823,
+      "forks": 81,
+      "issues": 0,
+      "language": "HTML",
+      "url": "https://github.com/yifanzhang-pro/recurrent-looped-tranformer",
+      "starDelta": 86,
+      "contributorDelta": null,
+      "issueDelta": -1,
       "score": null
     },
     {
       "name": "kruzovic7/ai-data-extractor",
       "description": "Free open-source extractor for AI coding assistant chat histories. Supports Claude Code, Cursor, Windsurf, Aider, Cline/Roo Code, and more.",
-      "stars": 815,
+      "stars": 820,
       "forks": 132,
       "issues": 0,
       "language": "Python",
       "url": "https://github.com/kruzovic7/ai-data-extractor",
-      "starDelta": 815,
+      "starDelta": 820,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 1630
-    },
-    {
-      "name": "yifanzhang-pro/recurrent-looped-tranformer",
-      "description": "Official Project Page for Recurrent Looped Transformer (RLT)",
-      "stars": 811,
-      "forks": 81,
-      "issues": 0,
-      "language": "HTML",
-      "url": "https://github.com/yifanzhang-pro/recurrent-looped-tranformer",
-      "starDelta": 74,
-      "contributorDelta": null,
-      "issueDelta": -1,
-      "score": null
+      "score": 1640
     },
     {
       "name": "angusdevgo/IDM_Pro_Tool",
@@ -69,54 +69,54 @@
     {
       "name": "eternityspring/reelbench-skills",
       "description": "Learning notes and tooling skills for AI video - AI 视频相关的学习与工具 skill",
-      "stars": 694,
+      "stars": 695,
       "forks": 92,
       "issues": 0,
       "language": "HTML",
       "url": "https://github.com/eternityspring/reelbench-skills",
-      "starDelta": 694,
+      "starDelta": 695,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 1388
+      "score": 1390
     },
     {
       "name": "ArasTey/lunel",
       "description": null,
-      "stars": 684,
-      "forks": 1639,
+      "stars": 690,
+      "forks": 1662,
       "issues": 2,
       "language": "Python",
       "url": "https://github.com/ArasTey/lunel",
-      "starDelta": 684,
+      "starDelta": 690,
       "contributorDelta": 0,
       "issueDelta": 2,
-      "score": 1371
+      "score": 1383
     },
     {
       "name": "nftechie/stonkfly",
       "description": "A full retained fly-connectome simulation with experimental memory and guarded Coinbase AgentKit trading actions.",
-      "stars": 674,
-      "forks": 109,
+      "stars": 688,
+      "forks": 112,
       "issues": 2,
       "language": "Python",
       "url": "https://github.com/nftechie/stonkfly",
-      "starDelta": 674,
+      "starDelta": 688,
       "contributorDelta": 0,
       "issueDelta": 2,
-      "score": 1351
+      "score": 1379
     },
     {
       "name": "zjwzcx/Awesome-Astra-Embodied-AI",
       "description": "GPT-6 Astra for embodied AI and robotics.",
-      "stars": 669,
+      "stars": 675,
       "forks": 13,
       "issues": 0,
       "language": null,
       "url": "https://github.com/zjwzcx/Awesome-Astra-Embodied-AI",
-      "starDelta": 669,
+      "starDelta": 675,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 1338
+      "score": 1350
     },
     {
       "name": "rizqinrr/viserys-agent",
@@ -134,6 +134,19 @@
   ],
   "silentClimbers": [
     {
+      "name": "unstablebuild/rune",
+      "description": "the development environment for pros",
+      "stars": 596,
+      "forks": 34,
+      "issues": 69,
+      "language": "Go",
+      "url": "https://github.com/unstablebuild/rune",
+      "starDelta": 596,
+      "contributorDelta": 0,
+      "issueDelta": 69,
+      "score": 1295.5
+    },
+    {
       "name": "Faizpi/bank-sampah",
       "description": null,
       "stars": 646,
@@ -147,82 +160,69 @@
       "score": 1292
     },
     {
-      "name": "unstablebuild/rune",
-      "description": "the development environment for pros",
-      "stars": 580,
-      "forks": 33,
-      "issues": 69,
-      "language": "Go",
-      "url": "https://github.com/unstablebuild/rune",
-      "starDelta": 580,
-      "contributorDelta": 0,
-      "issueDelta": 69,
-      "score": 1263.5
-    },
-    {
       "name": "mizzlelover/gongwen-gbt9704-skill",
       "description": "信息安全提醒：请勿上传企业禁止对外公开的文件；可在本地或企业内网部署大模型后使用。中文公文排版 Skill：按 GB/T 9704-2012 生成可编辑 DOCX。配套 CEB：https://github.com/mizzlelover/CEB",
-      "stars": 626,
+      "stars": 628,
       "forks": 127,
       "issues": 1,
       "language": "JavaScript",
       "url": "https://github.com/mizzlelover/gongwen-gbt9704-skill",
-      "starDelta": 626,
+      "starDelta": 628,
       "contributorDelta": 0,
       "issueDelta": 1,
-      "score": 1253.5
+      "score": 1257.5
     },
     {
       "name": "agentverse-os/AgentVerse-OS",
       "description": "Personal cloud OS for a developer and their AI agents on a single server. One-command install on Ubuntu, then everything in the browser: a windowed desktop, isolated workspaces with VS Code, Claude Code and Codex, a store of 944 self-hosted apps, backups and updates. Access only via Tailscale, nothing exposed to the internet. Rust core, Svelte UI.",
-      "stars": 531,
+      "stars": 571,
       "forks": 19,
       "issues": 0,
       "language": "Rust",
       "url": "https://github.com/agentverse-os/AgentVerse-OS",
-      "starDelta": 531,
+      "starDelta": 571,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 1062
-    },
-    {
-      "name": "kevinzakka/mjbatch",
-      "description": "A Python library for running thousands of MuJoCo simulations in parallel on CPU",
-      "stars": 494,
-      "forks": 53,
-      "issues": 4,
-      "language": "Python",
-      "url": "https://github.com/kevinzakka/mjbatch",
-      "starDelta": 494,
-      "contributorDelta": 0,
-      "issueDelta": 4,
-      "score": 994
+      "score": 1142
     },
     {
       "name": "nilbuild/page-mascot",
       "description": "A mascot that watches the cursor and blinks when you poke it",
-      "stars": 478,
-      "forks": 34,
+      "stars": 516,
+      "forks": 37,
       "issues": 1,
       "language": "Python",
       "url": "https://github.com/nilbuild/page-mascot",
-      "starDelta": 478,
+      "starDelta": 516,
       "contributorDelta": 0,
       "issueDelta": 1,
-      "score": 957.5
+      "score": 1033.5
+    },
+    {
+      "name": "kevinzakka/mjbatch",
+      "description": "A Python library for running thousands of MuJoCo simulations in parallel on CPU",
+      "stars": 497,
+      "forks": 53,
+      "issues": 4,
+      "language": "Python",
+      "url": "https://github.com/kevinzakka/mjbatch",
+      "starDelta": 497,
+      "contributorDelta": 0,
+      "issueDelta": 4,
+      "score": 1000
     },
     {
       "name": "yi1108/printfilm",
       "description": "PRINTFILM：AI 科普视频与漫剧创作平台",
-      "stars": 466,
+      "stars": 475,
       "forks": 15,
       "issues": 0,
       "language": "Python",
       "url": "https://github.com/yi1108/printfilm",
-      "starDelta": 466,
+      "starDelta": 475,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 932
+      "score": 950
     },
     {
       "name": "ai-sucks-butt/ai-sucks-butt",
@@ -240,28 +240,28 @@
     {
       "name": "youngyangyang04/llm-master",
       "description": "大模型（LLM）全栈学习路线与中文教程🔥：覆盖 Prompt Engineering、RAG、AI Agent、MCP、微调、模型部署、Transformer、AI 编程与大厂面试，从入门到生产实践。",
-      "stars": 430,
-      "forks": 31,
+      "stars": 436,
+      "forks": 33,
       "issues": 0,
       "language": null,
       "url": "https://github.com/youngyangyang04/llm-master",
-      "starDelta": 430,
+      "starDelta": 436,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 860
+      "score": 872
     },
     {
       "name": "zhihui-hu/one-ip",
       "description": "瞬息洞察 IP 纯净底色与风险评级。仅需一键探寻，物理坐标、机房源流与代理轨迹尽收眼底。",
-      "stars": 389,
-      "forks": 183,
+      "stars": 405,
+      "forks": 185,
       "issues": 2,
       "language": "TypeScript",
       "url": "https://github.com/zhihui-hu/one-ip",
-      "starDelta": 389,
+      "starDelta": 405,
       "contributorDelta": 0,
       "issueDelta": 2,
-      "score": 781
+      "score": 813
     }
   ],
   "coolingDown": [],
@@ -269,12 +269,25 @@
     {
       "name": "Chuloo/mural",
       "description": "The language app you eventually delete. A native iPhone companion for learning through conversation.",
-      "stars": 970,
-      "forks": 204,
+      "stars": 998,
+      "forks": 213,
       "issues": 14,
       "language": "Kotlin",
       "url": "https://github.com/Chuloo/mural",
-      "starDelta": 241,
+      "starDelta": 269,
+      "contributorDelta": null,
+      "issueDelta": -1,
+      "score": null
+    },
+    {
+      "name": "yifanzhang-pro/recurrent-looped-tranformer",
+      "description": "Official Project Page for Recurrent Looped Transformer (RLT)",
+      "stars": 823,
+      "forks": 81,
+      "issues": 0,
+      "language": "HTML",
+      "url": "https://github.com/yifanzhang-pro/recurrent-looped-tranformer",
+      "starDelta": 86,
       "contributorDelta": null,
       "issueDelta": -1,
       "score": null
@@ -282,80 +295,67 @@
     {
       "name": "kruzovic7/ai-data-extractor",
       "description": "Free open-source extractor for AI coding assistant chat histories. Supports Claude Code, Cursor, Windsurf, Aider, Cline/Roo Code, and more.",
-      "stars": 815,
+      "stars": 820,
       "forks": 132,
       "issues": 0,
       "language": "Python",
       "url": "https://github.com/kruzovic7/ai-data-extractor",
-      "starDelta": 815,
+      "starDelta": 820,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 1630
-    },
-    {
-      "name": "yifanzhang-pro/recurrent-looped-tranformer",
-      "description": "Official Project Page for Recurrent Looped Transformer (RLT)",
-      "stars": 811,
-      "forks": 81,
-      "issues": 0,
-      "language": "HTML",
-      "url": "https://github.com/yifanzhang-pro/recurrent-looped-tranformer",
-      "starDelta": 74,
-      "contributorDelta": null,
-      "issueDelta": -1,
-      "score": null
+      "score": 1640
     },
     {
       "name": "eternityspring/reelbench-skills",
       "description": "Learning notes and tooling skills for AI video - AI 视频相关的学习与工具 skill",
-      "stars": 694,
+      "stars": 695,
       "forks": 92,
       "issues": 0,
       "language": "HTML",
       "url": "https://github.com/eternityspring/reelbench-skills",
-      "starDelta": 694,
+      "starDelta": 695,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 1388
+      "score": 1390
     },
     {
       "name": "ArasTey/lunel",
       "description": null,
-      "stars": 684,
-      "forks": 1639,
+      "stars": 690,
+      "forks": 1662,
       "issues": 2,
       "language": "Python",
       "url": "https://github.com/ArasTey/lunel",
-      "starDelta": 684,
+      "starDelta": 690,
       "contributorDelta": 0,
       "issueDelta": 2,
-      "score": 1371
+      "score": 1383
     },
     {
       "name": "nftechie/stonkfly",
       "description": "A full retained fly-connectome simulation with experimental memory and guarded Coinbase AgentKit trading actions.",
-      "stars": 674,
-      "forks": 109,
+      "stars": 688,
+      "forks": 112,
       "issues": 2,
       "language": "Python",
       "url": "https://github.com/nftechie/stonkfly",
-      "starDelta": 674,
+      "starDelta": 688,
       "contributorDelta": 0,
       "issueDelta": 2,
-      "score": 1351
+      "score": 1379
     },
     {
       "name": "zjwzcx/Awesome-Astra-Embodied-AI",
       "description": "GPT-6 Astra for embodied AI and robotics.",
-      "stars": 669,
+      "stars": 675,
       "forks": 13,
       "issues": 0,
       "language": null,
       "url": "https://github.com/zjwzcx/Awesome-Astra-Embodied-AI",
-      "starDelta": 669,
+      "starDelta": 675,
       "contributorDelta": 0,
       "issueDelta": 0,
-      "score": 1338
+      "score": 1350
     },
     {
       "name": "rizqinrr/viserys-agent",
@@ -371,6 +371,19 @@
       "score": 1304
     },
     {
+      "name": "unstablebuild/rune",
+      "description": "the development environment for pros",
+      "stars": 596,
+      "forks": 34,
+      "issues": 69,
+      "language": "Go",
+      "url": "https://github.com/unstablebuild/rune",
+      "starDelta": 596,
+      "contributorDelta": 0,
+      "issueDelta": 69,
+      "score": 1295.5
+    },
+    {
       "name": "Faizpi/bank-sampah",
       "description": null,
       "stars": 646,
@@ -382,19 +395,6 @@
       "contributorDelta": 0,
       "issueDelta": 0,
       "score": 1292
-    },
-    {
-      "name": "unstablebuild/rune",
-      "description": "the development environment for pros",
-      "stars": 580,
-      "forks": 33,
-      "issues": 69,
-      "language": "Go",
-      "url": "https://github.com/unstablebuild/rune",
-      "starDelta": 580,
-      "contributorDelta": 0,
-      "issueDelta": 69,
-      "score": 1263.5
     }
   ]
 }
