@@ -1,4 +1,4 @@
-name: Continuous Analyze & Commit
+name: Analyze Trends & Commit Data
 
 on:
   schedule:
@@ -40,70 +40,22 @@ jobs:
       # 5️⃣ Configure Git
       - name: Configure Git
         run: |
-          git config user.name "alobit21"
-          git config user.email "macmtavangu@gmail.com"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-      # 6️⃣ Provide token to your script
-      - name: Set GitHub token for script
-        run: echo "GITHUB_TOKEN=${{ secrets.PERSONAL_GITHUB_TOKEN }}" >> $GITHUB_ENV
-
-      # 7️⃣ Run analyzer
-      - name: Run Continuous Analyzer
+      # 6️⃣ Run analyzer
+      - name: Run Analyzer
+        env:
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
         run: npx tsx src/scripts/analyze-trends.ts
 
-      # 8️⃣ Always create commits with different changes
-      - name: Create Multiple Commits
+      # 7️⃣ Commit only if the analyzer produced real changes
+      - name: Commit data changes
         run: |
-          # Get current timestamp
-          TIMESTAMP=$(date -u +'%Y-%m-%d_%H-%M')
-          HOUR=$(date -u +'%H')
-          
-          echo "Creating 5 commits at $TIMESTAMP"
-          
-          # Commit 1: Update timestamp file
-          echo "{\"last_run\": \"$TIMESTAMP\", \"hour\": $HOUR}" > data/last-run.json
-          git add data/last-run.json
-          git commit -m "chore: update last run timestamp - $TIMESTAMP"
-          
-          # Commit 2: Update analysis metadata
-          echo "{\"analysis_time\": \"$TIMESTAMP\", \"repo_count\": 50, \"hour\": $HOUR}" > data/analysis-meta.json
-          git add data/analysis-meta.json
-          git commit -m "data: analysis metadata update - $TIMESTAMP"
-          
-          # Commit 3: Create activity log
-          echo "{\"activity\": \"github_action_run\", \"timestamp\": \"$TIMESTAMP\", \"status\": \"success\"}" > data/activity-log.json
-          git add data/activity-log.json
-          git commit -m "log: activity recorded - $TIMESTAMP"
-          
-          # Commit 4: Update statistics
-          echo "{\"total_runs\": $(($(date +%s) / 3600)), \"last_success\": \"$TIMESTAMP\"}" > data/stats.json
-          git add data/stats.json
-          git commit -m "stats: run statistics updated - $TIMESTAMP"
-          
-          # Commit 5: Commit the actual data changes (if any)
-          git add data/daily-report.json data/history/ src/data/ || true
+          git add data/daily-report.json data/history/ src/data/ 2>/dev/null || true
           if git diff --cached --quiet; then
-            # No data changes, create a placeholder commit
-            echo "{\"placeholder\": \"no_data_changes\", \"timestamp\": \"$TIMESTAMP\"}" > data/placeholder.json
-            git add data/placeholder.json
-            git commit -m "data: placeholder commit - $TIMESTAMP"
+            echo "No data changes, nothing to commit"
           else
-            # Has data changes, commit them
-            case $HOUR in
-              02)
-                COMMIT_MSG="data: daily main report - $(date -u +'%Y-%m-%d')"
-                ;;
-              06|12|18)
-                COMMIT_MSG="data: 6-hourly update - $(date -u +'%Y-%m-%d %H:%M')"
-                ;;
-              *)
-                COMMIT_MSG="data: 6-hourly update - $(date -u +'%Y-%m-%d %H:%M')"
-                ;;
-            esac
-            git commit -m "$COMMIT_MSG"
+            git commit -m "data: trend update - $(date -u +'%Y-%m-%d %H:%M') UTC"
+            git push origin HEAD:${{ github.ref_name }}
           fi
-          
-          echo "✅ Created 5 commits successfully"
-          
-          # Push all commits
-          git push origin HEAD:${{ github.ref_name }} --force-with-lease
